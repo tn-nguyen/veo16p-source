@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+@import url("../styles/styles/global.css");
+
+@import url("../styles/styles/setup.css");
+</style>
+
+<script type="text/javascript" src="../scripts/global.js"></script>
+
+<script type="text/javascript">
+  info_include();
+</script>
+
+<script type="text/javascript" src="../scripts/libs.js"></script>
+<script type="text/javascript" src="../scripts/top_menu.js"></script>
+<script type="text/javascript" src="../scripts/left_menu.js"></script>
+<script type="text/javascript" src="../scripts/Validator.js"></script>
+<script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+<script type="text/javascript" src="../scripts/ie8_compatibility.js"></script>
+
+<script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+<script type="text/javascript">language_include();</script>
+<link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+<script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+</head>
+
+<body>
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+              print_top_menu(document, "SETUP");
+            </script>
+    </div>
+    <div id="c_sp_div_menubar" style="width:1070px">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left: 10px; padding-top: 10px;">
+          <script type="text/javascript">
+                      print_left_menu(document, "Network", "RTP");
+                    </script>
+        </ul>
+      </div>
+       <form name="netsetting_rtp" id="netsetting_rtp" action='/cgi-bin/webra_fcgi.fcgi'>
+        <div id="c_sp_div_contents" style="width:860px">
+          <div class="c_sp_div_frame c_sp_div_frame_dot" style="width:810px">
+            <div class="network_rtp_setup">
+              <div class="pagetitle">
+                <h1>
+                  <span id='lang_rtp'>RTP</span>
+                </h1>
+              </div>
+              <div id="tab">
+                <ul>
+                  <li><a href='#tab_rtp'><span id="lang_rtp">RTP</span></a></li>
+                  <li><a href='#tab_multicast'><span id="lang_multicast">MULTICAST</span></a></li>
+                </ul>
+                
+                <div id="tab_rtp" class="tabpage">
+                  <h2>
+                    <span id="lang_udp">UDP</span>
+                  </h2>
+                  
+                  <dl>
+                    <dt>
+                      <span id="lang_rtp_portrange">PORT RANGE</span>
+                    </dt> 
+                    <dd>
+                      <div style="width:170px; display:inline-block;">
+                        <input id="rtpsport" name="rtpsport" style="width:45%; float:left"></input>
+                        <span style="margin-left:3px">~</span>
+                        <input id="rtpeport" name="rtpeport" style="width:45%; float:right"/>
+                      </div>
+                    </dd>
+                  </dl>
+                  <br/>
+                  
+                  <h2>
+                    <span id="lang_audiobackchannel">AUDIO BACK CHANNEL</span>
+                  </h2>
+                  
+                  <dl>
+                    <dt>
+                      <span id="lang_audiobackch_mode">MODE</span>
+                    </dt> 
+                    <dd>
+                    <select id="audio_backch_mode" name="audio_backch_mode">
+                      <option value="1">AUTO</option>
+                      <option value="0">MANUAL</option>
+                    </select>
+                    </dd>
+                    <dt>
+                      <span id="lang_audiobackch_port">PORT</span>
+                    </dt>
+                    <dd>
+                      <!-- <input id="audio_backch_port" name="audio_backch_port"></input> -->
+                      <div style="width:170px; display:inline-block;">
+                        <input id="audio_backch_port" name="audio_backch_port" style="width:45%; float:left"></input>
+                        <span style="margin-left:3px">~</span>
+                        <input id="audio_backch_port2" style="width:45%; float:right" disabled/>
+                      </div>
+                    </dd>
+
+                  </dl>
+                  <input type="hidden" id="rtspport" name="rtspport"/>
+                  <input type="hidden" id="netserviceport" name="netserviceport"/>
+                </div> <!-- //tab_rtp -->
+                <div id="tab_multicast" class="tabpage">
+                  <br/>
+                  
+                  <table class="event event_motion network_rtp">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th colspan='4' class="colspan">
+                          <span id='lang_first_stream'>1ST STREAM</span>
+                        </th>
+                        <th colspan='4' class="colspan">
+                          <span id='lang_second_stream'>2ND STREAM</span>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th><span id='lang_channel'>CHANNEL</span></th>
+                        <th colspan='2'><span id='lang_streamip'> STREAM IP </span></th>
+                        <th><span id='lang_videoport'> VIDEO PORT </span></th>
+                        <th><span id='lang_audioport'> AUDIO PORT </span></th>
+                        <th colspan='2'><span id='lang_streamip'> STREAM IP </span></th>
+                        <th><span id='lang_videoport'> VIDEO PORT </span></th>
+                        <th><span id='lang_audioport'> AUDIO PORT</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          CAM1
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_0" id="address_0_0">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_0" id="vport_0_0">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_0" id="aport_0_0">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_0" id="address_1_0">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_0" id="vport_1_0">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_0" id="aport_1_0">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM2
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_1" id="address_0_1">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_1" id="vport_0_1">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_1" id="aport_0_1">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_1" id="address_1_1">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_1" id="vport_1_1">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_1" id="aport_1_1">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM3
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_2" id="address_0_2">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_2" id="vport_0_2">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_2" id="aport_0_2">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_2" id="address_1_2">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_2" id="vport_1_2">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_2" id="aport_1_2">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM4
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_3" id="address_0_3">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_3" id="vport_0_3">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_3" id="aport_0_3">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_3" id="address_1_3">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_3" id="vport_1_3">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_3" id="aport_1_3">
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody class='chenable8'>
+                      <tr>
+                        <td>
+                          CAM5
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_4" id="address_0_4">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_4" id="vport_0_4">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_4" id="aport_0_4">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_4" id="address_1_4">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_4" id="vport_1_4">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_4" id="aport_1_4">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM6
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_5" id="address_0_5">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_5" id="vport_0_5">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_5" id="aport_0_5">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_5" id="address_1_5">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_5" id="vport_1_5">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_5" id="aport_1_5">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM7
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_6" id="address_0_6">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_6" id="vport_0_6">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_6" id="aport_0_6">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_6" id="address_1_6">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_6" id="vport_1_6">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_6" id="aport_1_6">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM8
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_7" id="address_0_7">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_7" id="vport_0_7">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_7" id="aport_0_7">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_7" id="address_1_7">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_7" id="vport_1_7">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_7" id="aport_1_7">
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody class='chenable16'>
+                      <tr>
+                        <td>
+                          CAM9
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_8" id="address_0_8">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_8" id="vport_0_8">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_8" id="aport_0_8">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_8" id="address_1_8">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_8" id="vport_1_8">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_8" id="aport_1_8">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM10
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_9" id="address_0_9">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_9" id="vport_0_9">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_9" id="aport_0_9">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_9" id="address_1_9">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_9" id="vport_1_9">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_9" id="aport_1_9">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM11
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_10" id="address_0_10">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_10" id="vport_0_10">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_10" id="aport_0_10">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_10" id="address_1_10">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_10" id="vport_1_10">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_10" id="aport_1_10">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM12
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_11" id="address_0_11">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_11" id="vport_0_11">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_11" id="aport_0_11">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_11" id="address_1_11">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_11" id="vport_1_11">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_11" id="aport_1_11">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM13
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_12" id="address_0_12">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_12" id="vport_0_12">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_12" id="aport_0_12">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_12" id="address_1_12">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_12" id="vport_1_12">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_12" id="aport_1_12">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM14
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_13" id="address_0_13">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_13" id="vport_0_13">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_13" id="aport_0_13">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_13" id="address_1_13">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_13" id="vport_1_13">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_13" id="aport_1_13">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM15
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_14" id="address_0_14">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_14" id="vport_0_14">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_14" id="aport_0_14">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_14" id="address_1_14">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_14" id="vport_1_14">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_14" id="aport_1_14">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAM16
+                        </td>                        
+                        <td colspan='2'>
+                          <input type="text" name="address_0_15" id="address_0_15">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_0_15" id="vport_0_15">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_0_15" id="aport_0_15">
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="address_1_15" id="address_1_15">
+                        </td>
+                        <td>
+                          <input type="text" name="vport_1_15" id="vport_1_15">
+                        </td>
+                        <td>
+                          <input type="text" name="aport_1_15" id="aport_1_15">
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span id="lang_rtp_ttl">TTL</span>
+                        </td>
+                        <td colspan='2'>
+                          <input type="text" name="ttl" id="ttl"></td>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> <!-- //tab_multicast -->
+                
+                
+              </div>
+              <!--  //tab -->
+              
+            </div> <!-- network_security_setup -->
+          </div> <!-- c_sp_div_frame c_sp_div_frame_dot -->
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg"></div>
+            <div id="printMsg"></div>
+          </div>
+        </div> <!-- c_sp_div_contents -->
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/NetInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('NetRTP');
+  </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/NetModel.js"></script>
+  <script type="text/javascript" src="../scripts/view/NetView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/NetController.js"></script>
+
+  <script type="text/javascript">
+      zzmvc({
+        name : 'NetRTP',
+        action : 'index',
+        debug : false
+      });
+
+      dvrpoke();
+    </script>
+</body>
+</html>

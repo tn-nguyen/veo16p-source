@@ -1,0 +1,135 @@
+{
+  "id": "setupNetworkIpSetup",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+
+  },
+
+  "pageTitle": "setupNetworkIpSetup",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "id": "",
+          "cols": [
+            {
+              "content": [
+              {
+                "input": {
+                  "type":"checkbox",
+                  "id":"dhcp",
+                  "label": "DHCP",
+                  "dhcp_renew": [
+                    {
+                      "id": "renew",
+                      "value": "RENEW",
+                      "style": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "input": {
+                  "label": "IP ADDRESS",
+                  "ip": [
+                    {
+                      "id": "ipaddress",
+                      "name": "ipaddress",
+                      "style": "width:70px;"
+                    }
+                  ]
+                }
+              },
+              {
+                "input": {
+                  "label": "GATEWAY",
+                  "ip": [
+                    {
+                      "id": "gateway",
+                      "name": "gateway",
+                      "style": "width:70px;"
+                    }
+                  ]
+                }
+              },
+              {
+                "input": {
+                  "label": "SUBNET MASK",
+                  "ip": [
+                    {
+                      "id": "subnetmask",
+                      "name": "subnetmask",
+                      "style": "width:70px;"
+                    }
+                  ]
+                }
+              },
+              {
+                "input": {
+                  "label": "1ST DNS SERVER",
+                  "ip": [
+                    {
+                      "id": "1stdns",
+                      "name": "1stdns",
+                      "style": "width:70px;"
+                    }
+                  ]
+                }
+              },
+              {
+                "input": {
+                  "label": "2ND DNS SERVER",
+                  "ip": [
+                    {
+                      "id": "2nddns",
+                      "name": "2nddns",
+                      "style": "width:70px;"
+                    }
+                  ]
+                }
+              },
+              {
+                "input": {
+                  
+                  "id":"rtsp_serviceport",
+                  "label": "RTSP SERVICE PORT",
+                  "service_port": [
+                    {
+                      "id1": "rtsp_autoport",
+                      "value1": "AUTO PORT FORWARDING",
+                      "style": "",
+                      "id2": "deleteport",
+                      "value2": "DELETE PORT",
+                      "style": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "input": {
+                  
+                  "id":"web_serviceport",
+                  "label": "WEB SERVICE PORT",
+                  "service_port": [
+                    {
+                      "id1": "web_autoport",
+                      "value1": "AUTO PORT FORWARDING",
+                      "style": "",
+                      "id2": "deleteport",
+                      "value2": "DELETE PORT",
+                      "style": ""
+                    }
+                  ]
+                }
+              }
+
+
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

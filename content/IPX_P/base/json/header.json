@@ -1,0 +1,15 @@
+{
+  "id": "header",
+  "html": "template/header.htm",
+
+  "logo": "",
+  "text": "Web Viewer",
+  "homeURL": "live.htm",
+
+  "gnb": [
+    {"id": "gnbLive", "class": "live", "text": "LIVE", "href": "html/live.htm"},
+    {"id": "gnbSearch", "class": "search", "text": "SEARCH", "href": "html/playback.htm"},
+    {"id": "gnbSetup", "class": "setup", "text": "SETUP", "href": "html/setup_cam_title.htm"},
+    {"id": "gnbInformation", "class": "information", "text": "INFORMATION", "href": "html/versioninfo.htm"}
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "setupCameraCameraInstallationSetupTable",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "table": {
+                    "id": "tableCameraCameraInstallationSetup",
+                    "class": "tableCameraCameraInstallationSetup",
+                    "idPrefix": "tdCameraCameraInstallationSetup",
+                    "row": [
+                      {"id": "0", "text": "1", "class": "channelGroup4"},
+                      {"id": "1", "text": "2", "class": "channelGroup4"},
+                      {"id": "2", "text": "3", "class": "channelGroup4"},
+                      {"id": "3", "text": "4", "class": "channelGroup4"},
+                      {"id": "4", "text": "5", "class": "channelGroup8"},
+                      {"id": "5", "text": "6", "class": "channelGroup8"},
+                      {"id": "6", "text": "7", "class": "channelGroup8"},
+                      {"id": "7", "text": "8", "class": "channelGroup8"},
+                      {"id": "8", "text": "9", "class": "channelGroup16"},
+                      {"id": "9", "text": "10", "class": "channelGroup16"},
+                      {"id": "10", "text": "11", "class": "channelGroup16"},
+                      {"id": "11", "text": "12", "class": "channelGroup16"},
+                      {"id": "12", "text": "13", "class": "channelGroup16"},
+                      {"id": "13", "text": "14", "class": "channelGroup16"},
+                      {"id": "14", "text": "15", "class": "channelGroup16"},
+                      {"id": "15", "text": "16", "class": "channelGroup16"}
+                    ],
+                    "cols": [
+                      {
+                        "col": [
+                          {"id": "Cam", "text": "CHANNEL"},
+                          {"id": "Model", "text": "MODEL"},
+                          {"id": "Address", "text": "ADDRESS"},
+                          {"id": "Status", "text": "STATUS"},
+                          {"id": "Setup"}
+                        ]
+                      }
+                    ],
+                    "type": [
+                      {"string":{"id": "Model", "class": "Model", "text": "-"}},
+                      {"string":{"id": "Address", "class": "Address", "text": "-"}},
+                      {"string":{"id": "Status", "class": "Status", "text": "-"}},
+                      {
+                        "input": {
+                          "type": "button",
+                          "id": "Setup",
+                          "class": "Setup"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

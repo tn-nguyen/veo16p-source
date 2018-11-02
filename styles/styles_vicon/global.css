@@ -1,0 +1,132 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet
+
+file Name : global.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Body */
+
+* {margin:0; padding:0;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:rgb(44,44,44);
+    color:rgb(255,255,255);
+    font: 0.75em sans-serif, 굴림, Arial, Gulim;
+}
+
+a {
+  color:rgb(255,255,255);
+}
+
+a:hover {
+  color:rgb(220,220,220);
+}
+
+/**************************************************************************************************************************************/
+
+div,ul,li {
+    margin:0;
+    padding:0;
+}
+
+ul,ol {list-style:none;}
+img {border:none;}
+
+/*항목_타이틀*/
+h2 {font-weight:bold;  font-size: 1.2em;  letter-spacing:-1; text-decoration:none; line-height:24px;}
+
+/*항목*/
+span.list {font-weight:normal;  letter-spacing:-1; text-decoration:none; line-height:24px;}
+th.list   {font-weight:normal;  letter-spacing:0; text-decoration:none; line-height:24px; text-align:right; padding-right: 5px;}
+
+/*항목_체크박스*/
+span.check { letter-spacing:-1; text-decoration:none; line-height:24px; padding-left:5px; padding-right:65px; cursor:pointer; cursor:hand;}
+
+input, select {
+  color: #ffffff;
+  background-color: rgb(96,96,96);
+}
+
+input:disabled,
+button:disabled,
+select:disabled,
+option:disabled {
+ color: rgb(45,45,45);
+}
+
+/* Button */
+input[type="button"] , input[type="submit"] {
+  border:1px solid #000000;
+  cursor:pointer;
+}
+
+input[type="text"], select {
+  color:rgb(255,255,255);
+  background-color:rgb(45,45,45);
+  margin: 2px 0px 0px 0px;
+  border: 1px dotted #ffffff;
+}
+
+input[type="text"]:disabled, select:disabled {
+  color: rgb(96,96,96);
+  background-color:rgb(45,45,45);
+  margin: 2px 0px 0px 0px;
+  border: 1px dotted #ffffff;
+}
+
+input[type="checkbox"] {
+  cursor:pointer; cursor:hand;
+}
+
+/* Select */
+select {border:1px solid #7E9DB9;  text-align:center; vertical-align: middle; cursor:pointer; cursor:hand;}
+input{ outline-style:none; }
+
+textarea{ outline-style:none; }
+
+.table-head, th {
+  border-bottom:1px solid rgb(125,125,125);
+}
+
+/**************************************************************************************************************************************/
+
+#c_g_div_wrapper {width:990px;top:0;margin:auto;}
+
+/* Top live/search/setup Bar */
+#c_g_div_top{float:left; width:785px;}
+
+/* Branch Logo */
+#c_g_div_logo{float:left; width:205px; cursor:pointer; cursor:hand; }
+
+/*Tab Image*/
+#c_g_div_tab {float:left; position:relative; top:20px; left:0; z-index:3; margin-left:5px;}
+/* #c_g_div_tab ul {margin:0; padding:0; width:365px; overflow:hidden;left: 0px; top: 1px;} */
+#c_g_div_tab ul {margin:0; padding:0; width:495px; overflow:hidden;left: 0px; top: 1px;}
+#c_g_div_tab li {float:left; position:relative; width:120px; height:34px; padding-top:9px; padding-left:1px;background:url(../../images/images/tab_nor.gif) no-repeat; text-align:center;}
+#c_g_div_tab li span strong {font-weight:bolder;   letter-spacing:-1px; text-decoration:none;}
+#c_g_div_tab li a {color:#FFFFFF;  letter-spacing:-1px; text-decoration:none;}
+#c_g_div_tab li.on {width:122px; height:34px; background:url(../../images/images/tab_sel.gif) no-repeat;font-weight:bold;   letter-spacing:-1px; text-decoration:none;}
+
+
+/*상단_타이틀*/
+/* #c_g_div_title{ float:left; position:relative; top:23px; left:183px; padding-top:2px; width:260px; height:30px; text-align:right;} */
+#c_g_div_title{ float:left; position:relative; top:23px; left:53px; padding-top:2px; width:260px; height:30px; text-align:right;}
+#c_g_div_title span{font-weight:bold;font-size:1.2em;vertical-align:bottom;letter-spacing:-1px;line-height: 30px;}
+/**************************************************************************************************************************************/
+
+/* button */
+#c_g_div_button {float:right; margin-right:100px;}
+#c_g_div_button input { float:left; margin-right:2px; }
+
+/* Message */
+#c_g_div_msg {width:90%; min-height:20px; text-align:center; margin-left:30px;clear: both;}
+#errMsg {color:#CC006A;}
+#printMsg {color:#1FA908;}
+
+

@@ -1,0 +1,15 @@
+{
+  "id": "dialogNotice",
+  "html": "template/dialogSimple.htm",
+  "loadTemplate": {
+  },
+
+  "dialog": true,
+  "text": "NOTICE",
+
+  "imgDiv": "imgDialogNotice",
+  "imgClass": "imgDialogNotice",
+
+  "textDiv": "divDialogNoticeText",
+  "textClass": "divDialogNoticeText"
+}

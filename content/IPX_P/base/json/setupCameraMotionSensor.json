@@ -1,0 +1,54 @@
+{
+  "id": "setupCameraMotionSensor",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+
+  },
+
+  "pageTitle": "setupCameraMotionSensor",
+
+  "pages": [
+    {
+      "rows": [
+      {
+        "id": "setupCameraMotionSensor",
+        "cols": [
+          {
+            "id": "setupCameraMotionSensorContent",
+            "content": [
+                {
+                  "table": {
+                    "id": "setupCameraCameraTitleContentTable",
+                    "row": ["", "ACTIVATION","MOTION MARK"],
+                    "col": ["ALL", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+                    "type": [
+                     {
+                        "select": {
+                          "idPostfix": "camera_motionsensor_activation_",
+                          "option":[
+                            {"value": "1", "text": "ON"},
+                            {"value": "0", "text": "OFF"}
+                          ]
+                          
+                        }
+                      },
+                      {
+                        "select": {
+                          "idPostfix": "camera_motionsensor_motionmark_",
+                          "option":[
+                            {"value": "1", "text": "ON"},
+                            {"value": "0", "text": "OFF"}
+                          ]
+                          
+                        }
+                      }
+                     ]
+                  }
+                }              
+            ]
+          }
+      ]}]     
+
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet 
+
+file Name : setup.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Menu Bar*/
+#c_sp_div_menubar {clear:both; width:990px;}
+#c_sp_div_menubar_sub {float:left;width:17%; min-height:450px; background-color:#ffffff; border:1px solid #8b8b8b;z-index:2; margin-top:0px;}
+#c_sp_div_menubar_sub li a{color:#304561; letter-spacing:-1;  line-height:28px; text-decoration:none;}
+#c_sp_div_menubar_sub li.on {font-weight:bold; color:#304561; letter-spacing:-1; line-height:25px; text-decoration:none;}
+#c_sp_div_menubar_sub img {margin-right:6px;}
+/**************************************************************************************************************************************/
+
+/**************************************************************************************************************************************/
+/* Setup Frame*/
+#c_sp_div_contents {float:left; width:82%; min-height:450px; margin-left:1px; margin-top:0px;background-color:#ffffff; border:1px solid #8b8b8b; z-index:2;}
+#c_sp_div_frame01 {width:599px; margin:14px auto 20px 31px;}
+#c_sp_div_frame02 {width:750px; margin:14px auto 10px 31px; text-align:left;border-bottom:1px dotted #C5D0E0;}
+#c_sp_div_frame03 {width:750px; margin:14px auto 10px 31px; text-align:left;}/* i'??i`???e"???e" ?i`???i`??i`??i`?(c) */
+/**************************************************************************************************************************************/
+
+/**************************************************************************************************************************************/
+/* Version Infomation*/
+#c_info_div_contents {float:left; width:990px; min-height:700px; margin-left:1px; margin-top:0px;background-color:#ffffff; border:1px solid #8b8b8b; z-index:2;}
+.c_sp_tb_verinfo {width:119px; height:50px; margin:10px auto 5px 15px; border:1px solid #8b8b8b; color:#304561; font-weight:bold; text-align:center;}
+.c_sp_tb_verinfo td.tdinfo {cursor:pointer; cursor:hand;}
+/* .c_sp_tb_infomation {width:350px; height:100px; margin:10px auto 5px 20px; border:1px solid #8b8b8b; color:#304561; text-align:left;} */
+.c_sp_tb_infomation {width:350px; height:100px; margin:10px auto 5px 320px; border:1px solid #8b8b8b; color:#304561; text-align:left;}
+/* #infoheader {color:#304561; font-weight:bold; text-align:center; margin-top:5px;} */
+#infoheader {color:#304561; font-weight:bold; text-align:center; margin-top:40px;}
+/**************************************************************************************************************************************/
+
+/**************************************************************************************************************************************/
+/* Setup Body*/
+.c_sp_btn_okcancel {width:109px; height:17px; margin-bottom:10px;}
+
+/**************************************************************************************************************************************/
+/* Camera */
+/**************************************************************************************************************************************/
+.right_cel {height:23px; border-bottom:1px solid #91a8c1; background-color:#cbd9e7; text-align:center; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.left_cel {height:23px; border-bottom:1px solid #91a8c1; text-align:center; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.right_bottom_cel {height:20px; border-bottom:5px solid #91a8c1; background-color:#ffffff; text-align:center; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.left_bottom_cel {height:20px; border-bottom:5px solid #91a8c1; text-align:center; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+
+/* Camera Camera*/
+.c_sp_tb_cam_cam4 {width:600px; height:115px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_cam_cam8 {width:600px; height:92px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_cam_cam16 {width:600px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+
+.c_sp_td_cam_head1 {width:40px; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_td_cam_head2 {width:280px; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center; padding-left: 10px;}
+.c_sp_td_cam_head3 {width:140px; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_td_cam_head4 {width:140px; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+       
+.c_sp_td_cam_ch {width:40px; height:23px; border-bottom:1px solid #91a8c1; text-align:center; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_cam_title {width:280px; height:23px; border-bottom:1px solid #91a8c1; text-align:center; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; padding-left:10px;}
+.c_sp_td_cam_covert {width:140px; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; text-align:center;}
+.c_sp_td_cam_audio {width:140px; height:23px; border-bottom:1px solid #91a8c1; text-align:center;}
+
+.c_sp_txt_cam_title {ime-mode:disabled; width:96%;}
+.c_sp_lst_cam_cvau {width:90%; border: 1px solid #ffffff;}
+
+/* Camera Color */
+.c_sp_tb_cam_color4 {width:600px; height:115px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_cam_color8 {width:600px; height:92px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_cam_color16 {width:600px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+
+.c_sp_tb_cam_color_head1 {width:40px; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_cam_color_head2 {width:120px; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_cam_color_head3 {width:120px; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+
+.c_sp_td_cam_color1 {width:40px; border-bottom:1px solid #91a8c1; text-align:center; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_cam_color2 {width:120px; border-bottom:1px solid #91a8c1; text-align:center; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_cam_color3 {width:120px; height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; text-align:center; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+
+.c_sp_txt_cam_color {ime-mode:disabled; width:96%;}
+
+/* Camera Image Advanced Setup*/
+.c_sp_div_advanced #preview {}
+.c_sp_div_advanced #left_pannel {width:360px; margin-right:10px; float:left;}
+.c_sp_div_advanced #right_pannel {margin-left:370px;}
+.c_sp_div_advanced .control {margin:30px 0 10px 0;}
+
+.c_sp_div_advanced .lstdisp {width:200px;border:1px solid #A3BCD3; font-size:12px; color:#373487;}
+.c_sp_div_advanced .lstdisp_half {width:98px;}
+.c_sp_div_advanced .lstdisp_step_right{width:47px;}
+.c_sp_div_advanced dl {line-height:30px;}
+.c_sp_div_advanced dl dt {width:130px;height:30px; font-weight:normal; margin-right:10px; font-size:14px;color:#78ABCD; text-decoration:none; text-align:right; float:left;}
+.c_sp_div_advanced dl dd {}
+.c_sp_div_advanced .textbox {width:100px;border:1px solid #A3BCD3;}
+.c_sp_div_advanced .zoombtn {width:47px;}
+.c_sp_div_advanced .focusbtn {width:47px;}
+
+.c_sp_div_advanced .subtitle {font-weight:bold; color:#373487; font-size:14px; font-family:Arial; text-decoration:none; line-height:24px}
+.c_sp_div_advanced .information {font-size:12px; color:#373487; text-align:left;}
+.c_sp_div_advanced .scope {font-size:12px; color:#373487; }
+.c_sp_div_advanced .step {margin-left:16px; font-size:12px; color:#373487; }
+
+/* Camera PTZ */
+.c_sp_tb_cam_ptz4 {width:600px; height:230px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_cam_ptz8 {width:600px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_cam_ptz16 {width:600px; height:368px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+
+.c_sp_td_cam_ptz_head1 {width:20%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_td_cam_ptz_head2 {width:20%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+
+.c_sp_td_cam_ptz_body1 {width:20%; border-bottom:1px solid #91a8c1; text-align:center; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_cam_ptz_body2 {width:20%; height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; text-align:center; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+
+.c_sp_txt_cam_ptz_addr {ime-mode:disabled; width:96%;}
+.c_sp_lst_cam_ptz_sel {width:12ex; border: 1px solid #ffffff;}
+.c_sp_lst_cam_ptz_pt {width:100%;border: 1px solid #ffffff;}
+
+/* Camera Motion */
+.c_sp_tb_cam_motion_color_info {width:200px; height:20px; color:#283956;}
+.c_sp_tb_cam_motion_color_info td.tdselct {width:10%; background-color:RGB(255,255,0);}
+.c_sp_tb_cam_motion_color_info td.tdnone {width:10%; background-color:#DADADA;}
+.c_sp_tb_cam_motion_color_info td.tdtxt {width:40%;}
+
+.c_sp_div_motion_jpeg {width:750px; height:480px;}
+.c_sp_jp_cam_motion_jpegarea {width:750px; height:480px; z-index:2000;}
+
+.c_sp_tb_cam_motion_motiontable {width:750px; height:480px; padding:0; margin-top:-480px; background-repeat:no-repeat; background-position:center; table-layout:fixed; z-index:1000;}
+
+.c_sp_tb_cam_motion_setting{width:750px; font-size:13px; padding:0; table-layout:fixed; border-collapse:collapse; margin:5px auto 5px auto;}
+
+.c_sp_tb_cam_motion_setting td.tdlstright {width:16%; text-align:center;}
+.c_sp_tb_cam_motion_setting td.tdlstleft {width:16%; text-align:center; color:#283956;}
+.c_sp_tb_cam_motion_setting .btnmotion {width:100%; text-align:center; height:19px; }
+.c_sp_tb_cam_motion_setting .lstmotion {width:40px; text-align:center;}    
+/**************************************************************************************************************************************/
+/* Display */
+/**************************************************************************************************************************************/
+.c_sp_div_disp {margin-bottom:28px;}
+.c_sp_div_disp .lstdisp {width:170px; height:21px; margin:2px 0 1px 0; text-align: left; font-size:12px; }
+
+/**************************************************************************************************************************************/
+/* Sound */
+/**************************************************************************************************************************************/
+/* Sound Audio */
+.c_sp_div_sound {margin-bottom:28px;}
+.c_sp_div_sound .lstdisp {width:170px; height:21px; margin:2px 0 1px 0; text-align: left; font-size:12px;}
+/**************************************************************************************************************************************/
+/* System */
+/**************************************************************************************************************************************/
+/* System Date/Time */
+.c_sp_div_system_date {margin-bottom:28px;}
+.c_sp_div_system_date .lstdisp {width:170px; height:21px; margin:2px 0 1px 0; text-align: left; font-size:12px; color: #373487;}
+.c_sp_div_system_date .txtdisp {width:170px; height:17px; margin:2px 0 1px 0; text-align: left; font-size:12px; color: #373487;}
+/* System System Management */
+.c_sp_div_system {margin-bottom:28px; margin-left:100px; text-align: right;}
+.c_sp_div_system .lstdisp {width:90%; height:21px; margin-left:5px; text-align: left; font-size:12px;}
+.c_sp_div_system .txtdisp {width:90%; height:19px; margin-left:5px; text-align: left; font-size:12px; }
+.c_sp_div_system .txtlist {font-weight:normal; font-size:14px; color:#283956; letter-spacing:-1; text-decoration:none; line-height:24px; text-align: right;}
+.c_sp_div_system .tddisp {width:170px; height:19px; margin:2px 0 1px 0; text-align: left; font-size:12px;}
+/* System Control Device */               
+.c_sp_tb_system_dev {width:600px; height:46px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_system_dev td.tdhead1 {width:13%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_system_dev td.tdhead2 {width:29%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_system_dev td.tdhead3 {width:29%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_system_dev td.tdleft {height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_tb_system_dev td.tdright {height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_tb_system_dev .lstdev {width:100%; border: 1px solid #ffffff; }
+
+/**************************************************************************************************************************************/
+/* Record */
+/**************************************************************************************************************************************/
+.c_sp_tb_rec4 {width:750px; height:115px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec8 {width:750px; height:92px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec16 {width:750px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+
+.c_sp_tb_rec_act4 {width:750px; height:92px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec_act4 td.tdnone {background-color:#f1f7ff;}
+.c_sp_tb_rec_act4 td.tdcont {background-color:RGB(108,176,1);}
+.c_sp_tb_rec_act4 td.tdmot {background-color:RGB(51,132,236);}
+.c_sp_tb_rec_act4 td.tdcontmot {background-color:RGB(64,64,64);}
+.c_sp_tb_rec_act4 td.tdon {background-color:RGB(244,136,1);}
+.c_sp_tb_rec_act4 td.tdoff {background-color:#f1f7ff;}
+.c_sp_tb_rec_act8 {width:750px; height:92px; padding:0; table-layout:fixed; margin:-6px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec_act16 {width:750px; height:184px; padding:0; table-layout:fixed; margin:-6px auto 5px auto; border-collapse: collapse; text-align:center;}
+
+.c_sp_tb_rec_panic4 {width:750px; height:115px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec_panic8 {width:750px; height:92px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec_panic16 {width:750px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+
+#c_sp_div_rec_tab {float:left; position:relative; top:30px; left:0; z-index:1; }
+#c_sp_div_rec_tab ul {margin:0; padding:0; width:365px; overflow:hidden;left: 0px; top: 0px;}
+#c_sp_div_rec_tab li {float:left; position:relative; width:158px; height:20px; padding-top:2px; padding-left:1px;background:url(../../images/images/rec_tab_nor.gif) no-repeat; text-align:center;} 
+#c_sp_div_rec_tab li span {font-weight:bold; color:#304561; font-size:12px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_sp_div_rec_tab li a {color:#304561; font-size:12px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_sp_div_rec_tab li.on {width:159px; height:20px; background:url(../../images/images/rec_tab_sel.gif) no-repeat;font-weight:bold; color:#304561; font-size:12px; font-family:Arial; letter-spacing:-1; text-decoration:none;}                                          
+
+#c_sp_div_rec_contents {/*width:750px; */min-height:300px; margin-left:0px; margin-top:48px; background-color:#e6ebf2; border:1px solid #91a8c1; z-index:1; text-align:center; color:#283956;}
+
+.c_sp_tb_rec_time {width:750px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse:collapse;}
+.c_sp_td_rec_time_left1 {width:12%; height:23px; solid #91a8c1; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;  text-align:center;}
+.c_sp_td_rec_time_left2 {text-align:left;}
+.c_sp_td_rec_time_left3 {height:23px; border:1px solid #91a8c1; background-color:#f1f7ff; }   
+.c_sp_td_rec_time_right {text-align:right;}
+
+.c_sp_lst_rec_con {border: 1px solid #ffffff; }
+
+.c_sp_td_rec_act_left {width:12%; height:23px; solid #91a8c1; background-color:#e6ebf2; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;  text-align:center;}
+.c_sp_td_rec_act_left2 {width:12%; height:5px; solid #91a8c1; background-color:#e6ebf2; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;  text-align:center;}
+.c_sp_td_rec_act_motion {border:1px solid #91a8c1; margin:20px auto auto auto; background-color:#e6ebf2}
+
+.c_sp_btn_rec_act {width:100px; text-align:center; height:19px; margin:5px auto 5px auto;}
+/* Record Rec Operation */
+.c_sp_div_rec_operation {margin-bottom:28px;}
+.c_sp_div_rec_operation .lstrec {width:170px; height:21px; margin:2px 0 1px 0; border:1px solid #A3BCD3; font-size:12px; color: #283956; text-align: left;}
+
+/* Record Alarm Recording */
+.c_sp_tb_rec4 td.tdhead1 {width:12%; height:23px; padding:0; border-right:1px solid #91a8c1; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead2 {width:18%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead3 {width:18%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead4 {width:18%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead5 {width:11%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead6 {width:12%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead7 {width:11%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+
+.c_sp_td_rec_sfqright {width:11%; height:23px; border-bottom:0px solid #FFFFFF; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfqleft {width:12%; height:23px; border-bottom:1px solid #e6ebf2; border-right:1px solid #91a8c1;background-color:#e6ebf2; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfqbody {width:18%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfqbody2 {width:12%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfqbody3 {width:11%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+
+/* Record Continuous / Motion Recording */
+.c_sp_tb_rec4 td.tdhead8 {width:12%; height:23px; padding:0; border-right:1px solid #91a8c1; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead9 {width:22%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead10 {width:22%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead11 {width:22%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead12 {width:11%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec4 td.tdhead13 {width:11%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+
+.c_sp_td_rec_sfq2right {width:11%; height:23px; border-bottom:1px solid #FFFFFF; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfq2left {width:12%; height:23px; border-bottom:1px solid #e6ebf2; border-right:1px solid #91a8c1;background-color:#e6ebf2; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfq2body2 {width:11%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfq2body {width:22%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+/* Record Panic Recording */
+.c_sp_tb_rec_panic4 {width:750px; height:115px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec_panic8 {width:750px; height:92px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_rec_panic16 {width:750px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+
+.c_sp_tb_rec_panic4 td.tdhead8 {width:12%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec_panic4 td.tdhead9 {width:22%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec_panic4 td.tdhead10 {width:22%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec_panic4 td.tdhead11 {width:22%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec_panic4 td.tdhead12 {width:11%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_rec_panic4 td.tdhead13 {width:11%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+
+.c_sp_td_rec_sfq3right {width:11%; height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfq3left {width:12%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfq3body2 {width:11%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_rec_sfq3body {width:22%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+
+/**************************************************************************************************************************************/
+/* User */
+/**************************************************************************************************************************************/
+
+/* User Management */
+.c_sp_tb_userman {width:750px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse:collapse; text-align:center;}
+.c_sp_tb_userman td.tdright {height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userman td.tdleft {height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1;}
+.c_sp_tb_userman td.tdhead1 {width:20%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userman td.tdhead2 {width:15%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userman td.tdhead3 {width:25%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userman td.tdhead4 {width:10%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userman .lstgroup {border: 1px solid #ffffff; }
+.c_sp_tb_userman .btnadd {width:70%;}
+
+/* User Authority */
+.c_sp_tb_userautho {width:750px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse:collapse;}
+.c_sp_tb_userautho td.tdright {height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userautho td.tdleft {height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-align:center;}
+.c_sp_tb_userautho td.tdhead1 {width:10%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userautho td.tdhead2 {width:18%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userautho td.tdhead3 {width:18%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userautho td.tdhead4 {width:18%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userautho td.tdhead5 {width:18%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_userautho td.tdhead6 {width:18%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+
+/* User Log out */
+.c_sp_div_userlogout {margin-bottom:28px;}
+.c_sp_div_userlogout .lstdisp {width:170px; height:21px; margin:2px 0 1px 0; font-size:12px; text-align: left;}
+/**************************************************************************************************************************************/
+/* Network */
+/**************************************************************************************************************************************/
+/* Network Network */
+/* Network E-Mail */
+.c_sp_div_net {margin-bottom:28px;}
+.c_sp_div_net .lstdisp {width:170px; height:21px; margin:2px 0 1px 0; font-size:12px; text-align: left;}
+.c_sp_div_net .chkdhcp {height:21px; margin:2px 0 1px 0; border:1px solid #ffffff; font-size:12px; color: #283956; text-align: left;}
+.c_sp_div_net .txtnet {width:170px; height:19px; margin:2px 0 1px 0; font-size:12px; ime-mode:disabled;}
+.c_sp_div_net .txtpwd {width:170px; height:19px; margin:2px 0 1px 0; font-size:12px; border:1px solid #91a8c1; color:#3d3d3d; ime-mode:disabled;}
+/**************************************************************************************************************************************/
+/* Sensor */
+/**************************************************************************************************************************************/
+.c_sp_div_sensor {margin-bottom:28px;}
+.c_sp_div_sensor .lstdisp {width:170px; height:21px; margin:2px 0 1px 0; font-size:12px; text-align: left;}
+.c_sp_tb_sensor_alarmout4 {width:750px; height:115px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_sensor_alarmout8 {width:750px; height:92px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_sensor_alarmout16 {width:750px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_tb_sensor_alarmout4 td.tdhead1 {width:10%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_sensor_alarmout4 td.tdhead2 {width:30%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_sensor_alarmout4 td.tdhead3 {width:30%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_tb_sensor_alarmout4 td.tdhead4 {width:30%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_td_right {width:30%; height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;text-align:center;}
+.c_sp_td_left {width:10%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;text-align:center;}
+.c_sp_td_body {width:30%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1;background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;text-align:center;}
+.c_sp_td_button {width:110px; height:23px; padding:0; background-color:#ffffff;}
+/* Sensor HDD event */
+/* Sensor Alarm Input */
+.c_sp_div_sensor_arinput4 {width:600px; height:115px; padding:0; table-layout:fixed; margin:5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_div_sensor_arinput8 {width:600px; height:92px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_div_sensor_arinput16 {width:600px; height:184px; padding:0; table-layout:fixed; margin:-5px auto 5px auto; border-collapse: collapse; text-align:center;}
+.c_sp_div_sensor_arinput4 td.tdhead1 {width:13%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_div_sensor_arinput4 td.tdhead2 {width:29%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_div_sensor_arinput4 td.tdhead3 {width:29%; height:23px; padding:0; border-right:1px solid #91a8c1; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_div_sensor_arinput4 td.tdhead4 {width:29%; height:23px; padding:0; background-color:#cbd9e7; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_sp_td_sensor_arinput1 {width:13%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_sensor_arinput2 {width:29%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_sensor_arinput3 {width:29%; height:23px; border-bottom:1px solid #91a8c1; border-right:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_td_sensor_arinput4 {width:29%; height:23px; border-bottom:1px solid #91a8c1; background-color:#ffffff; font-weight:normal; color:#283956; letter-spacing:-1; text-decoration:none;}
+.c_sp_lst_sensor_arinput_con1 {width:100%; border: 1px solid #ffffff; font-size: 14px; color: #283956; text-align: center;}
+.c_sp_lst_sensor_arinput_con2 {width:90%; height:21px; margin:2px 0 1px 0; border:1px solid #A3BCD3; font-size:12px; color: #283956; text-align: left; ime-mode:disabled; maxlength="64";}
+/* Sensor Alarm Output */
+/* Sensor Buzzer Out */
+/* Sensor E-mail notification */
+
+
+/**************************************************************************************************************************************/
+

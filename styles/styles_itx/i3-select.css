@@ -1,0 +1,10 @@
+﻿.i3-select {
+    padding: 6px; 
+    width: 130px; 
+    height: 28px; 
+    color: #fff; 
+    font-size: 12px;
+    background-color: rgb(68, 68, 68);
+    border-radius: 3px;
+    border: 1px solid #4E4E4E;
+}

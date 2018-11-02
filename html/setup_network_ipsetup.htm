@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">info_include();</script>
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();</script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+
+    <title></title>
+
+  </head>
+
+<body>
+
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+        print_top_menu(document, "SETUP");
+      </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+          <script type="text/javascript">
+            print_left_menu(document, "Network", "Network");
+          </script>
+        </ul>
+      </div>
+
+      <form name="networksetting_ipsetup" id="networksetting_ipsetup" action='/cgi-bin/webra_fcgi.fcgi'>
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <div class="network_ipsetup_setup">
+              <h2>
+                <span id='lang_IPsetupsetting'>IP setup setting</span>
+              </h2>
+              <div id="tab">
+                <ul>
+                  <li><a href='#tab_ipv4'><span id="lang_ipv4">IPv4</span></a></li>
+                  <li><a href='#tab_ipv6'><span id="lang_ipv6">IPv6</span></a></li>
+                </ul>
+
+                <div id="tab_ipv4">
+                  <h2><span id='lang_IPsetupsetting'>IP setup setting</span></h2>
+                  <h2><span id='lang_ipv4_wan'>WAN</span></h2>
+
+                  <div class="c_sp_div_net" >
+                      <dl>
+                        <dt>
+                          <span class="list"><span id='lang_dhcp'>DHCP</span></span>
+                        </dt>
+                        <dd>
+                          <input type="checkbox" id="dhcp" class="chkdhcp">
+                          <input type="button" id="renew" class="" value="RENEW"/>
+                        </dd>
+                      </dl>
+                  </div>
+                  <div class="c_sp_div_net">
+                    <dl>
+                      <dt><span class="list"><span id='lang_ipaddress'>IP Address</span></span></dt>
+                      <dd>
+                        <input type="text" id="ipaddressA" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ipaddressB" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ipaddressC" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ipaddressD" class="iptextbox ipsetting" maxlength="3">
+                      </dd>
+                      <dt><span class="list"><span id='lang_gateway'>Gateway</span></span></dt>
+                      <dd>
+                        <input type="text" id="gatewayA" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="gatewayB" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="gatewayC" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="gatewayD" class="iptextbox ipsetting" maxlength="3">
+                      </dd>
+                      <dt><span class="list"><span id='lang_subnetmask'>Subnet Mask</span></span></dt>
+                      <dd>
+                        <input type="text" id="subnetmaskA" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="subnetmaskB" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="subnetmaskC" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="subnetmaskD" class="iptextbox ipsetting" maxlength="3">
+                      </dd>
+                      <dt><span class="list"><span id='lang_dns1server'>DNS 1st Server</span></span></dt>
+                      <dd>
+                        <input type="text" id="ddns1serverA" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ddns1serverB" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ddns1serverC" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ddns1serverD" class="iptextbox ipsetting" maxlength="3">
+                      </dd>
+                      <dt><span class="list"><span id='lang_dns2server'>DNS 2st Server</span></span></dt>
+                      <dd>
+                        <input type="text" id="ddns2serverA" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ddns2serverB" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ddns2serverC" class="iptextbox ipsetting" maxlength="3">.
+                        <input type="text" id="ddns2serverD" class="iptextbox ipsetting" maxlength="3">
+                      </dd>
+                    </dl>
+                  </div>
+
+                  <h2><span id='lang_LAN'>LAN</span></h2>
+                  <div class="c_sp_div_net">
+                    <dl>
+                      <dt>
+                        <span class="list"><span id='lang_use_ipv4_lan'>USE</span></span>
+                      </dt>
+                      <dd>
+                        <input type="checkbox" id="checkbox_use_ipv4_lan" class="chkdhcp">
+                      </dd>
+                      <dt><span class="list"><span id='lang_lan_ipv4_ipaddress'>IP Address</span></span></dt>
+                      <dd>
+                        <input type="text" id="lan_ipv4_addressA" class="iptextbox lan_ipv4_ipsetting" maxlength="3">.
+                        <input type="text" id="lan_ipv4_addressB" class="iptextbox lan_ipv4_ipsetting" maxlength="3">.
+                        <input type="text" id="lan_ipv4_addressC" class="iptextbox lan_ipv4_ipsetting" maxlength="3">.
+                        <input type="text" id="lan_ipv4_addressD" class="iptextbox lan_ipv4_ipsetting" maxlength="3">
+                      </dd>
+                      <dt><span class="list"><span id='lang_lan_ipv4_subnetmask'>Subnet Mask</span></span></dt>
+                      <dd>
+                        <input type="text" id="lan_ipv4_subnetmaskA" class="iptextbox lan_ipv4_ipsetting" maxlength="3">.
+                        <input type="text" id="lan_ipv4_subnetmaskB" class="iptextbox lan_ipv4_ipsetting" maxlength="3">.
+                        <input type="text" id="lan_ipv4_subnetmaskC" class="iptextbox lan_ipv4_ipsetting" maxlength="3">.
+                        <input type="text" id="lan_ipv4_subnetmaskD" class="iptextbox lan_ipv4_ipsetting" maxlength="3">
+                      </dd>
+                    </dl>
+                  </div>
+        
+                    <div class="c_sp_div_net">
+                      <dl>
+                        <dt><span class="list" id="lang_autoport_update">AUTO PORT UPDATE</span></dt>
+                        <dd>
+                          <select class="lstdisp" id="autoport" name="autoport">
+                            <option value="0">OFF</option>
+                            <option value="1">ON</option>
+                          </select>
+                        </dd>
+        
+                        <dt>
+                          <span class="list" id="lang_autoport_status">AUTO PORT STATUS</span>
+                        </dt>
+                        <dd>
+                          <input type="text" id="port_status" disabled>
+                          <input type="button" class="portsettingbtn" id="confirm_conflict" value="CONFIRM CONFLICT">
+                        </dd>
+        
+                        <dt><span class="list"><span id='lang_Rtspport'>RTSP service port</span></span></dt>
+                        <dd>
+                          <input type="text" id="rtspport" name="rtspport" class="portsetting" maxlength="5">
+                          <input type="button" id="rtsp_autoport" class="portsettingbtn" value="AUTO PORT FORWARDING"/>
+                          <input type="button" id="rtsp_removeport" class="portsettingbtn" value="REMOVE PORT"/>
+                        </dd>
+                        <dt><span class="list"><span id='lang_Webserviceport'>Web service port</span></span></dt>
+                        <dd>
+                          <input type="text" id="netserviceport" name="netserviceport" class="portsetting" maxlength="5">
+                          <input type="button" id="net_autoport" class="portsettingbtn" value="AUTO PORT FORWARDING"/>
+                          <input type="button" id="net_removeport" class="portsettingbtn" value="REMOVE PORT"/>
+                        </dd>
+                      </dl>
+                    </div>
+                    <div class="c_sp_div_net">
+                      <dl>
+                        <dt><span class="list"><span id='lang_MaxTXspeed'>Max TX speed</span></span></dt>
+                        <dd>
+                        <select id="maxtx" name="maxtx" class="lstdisp" >
+                          <option value="32">256 Kbps</option>
+                          <option value="64">512 Kbps</option>
+                          <option value="128">1 Mbps</option>
+                          <option value="256">2 Mbps</option>
+                          <option value="512">4 Mbps</option>
+                          <option value="1024">8 Mbps</option>
+                          <option value="2048">16 Mbps</option>
+                          <option value="4096">32 Mbps</option>
+                          <option value="8192">MAX</option>
+                        </select>
+                        </dd>
+                      </dl>
+                    </div>
+
+                </div>
+                
+                <div id="tab_ipv6">
+                  <h2><span id='lang_IPsetupsetting'>IP setup setting</span></h2>
+                  <h2><span id='lang_ipv6_wan'>WAN</span></h2>
+
+                  <div class="c_sp_div_net" >
+                    <div class="c_sp_div_net" >  
+                      <dl>
+                        <dt>
+                          <span class="list"><span id='lang_ipv6_on'>IPv6</span></span>
+                        </dt>
+                        <dd>
+                          <input type="radio" id="ipv6Off" name="ipv6on" value = "0">
+                          <span>Off</span>
+                          <input type="radio" id="ipv6Manual" name="ipv6on" value = "1">
+                          <span>On(MANUAL)</span>
+                          <input type="radio" id="ipv6Auto" name="ipv6on" value = "2">
+                          <span>On(Auto)</span>
+                          <input type="button" value="RENEW" id="ipv6renew" class=""/>
+                        </dd>
+                      </dl>
+                    </div>
+                      <dl>
+                        <dt><span class="list"><span id='lang_linklocaladdr'>Local-link address</span></dt>
+                        <dd>
+                          <input type="text" id="ipv6linklocal" class="ipv6linklocal" style="width:220px;" >
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt><span class="list"><span id='lang_ipv6ipaddr1'>IP Address 1</span></dt>
+                        <dd>
+                          <input type="text" name="ipv6ipaddr1" id="ipv6ipaddr1" class="ipv6textbox ipv6ipset" style="ime-mode:disabled; width:220px;" >
+                          <span>/</span>
+                          <input type="text" name="ipv6prefix1" id="ipv6prefix1" class="ipv6textbox ipv6prefixset" style="ime-mode:disabled; width:40px;" maxlength="3">
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt><span class="list"><span id='lang_ipv6ipaddr2'>IP Address 2</span></dt>
+                        <dd>
+                          <input type="text" name="ipv6ipaddr2" id="ipv6ipaddr2" class="ipv6textbox ipv6ipset" style="ime-mode:disabled; width:220px;" >
+                          <span>/</span>
+                          <input type="text" name="ipv6prefix2" id="ipv6prefix2" class="ipv6textbox ipv6prefixset" style="ime-mode:disabled; width:40px;" maxlength="3">
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt><span class="list"><span id='lang_ipv6ipaddr3'>IP Address 3</span></dt>
+                        <dd>
+                          <input type="text" name="ipv6ipaddr3" id="ipv6ipaddr3" class="ipv6textbox ipv6ipset" style="ime-mode:disabled; width:220px;" >
+                          <span>/</span>
+                          <input type="text" name="ipv6prefix3" id="ipv6prefix3" class="ipv6textbox ipv6prefixset" style="ime-mode:disabled; width:40px;" maxlength="3">
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt><span class="list"><span id='lang_ipv6ipaddr4'>IP Address 4</span></dt>
+                        <dd>
+                          <input type="text" name="ipv6ipaddr4" id="ipv6ipaddr4" class="ipv6textbox ipv6ipset" style="ime-mode:disabled; width:220px;" >
+                          <span>/</span>
+                          <input type="text" name="ipv6prefix4" id="ipv6prefix4" class="ipv6textbox ipv6prefixset" style="ime-mode:disabled; width:40px;" maxlength="3">
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt><span class="list"><span id='lang_gateway'>Gateway</span></span></dt>
+                        <dd>
+                          <input type="text" name="ipv6gateway" id="ipv6gateway" class="ipv6textbox ipv6gatewayset" maxlength="" style="ime-mode:disabled; width:220px;">
+                        </dd>
+                        <dt><span class="list"><span id='lang_dns1server'>DNS 1st Server</span></span></dt>
+                        <dd>
+                          <input type="text" name="ipv6ddns1server" id="ipv6ddns1server" class="ipv6textbox ipv6dnsset" maxlength="" style="ime-mode:disabled; width:220px;">
+                        </dd>
+                        <dt><span class="list"><span id='lang_dns2server'>DNS 2st Server</span></span></dt>
+                        <dd>
+                          <input type="text" name="ipv6ddns2server" id="ipv6ddns2server" class="ipv6textbox ipv6dnsset" maxlength="" style="ime-mode:disabled; width:220px;">
+                        </dd>
+                      </dl>
+                    </div>
+
+                    <h2><span id='lang_ipv6_wan'>WAN</span></h2>
+        
+                    <div class="c_sp_div_net">
+                      <dl>
+                        <dt>
+                          <span class="list"><span id='lang_use_ipv6_lan'>USE</span></span>
+                        </dt>
+                        <dd>
+                          <input type="checkbox" id="checkbox_use_ipv6_lan" class="chkdhcp">
+                        </dd>
+                        <dt><span class="list"><span id='lang_ipv6_ipaddress'>IP Address</span></dt>
+                        <dd>
+                          <input type="text" name="lan_ipv6_address" id="lan_ipv6_address" class="ipv6textbox lan_ipv6_ipsetting" style="ime-mode:disabled; width:220px;" >
+                          <span>/</span>
+                          <input type="text" name="lan_ipv6_prefix" id="lan_ipv6_prefix" class="ipv6textbox lan_ipv6_prefix" style="ime-mode:disabled; width:40px;" maxlength="3">
+                        </dd>
+                      </dl>
+                    </div>
+                </div>
+
+                  
+
+              </div>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg">
+            </div>
+            <div id="printMsg">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  <div id="dialog_pleasewait" title="WAIT" style="display: none;">
+    <form id="form_wait">
+      <p><span class="tips">Please Wait...</span></p>
+    </form>
+  </div>
+
+  <div id="dialog_dhcpmsg" title="NOTICE" style="display: none;">
+    <p><span id="lang_dhcpon">DHCP NOTICE</span></p>
+  </div>
+  <script type="text/javascript" src="../scripts/init/NetInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('NetIPSetup');
+  </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+  <script type="text/javascript" src="../scripts/model/NetModel.js"></script>
+  <script type="text/javascript" src="../scripts/view/NetView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/NetController.js"></script>
+  <script type="text/javascript">
+    zzmvc({
+      name: 'NetIPSetup',
+      action: 'index',
+      debug: false
+    });
+    dvrpoke();
+  </script>
+</body>
+</html>

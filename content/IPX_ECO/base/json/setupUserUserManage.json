@@ -1,0 +1,98 @@
+{
+  "id": "setupUserUserManagement",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    
+  },
+
+  "pageTitle": "setupUserUserManagement",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "id": "",
+          "cols": [
+            {
+              "content": [
+                {
+                  "table": {
+                    "id": "setupUserUserManagementContentTable",
+                    "row": ["NO","USER ID", "GROUP","COVERT CHANNEL","EMAIL","NOTIFICATION","EDIT","DELETE"],
+                    "col": ["1"],
+                    "type": [
+                     {
+                        "input-text": {
+                          "type": "button",
+                          "idPostfix": "userid"
+                        }
+                      },
+                      {
+                        "select": {
+                          "idPostfix": "usergroup",
+                          "option":[
+                            {"value": "admin", "text": "ADMIN"},
+                            {"value": "manager", "text": "MANAGER"},
+                            {"value": "user", "text": "USER"}
+                          ]
+                          
+                        }
+                      },
+                      {
+                        "select": {
+                          "idPostfix": "covert_channel",
+                          "option":[
+                            {"value": "0", "text": "OFF"},
+                            {"value": "1", "text": "1"},
+                            {"value": "2", "text": "2"},
+                            {"value": "2", "text": "3"},
+                            {"value": "2", "text": "4"}
+                          ]
+                        }
+                      },
+                      {
+                        "input-text": {
+                          "type": "button",
+                          "idPostfix": "email"
+                        }
+                      },
+                      {
+                        "input-checkbox": {
+                          "type": "checkbox",
+                          "idPostfix": "notification"
+                        }
+                      },
+                      {
+                        "input-button": {
+                          "type": "button",
+                          "idPostfix": "edit",
+                          "value": "EDIT"
+                        }
+                      },
+                      {
+                        "input-button": {
+                          "type": "button",
+                          "idPostfix": "delete",
+                          "value": "DELETE"
+                        }
+                      }
+                     ]
+                  }
+                },
+                {
+                  "input": {
+                            "type": "button",
+                            "idPostfix": "add",
+                            "value": "ADD",
+                            "style":"width:100px;"
+                            }
+                }
+            ]
+            }
+            
+          ]
+        }
+      ]
+    }
+  ]
+}

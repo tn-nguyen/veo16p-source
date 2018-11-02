@@ -1,0 +1,26 @@
+/*********************************************************************************************************/
+/* dialogSimple.css */
+/*********************************************************************************************************/
+#dialogWarning {
+  width: 600px !important;
+}
+
+.imgDialogWarning {
+  /*background: url() no-repeat;*/
+}
+
+.textDialogWarning {
+
+}
+
+#dialogConfirm {
+  width: 600px !important;
+}
+
+.imgDialogConfirm {
+  /*background: url() no-repeat;*/
+}
+
+.textDialoConfirm {
+
+}

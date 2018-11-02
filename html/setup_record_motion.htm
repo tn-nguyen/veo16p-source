@@ -1,0 +1,1223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+    <script type="text/javascript">info_include()</script>
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+    <script type="text/javascript">
+      passwordRenewCheck();
+      language_include()
+    </script>
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">print_top_menu(document, "SETUP")</script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">print_left_menu(document, "Record", "Motion recording")</script>
+          </ul>
+        </div>
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <h2><span id='lang_Motionrecordingsetting'>Motion recording setting</span></h2>
+            <div id="rec_tabs">
+              <ul>
+                <li><a href='#rec_tab_param'><span id='lang_RecParam'>Parameters</span></a></li>
+                <li><a href='#rec_tab_sched'><span id='lang_RecSched'>Schedule</span></a></li>
+              </ul>
+              <!-- ==================== First Tab ========================= -->
+              <div id="rec_tab_param">
+                <div class="c_sp_div_rec_contents">
+                  <div id='select_param'>
+                    <div class="schmodediv">
+                      <span id="lang_day"> DAY </span>
+                      <select id='schmodeSelect' name='schmode'>
+                        <option value='0' selected>Sun</option>
+                        <option value='1'>Mon</option>
+                        <option value='2'>Tue</option>
+                        <option value='3'>Wed</option>
+                        <option value='4'>Thu</option>
+                        <option value='5'>Fri</option>
+                        <option value='6'>Sat</option>
+                        <!--<option value='8'>Holiday</option>-->
+                      </select>
+                    </div>
+                    <table class='rec-time-index'>
+                      <thead>
+                        <tr>
+                          <th class="left"></th>
+                          <th class="right">00</th>
+                          <th class="right">01</th>
+                          <th class="right">02</th>
+                          <th class="right">03</th>
+                          <th class="right">04</th>
+                          <th class="right">05</th>
+                          <th class="right">06</th>
+                          <th class="right">07</th>
+                          <th class="right">08</th>
+                          <th class="right">09</th>
+                          <th class="right">10</th>
+                          <th class="right">11</th>
+                          <th class="right">12</th>
+                          <th class="right">13</th>
+                          <th class="right">14</th>
+                          <th class="right">15</th>
+                          <th class="right">16</th>
+                          <th class="right">17</th>
+                          <th class="right">18</th>
+                          <th class="right">19</th>
+                          <th class="right">20</th>
+                          <th class="right">21</th>
+                          <th class="right">22</th>
+                          <th class="right">23</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th class="left">
+                            <span id='lang_Time'>Time</span>
+                          </th>
+                          <td class="left3 cell_param"  id="timeline_0"  ></td>
+                          <td class="left3 cell_param"  id="timeline_1"  ></td>
+                          <td class="left3 cell_param"  id="timeline_2"  ></td>
+                          <td class="left3 cell_param"  id="timeline_3"  ></td>
+                          <td class="left3 cell_param"  id="timeline_4"  ></td>
+                          <td class="left3 cell_param"  id="timeline_5"  ></td>
+                          <td class="left3 cell_param"  id="timeline_6"  ></td>
+                          <td class="left3 cell_param"  id="timeline_7"  ></td>
+                          <td class="left3 cell_param"  id="timeline_8"  ></td>
+                          <td class="left3 cell_param"  id="timeline_9"  ></td>
+                          <td class="left3 cell_param"  id="timeline_10" ></td>
+                          <td class="left3 cell_param"  id="timeline_11" ></td>
+                          <td class="left3 cell_param"  id="timeline_12" ></td>
+                          <td class="left3 cell_param"  id="timeline_13" ></td>
+                          <td class="left3 cell_param"  id="timeline_14" ></td>
+                          <td class="left3 cell_param"  id="timeline_15" ></td>
+                          <td class="left3 cell_param"  id="timeline_16" ></td>
+                          <td class="left3 cell_param"  id="timeline_17" ></td>
+                          <td class="left3 cell_param"  id="timeline_18" ></td>
+                          <td class="left3 cell_param"  id="timeline_19" ></td>
+                          <td class="left3 cell_param"  id="timeline_20" ></td>
+                          <td class="left3 cell_param"  id="timeline_21" ></td>
+                          <td class="left3 cell_param"  id="timeline_22" ></td>
+                          <td class="left3 cell_param"  id="timeline_23" ></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <form id="param">
+                    <table class="rec-param">
+                      <thead>
+                        <tr>
+                          <th class="chenable16 forUTM4G tdhead0"></th>
+                          <th class="tdhead1"></th>
+                          <th class="tdhead2"><span id='lang_Size'>Size</span></th>
+                          <th class="tdhead3"><span id='lang_FrameRate'>Frame Rate</span></th>
+                          <th class="tdhead4"><span id='lang_Quality'>Quality</span></th>
+                          <th class="tdhead5"><span id='lang_Audio'>Audio</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="chenable16 forUTM4G tdsfq0" rowspan="8"><span id="lang_group1">GROUP1</span></td>
+                          <td class="tdsfq1" ><span class='title1'>Ch 1</span></td>
+                          <td class="tdsfq2">
+                            <select id="paramsize0" name="paramsize0" >
+                            </select>									
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps0" name="paramFps0" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ0" name="paramQ0">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio0" name="paramAudio0" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                          <!-- <td class="c_sp_td_rec_sfq2right" rowspan='4'><div id='FPSRemain0'></div><span id='lang_remmain'>Remain</span></td>  -->
+                        </tr>
+                        <tr>
+                          <td class="tdsfq1" ><span class='title2'>Ch 2</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize1" name="paramsize1" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps1" name="paramFps1" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ1" name="paramQ1">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio1" name="paramAudio1" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tdsfq1" ><span class='title3'>Ch 3</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize2" name="paramsize2" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps2" name="paramFps2" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ2" name="paramQ2">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio2" name="paramAudio2" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tdsfq1" ><span class='title4'>Ch 4</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize3" name="paramsize3" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps3" name="paramFps3" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ3" name="paramQ3">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio3" name="paramAudio3" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <!-- </tbody>
+                          <tbody class='chenable8'> -->  
+                        <tr class='ch16tr chenable8'>
+                          <td class="tdsfq1" ><span class='title5'>Ch 5</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize4" name="paramsize4" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps4" name="paramFps4" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ4" name="paramQ4">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio4" name="paramAudio4" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                          <!-- <td class="c_sp_td_rec_sfq2right" rowspan='4'><div id='FPSRemain1'></div><span id='lang_remmain'>Remain</span></td>  -->
+                        </tr>
+                        <tr class='ch16tr chenable8'>
+                          <td class="tdsfq1" ><span class='title6'>Ch 6</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize5" name="paramsize5" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps5" name="paramFps5" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ5" name="paramQ5">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio5" name="paramAudio5" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr class='ch16tr chenable8'>
+                          <td class="tdsfq1" ><span class='title7'>Ch 7</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize6" name="paramsize6" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps6" name="paramFps6" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ6" name="paramQ6">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio6" name="paramAudio6" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr class='ch16tr chenable8'>
+                          <td class="tdsfq1" ><span class='title8'>Ch 8</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize7" name="paramsize7" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps7" name="paramFps7" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ7" name="paramQ7">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio7" name="paramAudio7" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <!-- </tbody>
+                          <tbody class='chenable16'>   -->
+                        <tr class='ch16tr chenable16'>
+                          <td class="chenable16 forUTM4G tdsfq0" rowspan="8"><span id="lang_group2">GROUP2</span></td>
+                          <td class="tdsfq1" ><span class='title9'>Ch 9</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize8" name="paramsize8" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps8" name="paramFps8" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ8" name="paramQ8">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio8" name="paramAudio8" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                          <!-- <td class="c_sp_td_rec_sfq2right" rowspan='4'><div id='FPSRemain2'></div><span id='lang_remmain'>Remain</span></td>  -->
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <td class="tdsfq1" ><span class='title10'>Ch 10</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize9" name="paramsize9" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps9" name="paramFps9" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ9" name="paramQ9">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio9" name="paramAudio9" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <td class="tdsfq1" ><span class='title11'>Ch 11</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize10" name="paramsize10" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps10" name="paramFps10" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ10" name="paramQ10">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio10" name="paramAudio10" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <td class="tdsfq1" ><span class='title12'>Ch 12</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize11" name="paramsize11" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps11" name="paramFps11" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ11" name="paramQ11">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio11" name="paramAudio11" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <td class="tdsfq1" ><span class='title13'>Ch 13</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize12" name="paramsize12" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps12" name="paramFps12" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ12" name="paramQ12">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio12" name="paramAudio12" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                          <!-- <td class="c_sp_td_rec_sfq2right" rowspan='4'><div id='FPSRemain3'></div><span id='lang_remmain'>Remain</span></td>  -->
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <td class="tdsfq1" ><span class='title14'>Ch 14</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize13" name="paramsize13" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps13" name="paramFps13" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ13" name="paramQ13">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio13" name="paramAudio13" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <td class="tdsfq1" ><span class='title15'>Ch 15</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize14" name="paramsize14" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >
+                            <select id="paramFps14" name="paramFps14" >
+                            </select>
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ14" name="paramQ14">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio14" name="paramAudio14" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <td class="tdsfq1" ><span class='title16'>Ch 16</span></td>
+                          <td class="tdsfq2" >
+                            <select id="paramsize15" name="paramsize15" >
+                            </select>
+                          </td>
+                          <td class="tdsfq3" >												
+                            <select id="paramFps15" name="paramFps15" >
+                            </select>												
+                          </td>
+                          <td class="tdsfq4" >
+                            <select id="paramQ15" name="paramQ15">
+                              <option value="A">Highest</option>
+                              <option value="B">High</option>
+                              <option value="C">Standard</option>
+                              <option value="D">Low</option>
+                              <option value="E">Lowest</option>
+                            </select>
+                          </td>
+                          <td class="tdsfq5">
+                            <select id="paramAudio15" name="paramAudio15" class="audio">
+                              <option value="1">On</option>
+                              <option value="0">Off</option>
+                            </select>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div id="rec-calc" class="rec-calc">
+                    </div>
+                  </form>
+                </div>
+                <input id="btn_help" type="button" value="HELP"></input>
+                <div class="add_float_left warning_1080p">
+                  <span>* </span><span id="lang_warn_resolution">Resolution of 1080p is recorded at a maximum of 15 fps.</span>
+                </div>
+              </div>
+              <!-- ==================== Second Tab ========================= -->
+              <div id="rec_tab_sched">
+                <div class="c_sp_div_rec_contents">
+                  <div class="schmodediv">
+                    <span id="lang_day"> DAY </span>
+                    <select id='schmodeSelect1'>
+                      <option value='0' selected>Sun</option>
+                      <option value='1'>Mon</option>
+                      <option value='2'>Tue</option>
+                      <option value='3'>Wed</option>
+                      <option value='4'>Thu</option>
+                      <option value='5'>Fri</option>
+                      <option value='6'>Sat</option>
+                      <option value='7'>Holi.</option>
+                    </select>
+                  </div>
+                  <table class='rec-time-index'>
+                    <tr>
+                      <th class="left"></th>
+                      <th class="right">00</th>
+                      <th class="right">01</th>
+                      <th class="right">02</th>
+                      <th class="right">03</th>
+                      <th class="right">04</th>
+                      <th class="right">05</th>
+                      <th class="right">06</th>
+                      <th class="right">07</th>
+                      <th class="right">08</th>
+                      <th class="right">09</th>
+                      <th class="right">10</th>
+                      <th class="right">11</th>
+                      <th class="right">12</th>
+                      <th class="right">13</th>
+                      <th class="right">14</th>
+                      <th class="right">15</th>
+                      <th class="right">16</th>
+                      <th class="right">17</th>
+                      <th class="right">18</th>
+                      <th class="right">19</th>
+                      <th class="right">20</th>
+                      <th class="right">21</th>
+                      <th class="right">22</th>
+                      <th class="right">23</th>
+                    </tr>
+                    <tr>
+                      <td class="add_text_align_center"><span id='lang_Time'>Time</span></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3 c_6hr"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3 c_6hr"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3 c_6hr"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                      <td class="left3"></td>
+                    </tr>
+                    <tr>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                    </tr>
+                    <tr>
+                      <td class="left"></td>
+                      <td class="td_isoff"></td>
+                      <td class="left" colspan="2"><span id='lang_off'>Off</span></td>
+                      <td class="left"></td>
+                      <td class="td_ison"></td>
+                      <td class="left" colspan="2"><span id='lang_on'>On</span></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left"></td>
+                      <td class="left" colspan=3>
+                        <div id="mousepos"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                      <td class="left2"></td>
+                    </tr>
+                  </table>
+                  <div id=''>
+                    <table id='select_sched' class="rec-sched">
+                      <tbody>
+                        <tr>
+                          <th class="left"><span class='title1'>1</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr>
+                          <th class="left"><span class='title2'>2</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr>
+                          <th class="left"><span class='title3'>3</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr>
+                          <th class="left"><span class='title4'>4</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <!-- </tbody>
+                          <tbody class='chenable8'>   -->
+                        <tr class='ch16tr chenable8'>
+                          <th class="left"><span class='title5'>5</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable8'>
+                          <th class="left"><span class='title6'>6</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable8'>
+                          <th class="left"><span class='title7'>7</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable8'>
+                          <th class="left"><span class='title8'>8</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <!-- </tbody>
+                          <tbody class='chenable16'> -->  
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title9'>9</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title10'>10</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title11'>11</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title12'>12</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title13'>13</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title14'>14</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title15'>15</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                          <th class="left"><span class='title16'>16</span></th>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched c_6hr"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                          <td class="cell_sched"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="schedcp schmodediv">
+                      <input type="button" value="lang_copysched" id="cp_button"/>
+                    </div>
+                    <div class='clear schmodediv'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <form name="recordsetting_motion" id="recordsetting_motion">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </form>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg"></div>
+            <div id="printMsg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='popupCP'>
+    </div>
+    <div id="dialog_rec_sched">
+    </div>
+    <div id="dialog_rec_param">
+    </div>
+    <div id="dialog_help" style="display:none">
+      <p><span id="lang_record_help_1">If you want to set the time interval, drag the mouse to the time table at the top of the screen and a recording information setting window should appear.</span></p>
+      <p><span id="lang_record_help_2">In the recording information settings window, you can set the desired resolution and quality, FPS, audio recording, and whether to save or not.</span></p>
+      <p><span id="lang_record_help_3">If there is a different setting value, the time table will be displayed in a different color.</span></p>
+      <p><span id="lang_record_help_4">If you hover the mouse pointer over the top of the time table, the corresponding time zone information will be displayed for the recording settings.</span></p>
+      <p><span id="lang_record_help_5">Change the mode of schedule in operation mode page to change hourly, daily setup.</span></p>
+    </div>
+  </body>
+  <script type="text/javascript" src="../scripts/init/RecordInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('RecMotion');
+  </script>
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/RecordModel.js"></script>
+  <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+  <script type="text/javascript" src="../scripts/ParamWidget.js"></script>
+  <script type="text/javascript" src="../scripts/view/RecordView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/RecordController.js"></script>
+  <script>
+    zzmvc({
+        name: 'RecMotion',
+        action: 'index',
+        debug: false
+    });
+    
+    dvrpoke();
+    
+  </script>
+</html>

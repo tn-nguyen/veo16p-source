@@ -1,0 +1,919 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/search.css");
+    </style>
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+    <script type="text/javascript" src="../scripts/TimeZone.js"></script>
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+
+    <script type="text/javascript" src="../scripts/activex_request.js"></script>
+    <script type="text/javascript" src="../scripts/search_check.js"></script>
+    <script type="text/javascript" src="../scripts/search_request.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/toolbar_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+
+    <script type="text/javascript">
+      passwordRenewCheck();
+      language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link href="../styles/styles/i3custom.css" rel="stylesheet" type="text/css"/>
+    <link href="../styles/styles/i3-search-custom.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet/less" type="text/css" href="less/fixbug-veo16p.less" />
+
+  </head>
+
+  <body onMouseUp="gonmouseup();" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "PLAYBACK");
+          toptab_visible();
+        </script>
+      </div>
+      <div class="playback" id="c_sh_div_contents">
+        <div id="c_sh_div_shfrm">
+          <div id="c_sh_div_search">
+            <script language="javascript">
+              ActiveX_Include();
+            </script>
+          </div>
+          <div id="c_sh_div_toolbar">
+            <script language="javascript">
+              print_toolbar_playback_menu(document, INFO_DVRCHANNEL);
+            </script>
+          </div>
+          <div id="c_sh_div_tab">
+            <ul>
+              <li id="searchbytimeli" class="on" onClick="searchbytime_VichEnDis();"><span id='lang_searchbytime'>Search by time</span></li>
+              <li id="searchbyeventli" class="off" onClick="searchbyevent_VichEnDis();"><span id='lang_searchbyevent'>Search by event</span></li>
+              <li id="searchbytextdevli" class="off" onClick="searchbyevent_TextSearch();" hidden><span id='lang_searchbytextsearch'>TEXT-IN SEARCH</span></li>
+            </ul>
+          </div>
+          <form name="searchsetting_searchbytime" id="searchsetting_searchbytime" >
+            <div id="c_sh_div_time_contents">
+              <table class="c_sh_tb_time_setting" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+                <tr>
+                  <td class="tddate">
+                    <div id="daydiv">
+                      <select class="lstyear" id="year" name="year" onChange="onymdChange();">
+                      </select>&nbsp;/
+                      <select class="lstdate" id="month" name="month" onChange="onymdChange();">
+                      </select>&nbsp;/
+                      <select class="lstdate" id="day" name="day" onChange="onymdChange();">
+                      </select>
+                    </div>
+                  </td>
+                  <td class="tddateblk">
+                  </td>
+                  <td class="tddate">
+                    <select class="lstdate" id="hour" name="hour" onChange="onhmsChange();" onClick="onCalClick();">
+                    </select>&nbsp;:
+                    <select class="lstdate" id="minute" name="minute" onChange="onhmsChange();" onClick="onCalClick();onSecondClick();">
+                    </select>&nbsp;:
+                    <select class="lstdate" id="second" name="second" onChange="onhmsChange();" onClick="onCalClick();onSecondClick();">
+                    </select>
+                  </td>
+                  <td class="tdrefresh">
+                    <input name="button" type="button" class="btn_play" value="lang_Refresh"; onClick="search_searchbytime_OnLoad_func(true);">
+                  </td>
+                  <td class="tdrefresh">
+                    <!-- <input type="button" name="reroad" class="btn_play" value="lang_Start" onClick="onClickSearchStart();"/> -->
+                    <!-- <input type="button" name="reroad" class="btn_play" value="lang_Start" onClick="playback_pos_display();"/> -->
+                  </td>
+                  <td class="tddateblk">
+                  </td>
+                  <td class="tdbackup">
+                    <input id="button_backup" type="button" name="reroad" class="btn_play" value="lang_export" onClick="onClickSearchBackup();"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <!-- <input id="button_backup" type="button" class="btn_play" value="RESERVE"/> -->
+                  </td>
+                  <td></td>
+                  <td>
+                   <input id="button_backup" type="button" name="reroad" class="btn_play" value="EXPORT REMOTELY" onClick="onClickSearchBackupRemotely();"/>
+                  </td>
+                </tr>
+              </table>
+              <table class="c_sh_tb_time_info">
+                <tr>
+                  <td class="colorblk2">
+                  </td>
+                  <td class="colorpre" >
+                  </td>
+                  <td class="colortxt" ><span id='lang_Pre'>Pre</span>
+                  </td>
+                  <td class="colorcont" >
+                  </td>
+                  <td class="colortxt" ><span id='lang_Continuous'>Continuous</span>
+                  </td>
+                  <td class="coloralarm" >
+                  </td>
+                  <td class="colortxt"><span id='lang_Alarm'>Alarm</span>
+                  </td>
+                  <td class="colormotion" >
+                  </td>
+                  <td class="colortxt"><span id='lang_Motion'>Motion</span>
+                  </td>
+                  <td class="colorpanic" >
+                  </td>
+                  <td class="colortxt"><span id='lang_Panic'>Panic</span>
+                  </td>
+                  <td class="colorblk">
+                  </td>
+                  <td class="timeview">
+                    <div id="sh_cur_time"></div>
+                  </td>
+                </tr>
+              </table>
+              <table class="c_sh_tb_time_line" id="search_time_table" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" frame=void>
+              </table>
+            </div>
+
+            <div id="c_sh_div_event_contents">
+
+              <div id="eventdiv">
+                <div class="c_sh_div_event_title"><span id='lang_Event'>Event</span></div>
+
+                <div id="event-check">
+                  <ul>
+                    <li><label>
+                      <input type="checkbox" id="allevent" onClick="onSearchByEventAll(this)">
+                      <span id='lang_All'>All</span>
+                    </label></li>
+                  </ul>
+                  <ul>
+                    <li><label><input type="checkbox" id="systemevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_System'>System</span></label></li>
+                    <li><label><input type="checkbox" id="setupevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Setup'>Setup</span></label></li>
+                    <li><label><input type="checkbox" id="motionevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Motion_Event'>Motion</span></label></li>
+                    <!--<li><label><input type="checkbox" id="smartevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Smart'>Smart</span></label></li>-->
+
+                    <li>
+                      <label>
+                        <input type="checkbox" id="smartevent" onClick="onSearchByEventCheck()">
+                        <span id='lang_Storage'>
+                          Storage
+                        </span>
+                      </label>
+                    </li>
+
+                    <li id="alarmevent"><label><input type="checkbox" id="alarmvent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Alarm_Event'>Alarm</span></label></li>
+                    <li><label><input type="checkbox" id="vlossevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Videoloss'>Video loss</span></label></li>
+                    <li><label><input type="checkbox" id="recordevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Record'>Record</span></label></li>
+                    <li><label><input type="checkbox" id="netevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Net'>Network</span></label></li>
+                    <li class='foripx'><label><input type="checkbox" id="ipcamevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_IPCAM'>IPCAM</span></label></li>
+                    <li class='foripx'><label><input type="checkbox" id="vaevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_VA'>VCA</span></label></li>
+                    <li class='fordvr'><label><input type="checkbox" id="tamperevent" onClick="onSearchByEventCheck()">
+                    <span id='lang_Tamper'>Tamper</span></label></li>
+                    <!--<li class='supportPos'><label><input type="checkbox" id="posevent" onClick="onSearchByEventCheck()">
+                    <span> POS/ATM </span></label></li>-->
+                  </ul>
+                </div>
+              </div>
+              <div id="searchtimediv">
+                <div class="c_sh_div_event_title"><span id='lang_Period'>Period</span></div>
+                <table class="c_sh_tb_event_period">
+                  <tr>
+                    <td class="tdtitle"><span id='lang_From'>From</span></td>
+                    <td class="tddate">
+                      <div id="eventdatefromdiv">
+                        <select class="lstperiod" id="fromyear" name="year">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="frommonth" name="month" onChange="onChangFromMon(this);">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="fromday" name="day">
+                        </select>
+                      </div>
+                    </td>
+                    <td class="tdblk"></td>
+                    <td class="tddate">
+                      <select class="lstperiod" id="fromhour" name="hour">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="fromminute" name="minute">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="fromsecond" name="second">
+                      </select>
+                    </td>
+                    <td class="tdsearch"></td>
+                  </tr>
+                  <tr>
+                    <td class="tdtitle"><span id='lang_To'>To</span></td>
+                    <td class="tddate">
+                      <div id=eventdatetodiv>
+                        <select class="lstperiod" id="toyear" name="year">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="tomonth" name="month" onChange="onChangToMon(this);">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="today" name="day">
+                        </select>
+                      </div>
+                    </td>
+                    <td class="tdblk"></td>
+                    <td class="tddate">
+                      <select class="lstperiod" id="tohour" name="hour">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="tominute" name="minute">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="tosecond" name="second">
+                      </select>
+                    </td>
+                    <td class="tdsearch">
+                       <select class="lstsort" id="logsort">
+                         <option value="1" >LATEST</option>
+                         <option value="0" >OLDEST</option>
+                       </select>
+                       <input type="button" class="btn" id="logprintbtn" value="lang_btnSearch" onClick="search_logprint(searchsetting_searchbytime);">
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div id="logtablediv">
+                <table class="c_sh_tb_event_logprint">
+                  <tr>
+                    <td class="table-head tdbig"><span id='lang_DateTime'>Date / Time</span></td>
+                    <td class="table-head tdbigl"><span id='lang_Log'>Log</span></td>
+                  </tr>
+                  <tr id="logdate0"  onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time0"></div></td>
+                    <td class="tdbiglc"><div id="log0"></div></td>
+                  </tr>
+                  <tr id="logdate1"   onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time1"></div></td>
+                    <td class="tdbiglc"><div id="log1"></div></td>
+                  </tr>
+                  <tr id="logdate2"   onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time2"></div></td>
+                    <td class="tdbiglc"><div id="log2"></div></td>
+                  </tr>
+                  <tr id="logdate3"   onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time3"></div></td>
+                    <td class="tdbiglc"><div id="log3"></div></td>
+                  </tr>
+                  <tr id="logdate4"   onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time4"></div></td>
+                    <td class="tdbiglc"><div id="log4"></div></td>
+                  </tr>
+                  <tr id="logdate5"   onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time5"></div></td>
+                    <td class="tdbiglc"><div id="log5"></div></td>
+                  </tr>
+                  <tr id="logdate6"   onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time6"></div></td>
+                    <td class="tdbiglc"><div id="log6"></div></td>
+                  </tr>
+                  <tr id="logdate7"   onClick="onClickLogTable(this);">
+                    <td class="tdbigc"><div id="time7"></div></td>
+                    <td class="tdbiglc"><div id="log7"></div></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="button-container">
+                <input type="button" class="c_sh_btn_page_up" value="lang_Previous" onClick="pageupbtn();">
+                <input type="button" class="c_sh_btn_page_down" value="lang_Next" onClick="pagedownbtn();">
+              </div>
+
+            </div>
+
+            <div id="c_sh_div_text_search_contents">
+              <div id="searchtimediv">
+                <div class="c_sh_div_event_title"><span id='lang_keyword'>ITEM KEYWORD</span></div>
+                <table class="c_sh_tb_event_period">
+                  <tr>
+                    <td class="textsearchtitle"><span id='lang_keyword'>Text 1</span>
+	                    <td class="tdtext">
+												<input type="text" id="search_text0" style="margin-left:97px; width:250px;" />
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td class="textsearchtitle"><span id='lang_keyword'>Text 2</span>
+											<td class="tdtext">
+												<select class="textoptioncheck" id="operation0">
+		          						<option value=0>AND</option>
+		          						<option value=1>OR</option>
+		    						  	</select>
+												<input type="text" id="search_text1" style="margin-left:5px; width:250px;" />
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td class="textsearchtitle"><span id='lang_keyword'>Text 3</span>
+											<td class="tdtext">
+												<select class="textoptioncheck" id="operation1">
+		          						<option value=0>AND</option>
+		          						<option value=1>OR</option>
+		    						  	</select>
+												<input type="text" id="search_text2" style="margin-left:5px; width:250px;" />
+											</td>
+										</td>
+									</tr>
+                  <tr>
+                    <td class="tdtitle"><span></span></td>
+                    <td calss="tdtext" style="text-align:left;">
+                      <ul>
+                        <li style="margin-left:70px;"><label><input type="checkbox" id="matchcase" class="textoptioncheck"><span class="textoption" id='lang_matchcase'> Match Case</span></label></li>
+                        <li style="margin-left:70px;"><label><input type="checkbox" id="matchwhole" class="textoptioncheck"><span class="textoption" id='lang_matchwhole'> Match Whole Word Case</span></label></li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                </table>
+                <div class="c_sh_div_event_title"><span id='lang_channel'>Channel</span></div>
+                <div id="event-check">
+                  <ul>
+                    <li><label><input type="checkbox" id="allcam" onClick="onSearchByEventAll(this)">
+                    <span id='lang_All'>All</span></label></li>
+                  </ul>
+                  <ul>
+                    <li id="cam1"><label><input id="search_ch0"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH01</span></label></li>
+                    <li id="cam2"><label><input id="search_ch1"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH02</span></label></li>
+                    <li id="cam3"><label><input id="search_ch2"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH03</span></label></li>
+                    <li id="cam4"><label><input id="search_ch3"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH04</span></label></li>
+                    <li id="cam5"><label><input id="search_ch4"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH05</span></label></li>
+                    <li id="cam6"><label><input id="search_ch5"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH06</span></label></li>
+                    <li id="cam7"><label><input id="search_ch6"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH07</span></label></li>
+                    <li id="cam8"><label><input id="search_ch7"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH08</span></label></li>
+                    <li id="cam9"><label><input id="search_ch8"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH09</span></label></li>
+                    <li id="cam10"><label><input id="search_ch9"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH10</span></label></li>
+                    <li id="cam11"><label><input id="search_ch10"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH11</span></label></li>
+                    <li id="cam12"><label><input id="search_ch11"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH12</span></label></li>
+                    <li id="cam13"><label><input id="search_ch12"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH13</span></label></li>
+                    <li id="cam14"><label><input id="search_ch13"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH14</span></label></li>
+                    <li id="cam15"><label><input id="search_ch14"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH15</span></label></li>
+                    <li id="cam16"><label><input id="search_ch15"  type="checkbox" onClick="onSearchByTextsearchCheck()">
+                    <span>CH16</span></label></li>
+                  </ul>
+                </div>
+                <div id="searchtimediv" class="has-period">
+                <div class="c_sh_div_event_title"><span id='lang_Period'>PERIOD</span></div>
+                <table class="c_sh_tb_event_period">
+                  <tr>
+                    <td class="tdtitle"><span id='lang_From'>From</span></td>
+                    <td class="tddate">
+                      <div id="eventdatefromdiv">
+                        <select class="lstperiod" id="fromyear" name="year">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="frommonth" name="month" onChange="onChangFromMon(this);">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="fromday" name="day">
+                        </select>
+                      </div>
+                    </td>
+                    <td class="tdblk"></td>
+                    <td class="tddate">
+                      <select class="lstperiod" id="fromhour" name="hour">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="fromminute" name="minute">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="fromsecond" name="second">
+                      </select>
+                    </td>
+                    <td class="tdsearch"></td>
+                  </tr>
+                  <tr>
+                    <td class="tdtitle"><span id='lang_To'>To</span></td>
+                    <td class="tddate">
+                      <div id=eventdatetodiv>
+                        <select class="lstperiod" id="toyear" name="year">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="tomonth" name="month" onChange="onChangToMon(this);">
+                        </select>&nbsp;/&nbsp;
+                        <select class="lstperiod" id="today" name="day">
+                        </select>
+                      </div>
+                    </td>
+                    <td class="tdblk"></td>
+                    <td class="tddate">
+                      <select class="lstperiod" id="tohour" name="hour">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="tominute" name="minute">
+                      </select>&nbsp;:&nbsp;
+                      <select class="lstperiod" id="tosecond" name="second">
+                      </select>
+                    </td>
+                    <td class="tdsearch">
+                      <select class="lstsort" id="logsort">
+                        <option value="1" >LATEST</option>
+                        <option value="0" >OLDEST</option>
+                      </select>
+                      <input type="button" class="btn" id="logprintbtn" value="lang_btnSearch"
+                      onClick="search_text_logprint(searchsetting_searchbytime);">
+                    </td>
+                  </tr>
+                  <tr>
+
+                  </tr>
+                </table>
+                </div>
+              </div>
+              <div id="logtablediv">
+                <table class="c_sh_tb_event_logprint">
+                  <tr>
+                    <td class="tdbig"><span id='lang_DateTime'>Date / Time</span></td>
+                    <td class="tdbigch"><span id='lang_channel'> CHANNEL</span></td>
+                    <td class="tdbigl"><span id='lang_Log'>Log</span></td>
+                  </tr>
+                  <tr id="logdate0"  onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time0"></div></td>
+                    <td class="tdbigcch"><div id="ch0"></div></td>
+                    <td class="tdbiglc"><div id="log0"></div></td>
+                  </tr>
+                  <tr id="logdate1"   onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time1"></div></td>
+                    <td class="tdbigcch"><div id="ch1"></div></td>
+                    <td class="tdbiglc"><div id="log1"></div></td>
+                  </tr>
+                  <tr id="logdate2"   onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time2"></div></td>
+                    <td class="tdbigcch"><div id="ch2"></div></td>
+                    <td class="tdbiglc"><div id="log2"></div></td>
+                  </tr>
+                  <tr id="logdate3"   onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time3"></div></td>
+                    <td class="tdbigcch"><div id="ch3"></div></td>
+                    <td class="tdbiglc"><div id="log3"></div></td>
+                  </tr>
+                  <tr id="logdate4"   onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time4"></div></td>
+                    <td class="tdbigcch"><div id="ch4"></div></td>
+                    <td class="tdbiglc"><div id="log4"></div></td>
+                  </tr>
+                  <tr id="logdate5"   onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time5"></div></td>
+                    <td class="tdbigcch"><div id="ch5"></div></td>
+                    <td class="tdbiglc"><div id="log5"></div></td>
+                  </tr>
+                  <tr id="logdate6"   onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time6"></div></td>
+                    <td class="tdbigcch"><div id="ch6"></div></td>
+                    <td class="tdbiglc"><div id="log6"></div></td>
+                  </tr>
+                  <tr id="logdate7"   onClick="onClickLogTable(this, true);">
+                    <td class="tdbigc"><div id="time7"></div></td>
+                    <td class="tdbigcch"><div id="ch7"></div></td>
+                    <td class="tdbiglc"><div id="log7"></div></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="button-container">
+                <input type="button" class="c_sh_btn_page_up" value="lang_Previous" onClick="pageup_textsearch_btn();">
+                <input type="button" class="c_sh_btn_page_down" value="lang_Next" onClick="pagedown_textsearch_btn();">
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+        <span id="event_log" style="width:100%; white-space:pre-wrap; word-break:break-all;">
+
+        </span>
+        <div id="c_g_div_msg">
+          <div id="errMsg"></div>
+          <div id="printMsg"></div>
+        </div>
+        <div id="c_sh_div_bplayer">
+          <a href="../bplayer.zip"><span id="lang_bpdown">download Backup Player</span></a>
+        </div>
+      </div>
+    </div>
+
+  <div id="dialog_check_auth" style="display:none ;">
+    <div id="dialog_title">
+      <span id="lang_check_auth"></span>
+    </div>
+
+    <div id="dialog_body">
+      <input id="input_password" type="password" maxlength="16" style='ime-mode:disabled'/>
+      <dl id="dual_login_phase1">
+        <dt style="float:left; width:100px;"><span id="lang_username">USER</span></dt>
+        <dd><select id="dual_login_user_list" class="add_width_150"></select></dd>
+        <dd><input type="text" id="dual_login_user" class="add_width_150"></input></dd>
+        <dt style="float:left; width:100px;"><span id="lang_password">PASSWORD</span></dt>
+        <dd><input id="dual_login_password" type="password" class="add_width_150"/></dd>
+      </dl>
+
+    </div>
+  </div>
+
+  <div id="dialog_backup_remotely" style="display:none ;">
+    <div id="dialog_title">
+      <span id="lang_backup_remotely"></span>
+    </div>
+
+    <div id="dialog_body">
+      <!-- for preventing datepicker auto-open. -->
+      <input style="height:0px; top:-1000px; position:absolute"/>
+
+      <span class="display-block font-weight-bold">SELECT TIME</span>
+
+      <!-- date/time table -->
+      <table class="margin-left-10px">
+        <tr>
+          <td>FROM</td>
+          <td>
+            <input id="fromDatePicker" type="text"></input>
+          </td>
+          <td>
+            <select id="fromHourPicker"></select>
+          </td>
+          <td>
+            <select id="fromMinPicker"></select>
+          </td>
+          <td>
+            <select id="fromSecPicker"></select>
+          </td>
+          <td>
+            ~
+          </td>
+          <td>TO</td>
+          <td>
+            <input id="toDatePicker" type="text"></input>
+          </td>
+          <td>
+            <select id="toHourPicker"></select>
+          </td>
+          <td>
+            <select id="toMinPicker"></select>
+          </td>
+          <td>
+            <select id="toSecPicker"></select>
+          </td>
+        </tr>
+      </table>
+
+      <dl>
+        <dt class="margin-left-10px float-left width-80px">
+            <dd><input type="checkbox" id="include_log" checked></dd>
+          <label for="include_log"><span id="lang_log" >LOG</span></label>
+
+        </dt>
+
+
+        <dt class="margin-left-10px float-left width-80px">
+          <dd><input type="checkbox" id="include_codec" checked></dd>
+          <label for="include_codec"><span id="lang_codec" >CODEC</span></label>
+        </dt>
+
+      </dl>
+
+      <!-- channel table -->
+      <span class="display-block margin-top-10px font-weight-bold">SELECT CHANNEL</span>
+      <table class="width-100per margin-left-10px">
+        <tr>
+          <td>
+            <input type="checkbox" id="ch_mask_1"/ class="ch_mask" checked>
+            Ch1
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_2"/ class="ch_mask" checked>
+            Ch2
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_3"/ class="ch_mask" checked>
+            Ch3
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_4"/ class="ch_mask" checked>
+            Ch4
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_5"/ class="ch_mask" checked>
+            Ch5
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_6"/ class="ch_mask" checked>
+            Ch6
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_7"/ class="ch_mask" checked>
+            Ch7
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_8"/ class="ch_mask" checked>
+            Ch8
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" id="ch_mask_9"/ class="ch_mask" checked>
+            Ch9
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_10" class="ch_mask" checked/>
+            Ch10
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_11" class="ch_mask" checked/>
+            Ch11
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_12" class="ch_mask" checked/>
+            Ch12
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_13" class="ch_mask" checked/>
+            Ch13
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_14" class="ch_mask" checked/>
+            Ch14
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_15" class="ch_mask" checked/>
+            Ch15
+          </td>
+          <td>
+            <input type="checkbox" id="ch_mask_16" class="ch_mask" checked/>
+            Ch16
+          </td>
+        </tr>
+      </table>
+
+      <span class="display-block margin-top-10px font-weight-bold">ARCHIVEING INFO</span>
+      <dl>
+        <dt>
+          <div class="margin-left-10px width-80px float-left">
+            <span>TOTAL SIZE: </span>
+            <input id="archiving_total_size" disabled></input>
+          </div>
+        </dt>
+
+      </dl>
+
+    </div>
+  </div>
+
+  <div id="dialog_reserve" style="display:none;">
+    <form id="form_reserve">
+      <div>
+        <span class="width-100px display-block font-weight-bold">TAG NAME</span>
+      </div>
+      <div>
+        <input class="width-100per" type="text" maxlength="14" id="dialog_reserve_tag_name"/>
+      </div>
+      <div>
+        <span>* All channels are kept during data preservation.</span>
+      </div>
+    </form>
+  </div>
+
+  <div id="dialog_export" style="display:none;">
+    <form id="form_export">
+      <div>
+        <span class="width-100px display-block font-weight-bold" id="lang_export_device_name">DEVICE NAME</span>
+        <select class="width-100px" id="dialog_export_dev_list">
+        </select>
+      </div>
+
+      <div class="margin-top-10px">
+        <span class="width-100px display-block font-weight-bold" id="lang_export_device_format">DATA FORMAT</span>
+        <select class="width-100px" id="dialog_export_arch_type">
+          <option value="0">AVI</option>
+          <option value="1">RAW</option>
+        </select>
+      </div>
+
+      <div class="margin-top-10px">
+        <span class="width-100px display-block font-weight-bold" id="lang_export_tag_name">TAG NAME</span>
+        <input type="text" class="width-100per" id="dialog_export_tag_name">
+      </div>
+  <div class="margin-top-10px">
+      <span class="margin-top-10px display-block font-weight-bold" id="lang_export_memo">MEMO</span>
+      <textarea class="width-100per" id="dialog_export_memo"></textarea>
+  </div>
+      <div class="margin-top-10px progressbar-export">
+        <span class="font-weight-bold" id="lang_export_progress">PROGRESS</span>
+        <div><span id="dialog_export_progress"></span></div>
+        <div id="dialog_export_progressbar"></div>
+      </div>
+    </form>
+  </div>
+
+  <div class="hidden"></div>
+
+    <script language="JavaScript" for="itxview" event="OnBackupStatus(nStatus)">
+      self.CallbackBackup(nStatus);
+    </script>
+
+    <script language="JavaScript">
+      function CallbackBackup(nStatus)
+      {
+        if ( parseInt(nStatus) == 3 )
+        {
+          alert(errLiveBackupHdd);
+        }
+
+        else if ( parseInt(nStatus) == 5 )
+        {
+          if (browerIE == true)
+          {
+            onSearchStop();
+            GetSearchPlaytimeStop();
+          }
+          alert(errDisconnectNetwork);
+        }
+        else if ( parseInt(nStatus) == 7 )
+        {
+          if (browerIE == true)
+          {
+            onSearchStop();
+            GetSearchPlaytimeStop();
+          }
+          alert(errMaxClientConnect);
+        }
+        else if ( parseInt(nStatus) == 8 )
+        {
+          display_channelmode_change();
+        }
+        else if ( parseInt(nStatus) == 9 )
+        {
+          alert(errUserPasswd);
+        }
+      }
+
+      if( INFO_MODEL.indexOf("HDI") < 0 && INFO_MODEL.indexOf("HDY") < 0 ) {
+        $(".forhdi").remove();
+
+      }
+
+      if( INFO_MODEL.indexOf("ATM") < 0 && INFO_MODEL.indexOf("ANF") < 0 ) {
+        $(".fordvr").remove();
+      }
+
+      var _is_support_pos_model=function() {
+        var enum_pos_support_model=['ATM', 'ANF', 'IPX', 'UTM'];
+
+        for(var i=0; i<enum_pos_support_model.length; i++) {
+          if (INFO_MODEL.indexOf(enum_pos_support_model[i]) > 0) {
+            return true;
+          }
+        }
+
+        return false;
+      }
+
+      var _is_support_pos_vendor=function() {
+        var enum_pos_not_support_vendor=['ALSOK', 'TAKENAKA', 'VIDECON', 'KB_DEVICE'];
+
+        for(var i=0; i<enum_pos_not_support_vendor.length; i++) {
+          if (INFO_VENDOR.indexOf(enum_pos_not_support_vendor[i]) > 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      var _is_support_tamper_model=function() {
+        var enum_tamper_not_support_model=['4G', '5G', '5HG'];
+
+        for(var i=0; i<enum_tamper_not_support_model.length; i++) {
+          if (INFO_MODEL.indexOf(enum_tamper_not_support_model[i]) > 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      var _send_pos_support_info_to_activex=function() {
+        try {
+          var activex = document.getElementById("itxview");
+          activex.PosDataEnable(1);
+        } catch(e) {
+          this.error('Send pos support info to activex!', e);
+        }
+      }
+
+      var _hide_pos=function() {
+        $("#searchbytextdevli").hide();
+        $(".supportPos").remove();
+      }
+
+      var _hide_tamper=function() {
+        $("#tamperevent").parent().parent().remove();
+      }
+
+      _is_support_pos_model() && _is_support_pos_vendor() ? _send_pos_support_info_to_activex() : _hide_pos();
+      _is_support_tamper_model() ? {/* DO NOTHING BECAUSE NO NEED TO HIDE TAMPER UI */} : _hide_tamper();
+
+      if( INFO_MODEL.indexOf("IPX") < 0 ) {
+        $(".foripx").remove();
+      }
+
+      $.ajax({
+        type: "GET",
+        url: "/cgi-bin/webra_fcgi.fcgi",
+        async: false,
+        data: "action=get_search&menu=search.searchsetting_searchbyevent&dst=1",
+        error: function() {
+          console.log("fail");
+        },
+
+        success: function(data){
+          var dmva_support = encode_to_array(data);
+
+          if(dmva_support['dmvasupported'] == 0) {
+            $("#vaevent").hide();
+            $("#lang_VA").hide();
+          }
+        }
+     });
+
+    </script>
+
+    <script type="text/javascript">
+      var searchtab	=	document.getElementById("c_sh_div_tab");
+      var searchbytime = document.getElementById("c_sh_div_time_contents");
+      var searchbyevent = document.getElementById("c_sh_div_event_contents");
+      var searchbytextsearch = document.getElementById("c_sh_div_text_search_contents");
+
+      var itxview = document.getElementById("itxview");
+      if(itxview)
+      {
+        //	itxview.focus();
+      }
+      lang_file(INFO_LANGUAGE,'SEARCH');
+
+      searchInit();
+      searchbytime_VichEnDis();
+
+      addUnLoadEvent(dvr_led_on_stop);
+
+      if (browerIE == true)
+      {
+        addUnLoadEvent(onClickSearchStop);
+      }
+
+      start_time_check();
+      /*
+      function IE7LoadEvent()
+      {
+      var evt=document.createEventObject();
+      evt.button = 2;
+      document.all.itxview.fireEvent('onmousedown', evt);
+      }
+      addLoadEvent(IE7LoadEvent);
+      */
+
+    $( "#dialog_backup_remotely" ).dialog({ width: 667 });
+    $( "#dialog_export" ).dialog({ height: 360 });
+    </script>
+    <script src="less/less.min.js" ></script>
+  </body>
+</html>

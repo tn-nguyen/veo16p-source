@@ -1,0 +1,11 @@
+/*
+ * #container
+ */
+#container {
+  position:relative;
+  overflow: auto;
+  width: 100%;
+  min-height: 100%;
+  min-width: 755px;
+  margin: 0 auto;
+}

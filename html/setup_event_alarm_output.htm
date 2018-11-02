@@ -1,0 +1,1415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+  <script type="text/javascript">
+    info_include();
+  </script>
+
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+  passwordRenewCheck();
+    language_include();
+  </script>
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+  <link href="../scripts/jquery/jquery.dropdownMulti.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery.dropdownMulti.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+        print_top_menu(document, "SETUP");
+      </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+          <script type="text/javascript">
+            print_left_menu(document, "Event", "Alarm output");
+          </script>
+        </ul>
+      </div>
+      <form name="eventsetting_alarm_output" id="eventsetting_alarm_output" action='/cgi-bin/webra_fcgi.fcgi'>
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <h2>
+              <span id='lang_Alarmoutputsetting'>
+                Alarm output setting
+              </span>
+            </h2>
+            <div id="event_tabs">
+              <ul>
+                <li>
+                <a href='#event_tab_alarmout'><span id='lang_Alarmout'>Alarm Out</span></a>
+                </li>
+                <li>
+                <a href='#event_tab_sched'><span id='lang_EventSched'>On/Off Schedule</span></a>
+                </li>
+              </ul>
+              <!-------------- First tab ------------------>
+              <div id='event_tab_alarmout'>
+                <div class="c_sp_div_sensor">
+                  <table class="event alarmout" summary='alarm_setting_table'>
+                    <colgroup>
+                      <col class="c1"/>
+                    </colgroup>
+                    <colgroup span="4">
+                      <col class="c2"/>
+                      <col class="c3"/>
+                      <col class="c4"/>
+                      <col class="c5"/>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>
+                          <!--<span id="lang_CAM">CAM</span>-->
+                        </th>
+                        <th><span id="lang_Name"> Name </span></th>
+                        <!-- <th><span id='lang_Type'> Type </span></th> -->
+                        <th><span id='lang_Operation'> Operation </span></th>
+                        <th class="last"><span id='lang_Duration'> Duration </span></th>
+                      </tr>
+                      <tr>
+                        <th><span id="lang_selectAll">ALL</span></th>
+                        <th>
+                        </th>
+                        <!-- <th>
+                        </th> -->
+                        <th>
+                          <select id="op_type_all" name="op_type_all">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </th>
+                        <td class="last">
+                          <select id="duration_all" name="duration_all">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl1'>
+                            CH 1
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name0" name="name0" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type0" name="op_type0">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration0" name="duration0">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl2'>
+                            CH 2
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name1" name="name1" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type1" name="op_type1">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration1" name="duration1">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl3'>
+                            CH 3
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name2" name="name2" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type2" name="op_type2">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration2" name="duration2">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl4'>
+                            CH 4
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name3" name="name3" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type3" name="op_type3">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration3" name="duration3">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl5'>
+                            CH 5
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name4" name="name4" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type4" name="op_type4">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration4" name="duration4">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl6'>
+                            CH 6
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name5" name="name5" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type5" name="op_type5">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration5" name="duration5">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl7'>
+                            CH 7
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name6" name="name6" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type6" name="op_type6">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration6" name="duration6">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl8'>
+                            CH 8
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name7" name="name7" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type7" name="op_type7">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration7" name="duration7">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl9'>
+                            CH 9
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name8" name="name8" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type8" name="op_type8">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select id="duration8" name="duration8">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl10'>
+                            CH 10
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name9" name="name9" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type9" name="op_type9">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration9" name="duration9">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl11'>
+                            CH 11
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name10" name="name10" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type10" name="op_type10">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration10" name="duration10">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl12'>
+                            CH 12
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name11" name="name11" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type11" name="op_type11">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration11" name="duration11">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl13'>
+                            CH 13
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name12" name="name12" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type12" name="op_type12">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration12" name="duration12">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl14'>
+                            CH 14
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name13" name="name13" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type13" name="op_type13">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration13" name="duration13">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl15'>
+                            CH 15
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name14" name="name14" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type14" name="op_type14">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration14" name="duration14">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl16'>
+                            CH 16
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" maxlength="16" id="name15" name="name15" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type15" name="op_type15">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration15" name="duration15">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr class="arout">
+                        <td>
+                          <span class='lbl17'>
+                            17
+                          </span>
+                        </td>
+                        <td>
+                          <input type="text" name="name16" maxlength="16" id="name16" style="ime-mode:disabled">
+                        </td>
+                        <!-- <td>
+                          <label>
+                            <span id="lang_digitalout">Digital Out</span>
+                          </label>
+                        </td> -->
+                        <td>
+                          <select id="op_type16" name="op_type16">
+                            <option value='0'>N/O</option>
+                            <option value='1'>N/C</option>
+                          </select>
+                        </td>
+                        <td class="last">
+                          <select  id="duration16" name="duration16">
+                            <option value='0'>TRANSPARENT</option>
+                            <option value='5'>5 SEC</option>
+                            <option value='10'>10 SEC</option>
+                            <option value='15'>15 SEC</option>
+                            <option value='20'>20 SEC</option>
+                            <option value='30'>30 SEC</option>
+                            <option value='40'>40 SEC</option>
+                            <option value='60'>60 SEC</option>
+                            <option value='120'>120 SEC</option>
+                            <option value='180'>180 SEC</option>
+                            <option value='300'>300 SEC</option>
+                            <option value='9999'>UNTIL KEY</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>    
+              <!--               Second tab                 -->
+              <div id='event_tab_sched'>
+                <div class='ao_sched'>
+                  <div class="schmodediv">
+                    <span id="lang_day">day</span>
+                    <select id='schmodeSelect' name='schmode' style='width:60px;'>
+                      <option value='0' selected>SUN</option>
+                      <option value='1'>MON</option>
+                      <option value='2'>TUE</option>
+                      <option value='3'>WED</option>
+                      <option value='4'>THU</option>
+                      <option value='5'>FRI</option>
+                      <option value='6'>SAT</option>
+                    </select>
+                  </div>
+
+                  <ul class='indices'>
+                    <li class='arout_color1 box'>
+                    &nbsp;
+                    </li>
+                    <li>
+                    <span id='lang_off'>OFF</span>
+                    </li>
+                    <li class='arout_color2 box'>
+                    &nbsp;
+                    </li>
+                    <li>
+                    <span id='lang_on'>ON</span>
+                    </li>
+                    <li class='arout_color3 box'>
+                    &nbsp;
+                    </li>
+                    <li>
+                    <span id='lang_event'>EVENT</span>
+                    </li>
+                  </ul>
+
+                  <br/>
+
+                  <table class="aout-sched" id="select_sched">
+                    <colgroup span="1" >
+                      <col width="120"/>
+                    </colgroup>
+                    <colgroup span="24"></colgroup>
+                    <thead>
+                      <tr>
+                        <th>&nbsp;</th>
+                        <th>00</th>
+                        <th>01</th>
+                        <th>02</th>
+                        <th>03</th>
+                        <th>04</th>
+                        <th class="c_6hr">05</th>
+                        <th>06</th>
+                        <th>07</th>
+                        <th>08</th>
+                        <th>09</th>
+                        <th>10</th>
+                        <th class="c_6hr">11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                        <th>16</th>
+                        <th class="c_6hr">17</th>
+                        <th>18</th>
+                        <th>19</th>
+                        <th>20</th>
+                        <th>21</th>
+                        <th>22</th>
+                        <th>23</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl1'>
+                            Ch1
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl2'>
+                            Ch2
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl3'>
+                            Ch3
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl4'>
+                            Ch4
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl5'>
+                            Ch5
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl6'>
+                            Ch6
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl7'>
+                            Ch7
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl8'>
+                            Ch8
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl9'>
+                            Ch9
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl10'>
+                            Ch10
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl11'>
+                            Ch11
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl12'>
+                            Ch12
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl13'>
+                            Ch13
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl14'>
+                            Ch14
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl15'>
+                            Ch15
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl16'>
+                            Ch16
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                      <tr class='tr_arout_sched'>
+                        <th class="left">
+                          <span class='lbl17'>
+                            Ch17
+                          </span>
+                        </th>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched c_6hr"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                        <td class="cell_sched"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="schedcp">
+                    <input type="button" value="lang_copysched" id="cp_button"/>
+                  </div>
+                  <div class='clear'></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg">
+            </div>
+            <div id="printMsg">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id='popupCP'>
+  </div>
+
+  <script type="text/javascript" src="../scripts/selectAll.js"></script>
+  <script type="text/javascript" src="../scripts/init/EventInit.js"></script>
+
+  <script type="text/javascript">
+    ShowInit('EventAlarmOut');
+  </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/EventModel.js"></script>
+
+  <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+  <script type="text/javascript" src="../scripts/view/EventView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/EventController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+      name: 'EventAlarmOut',
+      action: 'index',
+      debug: false
+    });
+
+    dvrpoke();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/*
+ * header
+ */
+header {
+  width: 100%;
+  background: #888;
+  z-index: 1;
+}
+
+.logo {
+  background: url(../../images/logo/logo_itx.gif) no-repeat;
+  text-indent: -10000px;
+}
+
+.gnb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #666;
+}
+
+.lnb { background: #888; }
+
+.gnb ul li a {
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s, 0.5s;
+  -moz-transition-duration: 0.5s, 0.5s;
+  transition-duration: 0.5s, 0.5s; 
+  -webkit-transition-timing function: linear, ease-in;
+  -moz-transition-timing function: linear, ease-in; 
+  transition-timing function: linear, ease-in; 
+  color: #282020;
+  text-decoration: none;
+}
+.gnb ul li { float: left; margin-right: 30px; }
+.gnb ul li a:visited {}
+.gnb ul li a:hover { color: #fff; text-shadow: none; }
+.gnb ul li focus { color: #fff; text-shadow: none; }
+.gnb ul li a:active { position: relative; top: 0; }
+
+.stb { background: #777; }

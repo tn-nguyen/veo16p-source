@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    @import url("../styles/styles/global.css");
+    @import url("../styles/styles/setup.css");
+</style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+
+  <script type="text/javascript">
+      info_include();
+    </script>
+
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/validate.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+  passwordRenewCheck();
+      language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css"
+      rel="stylesheet" type="text/css" />
+    <script type="text/javascript"
+      src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript"
+      src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+</head>
+
+<body>
+
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+              print_top_menu(document, "SETUP");
+            </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left: 10px; padding-top: 10px;">
+          <script type="text/javascript">
+            print_left_menu(document, "Camera", "PTZ");
+          </script>
+        </ul>
+      </div>
+      <div id="c_sp_div_contents">
+        <div class="c_sp_div_contents">
+          <form name="camsetting_ptz" id="camsetting_ptz"
+            action='/cgi-bin/webra_fcgi.fcgi'>
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2>
+                <span id='lang_PTZSetting'>PTZ setting</span>
+              </h2>
+              <table class="cam_ptz">
+                <thead>
+                  <tr>
+                    <th class="c_sp_td_cam_ptz_head1">
+                      <span id='lang_camCh'>Ch.</span></th>
+                    <th class="c_sp_td_cam_ptz_head1 rs485">RS485</th>
+                    <th class="c_sp_td_cam_ptz_head1">
+                      <span id='lang_camAddress'>ADDRESS</span></th>
+                    <th class="c_sp_td_cam_ptz_head1">
+                      <span id='lang_camProtocol'>Protocol</span></th>
+                    <th class="c_sp_td_cam_ptz_head1">
+                      <span id='lang_camBaudrate'>Baudrate</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch1">1</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_0" id="rs485_0">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address0" id="address0" value=""
+                      onkeydown="NumObj(event);" maxlength="3"
+                      class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol0" name="protocol0"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate0" name="baudrate0"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch2">2</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_1" id="rs485_1">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address1" id="address1" value=""
+                      onkeydown="NumObj(event);" maxlength="3"
+                      class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol1" name="protocol1"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate1" name="baudrate1"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch3">3</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_2" id="rs485_2">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address2" id="address2" value=""
+                      onkeydown="NumObj(event);" maxlength="3"
+                      class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol2" name="protocol2"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate2" name="baudrate2"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch4">4</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_3" id="rs485_3">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address3" id="address3" value=""
+                      onkeydown="NumObj(event);" maxlength="3"
+                      class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol3" name="protocol3"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate3" name="baudrate3"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                </tbody>
+                <tbody class='chenable8'>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch5">5</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_4" id="rs485_4">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address4" id="address4" value=""
+                      onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol4" name="protocol4"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate4" name="baudrate4"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch6">6</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_5" id="rs485_5">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address5" id="address5" value=""
+                      onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol5" name="protocol5"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate5" name="baudrate5"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch7">7</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_6" id="rs485_6">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address6" id="address6" value=""
+                      onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol6" name="protocol6"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate6" name="baudrate6"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div id="ch8">8</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_7" id="rs485_7">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address7" id="address7" value=""
+                      onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol7" name="protocol7"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate7" name="baudrate7"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                </tbody>
+                <tbody class='chenable16'>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch9">9</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_8" id="rs485_8">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address8" id="address8"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol8" name="protocol8"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate8" name="baudrate8"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch10">10</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_9" id="rs485_9">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address9" id="address9"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol9" name="protocol9"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate9" name="baudrate9"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch11">11</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_10" id="rs485_10">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address10" id="address10"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol10" name="protocol10"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate10" name="baudrate10"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch12">12</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_11" id="rs485_11">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address11" id="address11"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol11" name="protocol11"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate11" name="baudrate11"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch13">13</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_12" id="rs485_12">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address12" id="address12"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol12" name="protocol12"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate12" name="baudrate12"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch14">14</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_13" id="rs485_13">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address13" id="address13"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol13" name="protocol13"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate13" name="baudrate13"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch15">15</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_14" id="rs485_14">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address14" id="address14"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol14" name="protocol14"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate14" name="baudrate14"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                  <tr>
+                    <td class="c_sp_td_cam_ptz_body1"><div
+                        id="ch16">16</div></td>
+                    <td class='rs485'>
+                      <input type="checkbox" name="rs485_15" id="rs485_15">
+                    </td>
+                    <td class="c_sp_td_cam_ptz_body1 disabled_target"><input
+                      type="text" name="address15" id="address15"
+                      value="" onkeydown="NumObj(event);"
+                      maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="protocol15" name="protocol15"
+                      class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                    <td class="left_bottom_cel disabled_target"><select
+                      id="baudrate15" name="baudrate15"
+                      class="c_sp_lst_cam_ptz_sel">
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="115200">115200</option>
+                    </select></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK"
+                class="c_sp_btn_okcancel" /> <input type="button"
+                value="lang_CANCEL" id="cancel"
+                class="c_sp_btn_okcancel" />
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg"></div>
+              <div id="printMsg"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+  <script type="text/javascript">
+      ShowInit('CamPTZ');
+    </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+  <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+  <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+  <script type="text/javascript"
+    src="../scripts/controller/CamController.js"></script>
+
+  <script type="text/javascript">
+      zzmvc({
+        name : 'CamPTZ',
+        action : 'index',
+        debug : false
+      });
+
+      dvrpoke();
+    </script>
+</body>
+</html>
+

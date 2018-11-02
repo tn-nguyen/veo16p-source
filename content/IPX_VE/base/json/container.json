@@ -1,0 +1,10 @@
+{
+  "id": "container",
+  "loadTemplate": {
+    "dialogWarning": "dialogWarning",
+    "dialogConfirm": "dialogConfirm",
+    "dialogNotice": "dialogNotice"
+  },
+
+  "defaultPage": "live"
+}

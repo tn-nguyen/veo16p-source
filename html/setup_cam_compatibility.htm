@@ -1,0 +1,1064 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</meta>
+
+<style type="text/css">
+@import url("../styles/styles/global.css");
+
+@import url("../styles/styles/setup.css");
+</style>
+
+<script type="text/javascript" src="../scripts/global.js"></script>
+
+<script type="text/javascript">
+  info_include();
+</script>
+
+<script type="text/javascript" src="../scripts/libs.js"></script>
+<script type="text/javascript" src="../scripts/view/ViewObjects.js"></script>
+<script type="text/javascript" src="../scripts/activex_request.js"></script>
+<script type="text/javascript" src="../scripts/top_menu.js"></script>
+<script type="text/javascript" src="../scripts/left_menu.js"></script>
+<script type="text/javascript" src="../scripts/validate.js"></script>
+<script type="text/javascript" src="../scripts/Validator.js"></script>
+<script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+<script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+<script type="text/javascript">
+  passwordRenewCheck();
+  language_include();
+</script>
+
+<!-- <link href="../scripts/jquery/jquery-ui.css" rel="stylesheet"
+  type="text/css" />-->
+<link href="../scripts/jquery/themes/ipx/jquery.ui.all.css"
+  rel="stylesheet" type="text/css"
+/>
+<link href="../scripts/jquery/ui.spinner.css" rel="stylesheet"
+  type="text/css"
+/>
+
+<!-- TODO: change original file to min -->
+<script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+<script type="text/javascript"
+  src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"
+></script>
+<script type="text/javascript" src="../scripts/jquery/ui.spinner.min.js"></script>
+</head>
+
+<body>
+  <div class="hidden">
+    <script language="javascript">
+          ActiveX_Include_340_191();
+        </script>
+  </div>
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+              print_top_menu(document, "SETUP");
+            </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left: 10px; padding-top: 10px;">
+          <script type="text/javascript">
+                      print_left_menu(document, "Camera", "Image");
+                    </script>
+        </ul>
+      </div>
+
+      <form name="camsetting_image" id="camsetting_imageCompatibility"
+        action='/cgi-bin/webra_fcgi.fcgi'
+      >
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <div class="cam_image_setup">
+              <div class="pagetitle">
+                <h1>
+                  <span id='lang_imagesetup'>CAMERA IMAGE SETUP</span>
+                </h1>
+              </div>
+
+              <div class='ch'>
+                <select id="ch"></select> <span id='model'
+                  class='camera_model'
+                >NOT CONNECTED</span>
+              </div>
+
+              <div id="tab">
+                <ul>
+                  <li><a href='#tab_image_setting'><span
+                      id="lang_image_setting"
+                    >IMAGE SETTINGS</span></a></li>
+                  <li><a href='#tab_exposure'><span
+                      id="lang_exposure"
+                    >EXPOSURE</span></a></li>
+                  <li>
+                    <a href='#tab_focus'>
+                      <span id="lang_focus">FOCUS COMPENSATION</span>
+                    </a>
+                  </li>
+                  <li><a href='#tab_direct_configure'><span
+                      id="lang_direct_configure"
+                    >DIRECT CONFIGURE</span></a></li>
+                </ul>
+
+                <div id="tab_image_setting" class="tabpage">
+                  <div class="panel">
+                    <div id="image_preview">
+                      <!-- for active x or jpeg or mpeg -->
+                      <img id="preview_image" class="preview_jpeg"
+                        src="../images/images/loading.gif"
+                      >
+                    </div>
+
+                    <div class="image">
+                      <dl id="image_setting_profile">
+                        <div class="brightness">
+                          <dt>
+                            <span id="lang_camBrightness">BRIGHTNESS</span>
+                          </dt>
+                          <dd id="brightness"></dd>
+                        </div>
+                        <div class="contrast">
+                          <dt>
+                            <span id="lang_camContrast">CONTRAST</span>
+                          </dt>
+                          <dd id="contrast"></dd>
+                        </div>
+                        <div class="tint">
+                          <dt>
+                            <span id="lang_camTint">HUE</span>
+                          </dt>
+                          <dd id="tint"></dd>
+                        </div>
+                        <div class="color">
+                          <dt>
+                            <span id="lang_camColor">COLOR</span>
+                          </dt>
+                          <dd id="color"></dd>
+                        </div>
+                        <div class="sharpness">
+                          <dt>
+                            <span id="lang_cam_camsetup_sharpness">SHARPNESS</span>
+                          </dt>
+                          <dd id="sharpness"></dd>
+                        </div>
+                        <div class="empty_line"></div>
+                        <div class="mirror">
+                          <dt>
+                            <span id="lang_cam_camsetup_rotate">MIRROR
+                              IMAGE</span>
+                          </dt>
+                          <dd>
+                            <select id="mirror"></select>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div id="focus_position" class="focus">
+                      <h2>
+                        <span id="lang_cam_camsetup_focus">FOCUS</span>
+                      </h2>
+                      <dl id="image_setting_focus">
+                        <div class="focus">
+                          <dt>
+                            <span id="lang_autofocus">AUTO FOCUS</span>
+                          </dt>
+                          <dd>
+                            <select id="focus"></select> <input
+                              type="button" id="onepush" value="ONE" class="onepush"
+                            ></input> <input type="button" id="home"
+                              value="HOME" class="home"
+                            ></input>
+                          </dd>
+                        </div>
+                      </dl>
+
+                      <dl id="image_setting_focus_autofocus">
+                      <div class="defaultspeed">
+                          <dt id="lang_default_speed">
+                            <span>DEFAULT SPEED</span>
+                          </dt>
+                          <dd id="defaultspeed"></dd>
+                        </div>
+                        <div class="nearlimit">
+                          <dt>
+                            <span id="lang_near_limit">NEAR LIMIT</span>
+                          </dt>
+                          <dd id="nearlimit"></dd>
+                        </div>
+                        <div class="farlimit">
+                          <dt>
+                            <span id="lang_far_limit">FAR LIMIT</span>
+                          </dt>
+                          <dd id="farlimit"></dd>
+                        </div>
+                      </dl>
+
+                      <dl id="image_setting_focus_absolute">
+                        <div class="abposition">
+                          <dt>
+                            <span id="lang_position">POSITION</span>
+                          </dt>
+                          <dd id="abposition"></dd>
+                        </div>
+                        <div class="abspeed">
+                          <dt>
+                            <span id="lang_speed">SPEED</span>
+                          </dt>
+                          <dd id="abspeed"></dd>
+                        </div>
+                      </dl>
+
+                      <dl id="image_setting_focus_relative">
+                        <div class="redistance">
+                          <dt>
+                            <span id="lang_position">DISTANCE</span>
+                          </dt>
+                          <dd id="redistance"></dd>
+                        </div>
+                        <div class="respeed">
+                          <dt>
+                            <span id="lang_speed">SPEED</span>
+                          </dt>
+                          <dd id="respeed"></dd>
+                        </div>
+                      </dl>
+
+                      <dl id="image_setting_focus_continuous">
+                        <div class="cospeed">
+                          <dt>
+                            <span id="lang_speed">SPEED</span>
+                          </dt>
+                          <dd id="cospeed"></dd>
+                        </div>
+                        <div class="focusnear">
+                          <dt>
+                            <span id="lang_cam_camsetup_focus">FOCUS</span>
+                          </dt>
+                          <dd>
+                            <input type="button" id="focusnear"
+                              value="NEAR"
+                            ></input> <input type="button" id="focusfar"
+                              value="FAR"
+                            ></input>
+                          </dd>
+                        </div>
+                      </dl>
+
+                      <dl>
+                        <div class="focus_limit">
+                          <dt>
+                            <span id="lang_focus_limit">FOCUS NEAR LIMIT</span>
+                          </dt>
+                          <dd>
+                            <select id="focus_limit"></select>
+                          </dd>
+                        </div>
+                      </dl>
+
+                      <dl>
+                        <div class="stabilizer">
+                          <dt>
+                            <span id="lang_stabilizer">STABILIZER</span>
+                          </dt>
+                          <dd>
+                            <select id="stabilizer"></select>
+                          </dd>
+                        </div>
+                      </dl>
+
+                      <dl>
+                        <div class="ir_correction">
+                          <dt>
+                            <span id="lang_ircorrection">IR CORRECTION</span>
+                          </dt>
+                          <dd>
+                            <select id="ir_correction"></select>
+                          </dd>
+                        </div>
+                      </dl>
+
+                    </div>
+
+                    <div class="white_balance">
+                      <h2>
+                        <span id="lang_cam_camsetup_white_balance_title">WHITE
+                          BALANCE</span>
+                      </h2>
+                      <dl id="image_setting_white_balance">
+                        <div class="wb">
+                          <dt>
+                            <span id="lang_cam_camsetup_white_balance">WHITE
+                              BALANCE</span>
+                          </dt>
+                          <dd>
+                            <select id="wb"></select>
+                          </dd>
+                        </div>
+                        <div class="crgain">
+                          <dt>
+                            <span id="lang_cr_gain">CR GAIN</span>
+                          </dt>
+                          <dd id="crgain"></dd>
+                        </div>
+                        <div class="cbgain">
+                          <dt>
+                            <span id="lang_cb_gain">CB GAIN</span>
+                          </dt>
+                          <dd id="cbgain"></dd>
+                        </div>
+
+                        <div class="mwb">
+                          <dt>
+                            <span id="lang_cam_camsetup_mwb_mode">MWB</span>
+                          </dt>
+                          <dd>
+                            <select id="mwb"></select>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- end of image setting tab -->
+
+                <div id="tab_exposure" class="tabpage">
+                  <div class="panel">
+                    <div id="exposure_preview"></div>
+                    <div class="exposure_mode">
+                      <dl>
+                      <div class="empty_line"></div>
+                        <div class="mode">
+                          <dt>
+                            <span id="lang_mode">MODE</span>
+                          </dt>
+                          <dd>
+                            <select id="mode"></select>
+                          </dd>
+                        </div>
+                        <div class="priority">
+                          <dt>
+                            <span id="lang_priority">PRIORITY</span>
+                          </dt>
+                          <dd>
+                            <select id="priority"></select>
+                          </dd>
+                        </div>
+                      </dl>
+                      <dl>
+                        <div class="empty_line"></div>
+                        <div class="blc">
+                          <dt>
+                            <span id="lang_blc">BLC CONTROL</span>
+                          </dt>
+                          <dd>
+                            <select id="blc"></select>
+                          </dd>
+                        </div>
+
+                        <div class="blclevel">
+                          <dt>
+                            <span id="lang_blclevel">BLC LEVEL</span>
+                          </dt>
+                          <dd id="blclevel"></dd>
+                        </div>
+
+                        <div class="hlc">
+                          <dl id="image_setting_hlc">
+                            <div class="hlc">
+                              <dt>
+                                <span id="lang_hlc">
+                                  HLC</span>
+                              </dt>
+                              <dd>
+                                <select id="hlc"></select>
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+
+                        <div class="defog">
+                          <dl id="image_setting_defog">
+                            <div class="defog">
+                              <dt>
+                                <span id="lang_defog">
+                                  DEFOG</span>
+                              </dt>
+                              <dd>
+                                <select id="defog"></select>
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+
+                        <div class="wide_dynamic_range">
+                          <dl id="image_setting_dnr">
+                            <div class="dnr">
+                              <dt>
+                                <span id="lang_dnr">
+                                  DNR</span>
+                              </dt>
+                              <dd>
+                                <select id="dnr"></select>
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+
+                        <div class="antiflicker">
+                          <dt>
+                            <span id="lang_antiflicker">ANTI-FLICKER</span>
+                          </dt>
+                          <dd>
+                            <select id="antiflicker"></select>
+                          </dd>
+                        </div>
+                        <div class="antiflicker_motion">
+                          <dt>
+                            <span id="lang_antiflicker_motion">ANTI-FLICKER</span>
+                          </dt>
+                          <dd>
+                            <select id="antiflicker_motion"></select>
+                          </dd>
+                        </div>
+                        <div class="antiflicker_motion_off">
+                          <dt>
+                            <span id="lang_antiflicker_motion_off">ANTI-FLICKER</span>
+                          </dt>
+                          <dd>
+                            <select id="antiflicker_motion_off"></select>
+                          </dd>
+                        </div>
+                        <div class="antiflicker_auto_off">
+                          <dt>
+                            <span id="lang_antiflicker_auto_off">ANTI-FLICKER</span>
+                          </dt>
+                          <dd>
+                            <select id="antiflicker_auto_off"></select>
+                          </dd>
+                        </div>
+                        <div class="max_shutter_50">
+                          <dt>
+                            <span id="lang_max_shutter_50">MAX SHUTTER SPEED 50</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_50"></select>
+                          </dd>
+                        </div>
+                        <div class="max_shutter_60">
+                          <dt>
+                            <span id="lang_max_shutter_60">MAX SHUTTER SPEED 50</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_60"></select>
+                          </dd>
+                        </div>
+                        <div class="max_shutter_off">
+                          <dt>
+                            <span id="lang_max_shutter_off">MAX SHUTTER SPEED OFF</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_off"></select>
+                          </dd>
+                        </div>
+                        <div class="max_shutter_motion_off">
+                          <dt>
+                            <span id="lang_max_shutter_motion_off">MAX SHUTTER SPEED OFF</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_motion_off"></select>
+                          </dd>
+                        </div>
+                      
+                        <div class="max_shutter_motion_off_on">
+                          <dt>
+                            <span id="lang_max_shutter">MAX SHUTTER SPEED MOTION OFF ON</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_motion_off_on"></select>
+                          </dd>
+                        </div>
+                        <div class="max_shutter_auto_off_off">
+                          <dt>
+                            <span id="lang_max_shutter">MAX SHUTTER SPEED MOTION OFF OFF</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_auto_off_off"></select>
+                          </dd>
+                        </div>
+                        <div class="max_shutter_auto_off_on_tv">
+                          <dt>
+                            <span id="lang_max_shutter">MAX SHUTTER SPEED AUTO OFF ON TV</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_auto_off_on_tv"></select>
+                          </dd>
+                        </div>
+                        <div class="max_shutter_auto_off_on">
+                          <dt>
+                            <span id="lang_max_shutter">MAX SHUTTER SPEED AUTO OFF ON</span>
+                          </dt>
+                          <dd>
+                            <select id="max_shutter_auto_off_on"></select>
+                          </dd>
+                        </div>
+                      
+                        <div class="base_shutter_50">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 50</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_50"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_60">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 60</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_60"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_100">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 100</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_100"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_120">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 120</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_120"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_100_300">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 100 300</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_100_300"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_100_5000">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 100 5000</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_100_5000"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_120_360">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 120 360</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_120_360"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_120_5000">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 120 5000</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_120_5000"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_120_262">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 120 262</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_120_262"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_30_262">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 30 262</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_30_262"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_25_100">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 25 100</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_25_100"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_25_300">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 25 300</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_25_300"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_25_5000">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 25 5000</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_25_5000"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_30_120">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 30 120</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_30_120"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_30_360">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 30 360</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_30_360"></select>
+                          </dd>
+                        </div>
+
+                        <div class="base_shutter_30_5000">
+                          <dt>
+                            <span id="lang_base_shutter">BASE SHUTTER SPEED 30 5000</span>
+                          </dt>
+                          <dd>
+                            <select id="base_shutter_30_5000"></select>
+                          </dd>
+                        </div>
+
+                      </dl>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div class="exposure_time">
+                      <h2>
+                        <span id="lang_exposure_time_title">EXPOSURE
+                          TIME</span>
+                      </h2>
+                      <dl>
+
+                        <div class="minetime">
+                          <dt>
+                            <span id="lang_min_exposure_time">MIN
+                              EXPOSURE TIME</span>
+                          </dt>
+                          <dd id="minetime"></dd>
+                        </div>
+                        <div class="maxetime">
+                          <dt>
+                            <span id="lang_max_exposure_time">MAX
+                              EXPOSURE TIME</span>
+                          </dt>
+                          <dd id="maxetime"></dd>
+                        </div>
+                        <div class="etime">
+                          <dt>
+                            <span id="lang_exposure_time">EXPOSURE
+                              TIME</span>
+                          </dt>
+                          <dd id="etime"></dd>
+                        </div>
+                        <div class="slowshutter">
+                          <dt>
+                            <span id="lang_slowshutter">SLOW
+                              SHUTTER</span>
+                          </dt>
+                          <dd>
+                            <select id="slowshutter"></select>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                    <div class="exposure_gain">
+                      <h2>
+                        <span id="lang_gain">GAIN</span>
+                      </h2>
+                      <dl>
+                        <div class="mingain">
+                          <dt>
+                            <span id="lang_min_gain">MIN GAIN</span>
+                          </dt>
+                          <dd id="mingain"></dd>
+                        </div>
+                        <div class="maxgain">
+                          <dt>
+                            <span id="lang_max_gain">MAX GAIN</span>
+                          </dt>
+                          <dd id="maxgain"></dd>
+                        </div>
+                        <div class="gain">
+                          <dt>
+                            <span id="lang_gain">GAIN</span>
+                          </dt>
+                          <dd id="gain"></dd>
+                        </div>
+                        <div class="maxagc">
+                          <dt>
+                            <span id="lang_maxagc">MAX AGC</span>
+                          </dt>
+                          <dd>
+                            <select id="maxagc"></select>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                    <div class="exposure_iris">
+                      <h2>
+                        <span id="lang_iris_title">IRIS</span>
+                      </h2>
+                      <dl>
+                        <div class="maxiris">
+                          <dt>
+                            <span id="lang_max_iris">MAX IRIS</span>
+                          </dt>
+                          <dd id="maxiris"></dd>
+                        </div>
+                        <div class="miniris">
+                          <dt>
+                            <span id="lang_min_iris">MIN IRIS</span>
+                          </dt>
+                          <dd id="miniris"></dd>
+                        </div>
+                        <div class="dc_iris">
+                          <dt>
+                            <span id="lang_dc_iris">IRIS CONTROL</span>
+                          </dt>
+                          <dd>
+                            <select id="dc_iris"></select>
+                            <input
+                              type="button" id="calibration" value="CALIBRATION" class="calibration"
+                            ></input>
+                          </dd>
+                        </div>
+                        <div class="dc_iris_motion">
+                          <dt>
+                            <span id="lang_dc_iris_motion">IRIS CONTROL</span>
+                          </dt>
+                          <dd>
+                            <select id="dc_iris_motion"></select>
+                          </dd>
+                        </div>
+                        <div class="iris">
+                          <dt>
+                            <span id="lang_iris">IRIS</span>
+                          </dt>
+                          <dd id="iris"></dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <div class="wide_dynamic_range">
+                      <h2>
+                        <span id="lang_wide_dynamic_range">WIDE
+                          DYNAMIC RANGE</span>
+                      </h2>
+                      <dl id="exposure_setting_wide_dynamic_range">
+                        <div class="wdr">
+                          <dt>
+                            <span id="lang_wide_dynamic_mode">WIDE
+                              DYNAMIC MODE</span>
+                          </dt>
+                          <dd>
+                            <select id="wdr"></select>
+                          </dd>
+                        </div>
+                        <div class="wdrlevel">
+                          <dt>
+                            <span id="lang_level">LEVEL</span>
+                          </dt>
+                          <dd id="wdrlevel"></dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                    <div class="day_night">
+                      <h2>
+                        <span id="lang_daynight">DAY / NIGHT</span>
+                      </h2>
+                      <dl id="image_setting_day_night">
+                        <div class="ircut">
+                          <dt>
+                            <span id="lang_ir_cut_filter">IR CUT
+                              FILTER</span>
+                          </dt>
+                          <dd>
+                            <select id="ircut"></select>
+                          </dd>
+                        </div>
+                        <div class="ircutm">
+                          <dt>
+                            <span id="lang_ir_cut_filter">IR CUT
+                              FILTER</span>
+                          </dt>
+                          <dd>
+                            <select id="ircutm"></select>
+                          </dd>
+                        </div>
+                        <div class="dnn_toggle">
+                          <dt>
+                            <span id="lang_dnn_toggle">DNN TOGGLE</span>
+                          </dt>
+                          <dd>
+                            <select id="dnn_toggle"></select>
+                          </dd>
+                        </div>
+                        <div class="adaptive_ir">
+                          <dt>
+                            <span id="lang_adaptive_ir">ADAPTIVE IR</span>
+                          </dt>
+                          <dd>
+                            <select id="adaptive_ir"></select>
+                          </dd>
+                        </div>
+                        <div class="dnn_sense_dton">
+                          <dt>
+                            <span id="lang_dnn_sense_dton">DAY TO NIGHT</span>
+                          </dt>
+                          <dd id="dnn_sense_dton">
+                            
+                          </dd>
+                        </div>
+                        <div class="dnn_sense_ntod">
+                          <dt>
+                            <span id="lang_dnn_sense_ntod">NIGHT TO DAY</span>
+                          </dt>
+                          <dd id="dnn_sense_ntod">
+
+                          </dd>
+                        </div>
+                        <div id="dnn_schedule_time">
+                          <dt>
+                            <span id="lang_cam_camsetup_daytime"> DAY TIME  </span>
+                          </dt>
+                          <select id="dnn_schedule_start_hour">
+                          </select>
+                          :
+                          <select id="dnn_schedule_start_min">
+                          </select>
+                          ~
+                          <select id="dnn_schedule_end_hour">
+                          </select>
+                          :
+                          <select id="dnn_schedule_end_min">
+                          </select>
+                        </div>
+                      </dl>
+                    </div>
+
+                    <!-- <div class="rectengle">
+                      <dl>
+                        <div class="bottom">
+                          <dt>
+                            <span id="lang_bottom">BOTTOM</span>
+                          </dt>
+                          <dd id="bottom"></dd>
+                        </div>
+                        <div class="top">
+                          <dt>
+                            <span id="lang_top">TOP</span>
+                          </dt>
+                          <dd id="top"></dd>
+                        </div>
+                        <div class="right">
+                          <dt>
+                            <span id="lang_right">RIGHT</span>
+                          </dt>
+                          <dd id="right"></dd>
+                        </div>
+                        <div class="left">
+                          <dt>
+                            <span id="lang_left">LEFT</span>
+                          </dt>
+                          <dd id="left"></dd>
+                        </div>
+                      </dl>
+                    </div> -->
+                  </div>
+                </div>
+                <!-- end of exposure tab -->
+
+                <div id="tab_focus" class="tabpage">
+                  <div class="panel">
+                    <!-- not using preview on this sprint.
+                      <div style="height:405px;">
+                        <img id="mimgid" class="focusarea" src="../images/images/loading_01.gif" style="width: 720px; height:405px; z-index: 2000;">
+                      <table id="focusblock" class="fblock">
+                      </table>
+                    </div> 
+                    -->
+
+                    <div class="focus_compensation">
+                      <h2>
+                        <span id="lang_focus_compensation">FOCUS COMPENSATION</span>
+                      </h2>
+                     
+                      <dl id="image_setting_focus_compensation">
+                        <div class="tem_comp_mode">
+                          <dt>
+                            <span id="lang_tem_compensation">TEMPERATURE</span>
+                          </dt>
+                          <dd>
+                            <select id="tem_comp_mode">
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </dd>
+                        </div>
+                        <div class="dnn_comp_mode">
+                          <dt>
+                            <span id="lang_dnn_compensation">DAY & NIGHT</span>
+                          </dt>
+                          <dd>
+                            <select id="dnn_comp_mode">
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of focus tab -->
+
+                <div id="tab_direct_configure" class="tabpage">
+                  <div>
+                    <input type="button" id="start" value="START"></input>
+                  </div>
+                  <p>
+                    <span id="lang_direct_configure_text1"> * If
+                      you press 'START' button, you can configure the IP
+                      cameras directly by the web access.</span>
+                  </p>
+                  <p>
+                    <span id="lang_direct_configure_text2">
+                      Warning: In this mode, the video recording will be
+                      stopped automatically.</span>
+                  </p>
+                </div>
+                <!-- end of direct configure tab -->
+
+              </div>
+              <!--  end of tab -->
+
+              <div>
+                <input type="button" id="copy_setting"
+                  value="lang_copysettingto"
+                ></input>
+                <input type="button" id="camera_onoff"
+                  value="Camera Off"
+                ></input>
+              </div>
+              <!-- end of copy setting -->
+            </div>
+            <!-- end of cam_image_setup -->
+
+          </div>
+          <!-- c_sp_div_frame c_sp_div_frame_dot -->
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK"
+              class="c_sp_btn_okcancel"
+            /> <input type="button" value="lang_CANCEL" id="cancel"
+              class="c_sp_btn_okcancel"
+            />
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg"></div>
+            <div id="printMsg"></div>
+          </div>
+        </div>
+        <!-- end of c_sp_div_contents -->
+      </form>
+    </div>
+  </div>
+
+  <div id="dialog_copy_setting" title="COPY SETTING TO"></div>
+
+  <div id="dialog_camera_onoff" title="Camera Connect Setting" style="display: none; z-index:1002; outline-style:none; outline-color:invert;">
+    <form id='form_factory_default'>
+
+      <div id="div_factory_default_message">
+        <dl>
+          <dt>
+            <span id='poe_msg'></span>
+          </dt>
+       </dl>
+      </div> <!-- end of div id="div_fw_location" -->
+
+    </form>
+    <!-- end of form id='form_new_user' -->
+  </div>
+  <!-- end of div id="user_dialog" -->
+
+
+  <div id="dialog_background"></div>
+  <div id="dialog_wait" title="WAIT">
+    <div id="dialog_title">
+      <span id="lang_wait">WAIT</span>
+    </div>
+    <div id="dialog_body">
+      <span id="lang_please_wait">PLEASE WAIT...</span><img
+        id="wait_image" class="wait_gif" src="../images/images/busy.gif"
+      ></span>
+    </div>
+  </div>
+  <!-- end of dialog_wait -->
+
+  <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+  <script type="text/javascript">
+      ShowInit('CamImage');
+    </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/CamIpcamMask.js"></script>
+  <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+  <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+  <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+  <script type="text/javascript"
+    src="../scripts/controller/CamController.js"
+  ></script>
+
+  <script type="text/javascript">
+      zzmvc({
+        name : 'CamCompatibility',
+        action : 'index',
+        debug : false
+      });
+
+      dvrpoke();
+    </script>
+</body>
+</html>

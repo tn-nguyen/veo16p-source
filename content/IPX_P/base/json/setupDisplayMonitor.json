@@ -1,0 +1,43 @@
+{
+  "id": "setupDisplayMonitor",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "pageTitle": "setupDisplayMonitor",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "id": "",
+          "cols": [
+            {
+              "content": [
+              { "subtitle": { "subtitle": "MONITOR" } },
+              {
+                "select": {
+                  "label": "SEQUENCE DWELL",
+                  "id": "select_sequence_dwell",
+                  "name": "select_sequence_dwell",
+                  "option":[
+                    {"value": "1", "text": "1 SEC"},
+                    {"value": "2", "text": "2 SEC"},
+                    {"value": "3", "text": "3 SEC"},
+                    {"value": "5", "text": "5 SEC"},
+                    {"value": "10", "text": "10 SEC"},
+                    {"value": "15", "text": "15 SEC"},
+                    {"value": "20", "text": "20 SEC"},
+                    {"value": "30", "text": "30 SEC"},
+                    {"value": "40", "text": "40 SEC"},
+                    {"value": "60", "text": "60 SEC"}
+                  ]
+                }
+              }
+            ]}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+      language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link href="../scripts/jquery/jquery.dropdownMulti.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+    <script src="../scripts/jquery/jquery.dropdownMulti.js"></script>
+
+    <title></title>
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Event", "VCA Event");
+            </script>
+          </ul>
+        </div>
+
+        <form name="eventsetting_vca" id="eventsetting_vca" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div id="c_sp_div_contents">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2><span id="lang_VCA"> VCA Event </span></h2>
+                <div id="fragment-disk">
+                  <table class="event event_vca">
+                    <colgroup>
+                      <col class='col1'/>
+                      <col class='col2'/>
+                      <col class='col3'/>
+                      <col class='col4'/>
+                      <col class='col5'/>
+                      <col class='col6'/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                      <th class='head0'></th>
+                      <th class='colspan' colspan="6">
+                        <span id='lang_action'>Action</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th><span id='lang_CAM'>CAM</span></th>
+                      <th><span id='lang_buzzer'> Buzzer </span></th>
+                      <th><span id='lang_vpopup'> Video </span></th>
+                      <th><span id='lang_email'> Email </span></th>
+                      <th class='ftp'><span> FTP </span></th>
+                      <th class='mobile'><span id="lang_mobile"> Mobile </span></th>
+                      <th class='mobilepush'><span id="lang_mobilepush"> Mobile Push</span></th>
+                    </tr>
+                    <tr>
+                    <th>
+                    </th>
+                      <th>
+                        <input type="checkbox"  id="buzzer_all">
+                      </th>
+                      <th>
+                        <input type="checkbox"  id="vpopup_all">
+                      </th>
+                      <th>
+                        <input type="checkbox"  id="email_all">
+                      </th>
+                      <th class='ftp'>
+                        <input type="checkbox"  id="ftp_all">
+                      </th>
+                      <th class='mobile'>
+                        <input type="checkbox"  id="mobile_all">
+                      </th>
+                      <th class='mobilepush'>
+                        <input type="checkbox"  id="mobilepush_all">
+                      </th>
+                    </tr>
+                    </thead>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer0" id="buzzer0">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup0" id="vpopup0">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email0" id="email0">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp0" id="ftp0">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile0" id="mobile0">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush0" id="mobilepush0">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer1" id="buzzer1">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup1" id="vpopup1">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email1" id="email1">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp1" id="ftp1">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile1" id="mobile1">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush1" id="mobilepush1">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer2" id="buzzer2">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup2" id="vpopup2">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email2" id="email2">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp2" id="ftp2">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile2" id="mobile2">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush2" id="mobilepush2">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      4
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer3" id="buzzer3">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup3" id="vpopup3">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email3" id="email3">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp3" id="ftp3">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile3" id="mobile3">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush3" id="mobilepush3">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class='chenable8'>
+                  <tr>
+                    <td>
+                      5
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer4" id="buzzer4">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup4" id="vpopup4">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email4" id="email4">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp4" id="ftp4">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile4" id="mobile4">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush4" id="mobilepush4">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      6
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer5" id="buzzer5">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup5" id="vpopup5">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email5" id="email5">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp5" id="ftp5">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile5" id="mobile5">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush5" id="mobilepush5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      7
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer6" id="buzzer6">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup6" id="vpopup6">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email6" id="email6">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp6" id="ftp6">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile6" id="mobile6">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush6" id="mobilepush6">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer7" id="buzzer7">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup7" id="vpopup7">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email7" id="email7">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp7" id="ftp7">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile7" id="mobile7">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush7" id="mobilepush7">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class='chenable16'>
+                  <tr>
+                    <td>
+                      9
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer8" id="buzzer8">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup8" id="vpopup8">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email8" id="email8">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp8" id="ftp8">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile8" id="mobile8">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush8" id="mobilepush8">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      10
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer9" id="buzzer9">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup9" id="vpopup9">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email9" id="email9">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp9" id="ftp9">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile9" id="mobile9">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush9" id="mobilepush9">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      11
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer10" id="buzzer10">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup10" id="vpopup10">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email10" id="email10">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp10" id="ftp10">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile10" id="mobile10">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush10" id="mobilepush10">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      12
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer11" id="buzzer11">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup11" id="vpopup11">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email11" id="email11">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp11" id="ftp11">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile11" id="mobile11">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush11" id="mobilepush11">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      13
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer12" id="buzzer12">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup12" id="vpopup12">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email12" id="email12">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp12" id="ftp12">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile12" id="mobile12">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush12" id="mobilepush12">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      14
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer13" id="buzzer13">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup13" id="vpopup13">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email13" id="email13">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp13" id="ftp13">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile13" id="mobile13">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush13" id="mobilepush13">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      15
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer14" id="buzzer14">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup14" id="vpopup14">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email14" id="email14">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp14" id="ftp14">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile14" id="mobile14">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush14" id="mobilepush14">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      16
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer15" id="buzzer15">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup15" id="vpopup15">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email15" id="email15">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp15" id="ftp15">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile15" id="mobile15">
+                    </td>
+                    <td class='mobilepush'>
+                      <input type="checkbox" name="mobilepush15" id="mobilepush15">
+                    </td>
+                  </tr>
+                </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../scripts/selectAll.js"></script>
+    <script type="text/javascript" src="../scripts/init/EventInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('EventVCA');
+    </script>
+
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+    <script type="text/javascript" src="../scripts/model/EventModel.js"></script>
+
+    <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+    <script type="text/javascript" src="../scripts/view/EventView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/EventController.js"></script>
+
+    <script type="text/javascript">
+      zzmvc({
+        name: 'EventVCA',
+        action: 'index',
+        debug: false
+      });
+
+      dvrpoke();
+
+    </script>
+  </body>
+</html>

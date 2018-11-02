@@ -1,0 +1,436 @@
+{
+  "id": "setupCameraCameraInstallationSearchTable",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "input": {
+                    "type": "button",
+                    "id": "buttonSetupCameraCameraInstallationSearch",
+                    "text": "SEARCH"
+                  }
+                },
+                {
+                  "select": {
+                    "id": "selectSetupCameraCameraInstallationSearchType",
+                    "name": "selectSetupCameraCameraInstallationSearchType",
+                    "class": "selectSetupCameraCameraInstallationSearchType",
+                    "option": [
+                      {"value": "0", "text": "Auto scan (LAN)"},
+                      {"value": "2", "text": "Specific IP / Host name"}
+                    ]
+                  }
+                },
+                {
+                  "string": {
+                    "text": "IP / HOST NAME",
+                    "class": "setupCameraCameraInstallationSearchSpecific"
+                  } 
+                },
+                {
+                  "input": {
+                    "type": "text",
+                    "id": "setupCameraCameraInstallationSearchSpecificHost",
+                    "class": "setupCameraCameraInstallationSearchSpecific"
+                  }
+                },
+                {
+                  "string": {
+                    "text": "PORT",
+                    "class": "setupCameraCameraInstallationSearchSpecific"
+                  }
+                },
+                {
+                  "input": {
+                    "type": "text",
+                    "id": "setupCameraCameraInstallationSearchSpecificPort",
+                    "class": "setupCameraCameraInstallationSearchSpecific"
+                  }
+                },
+                {
+                  "string": {
+                    "text": "SEARCHING...",
+                    "class": "setupCameraCameraInstallationSearchSearching"
+                  }
+                },
+                {
+                  "img": {
+                    "id": "setupCameraCameraInstallationSearchSearchingImage",
+                    "class": "setupCameraCameraInstallationSearchSearching",
+                    "src": "/images/ITX_OLD/busy.gif"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "width": 7,
+              "content": [
+                {
+                  "table": {
+                    "id": "tableCameraCameraInstallationSearch0",
+                    "class": "tableCameraCameraInstallationSearch",
+                    "idPrefix": "tdCameraCameraInstallationSearch",
+                    "row": [
+                      {"id": "0"},
+                      {"id": "1"}, 
+                      {"id": "2"},
+                      {"id": "3"},
+                      {"id": "4"},
+                      {"id": "5"},
+                      {"id": "6"},
+                      {"id": "7"},
+                      {"id": "8"},
+                      {"id": "9"},
+                      {"id": "10"},
+                      {"id": "11"},
+                      {"id": "12"},
+                      {"id": "13"},
+                      {"id": "14"},
+                      {"id": "15"}
+                    ],
+                    "cols": [
+                      {
+                        "col": [
+                          {"id": "Model", "text": "MODEL"},
+                          {"id": "Address", "text": "ADDRESS"},
+                          {"id": "Status", "text": "STATUS"},
+                          {"id": "AssignedChannel", "text": "ASSIGNED CHANNEL"},
+                          {"id": "Setup"}
+                        ]
+                      }
+                    ],
+                    "type": [
+                      {"string":{"id": "Model"}},
+                      {"string":{"id": "Address"}},
+                      {"string":{"id": "Status"}},
+                      {
+                        "select" : {
+                          "id": "AssignedChannel",
+                          "class": "Ch",
+                          "option": [
+                            {"value": "-1", "text": "NOT ASSIGNED"},
+                            {"value": "0", "text": "CAM 1"},
+                            {"value": "1", "text": "CAM 2"},
+                            {"value": "2", "text": "CAM 3"},
+                            {"value": "3", "text": "CAM 4"},
+                            {"value": "4", "text": "CAM 5"},
+                            {"value": "5", "text": "CAM 6"},
+                            {"value": "6", "text": "CAM 7"},
+                            {"value": "7", "text": "CAM 8"},
+                            {"value": "8", "text": "CAM 9"},
+                            {"value": "9", "text": "CAM 10"},
+                            {"value": "10", "text": "CAM 11"},
+                            {"value": "11", "text": "CAM 12"},
+                            {"value": "12", "text": "CAM 13"},
+                            {"value": "13", "text": "CAM 14"},
+                            {"value": "14", "text": "CAM 15"},
+                            {"value": "15", "text": "CAM 16"}
+                          ]
+                        }
+                      },
+                      {
+                        "input": {
+                          "type": "button",
+                          "id": "Setup",
+                          "class": "Setup"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "table": {
+                    "id": "tableCameraCameraInstallationSearch1",
+                    "class": "tableCameraCameraInstallationSearch",
+                    "idPrefix": "tdCameraCameraInstallationSearch",
+                    "row": [
+                      {"id": "16"},
+                      {"id": "17"}, 
+                      {"id": "18"},
+                      {"id": "19"},
+                      {"id": "20"},
+                      {"id": "21"},
+                      {"id": "22"},
+                      {"id": "23"},
+                      {"id": "24"},
+                      {"id": "25"},
+                      {"id": "26"},
+                      {"id": "27"},
+                      {"id": "28"},
+                      {"id": "29"},
+                      {"id": "30"},
+                      {"id": "31"}
+                    ],
+                    "cols": [
+                      {
+                        "col": [
+                          {"id": "Model", "text": "MODEL"},
+                          {"id": "Address", "text": "ADDRESS"},
+                          {"id": "Status", "text": "STATUS"},
+                          {"id": "AssignedChannel", "text": "ASSIGNED CHANNEL"},
+                          {"id": "Setup"}
+                        ]
+                      }
+                    ],
+                    "type": [
+                      {"string":{"id": "Model"}},
+                      {"string":{"id": "Address"}},
+                      {"string":{"id": "Status"}},
+                      {
+                        "select" : {
+                          "id": "AssignedChannel",
+                          "class": "Ch",
+                          "option": [
+                            {"value": "-1", "text": "NOT ASSIGNED"},
+                            {"value": "0", "text": "CAM 1"},
+                            {"value": "1", "text": "CAM 2"},
+                            {"value": "2", "text": "CAM 3"},
+                            {"value": "3", "text": "CAM 4"},
+                            {"value": "4", "text": "CAM 5"},
+                            {"value": "5", "text": "CAM 6"},
+                            {"value": "6", "text": "CAM 7"},
+                            {"value": "7", "text": "CAM 8"},
+                            {"value": "8", "text": "CAM 9"},
+                            {"value": "9", "text": "CAM 10"},
+                            {"value": "10", "text": "CAM 11"},
+                            {"value": "11", "text": "CAM 12"},
+                            {"value": "12", "text": "CAM 13"},
+                            {"value": "13", "text": "CAM 14"},
+                            {"value": "14", "text": "CAM 15"},
+                            {"value": "15", "text": "CAM 16"}
+                          ]
+                        }
+                      },
+                      {
+                        "input": {
+                          "type": "button",
+                          "id": "Setup",
+                          "class": "Setup"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "table": {
+                    "id": "tableCameraCameraInstallationSearch2",
+                    "class": "tableCameraCameraInstallationSearch",
+                    "idPrefix": "tdCameraCameraInstallationSearch",
+                    "row": [
+                      {"id": "32"},
+                      {"id": "33"}, 
+                      {"id": "34"},
+                      {"id": "35"},
+                      {"id": "36"},
+                      {"id": "37"},
+                      {"id": "38"},
+                      {"id": "39"},
+                      {"id": "40"},
+                      {"id": "41"},
+                      {"id": "42"},
+                      {"id": "43"},
+                      {"id": "44"},
+                      {"id": "45"},
+                      {"id": "46"},
+                      {"id": "47"}
+                    ],
+                    "cols": [
+                      {
+                        "col": [
+                          {"id": "Model", "text": "MODEL"},
+                          {"id": "Address", "text": "ADDRESS"},
+                          {"id": "Status", "text": "STATUS"},
+                          {"id": "AssignedChannel", "text": "ASSIGNED CHANNEL"},
+                          {"id": "Setup"}
+                        ]
+                      }
+                    ],
+                    "type": [
+                      {"string":{"id": "Model"}},
+                      {"string":{"id": "Address"}},
+                      {"string":{"id": "Status"}},
+                      {
+                        "select" : {
+                          "id": "AssignedChannel",
+                          "class": "Ch",
+                          "option": [
+                            {"value": "-1", "text": "NOT ASSIGNED"},
+                            {"value": "0", "text": "CAM 1"},
+                            {"value": "1", "text": "CAM 2"},
+                            {"value": "2", "text": "CAM 3"},
+                            {"value": "3", "text": "CAM 4"},
+                            {"value": "4", "text": "CAM 5"},
+                            {"value": "5", "text": "CAM 6"},
+                            {"value": "6", "text": "CAM 7"},
+                            {"value": "7", "text": "CAM 8"},
+                            {"value": "8", "text": "CAM 9"},
+                            {"value": "9", "text": "CAM 10"},
+                            {"value": "10", "text": "CAM 11"},
+                            {"value": "11", "text": "CAM 12"},
+                            {"value": "12", "text": "CAM 13"},
+                            {"value": "13", "text": "CAM 14"},
+                            {"value": "14", "text": "CAM 15"},
+                            {"value": "15", "text": "CAM 16"}
+                          ]
+                        }
+                      },
+                      {
+                        "input": {
+                          "type": "button",
+                          "id": "Setup",
+                          "class": "Setup"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "table": {
+                    "id": "tableCameraCameraInstallationSearch3",
+                    "class": "tableCameraCameraInstallationSearch",
+                    "idPrefix": "tdCameraCameraInstallationSearch",
+                    "row": [
+                      {"id": "48"},
+                      {"id": "49"}, 
+                      {"id": "50"},
+                      {"id": "51"},
+                      {"id": "52"},
+                      {"id": "53"},
+                      {"id": "54"},
+                      {"id": "55"},
+                      {"id": "56"},
+                      {"id": "57"},
+                      {"id": "58"},
+                      {"id": "59"},
+                      {"id": "60"},
+                      {"id": "61"},
+                      {"id": "62"},
+                      {"id": "63"}
+                    ],
+                    "cols": [
+                      {
+                        "col": [
+                          {"id": "Model", "text": "MODEL"},
+                          {"id": "Address", "text": "ADDRESS"},
+                          {"id": "Status", "text": "STATUS"},
+                          {"id": "AssignedChannel", "text": "ASSIGNED CHANNEL"},
+                          {"id": "Setup"}
+                        ]
+                      }
+                    ],
+                    "type": [
+                      {"string":{"id": "Model"}},
+                      {"string":{"id": "Address"}},
+                      {"string":{"id": "Status"}},
+                      {
+                        "select" : {
+                          "id": "AssignedChannel",
+                          "class": "Ch",
+                          "option": [
+                            {"value": "-1", "text": "NOT ASSIGNED"},
+                            {"value": "0", "text": "CAM 1"},
+                            {"value": "1", "text": "CAM 2"},
+                            {"value": "2", "text": "CAM 3"},
+                            {"value": "3", "text": "CAM 4"},
+                            {"value": "4", "text": "CAM 5"},
+                            {"value": "5", "text": "CAM 6"},
+                            {"value": "6", "text": "CAM 7"},
+                            {"value": "7", "text": "CAM 8"},
+                            {"value": "8", "text": "CAM 9"},
+                            {"value": "9", "text": "CAM 10"},
+                            {"value": "10", "text": "CAM 11"},
+                            {"value": "11", "text": "CAM 12"},
+                            {"value": "12", "text": "CAM 13"},
+                            {"value": "13", "text": "CAM 14"},
+                            {"value": "14", "text": "CAM 15"},
+                            {"value": "15", "text": "CAM 16"}
+                          ]
+                        }
+                      },
+                      {
+                        "input": {
+                          "type": "button",
+                          "id": "Setup",
+                          "class": "Setup"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "input": {
+                    "type": "button",
+                    "id": "tdCameraCameraInstallationSearchPrevious",
+                    "class": "tdCameraCameraInstallationSearchPrevious",
+                    "text": "PREVIOUS"
+                  }
+                },
+                {
+                  "string": {
+                    "id":"setupCameraCameraInstallationSearchPageState",
+                    "text": "1 / 1"
+                  }
+                },
+                {
+                  "input": {
+                    "type": "button",
+                    "id": "tdCameraCameraInstallationSearchNext",
+                    "class": "tdCameraCameraInstallationSearchNext",
+                    "text": "NEXT"
+                  }
+                }
+              ]
+            },
+            {
+              "width": 3,
+              "last": true,
+              "content": [
+                { "subtitle": { "text": "SEARCH RESULT"} },
+                {
+                  "string": {
+                    "id":"setupCameraCameraInstallationSearchAssigned",
+                    "text": "# OF ASSIGNED CAMERAS : %d",
+                    "br":""
+                  }
+                },
+                {
+                  "string": {
+                    "id":"setupCameraCameraInstallationSearchFound",
+                    "text": "# OF FOUND CAMERAS : %d",
+                    "br":""
+                  }
+                },
+                {
+                  "string": {
+                    "id":"setupCameraCameraInstallationSearchNeed",
+                    "text": "# OF CAMERAS NEEDED TO BE SET : %d",
+                    "br":""
+                  }
+                },
+                {
+                  "input": {
+                    "type": "button",
+                    "id": "setupCameraCameraInstallationSetupAll",
+                    "text": "SETUP ALL CAMERAS"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

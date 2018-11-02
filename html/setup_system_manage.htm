@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    @import url("../styles/styles/global.css");
+    @import url("../styles/styles/setup.css");
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+
+  <script type="text/javascript">
+    info_include();
+  </script>
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/validate.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+  passwordRenewCheck();
+    language_include();
+  </script>
+
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+  <title></title>
+</head>
+
+<body>
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+        print_top_menu(document, "SETUP");
+      </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+          <script type="text/javascript">
+            print_left_menu(document, "System", "System Management");
+          </script>
+        </ul>
+      </div>
+      <div id="c_sp_div_contents">
+        <form name="systemsetting_info" id="systemsetting_info">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <h2>
+            <span id='lang_Systemmanagement'>
+              System Management
+            </span>
+            </h2>
+            <div class="c_sp_div_system" style="display:none">
+              <dl>
+                <dt class="list"><span id='lang_fwupdate'>FW UPDATE</span></dt>
+                <dd><input type="button" class="butdisp" id="fwupdate" value="Network" disabled /></dd>
+             </dl>
+            </div>
+
+            <div class="c_sp_div_system network_fw_update" style="display:none">
+              <dl>
+                <dt class="list remove_alsok"><span id='lang_network_fw_update'>NETWORK FW UPDATE</span></dt>
+                <dd class="remove_alsok"><input type="button" id="netfwupdate" value="UPGRADE" /></dd>
+                <dt class="list"><span id='lang_factory_default'>FACTORY DEFAULT</span></dt>
+                <dd><input type="button" class="btn" id="netfactorydefault" value="FACTORY" /></dd>
+                <dt class="list"><span id='lang_systemdata'>SYSTEM DATA</span></dt>
+                <dd>
+                  <input type="button" class="half_btn" id="save" value="SAVE"/>
+                  <input type="button" class="half_btn" id="load" value="LOAD"/>
+                </dd>
+                <div class="foripx">
+                <dt class="list foripx"><span id='lang_reboot'>NVR RESTART</span></dt>
+                <dd><input type="button" class="btn foripx" id="nvrrestart" value="RESTART" /> </dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="c_sp_div_system">
+              <dl class="systemid">
+                <dt><span class="list"><span id='lang_Systemid'>SYSTEM ID</span></span></dt>
+                <dd>
+                  <input type="text" class="lstdisp" id="system_id" name="system_id" maxlength="16" />
+                </dd>
+              </dl>
+              <dl>
+                <dt class="list"><span id='lang_passwd'>Password</span></dt>
+                <dd>
+                <select  id="passwd_enable" class="lstdisp" name="passwd_enable" >
+                  <option value="0">Off</option>
+                  <option value="1">On</option>
+                </select>
+                </dd>
+                <dt class="list"><span id='lang_passwd_expire'>Password Expired</span></dt>
+                <dd>
+                <select  id="passwd_expired" class="lstdisp" name="passwd_expired" >
+                  <option value="0">NOT USED</option>
+                  <option value="1">1 MONTH</option>
+                  <option value="2">2 MONTHS</option>
+                  <option value="3">3 MONTHS</option>
+                  <option value="4">4 MONTHS</option>
+                  <option value="5">5 MONTHS</option>
+                  <option value="6">6 MONTHS</option>
+                  <option value="12">12 MONTHS</option>
+                </select>
+                </dd>
+                <dt class="list"><span id='lang_renew_passwd'>RENEW PASSWORD</span></dt>
+                <dd>
+                <select  id="passwd_renew" class="lstdisp" name="passwd_renew" >
+                  <option value="0">Off</option>
+                  <option value="1">On</option>
+                </select>
+                </dd>
+                <dt class="list"><span id='lang_autologout'>Auto Logout</span></dt>
+                <dd>
+                <select id="auto_logout" name="auto_logout" class="lstdisp" >
+                  <option value="0">Off</option>
+                  <option value="1">On</option>
+                </select>
+                </dd>
+                <dt class="list"><span id='lang_autologout_duration'>Duration</span></dt>
+                <dd>
+                <select id="duration" name="duration" class="lstdisp" >
+                  <option value="1">1 MINUTE</option>
+                  <option value="2">2 MINUTES</option>
+                  <option value="3">3 MINUTES</option>
+                  <option value="5">5 MINUTES</option>
+                  <option value="10">10 MINUTES</option>
+                </select>
+                </dd>
+              </dl>
+              <dl class='foripx'>
+                <dt class="list"><span id='lang_poelimit'>POE POWER LIMIT</span></dt>
+                <dd>
+                <select id="poe_limit" name="poe_limit" class="lstdisp" disabled>
+                  <option value="40">40w</option>
+                  <option value="72">72w</option>
+                  <option value="100">100w</option>
+                </select>
+                </dd>
+              </dl>
+              <dl class='foripx foripxpro hideforeco'>
+                <dt class="list"><span id='lang_poelimit_hub'>POE POWER LIMIT (HUB)</span></dt>
+                <dd>
+                <select id="poe_limit_hub" name="poe_limit_hub" class="lstdisp" disabled>
+                  <option value="40">40w</option>
+                  <option value="72">72w</option>
+                </select>
+                </dd>
+              </dl>
+              <dl class='foripx'>
+                <dt class="list"><span id='lang_powerfreq'>AC POWER FREQUENCY</span></dt>
+                <dd>
+                <select id="sig_type" name="sig_type" class="lstdisp" disabled>
+                  <option value="0">60Hz</option>
+                  <option value="1">50Hz</option>
+                </select>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg">
+            </div>
+            <div id="printMsg">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!--fw upgrade by 128M nand flash memory-->
+  <div id="dialog_nand_fw_upgrade" title="FW UPGRADE" style="display: none;">
+    <form id='form_nand_fw_upgrade'>
+      <div>
+        <dl>
+          <dt>
+            <dd id="nand_information">
+              <p id="nand_info_note">Note</p>
+              <p id="nand_info_dont_close_browser">-Please do not close the current browser window.</p>
+              <p id="nand_info_dont_close_server">-Do not close the firmware server.</p>
+              <p id="nand_info_dont_close_network">-Do not remove any device power or network cables.</p>
+            </dd>
+          </dt>
+        </dl>
+        <dl>
+          <dt>
+            <span id='lang_fw_location'>FW LOCATION</span>
+          </dt>
+          <dd>
+            <input type="text" class="text" id="urlname" value="http://" />
+          </dd>
+        </dl>
+        <dl>
+          <dt class="nand_fw_info">
+            <p id="nand_fw_info"></p>
+          </dt>
+        </dl>
+      </div>
+    </form>
+  </div>
+
+  <div id="dialog_nand_fwup_progressbar" title="FW UPGRADE" style="display: none;">
+    <img src="../images/images/busy.gif" id='nand_progress_image'>
+    <p id="nand_fw_prgss_info"> - Firmware backup completed. System will restart. Please wait.</p>
+    <p id="nand_fw_prgss_info1"> - Upgrades take 10 minutes on average and the upgrade may fail or take longer due to poor network conditions.</p>
+  </div>
+
+  <div id="dialog_fw_upgrade" title="FW UPGRADE" style="display: none;">
+    <form id='form_fw_upgrade'>
+      <div id="div_fw_location">
+        <dl>
+          <dt>
+            <span id='lang_fw_location'>FW LOCATION</span>
+          </dt>
+          <dd>
+            <input type="text" class="text" id="fwurl" value="http://" />
+          </dd>
+        </dl>
+      </div> <!-- end of div id="div_fw_location" -->
+
+      <p><input type="button" id="netfwverify" value="VERIFY" /></p>
+      <p class="tips"></p>
+
+      <div id="div_confirm_upgrade" style="display:none;" >
+        <input type="button" id="upgrade_yes" value="YES" />
+        <input type="button" id="upgrade_no" value="NO" />
+      </div>
+
+      <div id="div_update_progress" style="display:none;" >
+        <div id="progressbar"></div>
+      </div> <!-- div id="div_update_progress" -->
+
+    </form>
+    <!-- end of form id='form_new_user' -->
+  </div>
+  <!-- end of div id="user_dialog" -->
+
+  <div id="dialog_factory_default" title="FACTORY DEFAULT" style="display: none;">
+    <form id='form_factory_default'>
+
+      <div id="div_factory_default_message">
+        <dl>
+          <dt>
+            <span id='lang_fac_message'>WARNING</span>
+          </dt>
+       </dl>
+      </div> <!-- end of div id="div_fw_location" -->
+
+      <p class="factory_message">
+      </p>
+    </form>
+    <!-- end of form id='form_new_user' -->
+  </div>
+  <!-- end of div id="user_dialog" -->
+
+  <div id="dialog_reboot_confirm" style="display: none;">
+    <form id="form_reboot_confirm">
+      <div id="div_password_check">
+        <p><span id="lang_confirm_password">CONFIRM PASSWORD</span></p>
+        <input type="password" id="password"/>
+      </div>
+      <div id="div_confirm_msg" style="display:none">
+        <p class="confirm_msg">
+          <span id="lang_reboot_message">The System will be reboot.</br>Do you want to contienue?
+</span>
+        </p>
+      </div>
+      <p class="tips"></p>
+      <div id="div_reboot_progress" style="display:none;" >
+        <div id="progressbar"></div>
+      </div>
+    </form>
+  </div>
+
+
+  <div id="dialog_pleasewait" title="WAIT" style="display: none;">
+    <form id="form_wait">
+      <p><span class="tips">Please Wait...</span></p>
+    </form>
+  </div>
+
+  <div id="dialog_sysdb_upload" style="display: none;">
+    <form id='dbup' action="/cgi-bin/webra_dbfile_upload.cgi" method="post" enctype="multipart/form-data">
+      <input type="file" id="setupFileUpload" size="50" name="setupFileUpload">
+    </form>
+    <p><span class="tips"></span></p>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/SystemInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('SystemManage');
+    </script>
+
+    <script type="text/javascript" src="../scripts/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+    <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+    <script type="text/javascript" src="../scripts/model/SystemModel.js"></script>
+    <script type="text/javascript" src="../scripts/view/SystemView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/SystemController.js"></script>
+
+    <script type="text/javascript">
+      zzmvc({
+        name: 'SystemManage',
+        action: 'index',
+        debug: false
+      });
+
+      dvrpoke();
+    </script>
+  </body>
+</html>

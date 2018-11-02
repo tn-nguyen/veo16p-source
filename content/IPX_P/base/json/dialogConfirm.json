@@ -1,0 +1,15 @@
+{
+  "id": "dialogConfirm",
+  "html": "template/dialogSimple.htm",
+  "loadTemplate": {
+  },
+
+  "imgDiv": "imgDialogConfirm",
+  "imgClass": "imgDialogConfirm",
+
+  "textDiv": "divDialogConfirmText",
+  "textClass": "divDialogConfirmText",
+
+  "dialog": true,
+  "text": "CONFIRM"
+}

@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css"> 
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">info_include();</script>
+
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();</script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+    <title></title>
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">print_left_menu(document, "Camera", "Type");</script>
+          </ul>
+        </div>
+        <form name="camsetting_cam" id="camsetting_cam" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div id="c_sp_div_contents">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2>
+                <span id='lang_CameraType'>
+                  Camera Type
+                </span>
+              </h2>
+              <table class="c_tb_camtype">
+                <colgroup>
+                  <col class='col1'/>
+                  <col class='col2'/>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <span class='lang_MenuCamType'>CH</span>
+                    </th>
+                    <th>
+                      Type
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>1
+                    </td>
+                    <td>
+                      <select name='camtype1' id='camtype1' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>2
+                    </td>
+                    <td>
+                      <select name='camtype2' id='camtype2' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>3
+                    </td>
+                    <td>
+                      <select name='camtype3' id='camtype3' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>4
+                    </td>
+                    <td>
+                      <select name='camtype4' id='camtype4' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                </tbody>
+                <tbody class="chenable8">
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>5
+                    </td>
+                    <td>
+                      <select name='camtype5' id='camtype5' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>6
+                    </td>
+                    <td>
+                      <select name='camtype6' id='camtype6' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>7
+                    </td>
+                    <td>
+                      <select name='camtype7' id='camtype7' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>8
+                    </td>
+                    <td>
+                      <select name='camtype8' id='camtype8' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                </tbody>
+                <tbody class="chenable16">
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>9
+                    </td>
+                    <td>
+                      <select name='camtype9' id='camtype9' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>10
+                    </td>
+                    <td>
+                      <select name='camtype10' id='camtype10' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>11
+                    </td>
+                    <td>
+                      <select name='camtype11' id='camtype11' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>12
+                    </td>
+                    <td>
+                      <select name='camtype12' id='camtype12' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>13
+                    </td>
+                    <td>
+                      <select name='camtype13' id='camtype13' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>14
+                    </td>
+                    <td>
+                      <select name='camtype14' id='camtype14' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>15
+                    </td>
+                    <td>
+                      <select name='camtype15' id='camtype15' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                  <tr>
+                    <td class='right_cel'>
+                      <span class='lang_MenuCamType'>CH</span>16
+                    </td>
+                    <td>
+                      <select name='camtype16' id='camtype16' disabled="disabled">
+                        <option value='-1'>------------</option>
+                        <option value='0'>1920x1080p, 25fps</option>
+                        <option value='1'>1920x1080p, 30fps</option>
+                        <option value='2'>1920x1080p, 60fps</option>
+                        <option value='3'>1920x1080i, 60fps</option>
+                        <option value='4'>1680x1050p, 60fps</option>
+                        <option value='5'>1280x1024p, 60fps</option>
+                        <option value='6'>1280x720p, 25fps</option>
+                        <option value='7'>1280x720p, 30fps</option>
+                        <option value='8'>1280x720p, 50fps</option>
+                        <option value='9'>1280x720p, 60fps</option>
+                        <option value='10'>1024x768p, 25fps</option>
+                        <option value='11'>800x600p, 30fps</option>
+                        <option value='12'>720x576i, 50fps</option>
+                        <option value='13'>720x480i, 60fps</option>
+                        <option value='98'>SD(PAL)</option>
+                        <option value='99'>SD(NTSC)</option>
+                      </select>
+                    </td>
+                  </tr>                                    
+                </tbody>
+              </table>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('CamType');
+      </script>        
+      <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+      <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+
+      <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+      <script type="text/javascript" src="../scripts/controller/CamController.js"></script>
+
+      <script type="text/javascript">
+
+        zzmvc({
+name: 'CamType',
+action: 'index',
+debug: false
+});
+
+dvrpoke();
+
+</script>
+    </body>
+  </html>

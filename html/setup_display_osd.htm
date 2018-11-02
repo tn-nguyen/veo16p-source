@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css">
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">info_include();</script>
+
+
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+        <script type="text/javascript">
+        passwordRenewCheck();
+        language_include();</script>
+
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+        <title></title>
+
+    </head>
+
+    <body>
+
+        <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                        <script type="text/javascript">print_left_menu(document, "Display", "OSD");</script>
+                    </ul>
+                </div>
+
+                <form name="displaysetting_osd" id="displaysetting_osd" action='/cgi-bin/webra_fcgi.fcgi'>
+                    <div id="c_sp_div_contents">
+                        <div class="c_sp_div_frame c_sp_div_frame_dot">
+                            <h2>
+                            <span id='lang_OSDsetting'>OSD setting</span>
+                            </h2>
+                            <div class="c_sp_div_disp">
+                                <dl>
+                                    <dt>
+                                        <span class="list">
+                                            <span id='lang_Cameratitle'>
+                                                Camera title
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="cam_title" name="cam_title" class="lstdisp">
+                                            <option value="0">Off</option>
+                                            <option value="1">On</option>
+                                        </select>
+                                    </dd>
+                                    <dt>
+                                        <span class="list">
+                                            <span id='lang_Recordingmodeicon'>
+                                                Recording mode icon
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="recod_mode" name="recod_mode" class="lstdisp">
+                                            <option value="0">Off</option>
+                                            <option value="1">On</option>
+                                        </select>
+                                    </dd>
+                                    <dt>
+                                        <span class="list">
+                                            <span id='lang_Audiomodeicon'>
+                                                Audio mode icon
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="audio_mode" name="audio_mode" class="lstdisp">
+                                            <option value="0">Off</option>
+                                            <option value="1">On</option>
+                                        </select>
+                                    </dd>
+                                    <!--<dt><span class="list">TEXT-IN</span></dt> ver2.0-->
+                                    <!--
+                                    <dd>
+                                    <select  id="text_in" name="text_in" class="lstdisp">
+                                    <option value="10">10 SEC</option>
+                                    <option value="15">15 SEC</option>
+                                    <option value="20">20 SEC</option>
+                                    </select>
+                                    </dd>
+                                    ver 2.0-->
+                                </dl>
+                            </div>
+                            <div class="c_sp_div_disp">
+                                <dl>
+                                    <dt>
+                                        <span class="list">
+                                            <span id='lang_StatusbarFS'>
+                                                Status bar on Full Screen Mode
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="status_bar_timeout" name="status_bar_timeout" class="lstdisp">
+                                            <option value="0">Always On</option>
+                                            <option value="1">Auto Hide</option>
+                                            <option value="5">5 SEC</option>
+                                            <option value="10">10 SEC</option>
+                                            <option value="15">15 SEC</option>
+                                            <option value="20">20 SEC</option>
+                                            <option value="30">30 SEC</option>
+                                            <option value="60">1 MIN</option>
+                                        </select>
+                                    </dd>
+                                    <dt class='remove_alsok'> 
+                                        <span class="list">
+                                            <span id='lang_TimelineFS'>
+                                                Time Line on full screen mode
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd class='remove_alsok'>
+                                        <select  id="timeline_fs" name="timeline_fs" class="lstdisp">
+                                            <option value="0">Auto Hide</option>
+                                            <option value="1">Always Off</option>
+                                            <option value="2">Always On</option>
+                                        </select>
+                                    </dd>
+                                    
+                                    <dt>
+                                      <span class="list">
+                                        <span id='lang_zoom_pip'>
+                                          Zoom PIP
+                                        </span>
+                                      </span>    
+                                    </dt>
+                                    <dd>
+                                      <select id="zoom_pip" name="zoom_pip" class="lstdisp">
+                                        <option value="0">Always On</option>
+                                        <option value="1">1 SEC</option>
+                                        <option value="3">3 SEC</option>
+                                        <option value="5">5 SEC</option>
+                                      </select>
+                                    </dd>
+
+                                    <dt>
+                                        <span class="list">
+                                            <span id='lang_Border'>
+                                                Border
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="border" name="border" class="lstdisp">
+                                            <option value="0">Off</option>
+                                            <option value="1">On</option>
+                                        </select>
+                                    </dd>
+                                    <dt>
+                                        <span class="list">
+                                            <span id='lang_Bordercolor'>
+                                                Border color
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="border_color" name="border_color" class="lstdisp">
+                                            <option value="0" class="white">White</option>
+                                            <option value="1" class="gray">Gray</option>
+                                            <option value="2" class="yellow">Yellow</option>
+                                            <option value="3" class="blue">Blue</option>
+                                            <option value="4" class="green">Green</option>
+                                            <option value="5" class="red">Red</option>
+                                        </select>
+                                    </dd>
+
+                                    <dt>
+                                      <span class="list">
+                                        <span id='lang_user_name'>
+                                          User Name
+                                        </span>
+                                      </span>
+                                    </dt>
+                                    <dd>
+                                      <select id="user_name" name="user_name" class="lstdisp">
+                                        <option value="0">Off</option>
+                                        <option value="1">On</option>
+                                      </select>
+                                    </dd>
+                                    <!--
+                                    <dt id='limdis'><span class="list"><div id='lang_Motionsensordisplay'>Motion sensor display</div></span></dt>
+                                    <dt id='limcolor'><span class="list"><div id='lang_Motioncolor'>Motion color</div></span></dt>
+                                    -->
+                                    <!--
+                                    <dd id="limsensordislst">
+                                    <select  id="motion_sensor_dis" name="motion_sensor_dis" class="lstdisp">
+                                    <option value="0">Off</option>
+                                    <option value="1">On</option>
+                                    </select>
+                                    </dd>
+                                    <dd id="limcolorlst">
+                                    <select  id="motion_color" name="motion_color" class="lstdisp">
+                                    <option value="0">Yellow</option>
+                                    <option value="1">Blue</option>
+                                    <option value="2">Green</option>
+                                    <option value="3">Red</option>
+                                    </select>
+                                    </dd>
+                                    -->
+                                </dl>
+                            </div>
+                            <div class="c_sp_div_disp">
+                                <dl>
+                                    <dt>
+                                        <span class="list">
+                                            <span id='lang_Language'>
+                                                WEB Language
+                                            </span>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="language" name="language" class="lstdisp">
+                                            <option value="english">English</option>
+                                            <option value="korean">Korean</option>
+                                            <option value="japanese">Japanese</option>
+                                            <!--
+                                            <option value="italian">Italian</option>
+                                            <option value="spanish">Spanish</option>
+                                            <option value="french">French</option>
+                                            <option value="german">German</option>
+                                            -->
+                                            <option value="russian">Russian</option>
+                                            <!--
+                                            <option value="polish">Polish</option>
+                                            <option value="turkish">Turkish</option>
+                                            <option value="thai">Thai</option>
+                                            <option value="chinese(s)">Chinese(s)</option>
+                                            <option value="chinese(t)">Chinese(t)</option>
+                                            <option value="dutch">Dutch</option>
+                                            <option value="portuguese br">Brazil</option>
+                                            <option value="bulgarian">Bulgarian</option>
+                                            <option value="persian">Persian</option>
+                                            <option value="portuguese pt">Portuguese</option>
+                                            -->
+                                        </select>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../scripts/init/DispSndInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('DispOSD');
+        </script>
+
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/DispSndModel.js"></script>
+
+        <script type="text/javascript" src="../scripts/view/DispSndView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/DispSndController.js"></script>
+
+        <script type="text/javascript">
+
+
+            zzmvc({
+                name: 'DispOSD',
+                action: 'index',
+                debug: false
+            });
+
+            dvrpoke();
+
+        </script>
+    </body>
+</html>

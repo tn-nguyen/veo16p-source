@@ -1,0 +1,6 @@
+{
+  "id": "setupDisplaySequence",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  }
+}

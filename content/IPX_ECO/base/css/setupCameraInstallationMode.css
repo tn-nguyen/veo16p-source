@@ -1,0 +1,76 @@
+/*********************************************************************************************************/
+/* setupCameraInstallationMode.css */
+/*********************************************************************************************************/
+
+#setupCameraInstallationMode {
+
+}
+
+#setupCameraInstallationMode {
+  position: relative;
+}
+
+#setupCameraInstallationMode img{
+  width: 95%;
+}
+
+#setupCameraInstallationMode span.cctvmodeText{
+  position: absolute;
+  background-color: #A8B6C4;
+  text-align: center;
+  line-height: 15px;
+}
+
+#setupCameraInstallationMode span.openmodeText{
+  position: absolute;
+  background-color: #A8B6C4;
+  text-align: center;
+  line-height: 15px;
+}
+
+#setupCameraInstallationMode h2 {
+	font-size: 8px;
+	font-weight: bold;
+}
+
+/*********************************************************************************************************/
+/* cctv mode text position */
+/*********************************************************************************************************/
+#setupCameraInstallationMode #cctvmodeTextLan { top: 118px; left: 269px; width: 100px;}
+#setupCameraInstallationMode #cctvmodeTextProtectedNetwork { top: 118px; left: 385px; width: 140px;}
+#setupCameraInstallationMode #cctvmodeTextInternet { top: 200px; left: 175px; width: 65px;}
+#setupCameraInstallationMode #cctvmodeTextGateway { top: 162px; left: 324px; width:50px; font-size:10px;}
+#setupCameraInstallationMode #cctvmodeTextPc1 { top: 300px; left: 142px; width:25px;}
+#setupCameraInstallationMode #cctvmodeTextPc2 { top: 300px; left: 289px; width: 25px;}
+#setupCameraInstallationMode #cctvmodeTextDedicatedSwitch { top: 323px; left: 410px; width: 120px;}
+
+/*********************************************************************************************************/
+/* open mode text position */
+/*********************************************************************************************************/
+#setupCameraInstallationMode #openmodeTextOpenNetwork { top: 120px; left: 225px; width: 180px;}
+#setupCameraInstallationMode #openmodeTextInternet { top: 160px; left: 215px; width: 65px;}
+#setupCameraInstallationMode #openmodeTextGateway { top: 160px; left: 322px; width: 65px;}
+#setupCameraInstallationMode #openmodeTextPc1 { top: 307px; left: 105px; width:25px;}
+#setupCameraInstallationMode #openmodeTextPc2 { top: 307px; left: 286px; width:25px;}
+#setupCameraInstallationMode #openmodeTextGeneralSwitch { top: 323px; left: 413px; width: 120px;}
+
+/*********************************************************************************************************/
+/* cctv mode text position for IE7 */
+/*********************************************************************************************************/
+.ie7 #setupCameraInstallationMode #cctvmodeTextLan { top: 128px; left: 269px; width: 100px;}
+.ie7 #setupCameraInstallationMode #cctvmodeTextProtectedNetwork { top: 118px; left: 385px; width: 140px;}
+.ie7 #setupCameraInstallationMode #cctvmodeTextInternet { top: 210px; left: 175px; width: 65px;}
+.ie7 #setupCameraInstallationMode #cctvmodeTextGateway { top: 172px; left: 324px; width:50px; font-size:10px;}
+.ie7 #setupCameraInstallationMode #cctvmodeTextPc1 { top: 310px; left: 142px; width:25px;}
+.ie7 #setupCameraInstallationMode #cctvmodeTextPc2 { top: 310px; left: 289px; width: 25px;}
+.ie7 #setupCameraInstallationMode #cctvmodeTextDedicatedSwitch { top: 313px; left: 410px; width: 120px;}
+
+/*********************************************************************************************************/
+/* open mode text position for IE7 */
+/*********************************************************************************************************/
+.ie7 #setupCameraInstallationMode #openmodeTextOpenNetwork { top: 130px; left: 225px; width: 180px;}
+.ie7 #setupCameraInstallationMode #openmodeTextInternet { top: 170px; left: 215px; width: 65px;}
+.ie7 #setupCameraInstallationMode #openmodeTextGateway { top: 170px; left: 322px; width: 65px;}
+.ie7 #setupCameraInstallationMode #openmodeTextPc1 { top: 317px; left: 105px; width:25px;}
+.ie7 #setupCameraInstallationMode #openmodeTextPc2 { top: 317px; left: 286px; width:25px;}
+.ie7 #setupCameraInstallationMode #openmodeTextGeneralSwitch { top: 333px; left: 413px; width: 120px;}

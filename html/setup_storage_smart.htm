@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css">
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">
+            info_include();
+        </script>
+
+        
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+        
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+        
+        <script type="text/javascript">
+        passwordRenewCheck();
+            language_include();
+        </script>
+
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+        
+        <title></title>
+    </head>
+
+    <body>
+
+        <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">
+                      print_top_menu(document, "SETUP");
+                </script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                    <script type="text/javascript">
+                          print_left_menu(document, "Storage", "SMART Setup");
+                     </script>
+                    </ul>
+                </div>
+    
+                <div id="c_sp_div_contents">
+                    <div class="c_sp_div_frame c_sp_div_frame_dot">
+                        <h2><span id='lang_MenuStorageSmart'>Storage S.M.A.R.T.</span></h2>
+                        <div id="smart_tabs">
+                            <ul>
+                                <li>
+                                    <a href='#tab_internal'><span id='lang_MenuStorageInternal'>lang_MenuStorageInternal</span></a>
+                                </li>
+                                <li class="exist_external remove_alsok">
+                                    <a href='#tab_external'><span id='lang_MenuStorageExternal'>lang_MenuStorageExternal</span></a>
+                                </li>
+                            </ul>
+                            <div id="tab_internal">
+                                <table class="c_sp_tb_storage_smart">
+                                    <thead>
+                                        <tr>
+                                            <th class="head1"></th>
+                                            <th class="head2"><span id="lang_storage_disk">Disk</span>1</th>
+                                            <th class="head2"><span id="lang_storage_disk">Disk</span>2</th>
+                                            <th class="head2"><span id="lang_storage_disk">Disk</span>3</th>
+                                            <th class="head2"><span id="lang_storage_disk">Disk</span>4</th>
+                                            <th class="head2"><span id="lang_storage_disk">Disk</span>5</th>
+                                            <th class="in_detail">Threshold</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id='lang_smart'>S.M.A.R.T. Status</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_status0'></span></td>
+                                          <td class="tdright"><span id='in_status1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_status2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_status3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_status4'></span></td>
+                                          <td class="in_detail"><span id='in_status_threshold'></span></td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody id='in_detail'>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id='lang_smart_hddtemp'>HDD Temperature</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_temperature0'></span></td>
+                                          <td class="tdright"><span id='in_temperature1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_temperature2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_temperature3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_temperature4'></span></td>
+                                          <td class="in_detail"><span id='in_temperature_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_readerr">Read Error Rate</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_readerr0'></span></td>
+                                          <td class="tdright"><span id='in_readerr1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_readerr2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_readerr3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_readerr4'></span></td>
+                                          <td class="in_detail"><span id='in_readerr_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_seekerr">Seek Error Rate</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_seekerr0'></span></td>
+                                          <td class="tdright"><span id='in_seekerr1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_seekerr2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_seekerr3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_seekerr4'></span></td>
+                                          <td class="in_detail"><span id='in_seekerr_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_realloc">Reallocated Sectors Count</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_realloc0'></span></td>
+                                          <td class="tdright"><span id='in_realloc1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_realloc2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_realloc3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_realloc4'></span></td>
+                                          <td class="in_detail"><span id='in_realloc_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_spinup">Spin Up Time</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_spinup0'></span></td>
+                                          <td class="tdright"><span id='in_spinup1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_spinup2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_spinup3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_spinup4'></span></td>
+                                          <td class="in_detail"><span id='in_spinup_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_spinretry">Spin Retry Count</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_spinretry0'></span></td>
+                                          <td class="tdright"><span id='in_spinretry1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_spinretry2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_spinretry3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_spinretry4'></span></td>
+                                          <td class="in_detail"><span id='in_spinretry_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_startstop">Start/Stop Count</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_startstop0'></span></td>
+                                          <td class="tdright"><span id='in_startstop1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_startstop2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_startstop3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_startstop4'></span></td>
+                                          <td class="in_detail"><span id='in_startstop_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_powercyc">Power Cycle Count</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_powercyc0'></span></td>
+                                          <td class="tdright"><span id='in_powercyc1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_powercyc2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_powercyc3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_powercyc4'></span></td>
+                                          <td class="in_detail"><span id='in_powercyc_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_diskpwron">Disk Power-On Hours</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_diskonhours0'></span></td>
+                                          <td class="tdright"><span id='in_diskonhours1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_diskonhours2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_diskonhours3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_diskonhours4'></span></td>
+                                          <td class="in_detail"><span id='in_diskonhours_threshold'></span></td>
+                                        </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_serialnum">SERIAL NUMBER</span>
+                                          </th>
+                                          <td class="tdright"><span id='in_serial0'></span></td>
+                                          <td class="tdright"><span id='in_serial1'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_serial2'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_serial3'></span></td>
+                                          <td class="tdright remove_alsok"><span id='in_serial4'></span></td>
+                                          <td class="in_detail"><span id='in_serial_threshold'></span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                <input type="button" id="but_detail_in" class="c_sp_but_detail" value="DETAIL"/>
+                            </div>
+                            <div id="tab_external">
+                                <table class="c_sp_tb_storage_smart">
+                                  <thead>
+                                    <tr>
+                                      <th class="head1"></th>
+                                      <th class="head2"><span id="lang_storage_disk">Disk</span>1</th>
+                                      <th class="head2"><span id="lang_storage_disk">Disk</span>2</th>
+                                      <th class="head2"><span id="lang_storage_disk">Disk</span>3</th>
+                                      <th class="head2"><span id="lang_storage_disk">Disk</span>4</th>
+                                      <th class="head2"><span id="lang_storage_disk">Disk</span>5</th>
+                                      <th class="ex_detail">Threshold</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id='lang_smart_ex'>S.M.A.R.T. Status</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_status0'></span></td>
+                                      <td class="tdright"><span id='ex_status1'></span></td>
+                                      <td class="tdright"><span id='ex_status2'></span></td>
+                                      <td class="tdright"><span id='ex_status3'></span></td>
+                                      <td class="tdright"><span id='ex_status4'></span></td>
+                                      <td class="ex_detail"><span id='ex_status_threshold'></span></td>
+                                    </tr>
+                                  </tbody>
+                                  <tbody id='ex_detail'>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id='lang_smart_hddtemp_ex'>HDD Temperature</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_temperature0'></span></td>
+                                      <td class="tdright"><span id='ex_temperature1'></span></td>
+                                      <td class="tdright"><span id='ex_temperature2'></span></td>
+                                      <td class="tdright"><span id='ex_temperature3'></span></td>
+                                      <td class="tdright"><span id='ex_temperature4'></span></td>
+                                      <td class="ex_detail"><span id='ex_temperature_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_readerr_ex">Read Error Rate</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_readerr0'></span></td>
+                                      <td class="tdright"><span id='ex_readerr1'></span></td>
+                                      <td class="tdright"><span id='ex_readerr2'></span></td>
+                                      <td class="tdright"><span id='ex_readerr3'></span></td>
+                                      <td class="tdright"><span id='ex_readerr4'></span></td>
+                                      <td class="ex_detail"><span id='ex_readerr_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_seekerr_ex">Seek Error Rate</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_seekerr0'></span></td>
+                                      <td class="tdright"><span id='ex_seekerr1'></span></td>
+                                      <td class="tdright"><span id='ex_seekerr2'></span></td>
+                                      <td class="tdright"><span id='ex_seekerr3'></span></td>
+                                      <td class="tdright"><span id='ex_seekerr4'></span></td>
+                                      <td class="ex_detail"><span id='ex_seekerr_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_realloc_ex">Reallocated Sectors Count</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_realloc0'></span></td>
+                                      <td class="tdright"><span id='ex_realloc1'></span></td>
+                                      <td class="tdright"><span id='ex_realloc2'></span></td>
+                                      <td class="tdright"><span id='ex_realloc3'></span></td>
+                                      <td class="tdright"><span id='ex_realloc4'></span></td>
+                                      <td class="ex_detail"><span id='ex_realloc_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_spinup_ex">Spin Up Time</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_spinup0'></span></td>
+                                      <td class="tdright"><span id='ex_spinup1'></span></td>
+                                      <td class="tdright"><span id='ex_spinup2'></span></td>
+                                      <td class="tdright"><span id='ex_spinup3'></span></td>
+                                      <td class="tdright"><span id='ex_spinup4'></span></td>
+                                      <td class="ex_detail"><span id='ex_spinup_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_spinretry_ex">Spin Retry Count</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_spinretry0'></span></td>
+                                      <td class="tdright"><span id='ex_spinretry1'></span></td>
+                                      <td class="tdright"><span id='ex_spinretry2'></span></td>
+                                      <td class="tdright"><span id='ex_spinretry3'></span></td>
+                                      <td class="tdright"><span id='ex_spinretry4'></span></td>
+                                      <td class="ex_detail"><span id='ex_spinretry_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_startstop_ex">Start/Stop Count</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_startstop0'></span></td>
+                                      <td class="tdright"><span id='ex_startstop1'></span></td>
+                                      <td class="tdright"><span id='ex_startstop2'></span></td>
+                                      <td class="tdright"><span id='ex_startstop3'></span></td>
+                                      <td class="tdright"><span id='ex_startstop4'></span></td>
+                                      <td class="ex_detail"><span id='ex_startstop_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_powercyc_ex">Power Cycle Count</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_powercyc0'></span></td>
+                                      <td class="tdright"><span id='ex_powercyc1'></span></td>
+                                      <td class="tdright"><span id='ex_powercyc2'></span></td>
+                                      <td class="tdright"><span id='ex_powercyc3'></span></td>
+                                      <td class="tdright"><span id='ex_powercyc4'></span></td>
+                                      <td class="ex_detail"><span id='ex_powercyc_threshold'></span></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="head1">
+                                        <span id="lang_smart_diskpwron_ex">Disk Power-On Hours</span>
+                                      </th>
+                                      <td class="tdright"><span id='ex_diskonhours0'></span></td>
+                                      <td class="tdright"><span id='ex_diskonhours1'></span></td>
+                                      <td class="tdright"><span id='ex_diskonhours2'></span></td>
+                                      <td class="tdright"><span id='ex_diskonhours3'></span></td>
+                                      <td class="tdright"><span id='ex_diskonhours4'></span></td>
+                                      <td class="ex_detail"><span id='ex_diskonhours_threshold'></span></td>
+                                    </tr>
+                                        <tr>
+                                          <th class="head1">
+                                            <span id="lang_smart_serialnum">SERIAL NUMBER</span>
+                                          </th>
+                                          <td class="tdright" id="text_serial"><span id='ex_serial0'></span></td>
+                                          <td class="tdright" id="text_serial"><span id='ex_serial1'></span></td>
+                                          <td class="tdright" id="text_serial"><span id='ex_serial2'></span></td>
+                                          <td class="tdright" id="text_serial"><span id='ex_serial3'></span></td>
+                                          <td class="tdright" id="text_serial"><span id='ex_serial4'></span></td>
+                                          <td class="ex_detail"><span id='ex_serial_threshold'></span></td>
+                                        </tr>
+                                  </tbody>
+                                </table>
+                                <input type="button" id="but_detail_ex" class="c_sp_but_detail" value="DETAIL"/>
+                            </div>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>
+                    </div>
+                </div>                     
+            </div>                     
+        </div>                     
+    
+        <script type="text/javascript" src="../scripts/init/StorageInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('StorageSmart');
+        </script>        
+            
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        
+        <script type="text/javascript" src="../scripts/model/StorageModel.js"></script>
+        <script type="text/javascript" src="../scripts/view/StorageView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/StorageController.js"></script>
+    
+        <script type="text/javascript">
+            zzmvc({
+                name: 'StorageSmart',
+                action: 'index',
+                debug: false
+            });
+    
+            dvrpoke();
+                       
+        </script>                            
+    </body>                    
+</html>                    

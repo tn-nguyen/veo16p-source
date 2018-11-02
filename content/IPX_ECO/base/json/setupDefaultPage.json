@@ -1,0 +1,23 @@
+{
+  "id": "setupDefaultPage",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    "key": "key_value"
+  },
+
+  "pages": [
+    {
+      "pageTitle": "setupDefaultPage",
+      "rows": [
+        {
+          "id": "",
+          "cols": [
+            {
+              "id": "key_value"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

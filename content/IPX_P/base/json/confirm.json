@@ -1,0 +1,7 @@
+{
+  "id": "confirm",
+  "html": "template/confirm.htm",
+
+  "submit" : { "text": "APPLY" },
+  "reset": { "text": "CANCEL" }
+}

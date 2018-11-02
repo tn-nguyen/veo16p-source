@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </meta>
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+    <script type="text/javascript">
+      info_include();
+    </script>
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+    <script type="text/javascript">language_include();</script>
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+  </head>
+  <body>
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left: 10px; padding-top: 10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Network", "Security");
+            </script>
+          </ul>
+        </div>
+        <form name="netsetting_security" id="netsetting_security" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div id="c_sp_div_contents">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <div class="network_security_setup">
+                <div class="pagetitle">
+                  <h1>
+                    <span id='lang_security'>SECURITY</span>
+                  </h1>
+                </div>
+                <div id="tab">
+                  <ul>
+                    <li><a href='#tab_encryption'><span id="lang_encryption">ENCRYPTION</span></a></li>
+                    <li id="li_ipfilter"><a href='#tab_ipfilter'><span id="lang_ipfilter">IP FILTER</span></a></li>
+                  </ul>
+                  <div id="tab_encryption" class="tabpage">
+                    <div class="for_ipx rtsp_service">
+                      <h2>
+                        <span id="lang_rtsp_service">RTSP SERVICE</span>
+                      </h2>
+                      <dl>
+                        <dt>
+                          <span id="lang_rtspencenable">RTSP ENCRYPTION ENABLE</span>
+                        </dt>
+                        <dd>
+                          <select id="srtspon" name="srtspon">
+                            <option value="0">Off</option>
+                            <option value="1">On</option>
+                          </select>
+                        </dd>
+                        <dt>
+                          <span id="lang_rtspencmethod">RTSP ENCRYPTION METHOD</span>
+                        </dt>
+                        <dd>
+                          <input type="text" readonly id="srtsp_method"></input>
+                        </dd>
+                      </dl>
+                      <br/>
+                    </div>
+                    <h2>
+                      <span id="lang_webservice">WEB SERVICE</span>
+                    </h2>
+                    <dl>
+                      <dt>
+                        <span id="lang_httpsenable">HTTPS ENABLE</span>
+                      </dt>
+                      <dd>
+                        <select id="httpson" name="httpson">
+                          <option value="0">Off</option>
+                          <option value="1">On</option>
+                        </select>
+                      </dd>
+                      <dt>
+                        <span id="lang_httpauthmethod">HTTP AUTHENTICATION METHOD</span>
+                      </dt>
+                      <dd>
+                        <select id="httpauth_method" name="httpauth_method">
+                          <option value="0">BASIC</option>
+                          <option value="1">DIGEST</option>
+                        </select>
+                      </dd>
+                    </dl>
+                  </div>
+                  <!-- //tab_encryption -->
+                  <div id="tab_ipfilter" class="tabpage">
+                    <dl>
+                      <dt>
+                        <span id="lang_ipfilterenable">IP FILTER ENABLE</span>
+                      </dt>
+                      <dd>
+                        <select id="filter_enable" name="filter_enable">
+                          <option value="0">Off</option>
+                          <option value="1">On</option>
+                        </select>
+                      </dd>
+                      <dt>
+                        <span id="lang_ipfilterrule">IP FILTER RULE</span>
+                      </dt>
+                      <dd>
+                        <select id="filter_opmode" name="filter_opmode">
+                          <option value="0">ALLOW LIST</option>
+                          <option value="1">DENY LIST</option>
+                        </select>
+                      </dd>
+                    </dl>
+                    <br/>
+                    <table id='table_filter'>
+                      <thead>
+                        <tr>
+                          <th><span id="lang_type">TYPE</span></th>
+                          <th><span id="lang_list">LIST</span></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <input id="filter_type0" name="filter_type0" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr0" name="filter_addr0" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add0" class="add" type="button" value="ADD"></input>
+                            <input id="edit0" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete0" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input id="filter_type1" name="filter_type1" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr1" name="filter_addr1" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add1" class="add" type="button" value="ADD"></input>
+                            <input id="edit1" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete1" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input id="filter_type2" name="filter_type2" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr2" name="filter_addr2" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add2" class="add" type="button" value="ADD"></input>
+                            <input id="edit2" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete2" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input id="filter_type3" name="filter_type3" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr3" name="filter_addr3" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add3" class="add" type="button" value="ADD"></input>
+                            <input id="edit3" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete3" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input id="filter_type4" name="filter_type4" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr4" name="filter_addr4" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add4" class="add" type="button" value="ADD"></input>
+                            <input id="edit4" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete4" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input id="filter_type5" name="filter_type5" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr5" name="filter_addr5" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add5" class="add" type="button" value="ADD"></input>
+                            <input id="edit5" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete5" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input id="filter_type6" name="filter_type6" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr6" name="filter_addr6" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add6" class="add" type="button" value="ADD"></input>
+                            <input id="edit6" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete6" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <input id="filter_type7" name="filter_type7" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="filter_addr7" name="filter_addr7" type="text"></input>
+                          </td>
+                          <td>
+                            <input id="add7" class="add" type="button" value="ADD"></input>
+                            <input id="edit7" class="edit" type="button" value="EDIT"></input>
+                            <input id="delete7" class="delete" type="button" value="DELETE"></input>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //tab_ipfilter -->
+                </div>
+                <!--  //tab -->
+              </div>
+              <!-- network_security_setup -->
+            </div>
+            <!-- c_sp_div_frame c_sp_div_frame_dot -->
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg"></div>
+              <div id="printMsg"></div>
+            </div>
+          </div>
+          <!-- c_sp_div_contents -->
+        </form>
+      </div>
+    </div>
+    <div id="dialog_filter" title="RULE SETTING" style="display:none;">
+      <form>
+        <dl>
+          <dt>
+            <span id="lang_type">TYPE</span>
+          </dt>
+          <dd>
+            <select id="diag_filter_type">
+              <option value="8">NETWORK(A CLASS)</option>
+              <option value="16">NETWORK(B CLASS)</option>
+              <option value="24">NETWORK(C CLASS)</option>
+              <option value="32">IP ADDRESS</option>
+            </select>
+          </dd>
+          <dt>
+            <span id="lang_address">ADDRESS</span>
+          </dt>
+          <dd>
+            <input type="text" id="diag_filter_addr_a" maxlength="3" class="addr"></input>.
+            <input type="text" id="diag_filter_addr_b" maxlength="3" class="addr"></input>.
+            <input type="text" id="diag_filter_addr_c" maxlength="3" class="addr"></input>.
+            <input type="text" id="diag_filter_addr_d" maxlength="3" class="addr"></input>
+          </dd>
+        </dl>
+      </form>
+    </div>
+    <script type="text/javascript" src="../scripts/init/NetInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('NetSecurity');
+    </script>
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+    <script type="text/javascript" src="../scripts/model/NetModel.js"></script>
+    <script type="text/javascript" src="../scripts/view/NetView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/NetController.js"></script>
+    <script type="text/javascript">
+      zzmvc({
+        name : 'NetSecurity',
+        action : 'index',
+        debug : false
+      });
+      
+      dvrpoke();
+    </script>
+  </body>
+</html>

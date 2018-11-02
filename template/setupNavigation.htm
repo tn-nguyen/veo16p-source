@@ -1,0 +1,28 @@
+<!-- setupNavigation.htm -->
+<!-- nav -->
+<nav class="{{class}}">
+  {{#each menu}}
+  <h3>
+    <img{{#class}} class="{{.}}"{{/class}} src="{{../menuImage}}">
+    <a href="{{submenu.[0].url}}">
+      <span>
+        {{text}}}
+      </span>
+    </a>
+  </h3>
+  <ul class="lnbSetup{{#class}} {{.}}{{/class}}">
+    {{#each submenu}}
+    <li{{#id}} id="{{.}}"{{/id}}{{#class}} class="{{.}}"{{/class}}>
+      <img {{#id}} id="{{.}}Img"{{/id}} src="{{../../submenuImage}}">
+      <a href="{{url}}">
+        <span>
+          {{text}}
+        </span>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+  {{/each}}
+</nav>
+<!--  //nav -->
+<!-- //setupNav.htm -->

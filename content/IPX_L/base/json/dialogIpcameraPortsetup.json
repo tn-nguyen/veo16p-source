@@ -1,0 +1,40 @@
+{
+  "id": "dialogIpcameraPortsetup",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "dialog": true,
+  "text": "PORT SETUP FOR CAMERA",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "input": {
+                    "label": "RTSP SERVICE PORT",
+                    "id": "dialogIpCameraIpsetupRtspPort",
+                    "type": "text",
+                    "class": "port"
+                  }
+                },
+                {
+                  "input": {
+                    "label": "WEB SERVICE PORT",
+                    "id": "dialogIpCameraIpsetupWebPort",
+                    "type": "text",
+                    "class": "port"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

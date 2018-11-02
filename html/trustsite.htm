@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+  <script type="text/javascript" src="../scripts/multiLanguage.js"></script>
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+          info_include();
+          language_include();
+  </script>
+</head>
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<!-- <object width="0" height="0" id="trustsite" classid="clsid:A60F51BE-9C8D-4719-91F4-491F65121FD2"></object> -->
+
+    <script type="text/javascript">
+      function getActiveXInfo() {
+        var data;
+
+        $.ajax({
+          url: '../activex/AxManifest.json',
+          async: false,
+          dataType: 'json',
+          success: function (response) {
+            data = response;
+          }
+        });
+
+        return data;
+      }
+
+      var axInfo = getActiveXInfo();
+      var wString =  "codebase=../activex/WebViewer.exe#version=";
+      var activex_ver = wString + axInfo.data.regtrustsite["VersionString"];
+
+      var str_elem = "";
+
+      if (browerIE) {
+        str_elem = "<object";
+        str_elem += " id='trustsite'";
+        str_elem += " CLASSID='CLSID:" + axInfo.data.regtrustsite.ClassId+"'";
+        str_elem += " activex_ver";
+        str_elem += " width=0";
+        str_elem += " height=0";
+        str_elem += " >";
+        str_elem += " <div style='height:405px; line-height:405px;text-align: center;'><a href='/activex/WebViewer.exe'><span>" + langArray['LTXT_PLAYER_INSTALL'] + "</span></a><div>";
+        str_elem += " </object>";
+
+        document.writeln(str_elem);
+      }
+    </script>
+
+    <!--object ID="Trustax"
+        CLASSID="CLSID:9282A3AA-4954-46B4-B4AE-F086CE3F1110"
+        CODEBASE="../activex/regtrustsite.cab#version=1,0,0,5" width="0" height="0">
+    </object-->
+
+    <script type="text/javascript">
+      addLoadEvent(on_load);
+      addUnLoadEvent(on_unload);
+
+      function GoUrl()
+      {
+        var movepage = "live.htm";
+
+        if ( INFO_VENDOR == "SAMSUNG" )
+            {
+                movepage = "live_samsung.htm";
+            }
+            else
+            {
+                movepage = "live.htm";
+            }
+        self.location = movepage;
+      }
+
+      validcheck_ip = function(ipaddress) {
+        var valid = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        if(ipaddress == "")
+          return true;
+
+        if(valid.test(ipaddress)){
+          return false;
+        } else {
+          return true;
+        }
+      };
+
+      function check_validate(ip) {
+        if(ip == null || ip == undefined){
+          return;
+        }
+        
+        var check_ip = validcheck_ip(ip);
+        if(check_ip) {
+          return 1;
+        } else {
+          return 0;
+        }
+      };
+
+      function on_load()
+      {
+        //  var urllocation = window.location;
+        //  var urlhost = location.hostname;
+
+        //var re = Trustax.CallMethod2( urlhost );
+        //GoUrl();
+        function trustsite_check() {
+          var trustax = document.getElementById('trustsite');
+          var host = window.location.hostname;
+          var protocol = window.location.protocol;
+          if(protocol.indexOf("https") >= 0){
+            protocol = "https";
+          } else {
+            protocol = "http";
+          }
+          var port = window.location.port;
+          var check_host = check_validate(host);
+
+          try {
+            //document.getElementById('trustsite').style.display = "none";
+            var status = trustax.CheckTrustSite(check_host, protocol, host, port);
+            if(status == 2) {
+              window.open('about:blank', '_top').close();
+            } else if(status == 1) {
+              window.location.reload();
+            } else {
+              GoUrl();
+            }
+
+          } catch(ERR) {
+            setTimeout(function(){
+              trustsite_check();
+            }, 3000);
+          }
+        }
+
+        _isTrustSiteCheckExceptionVendor = function(){
+          var result = false;
+
+          INFO_VENDOR==='CBC' ? result=true
+            : result = false;
+
+          return result;
+        }
+        //trustsite_check();
+
+        _isTrustSiteCheckExceptionVendor() ? GoUrl() : trustsite_check();
+
+      }
+
+      function on_unload()
+      {
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+ <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css"> 
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">info_include();</script>
+
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+        <script type="text/javascript">
+        passwordRenewCheck();
+        language_include();</script>
+
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js">
+        </script>
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <title></title>
+    </head>
+
+    <body>
+
+        <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                        <script type="text/javascript">print_left_menu(document, "Camera", "Covert");</script>
+                    </ul>
+                </div>
+                <form name="camsetting_cam" id="camsetting_cam" action="/cgi-bin/webra_fcgi.fcgi">
+                    <div id="c_sp_div_contents">
+                        <div class="c_sp_div_frame c_sp_div_frame_dot">
+                            <h2>
+                            <span id='lang_CameraCovert'> Private Covert</span>
+                            </h2>
+                            <table class="c_sp_tb_cam_covert">
+                                <thead>
+                                    <tr>
+                                        <th class="head head1"><span id='lang_camCh'> Ch. </span></th>
+                                        <th class="head head2">ADMIN</th>
+                                        <th class="head head3">MANAGER</th>
+                                        <th class="head head4">USER</th>
+                                        <th class="head head5"><span id='lang_logout'>LOG OUT</span></th>
+                                    </tr>
+                                    <tr>
+                                        <td class="head head1" ><span id='lang_selectAll'> All </span></td>
+                                        <td class="head head2" >
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="iAllChkAdmin">
+                                        </td>
+                                        <td class="head head3" >
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="iAllChkManager">
+                                        </td>
+                                        <td class="head head4" >
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="iAllChkUser">
+                                        </td>
+                                        <td class="head head5" >
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="iAllChkLogoff">
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                        <div id="ch1">
+                                            1
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin0" value="1" name="cv_admin0">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager0" value="1" name="cv_manager0">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user0" value="1" name="cv_user0">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff0" value="1" name="cv_logoff0">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch2">
+                                            2
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin1" value="1" name="cv_admin1">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager1" value="1" name="cv_manager1">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user1" value="1" name="cv_user1">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff1" value="1" name="cv_logoff1">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch3">
+                                            3
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin2" value="1" name="cv_admin2">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager2" value="1" name="cv_manager2">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user2" value="1" name="cv_user2">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff2" value="1" name="cv_logoff2">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch4">
+                                            4
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin3" value="1" name="cv_admin3">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager3" value="1" name="cv_manager3">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user3" value="1" name="cv_user3">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff3" value="1" name="cv_logoff3">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="chenable8">
+                                    <tr>
+                                        <td>
+                                        <div id="ch5">
+                                            5
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin4" value="1" name="cv_admin4">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager4" value="1" name="cv_manager4">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user4" value="1" name="cv_user4">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff4" value="1" name="cv_logoff4">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch6">
+                                            6
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin5" value="1" name="cv_admin5">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager5" value="1" name="cv_manager5">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user5" value="1" name="cv_user5">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff5" value="1" name="cv_logoff5">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch7">
+                                            7
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin6" value="1" name="cv_admin6">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager6" value="1" name="cv_manager6">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user6" value="1" name="cv_user6">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff6" value="1" name="cv_logoff6">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch8">
+                                            8
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin7" value="1" name="cv_admin7">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager7" value="1" name="cv_manager7">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user7" value="1" name="cv_user7">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff7" value="1" name="cv_logoff7">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="chenable16">
+                                    <tr>
+                                        <td>
+                                        <div id="ch9">
+                                            9
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin8" value="1" name="cv_admin8">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager8" value="1" name="cv_manager8">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user8" value="1" name="cv_user8">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff8" value="1" name="cv_logoff8">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch10">
+                                            10
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin9" value="1" name="cv_admin9">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager9" value="1" name="cv_manager9">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user9" value="1" name="cv_user9">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff9" value="1" name="cv_logoff9">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch11">
+                                            11
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin10" value="1" name="cv_admin10">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager10" value="1" name="cv_manager10">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user10" value="1" name="cv_user10">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff10" value="1" name="cv_logoff10">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch12">
+                                            12
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin11" value="1" name="cv_admin11">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager11" value="1" name="cv_manager11">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user11" value="1" name="cv_user11">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff11" value="1" name="cv_logoff11">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch13">
+                                            13
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin12" value="1" name="cv_admin12">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager12" value="1" name="cv_manager12">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user12" value="1" name="cv_user12">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff12" value="1" name="cv_logoff12">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch14">
+                                            14
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin13" value="1" name="cv_admin13">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager13" value="1" name="cv_manager13">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user13" value="1" name="cv_user13">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff13" value="1" name="cv_logoff13">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch15">
+                                            15
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin14" value="1" name="cv_admin14">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager14" value="1" name="cv_manager14">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user14" value="1" name="cv_user14">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff14" value="1" name="cv_logoff14">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <div id="ch16">
+                                            16
+                                        </div>
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskadmin" id="cv_admin15" value="1" name="cv_admin15">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskmanager" id="cv_manager15" value="1" name="cv_manager15">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_maskuser" id="cv_user15" value="1" name="cv_user15">
+                                        </td>
+                                        <td>
+                                        <input type="checkbox" class="c_sp_chk_cam_masklogoff" id="cv_logoff15" value="1" name="cv_logoff15">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr id="covert-shownas">
+                                        <td>
+                                          <span id="langShownAs">SHOWN AS</span>
+                                        </td>
+                                        <td>
+                                          <select id="cvt_disp0" name="cvt_disp0">
+                                            <option value="0">NO VIDEO</option>
+                                            <option value="1">COVERT</option>
+                                          </select>
+                                        </td>
+                                        <td>
+                                          <select id="cvt_disp1" name="cvt_disp1">
+                                            <option value="0">NO VIDEO</option>
+                                            <option value="1">COVERT</option>
+                                          </select>
+                                        </td>
+                                        <td>
+                                          <select id="cvt_disp2" name="cvt_disp2">
+                                            <option value="0">NO VIDEO</option>
+                                            <option value="1">COVERT</option>
+                                          </select>
+                                        </td>
+                                        <td>
+                                          <select id="cvt_disp3" name="cvt_disp3">
+                                            <option value="0">NO VIDEO</option>
+                                            <option value="1">COVERT</option>
+                                          </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('CamCovert');
+        </script>      
+        
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+        <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+        <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/CamController.js"></script>
+
+        <script type="text/javascript">
+
+            zzmvc({
+                name: 'CamCovert',
+                action: 'index',
+                debug: false
+            });
+
+            dvrpoke();
+
+    </script>
+</body>
+</html>

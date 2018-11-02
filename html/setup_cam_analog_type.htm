@@ -1,0 +1,2001 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">info_include();</script>
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+      passwordRenewCheck();
+        language_include();</script>
+
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <title></title>
+  </head>
+  <body>
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+      </div>
+      <div id="c_sp_div_menubar" style="width:1120px">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Camera", "AnalogType");
+            </script>
+          </ul>
+        </div>
+        <form name="camsetting_cam" id="camsetting_cam" action="/cgi-bin/webra_fcgi.fcgi">
+          <div id="c_sp_div_contents" style="width:910px">
+            <div class="c_sp_div_frame c_sp_div_frame_dot" style="width:850px">
+              <h2>
+                <!-- <span id='lang_AnalogType'> -->
+                <span id="lang_AnalogType">
+                  CAMERA TYPE SETUP
+                </span>
+              </h2>
+              <div id="analog_tabs">
+                <ul>
+                  <li>
+                    <a href="#analog_tab_type">
+                      <span id="lang_analog_type">
+                        Camera Type
+                      </span>
+                    </a>
+                  </li>
+                  <li id="tab_installation">
+                    <a href="#analog_tab_ipcam">
+                      <span id="lang_ipcam">
+                        IpCam
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- Analog Type Select Tab -->
+                <div id="analog_tab_type">
+                  <div class="analog_type_for_5g_model">
+                    <table class="c_sp_tb_cam_covert">
+                      <thead>
+                        <tr>
+                          <th class="head head1">
+                            <span id='lang_camCh'> Ch. </span>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_head2">
+                            <!-- <span id='lang_CameraType_TVI_A'>TVI (A)</span> -->
+                            <select id="camera_type_0">
+                              <option value="0">TVI (A)</option>
+                              <option value="1">SELECT ALL</option>
+                            </select>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_head3">
+                            <!-- <span id='lang_CameraType_TVI_B'>TVI (B)</span> -->
+                            <select id="camera_type_1">
+                              <option value="0">TVI (B)</option>
+                              <option value="1">SELECT ALL</option>
+                            </select>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_head4">
+                            <!-- <span id='lang_CameraType_AHD'>AHD</span> -->
+                            <select id="camera_type_2">
+                              <option value="0">AHD</option>
+                              <option value="1">SELECT ALL</option>
+                            </select>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_head5">
+                            <!-- <span id='lang_CameraType_AHD'>AHD</span> -->
+                            <select id="camera_type_6">
+                              <option value="0">3MP</option>
+                              <option value="1">SELECT ALL</option>
+                            </select>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_head6">
+                            <!-- <span id='lang_CameraType_IPCAM'>IPCAM</span> -->
+                            <select id="camera_type_8">
+                              <option value="0">IP CAM</option>
+                              <option value="1">SELECT ALL</option>
+                            </select>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div id="ch1">
+                                    1
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype0" name="analogtype0"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype0" name="analogtype0"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype0" name="analogtype0"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype0" name="analogtype0"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype0" name="analogtype0"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch2">
+                                    2
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype1" name="analogtype1"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype1" name="analogtype1"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype1" name="analogtype1"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype1" name="analogtype1"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype1" name="analogtype1"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch3">
+                              3
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype2" name="analogtype2"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype2" name="analogtype2"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype2" name="analogtype2"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype2" name="analogtype2"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype2" name="analogtype2"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch4">
+                                4
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype3" name="analogtype3"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype3" name="analogtype3"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype3" name="analogtype3"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype3" name="analogtype3"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype3" name="analogtype3"/>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tbody class="chenable8">
+                        <tr>
+                          <td>
+                            <div id="ch5">
+                              5
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype4" name="analogtype4"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype4" name="analogtype4"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype4" name="analogtype4"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype4" name="analogtype4"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype4" name="analogtype4"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch6">
+                              6
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype5" name="analogtype5"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype5" name="analogtype5"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype5" name="analogtype5"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype5" name="analogtype5"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype5" name="analogtype5"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch7">
+                              7
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype6" name="analogtype6"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype6" name="analogtype6"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype6" name="analogtype6"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype6" name="analogtype6"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype6" name="analogtype6"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch8">
+                                8
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype7" name="analogtype7"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype7" name="analogtype7"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype7" name="analogtype7"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype7" name="analogtype7"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype7" name="analogtype7"/>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tbody class="chenable16">
+                        <tr>
+                          <td>
+                            <div id="ch9">
+                                9
+                            </div>
+                          </td>
+                          <td>
+                              <input type="radio" value="0" id="analogtype8" name="analogtype8"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="1" id="analogtype8" name="analogtype8"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="2" id="analogtype8" name="analogtype8"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="6" id="analogtype8" name="analogtype8"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="8" id="analogtype8" name="analogtype8"/>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch10">
+                                10
+                            </div>
+                          </td>
+                          <td>
+                              <input type="radio" value="0" id="analogtype9" name="analogtype9"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="1" id="analogtype9" name="analogtype9"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="2" id="analogtype9" name="analogtype9"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="6" id="analogtype9" name="analogtype9"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="8" id="analogtype9" name="analogtype9"/>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch11">
+                                11
+                            </div>
+                          </td>
+                          <td>
+                              <input type="radio" value="0" id="analogtype10" name="analogtype10"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="1" id="analogtype10" name="analogtype10"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="2" id="analogtype10" name="analogtype10"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="6" id="analogtype10" name="analogtype10"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="8" id="analogtype10" name="analogtype10"/>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch12">
+                                12
+                            </div>
+                          </td>
+                          <td>
+                              <input type="radio" value="0" id="analogtype11" name="analogtype11"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="1" id="analogtype11" name="analogtype11"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="2" id="analogtype11" name="analogtype11"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="6" id="analogtype11" name="analogtype11"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="8" id="analogtype11" name="analogtype11"/>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch13">
+                                13
+                            </div>
+                          </td>
+                          <td>
+                              <input type="radio" value="0" id="analogtype12" name="analogtype12"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="1" id="analogtype12" name="analogtype12"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="2" id="analogtype12" name="analogtype12"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="6" id="analogtype12" name="analogtype12"/>
+                            </td>
+                            <td>
+                              <input type="radio" value="8" id="analogtype12" name="analogtype12"/>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch14">
+                                14
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype13" name="analogtype13"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype13" name="analogtype13"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype13" name="analogtype13"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype13" name="analogtype13"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype13" name="analogtype13"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch15">
+                                15
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype14" name="analogtype14"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype14" name="analogtype14"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype14" name="analogtype14"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype14" name="analogtype14"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype14" name="analogtype14"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch16">
+                                16
+                            </div>
+                          </td>
+                          <td>
+                            <input type="radio" value="0" id="analogtype15" name="analogtype15"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="1" id="analogtype15" name="analogtype15"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="2" id="analogtype15" name="analogtype15"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="6" id="analogtype15" name="analogtype15"/>
+                          </td>
+                          <td>
+                            <input type="radio" value="8" id="analogtype15" name="analogtype15"/>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="analog_type_for_5hg_model">
+                    <table class="c_sp_tb_cam_analogtype_5hd">
+                      <thead>
+                        <tr>
+                          <th class="head head1">
+                            <span id="lang_camCh">Ch.</span>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_5hg_head2">
+                            <select id="5hg_input_type_all" class="add_width_90_per">
+                              <option value="-1">INPUT TYPE</option>
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_5hg_head3">
+                            <select id="5hg_mode_all" class="add_width_90_per">
+                              <option value="-1">MODE</option>
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_5hg_head4">
+                            <select id="5hg_signal_type_all" class="add_width_90_per">
+                              <option value="-1">SIGNAL TYPE</option>
+                              <option value="0">TVI</option>
+                              <!-- <option value="2">CVI</option> -->
+                              <option value="1">AHD</option>
+                            </select>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_5hg_head5">
+                            <select id="5hg_resolution_all" class="add_width_90_per" disabled>
+                              <option value="-1">RESOLUTION</option>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </th>
+                          <!-- <th class="table-head c_sp_td_cam_analog_5hg_head6">
+                            <span>NR FILTER</span>
+                          </th>
+                          <th class="table-head c_sp_td_cam_analog_5hg_head7">
+                            <input type="button" id="5hg_refresh_all" value="REFRESH ALL" class="add_width_90_per" class="add_width_90_per"/>
+                          </th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div id="ch_5hg_1">
+                              1
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_0" name="5hg_input_type_0" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_0" name="5hg_mode_0" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_0" name="5hg_signal_type_0" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_0" name="5hg_resolution_0" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_0" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_0" value="REFRESH" class="add_width_90_per" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch_5hg_2">
+                              2
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_1" name="5hg_input_type_1" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_1" name="5hg_mode_1" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_1" name="5hg_signal_type_1" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_1" name="5hg_resolution_1" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_1" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_1" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch_5hg_3">
+                              3
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_2" name="5hg_input_type_2" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_2" name="5hg_mode_2" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_2" name="5hg_signal_type_2" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_2" name="5hg_resolution_2" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_2" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_2" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr>
+                          <td>
+                            <div id="ch_5hg_4">
+                              4
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_3" name="5hg_input_type_3" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_3" name="5hg_mode_3" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_3" name="5hg_signal_type_3" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_3" name="5hg_resolution_3" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_3" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_3" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4">
+                          <td>
+                            <div id="ch_5hg_5">
+                              5
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_4" name="5hg_input_type_4" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_4" name="5hg_mode_4" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_4" name="5hg_signal_type_4" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_4" name="5hg_resolution_4" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_4" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_4" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4">
+                          <td>
+                            <div id="ch_5hg_6">
+                              6
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_5" name="5hg_input_type_5" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_5" name="5hg_mode_5" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_5" name="5hg_signal_type_5" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_5" name="5hg_resolution_5" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_5" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_5" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4">
+                          <td>
+                            <div id="ch_5hg_7">
+                              7
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_6" name="5hg_input_type_6" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_6" name="5hg_mode_6" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_6" name="5hg_signal_type_6" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_6" name="5hg_resolution_6" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_6" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_6" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4">
+                          <td>
+                            <div id="ch_5hg_8">
+                              8
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_7" name="5hg_input_type_7" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_7" name="5hg_mode_7" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_7" name="5hg_signal_type_7" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_7" name="5hg_resolution_7" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_7" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_7" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_9">
+                              9
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_8" name="5hg_input_type_8" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_8" name="5hg_mode_8" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_8" name="5hg_signal_type_8" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_8" name="5hg_resolution_8" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_8" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_8" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_10">
+                              10
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_9" name="5hg_input_type_9" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_9" name="5hg_mode_9" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_9" name="5hg_signal_type_9" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_9" name="5hg_resolution_9" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_9" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_9" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_11">
+                              11
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_10" name="5hg_input_type_10" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_10" name="5hg_mode_10" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_10" name="5hg_signal_type_10" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_10" name="5hg_resolution_10" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_10" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_10" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_12">
+                              12
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_11" name="5hg_input_type_11" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_11" name="5hg_mode_11" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_11" name="5hg_signal_type_11" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_11" name="5hg_resolution_11" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_11" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_11" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_13">
+                              13
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_12" name="5hg_input_type_12" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_12" name="5hg_mode_12" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_12" name="5hg_signal_type_12" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_12" name="5hg_resolution_12" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_12" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_12" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_14">
+                              14
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_13" name="5hg_input_type_13" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_13" name="5hg_mode_13" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_13" name="5hg_signal_type_13" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_13" name="5hg_resolution_13" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_13" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_13" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_15">
+                              15
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_14" name="5hg_input_type_14" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_14" name="5hg_mode_14" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_14" name="5hg_signal_type_14" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_14" name="5hg_resolution_14" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_14" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_14" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                        <tr class="chdisable4 chdisable8">
+                          <td>
+                            <div id="ch_5hg_16">
+                              16
+                            </div>
+                          </td>
+                          <td>
+                            <select id="5hg_input_type_15" name="5hg_input_type_15" class="add_width_90_per">
+                              <option value="0">ANALOG</option>
+                              <option value="1">IPCAM</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_mode_15" name="5hg_mode_15" class="add_width_90_per">
+                              <option value="0">AUTO</option>
+                              <option value="1">MANUAL</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_signal_type_15" name="5hg_signal_type_15" class="add_width_90_per">
+                              <option value="0">TVI</option>
+                              <option value="1">AHD</option>
+                              <!-- <option value="2">CVI</option> -->
+                            </select>
+                          </td>
+                          <td>
+                            <select id="5hg_resolution_15" name="5hg_resolution_15" class="add_width_90_per" disabled>
+                              <option value="0">2MP</option>
+                              <option value="1">3MP</option>
+                              <option value="2">3.7MP</option>
+                              <option value="3">4MP</option>
+                              <option value="4">5MP</option>
+                            </select>
+                          </td>
+                          <!-- <td>
+                            <select id="5hg_nr_filter_15" class="add_width_90_per" disabled>
+                              <option value="0">OFF</option>
+                              <option value="1">ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="button" id="5hg_refresh_15" value="REFRESH" class="add_width_90_per"/>
+                          </td> -->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- IP Camera Select Tab -->
+                <div id="analog_tab_ipcam">
+                  <div id="div_dialog_camera_add_delete">
+                    <h2><span id="lang_camera_add">CAMERA ADD</span></h2>
+                    <dl>
+                      <dt class="add_float_left">
+                        <span class="add_width_150 add_display_inline_block add_margin_right_10 add_color_turquoise" id="lang_auto_scan">Auto Scan</span>
+                      </dt>
+                      <dd>
+                        <input type="button" id="button_ipcam_search" class="add_width_150" value="lang_button_search"/>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt class="add_float_left">
+                        <span class="add_width_150 add_display_inline_block add_margin_right_10 add_color_turquoise" id="lang_specific">Specific IP/Host name</span>
+                      </dt>
+                      <dd>
+                        <input type="button" id="button_ipcam_specific" class="add_width_150" value="lang_button_add"/>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt class="add_float_left">
+                        <span class="add_width_150 add_display_inline_block add_margin_right_10 add_color_turquoise" id="lang_virtualcam">Virtual Camera</span>
+                      </dt>
+                      <dd>
+                        <input type="button" id="button_ipcam_vcam" class="add_width_150" value="lang_button_add"/>
+                      </dd>
+                    </dl>
+                    <h2><span id="lang_camera_list">CAMERA LIST</span></h2>
+                    <dl>
+                      <dt>
+                        <table class="c_sp_tb_cam_analog add_float_left" style="width:400px">
+                          <thead>
+                            <tr>
+                              <th class="head head1">
+                                <span id="lang_camera_model">MODEL</span>
+                              </th>
+                              <th class="head head2">
+                                <span id="lang_camera_address">ADDRESS</span>
+                              </th>
+                              <th class="head head3">
+                                <span id="lang_camera_status">STATUS</span>
+                              </th>
+                              <th class="head head4">
+                                <span id="lang_camera_channel">ASSIGNED CHANNEL</span>
+                              </th>
+                              <th class="head head5">
+
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span id="model0"></span></td>
+                              <td><span id="ipaddr0"></span></td>
+                              <td><span id="state0" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_0">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup0" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model1"></span></td>
+                              <td><span id="ipaddr1"></span></td>
+                              <td><span id="state1" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_1">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup1" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model2"></span></td>
+                              <td><span id="ipaddr2"></span></td>
+                              <td><span id="state2" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_2">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup2" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model3"></span></td>
+                              <td><span id="ipaddr3"></span></td>
+                              <td><span id="state3" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_3">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup3" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model4"></span></td>
+                              <td><span id="ipaddr4"></span></td>
+                              <td><span id="state4" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_4">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup4" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model5"></span></td>
+                              <td><span id="ipaddr5"></span></td>
+                              <td><span id="state5" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_5">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup5" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model6"></span></td>
+                              <td><span id="ipaddr6"></span></td>
+                              <td><span id="state6" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_6">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup6" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model7"></span></td>
+                              <td><span id="ipaddr7"></span></td>
+                              <td><span id="state7" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_7">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup7" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model8"></span></td>
+                              <td><span id="ipaddr8"></span></td>
+                              <td><span id="state8" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_8">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup8" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model9"></span></td>
+                              <td><span id="ipaddr9"></span></td>
+                              <td><span id="state9" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_9">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup9" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model10"></span></td>
+                              <td><span id="ipaddr10"></span></td>
+                              <td><span id="state10" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_10">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup10" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model11"></span></td>
+                              <td><span id="ipaddr11"></span></td>
+                              <td><span id="state11" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_11">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup11" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model12"></span></td>
+                              <td><span id="ipaddr12"></span></td>
+                              <td><span id="state12" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_12">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup12" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model13"></span></td>
+                              <td><span id="ipaddr13"></span></td>
+                              <td><span id="state13" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_13">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup13" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model14"></span></td>
+                              <td><span id="ipaddr14"></span></td>
+                              <td><span id="state14" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_14">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup14" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><span id="model15"></span></td>
+                              <td><span id="ipaddr15"></span></td>
+                              <td><span id="state15" class="add_whitespace_pre_line"></span></td>
+                              <td>
+                                <select id="select_assign_15">
+                                  <option value="-1">NOT ASSIGNED</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="image" id="ipcam_setup15" class="add_width_20 add_height_20" src="../../images/ITX_OLD/bt_pop_setting_n.png" disabled/>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="c_sp_tb_cam_analog" style="float:left; margin-left: 10px; width: 190px;">
+                          <thead>
+                            <tr>
+                              <th class="head head1">
+                                <span id="lang_search_result">SEARCH RESULT</span>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <span id="ipcam_assigned_count"></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span id="ipcam_found_count"></span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <span id="ipcam_need_count" class="add_whitespace_pre_line"></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dt>
+                    </dl>
+                    <dl style="margin-left: 180px">
+                      <input class="add_width_100" id="button_prev" type="button" value="lang_button_prev"/>
+                      <span id="current_page">1</span>
+                      /
+                      <span id="max_page">1</span>
+                      <input class="add_width_100" id="button_next" type="button" value="lang_button_next"/>
+                    </dl>
+                  </div>
+
+                  <p class="warning_message">
+                  </p>
+
+
+                  <div>
+                    <span>[!]&nbsp</span><span id="lang_warn_message1">You need to set up the network properties on this device for adding cameras.</span>
+                  </div>
+                  <div>
+                    <span>&nbsp&nbsp&nbsp&nbsp</span><span id="lang_warn_message2">If you didn't set up the network properties before, then you need to set up the network properties.</span>
+                  </div>
+                  <input type="button" class="add_width_200" id="redirectNetworkSetup" value="lang_button_gotonetwork"/>
+                </div>
+              </div>
+
+            </div>
+            <div id="c_g_div_button">
+                <input type="button" value="lang_OK" id="button_apply_openmode_setting" class="c_sp_btn_okcancel" style="display:none"/>
+                <input type="button" value="lang_CANCEL" id="button_cancel_openmode_setting" class="c_sp_btn_okcancel" style="display:none"/>
+                <input type="submit" value="lang_OK" id="button_submit" class="c_sp_btn_okcancel"/>
+                <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="dialog_warning" title="WARNING" style="display: none;">
+      <form id='form_dialog_warning'>
+
+        <div id="div_dialog_warning_message">
+          <dl>
+            <dt>
+              <span id='lang_dialog_warning_message' class="add_whitespace_pre_line">Warning : In this mode, the video recording will be stopped automatically. Do you want to continue?</span>
+            </dt>
+          </dl>
+        </div>
+
+        <p class="warning_message">
+        </p>
+      </form>
+    </div>
+
+    <div id="dialog_warning_ipcam_apply" title="WARNING" style="display: none;">
+      <form id='formdialog_warning_ipcam_apply'>
+
+        <div id="divdialog_warning_ipcam_apply_message">
+          <dl>
+            <dt>
+              <span id='langdialog_warning_ipcam_apply_message' class="add_whitespace_pre_line">In case of camera that set as DHCP, the camera may be disconnected by IP change.</span>
+            </dt>
+          </dl>
+        </div>
+
+        <p class="warning_message">
+        </p>
+      </form>
+    </div>
+
+    <div id="dialog_please_wait" title="WARNING" style="display: none;">
+      <form id='form_dialog_please_wait'>
+
+        <div id="div_dialog_please_wait_message">
+          <dl>
+            <dt>
+              <span id='lang_dialog_please_wait_message' class="add_whitespace_pre_line">Please wait...</span>
+            </dt>
+          </dl>
+        </div>
+
+        <p class="warning_message">
+        </p>
+      </form>
+    </div>
+
+    <div id="dialog_ipcam_install_specific" title="WARNING" style="display: none;">
+      <form id='form_dialog_ipcam_install_specific'>
+
+        <div id="div_dialog_ipcam_install_specific_message" class="add_font_size_10">
+          <div class="add_float_left add_width_300 add_margin_right_3">
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_specific_name">IP/HOST NAME</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_specific_host" class="add_width_150"/>
+              </dd>
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_specific_port">PORT</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_specific_port" class="add_width_150"/>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <p class="warning_message">
+        </p>
+      </form>
+    </div>
+
+    <div id="dialog_ipcam_install_vcam" title="WARNING" style="display: none;">
+      <form id="form_dialog_ipcam_install_vcam">
+
+        <div id="div_dialog_ipcam_install_vcam_message" class="add_font_size_10">
+          <div class="add_float_left add_width_400 add_margin_right_3">
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_camname">CAMERA NAME</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_vcam_model" class="add_width_100"/>
+              </dd>
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_ipaddr">IP ADDRESS</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_vcam_ipaddress" class="add_width_100"/>
+              </dd>
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_specific_port">PORT</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_vcam_port" class="add_width_100"/>
+              </dd>
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_username">ID</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_vcam_id" class="add_width_100"/>
+              </dd>
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_password">PASSWORD</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_vcam_password" class="add_width_100"/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_vcam_1st_stream">1ST STREAM</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_vcam_1st_rtsp" class="add_width_200"/>
+              </dd>
+            </dl>
+            <dl>
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_vcam_2nd_stream">2ND STREAM</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_vcam_2nd_rtsp" class="add_width_200"/>
+              </dd>
+            </dl>
+          </div>
+          <div class="add_float_left add_whitespace_pre">
+            <span id="lang_dialog_vcam_message1">* Two RTSP address can be entered</span>
+            <span>ex) rtsp://192.168.100.50:544/live/main</span>
+          </div>
+          <div>
+            <table class="add_width_full add_text_align_center">
+              <thead>
+                <th class="add_background_skyblue" colspan="2">
+                  <span id="lang_dialog_vcam_restriction">
+                    RESTRICTION
+                  </span>
+                </th>
+              </thead>
+              <tr>
+                <!-- LEFT -->
+                <td class="add_vertical_align_baseline">
+                  <table class="add_width_full">
+                    <thead>
+                      <th class="add_background_skyblue" colspan="2">
+                        <span id="lang_dialog_vcam_bitrate">BITRATE</span>
+                      </th>
+                    </thead>
+                    <tr>
+                      <td>4CH</td>
+                      <td>MAX 8000kb/s</td>
+                    </tr>
+                    <tr>
+                      <td>8CH, 16CH</td>
+                      <td>MAX 4000kb/s</td>
+                    </tr>
+                  </table>
+                  <table class="add_width_full">
+                    <thead>
+                      <th class="add_background_skyblue" colspan="2">FPS</th>
+                    </thead>
+                    <tr>
+                      <td>NTSC</td>
+                      <td>MAX 8000kb/s</td>
+                    </tr>
+                    <tr>
+                      <td>PAL</td>
+                      <td>MAX 4000kb/s</td>
+                    </tr>
+                  </table>
+                  <table class="add_width_full">
+                    <tr>
+                      <td class="add_background_skyblue">
+                        <span id="lang_dialog_vcam_video_codec">VIDEO CODEC</span>
+                      </td>
+                      <td>H264</td>
+                    </tr>
+                    <tr>
+                      <td class="add_background_skyblue">
+                        <span id="lang_dialog_vcam_audio_codec">AUDIO CODEC</span>
+                      </td>
+                      <td>G711 u_Law</td>
+                    </tr>
+                  </table>
+                </td>
+                <!-- LEFT END -->
+                <!-- RIGHT -->
+                <td>
+                  <table class="add_width_full">
+                    <thead>
+                      <th class="add_background_skyblue" colspan="2">
+                        <span id="lang_dialog_vcam_supported_resolution">SUPPORTED RESOLUTION</span>
+                      </th>
+                    </thead>
+                    <tr>
+                      <td>352x420</td>
+                      <td>704x240</td>
+                    </tr>
+                    <tr>
+                      <td>704x480</td>
+                      <td>704x480P</td>
+                    </tr>
+                    <tr>
+                      <td>352x288</td>
+                      <td>704x288</td>
+                    </tr>
+                    <tr>
+                      <td>704x576</td>
+                      <td>704x576P</td>
+                    </tr>
+                    <tr>
+                      <td>640x480</td>
+                      <td>720x480</td>
+                    </tr>
+                    <tr>
+                      <td>720x576</td>
+                      <td>800x600</td>
+                    </tr>
+                    <tr>
+                      <td>1024x768</td>
+                      <td>1280x1024</td>
+                    </tr>
+                    <tr>
+                      <td>1600x1200</td>
+                      <td>1280x720</td>
+                    </tr>
+                    <tr>
+                      <td>1920x1080</td>
+                      <td>640x352</td>
+                    </tr>
+                    <tr>
+                      <td>640x360</td>
+                      <td>640x630I</td>
+                    </tr>
+                    <tr>
+                      <td>1280x720I</td>
+                      <td>1920x1280I</td>
+                    </tr>
+                    <tr>
+                      <td>640x400</td>
+                      <td>800x450</td>
+                    </tr>
+                    <tr>
+                      <td>1440x900</td>
+                      <td>960x480</td>
+                    </tr>
+                    <tr>
+                      <td>960x576</td>
+                      <td>320x180</td>
+                    </tr>
+                    <tr>
+                      <td>2304x1296</td>
+                      <td>2048x1536</td>
+                    </tr>
+                    <tr>
+                      <td>2560x1440</td>
+                      <td>2688x1520</td>
+                    </tr>
+                    <tr>
+                      <td>2560x1600</td>
+                      <td>2560x1920</td>
+                    </tr>
+                    <tr>
+                      <td>2592x1920</td>
+                      <td>2592x1944</td>
+                    </tr>
+                    <tr>
+                      <td>2992x1680</td>
+                      <td>2880x1800</td>
+                    </tr>
+                    <tr>
+                      <td>3200x1800</td>
+                      <td>2880x2160</td>
+                    </tr>
+                    <tr>
+                      <td>3072x2048</td>
+                      <td>3200x2400</td>
+                    </tr>
+                  </table>
+                </td>
+                <!-- RIGHT END -->
+              </tr>
+            </table>
+          </div>
+
+        </div>
+        <p class="warning_message">
+        </p>
+      </form>
+    </div>
+
+    <div id="dialog_ipcam_install" title="WARNING" style="display: none;">
+      <form id='form_dialog_ipcam_install'>
+
+        <div id="div_dialog_ipcam_install_message" class="add_font_size_10">
+          <div class="add_float_left add_width_400 add_margin_right_3">
+            <div>
+              <h4 class="add_background_skyblue add_padding_3 add_font_size_12">
+                <span id="lang_dialog_ipcam_install_config">CONFIGURATION</span>
+              </h4>
+            </div>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_camname">CAMERA NAME</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_model" class="add_width_100" disabled/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_ipaddr">IP ADDRESS</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_ipaddr" class="add_width_100" disabled/>
+                <input type="button" class="add_width_150" value="lang_dialog_ipcam_install_ipsetup" disabled/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_httpport">HTTP PORT</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_httpport" class="add_width_100" disabled/>
+                <input type="button" class="add_width_150" value="lang_dialog_ipcam_install_portsetup" disabled/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_rtspport">RTSP PORT</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_rtspport" class="add_width_100" disabled/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_username">USER NAME</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_u" class="add_width_100"/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_password">PASSWORD</span>
+              </dt>
+              <dd>
+                <input type="password" id="ipcam_install_p" class="add_width_100"/>
+                <input type="button" id="ipcam_install_changepw" class="add_width_150" value="lang_dialog_ipcam_install_password" disabled/>
+                <input type="button" id="ipcam_install_login" class="add_width_150" value="lang_dialog_ipcam_install_login" style="display:none"/>
+              </dd>
+            </dl>
+
+            <div>
+              <h4 class="add_background_skyblue add_padding_3 add_font_size_12 add_margin_top_3">
+                <span id="lang_dialog_ipcam_install_diagnostic_tools">DIAGNOSTIC TOOLS</span>
+              </h4>
+            </div>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_ipcam_reset">IP CAMERA RESET</span>
+              </dt>
+              <dd>
+                <input type="button" class="add_width_100" value="lang_dialog_ipcam_install_reset" disabled/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_network_test">NETWORK TEST</span>
+              </dt>
+              <dd>
+                <input type="button" id="button_ipcam_ping" class="add_width_100" value="lang_dialog_ipcam_install_pingtest"/>
+              </dd>
+            </dl>
+          </div>
+
+          <div>
+            <div>
+              <h4 class="add_background_skyblue add_padding_3 add_font_size_12">
+                <span id="lang_dialog_ipcam_install_cam_info">CAMERA INFO</span>
+              </h4>
+            </div>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_mac_addr">MAC ADDRESS</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_mac" class="add_width_150" disabled/>
+              </dd>
+            </dl>
+            <dl class="add_margin_top_3">
+              <dt class="add_float_left add_width_100 add_text_align_right add_color_turquoise add_margin_right_3">
+                <span id="lang_dialog_ipcam_install_fwversion">F/W VERSION</span>
+              </dt>
+              <dd>
+                <input type="text" id="ipcam_install_fwver" class="add_width_150" disabled/>
+              </dd>
+            </dl>
+          </div>
+
+        </div>
+
+        <p class="warning_message">
+        </p>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('AnalogType');
+    </script>
+
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+    <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+    <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+    <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+    <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/CamController.js"></script>
+
+    <script type="text/javascript" src="../scripts/bitFieldWidget.js"></script>
+    <script type="text/javascript" src="../scripts/widget/analogtypeCalculator.js"></script>
+
+    <script type="text/javascript">
+      zzmvc({
+        name: 'AnalogType',
+        action: 'index',
+        debug: false
+      });
+
+      dvrpoke();
+    </script>
+  </body>
+</html>

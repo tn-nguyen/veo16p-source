@@ -1,0 +1,10 @@
+{
+  "id": "search",
+  "html": "template/search.htm",
+
+  "pageTitle": "Search",
+  "formFcgi": "../cgi-bin/webra_fcgi.fcgi",
+
+  "rows": [
+    {}]
+}

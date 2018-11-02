@@ -1,0 +1,54 @@
+{
+  "id": "setupAudioAudioSetup",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    "key": "key_value"
+  },
+
+  "pageTitle": "setupAudioAudioSetup",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "id": "",
+          "cols": [
+            {
+              "content": [
+              { "subtitle": { "subtitle": "AUDIO" } },
+              {
+                "select": {
+                  "label": "DEFAULT LIVE AUDIO CHANNEL",
+                  "id": "live_audio_channel",
+                  "name": "live_audio_channel",
+                  "option":[
+                    {"value": "0", "text": "OFF"},
+                    {"value": "1", "text": "CH 1"},
+                    {"value": "2", "text": "CH 2"},
+                    {"value": "3", "text": "CH 3"},
+                    {"value": "4", "text": "CH 4"}
+                  ]
+                }
+              },
+              {
+                "select": {
+                  "label": "NETWORK AUDIO TRANSMISSION",
+                  "id": "network_audio_transmission",
+                  "name": "network_audio_transmission"
+                }
+              },
+              {
+                "select": {
+                  "label": "RECEIVE NETWORK AUDIO",
+                  "id": "receive_network_audio",
+                  "name": "receive_network_audio"
+                }
+              }
+            ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

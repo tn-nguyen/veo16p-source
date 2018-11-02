@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/view/ViewObjects.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+    <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link href="../scripts/jquery/ui.spinner.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/ui.spinner.min.js"></script>
+
+    <title></title>
+
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Camera", "Tamper");
+            </script>
+          </ul>
+        </div>
+        <div id="c_sp_div_contents">
+          <form name="camsetting_motion" id="camsetting_motion">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2><span id='lang_TamperSetting'>Tamper setting</span></h2>
+              <div id="tamper-tab">
+                <ul>
+                  <li><a href="#tab-act"><span id="lang_tab_activation">ACTIVATION</span></a></li>
+                  <li><a href="#tab-area"><span id="lang_Sensitivity">SENSITIVITY</span></a></li>
+                </ul>
+                <div id="tab-act">
+                  <table id="tamper-act">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th><span id="lang_activation">ACTIVATION</span></th>
+                        <th><span id="lang_mark">MARK</span></th>
+                      </tr>
+                      <tr>
+                        <th><span id="lang_selectAll">ALL</span></th>
+                        <th>
+                          <select id="act_all" class="lsttamper">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </th>
+                        <th>
+                          <select id="mark_all" class="lsttamper">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span id='cam1'>CAM1</span></td>
+                        <td>
+                          <select id="act1" class="lsttamper" name="act1">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark1" class="lsttamper" name="mark1">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam2'>CAM2</span></td>
+                        <td>
+                          <select id="act2" class="lsttamper" name="act2">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark2" class="lsttamper" name="mark2">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam3'>CAM3</span></td>
+                        <td>
+                          <select id="act3" class="lsttamper" name="act3">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark3" class="lsttamper" name="mark3">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam4'>CAM4</span></td>
+                        <td>
+                          <select id="act4" class="lsttamper" name="act4">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark4" class="lsttamper" name="mark4">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody class='chenable8'>
+                      <tr>
+                        <td><span id='cam5'>CAM5</span></td>
+                        <td>
+                          <select id="act5" class="lsttamper" name="act5">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark5" class="lsttamper" name="mark5">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam6'>CAM6</span></td>
+                        <td>
+                          <select id="act6" class="lsttamper" name="act6">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark6" class="lsttamper" name="mark6">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam7'>CAM7</span></td>
+                        <td>
+                          <select id="act7" class="lsttamper" name="act7">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark7" class="lsttamper" name="mark7">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam8'>CAM8</span></td>
+                        <td>
+                          <select id="act8" class="lsttamper" name="act8">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark8" class="lsttamper" name="mark8">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody class='chenable16'>
+                      <tr>
+                        <td><span id='cam9'>CAM9</span></td>
+                        <td>
+                          <select id="act9" class="lsttamper" name="act9">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark9" class="lsttamper" name="mark9">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam10'>CAM10</span></td>
+                        <td>
+                          <select id="act10" class="lsttamper" name="act10">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark10" class="lsttamper" name="mark10">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam11'>CAM11</span></td>
+                        <td>
+                          <select id="act11" class="lsttamper" name="act11">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark11" class="lsttamper" name="mark11">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam12'>CAM12</span></td>
+                        <td>
+                          <select id="act12" class="lsttamper" name="act12">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark12" class="lsttamper" name="mark12">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam13'>CAM13</span></td>
+                        <td>
+                          <select id="act13" class="lsttamper" name="act13">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark13" class="lsttamper" name="mark13">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam14'>CAM14</span></td>
+                        <td>
+                          <select id="act14" class="lsttamper" name="act14">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark14" class="lsttamper" name="mark14">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam15'>CAM15</span></td>
+                        <td>
+                          <select id="act15" class="lsttamper" name="act15">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark15" class="lsttamper" name="mark15">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span id='cam16'>CAM16</span></td>
+                        <td>
+                          <select id="act16" class="lsttamper" name="act16">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="mark16" class="lsttamper" name="mark16">
+                            <option value='0'>Off</option>
+                            <option value='1'>On</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="tab-area">
+                  
+                  <div class="tamper_setup">
+                    <dl>
+                      <dt>
+                      <span id='lang_camCh' class="list">Ch. No.</span>
+                      </dt>
+                      <dd>
+                        <select class="lsttamper" id="chno" name="chno"></select>
+                      </dd>
+                      <dt>
+                      <span id='lang_daytime' class="list">Daytime</span>
+                      </dt>
+                      <dd>
+                      <select class="lsttamper area_setup" id="rebl_time_start" name="rebl_time_start">
+                        <option value='0'>  0:00    </option>
+                        <option value='1'>  1:00    </option>
+                        <option value='2'>  2:00    </option>
+                        <option value='3'>  3:00    </option>
+                        <option value='4'>  4:00    </option>
+                        <option value='5'>  5:00    </option>
+                        <option value='6'>  6:00    </option>
+                        <option value='7'>  7:00    </option>
+                        <option value='8'>  8:00    </option>
+                        <option value='9'>  9:00    </option>
+                        <option value='10'> 10:00   </option>
+                        <option value='11'> 11:00   </option>
+                        <option value='12'> 12:00   </option>
+                        <option value='13'> 13:00   </option>
+                        <option value='14'> 14:00   </option>
+                        <option value='15'> 15:00   </option>
+                        <option value='16'> 16:00   </option>
+                        <option value='17'> 17:00   </option>
+                        <option value='18'> 18:00   </option>
+                        <option value='19'> 19:00   </option>
+                        <option value='20'> 20:00   </option>
+                        <option value='21'> 21:00   </option>
+                        <option value='22'> 22:00   </option>
+                        <option value='23'> 23:00   </option>
+                      </select> ~ 
+                      <select class="lsttamper area_setup" id="rebl_time_end" name="rebl_time_end">
+                        <option value='0'>  0:00    </option>
+                        <option value='1'>  1:00    </option>
+                        <option value='2'>  2:00    </option>
+                        <option value='3'>  3:00    </option>
+                        <option value='4'>  4:00    </option>
+                        <option value='5'>  5:00    </option>
+                        <option value='6'>  6:00    </option>
+                        <option value='7'>  7:00    </option>
+                        <option value='8'>  8:00    </option>
+                        <option value='9'>  9:00    </option>
+                        <option value='10'> 10:00   </option>
+                        <option value='11'> 11:00   </option>
+                        <option value='12'> 12:00   </option>
+                        <option value='13'> 13:00   </option>
+                        <option value='14'> 14:00   </option>
+                        <option value='15'> 15:00   </option>
+                        <option value='16'> 16:00   </option>
+                        <option value='17'> 17:00   </option>
+                        <option value='18'> 18:00   </option>
+                        <option value='19'> 19:00   </option>
+                        <option value='20'> 20:00   </option>
+                        <option value='21'> 21:00   </option>
+                        <option value='22'> 22:00   </option>
+                        <option value='23'> 23:00   </option>
+                      </select>
+                      </dd>
+                    </dl>
+                    <table class="sensitivity">
+                      <col class="prop1"></col>
+                      <colgroup>
+                        <col class="prop2"></col>
+                        <col class="prop2"></col>
+                      </colgroup>
+
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th><span class="list"><span id='lang_Sensitivity'>Sensitivity</span></span></th>
+                          <th><span class="list"><span ></span></span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th><span class="list"><span id='lang_daytime'>Daytime</span></span></th>
+                          <td>
+                            <select class="lsttamper area_setup" id="redirect_level_d" name="redirect_level_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                            </select>
+                            <!--
+                            <div id="slider-sense_d" class="slider"></div>
+                            <input type="text" id="sense_d" class="spinner" value="0"/>
+                            -->
+                          </td>
+                          <td>
+                            
+                            <!--
+                            <div id="slider-mini_d" class="slider"></div>
+                            <input type="text" id="mini_d" class="spinner" value="0"/>
+                            -->
+                          </td>
+                        </tr>
+                        <tr>
+                          <th><span class="list"><span id='lang_nighttime'>Nighttime</span></span></th>
+                          <td>
+                            <select class="lsttamper area_setup" id="redirect_level_n" name="redirect_level_n">
+                              <option value='0'>0</option>
+                            </select>
+                            <!--
+                            <div id="sense_n"></div>
+                            -->
+                          </td>
+                          <td>
+                            <!--
+                            <div id="slider-mini_n" class="slider"></div>
+                            <input type="text" id="mini_n" class="spinner" value="0"/>
+                            -->
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                </div> <!-- tab --> 
+            </div>
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </form>
+        </div>  
+      </div>
+    </div>
+
+  </body>
+
+  <script type="text/javascript" src="../scripts/selectAll.js"></script>
+  <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('CamTamper');
+  </script>        
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+
+   <script type="text/javascript" src="../scripts/MotionWidgets.js"></script>
+  <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/CamController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+      name: 'CamTamper',
+      action: 'index',
+      debug: false
+    });
+
+    dvrpoke();
+
+  </script>            
+</html>

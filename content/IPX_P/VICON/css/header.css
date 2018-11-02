@@ -1,0 +1,62 @@
+/*
+ * header
+ */
+header {
+  width: 100%;
+  height: 56px;
+  z-index: 1;
+}
+
+.logo {
+  background: url(/images/logo/logo_vicon.png) no-repeat;
+  text-indent: -10000px;
+  width:205px;
+  float:left;
+}
+
+.gnb {
+  float:left;
+  position:relative;
+  top:20px;
+  left:0;
+  z-index:3;
+  margin-left:5px;
+}
+
+.gnb ul {
+  margin:0;
+  padding:0;
+  width:495px;
+  overflow:hidden;
+  left: 0px;
+  top: 1px;
+}
+
+.gnb li {
+  float:left;
+  position:relative;
+  width:120px;
+  height:25px;
+  padding-top:9px;
+  padding-left:1px;
+  background:url(/images/images/tab_nor.gif) no-repeat;
+  text-align:center;
+}
+
+.gnb li a {
+  color:#FFFFFF;
+  text-decoration:none;
+}
+
+.gnb li.on {
+  width:122px;
+  height:25px;
+  background:url(/images/images/tab_sel.gif) no-repeat;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.gnb li.on span {
+  font-weight:bolder;
+  text-decoration:none;
+}

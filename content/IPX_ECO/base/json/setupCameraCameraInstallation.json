@@ -1,0 +1,80 @@
+{
+  "id": "setupCameraCameraInstallation",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    "setupCameraCameraInstallationSearchTable": "setupCameraCameraInstallationSearchTable",
+    "setupCameraCameraInstallationSetupTable": "setupCameraCameraInstallationSetupTable",
+    "dialogIpcameraConfiguration" : "dialogIpcameraConfiguration"
+  },
+
+  "pages": [
+    {
+      "text": "CAMERA INSTALLATION",
+      "id": "setupCameraCameraInstallationSetup",
+      "class": "setupCameraCameraInstallationSetup",
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "input": {
+                    "type": "button",
+                    "id": "buttonCameraInstallationAddNewCamera",
+                    "text": "CAMERA ADD/DELETE"
+                  }
+                },
+                {
+                  "div": {
+                    "id": "setupCameraCameraInstallationSetupTable"
+                  }
+                },
+                {
+                  "string": {
+                    "text": "You need to set up the network properties on this device for adding cameras."
+                  }
+                },
+                {"br": ""},
+                {
+                  "string": {
+                    "text": "If you didn't set up the network properties before, then you need to set up the network properties."
+                  }
+                },
+                {"br": ""},
+                {
+                  "input": {
+                    "type": "button",
+                    "id": "selectInstallationModeRedirectNetworkSetup",
+                    "text": "GO TO NETWORK SETUP"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "text": "CAMERA INSTALLATION",
+      "id": "setupCameraCameraInstallationSearch",
+      "class": "setupCameraCameraInstallationSearch",
+      "style": "display:none;",
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "div": {
+                    "id": "setupCameraCameraInstallationSearchTable"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

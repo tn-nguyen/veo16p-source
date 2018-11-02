@@ -1,0 +1,859 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+      language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css"
+    rel="stylesheet" type="text/css" />
+    <script type="text/javascript"
+      src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript"
+      src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left: 10px; padding-top: 10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Camera", "PTZ");
+            </script>
+          </ul>
+        </div>
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_contents">
+            <form name="camsetting_ptz" id="camsetting_ptz"
+              action='/cgi-bin/webra_fcgi.fcgi'>
+              <div class="c_sp_div_frame c_sp_div_frame_dot">
+                <h2>
+                  <span id='lang_MenuCamPTZ'>PTZ setting</span>
+                </h2>
+                <table class="cam_ptz">
+                  <thead>
+                    <tr>
+                      <th><div id='lang_camCh'>Ch.</div></th>
+                      <th><div id='lang_camAddress'>Address</div></th>
+                      <th><div id='lang_camAutoFocus'>Auto Focus</div></th>
+                      <th><div id='lang_camPTSpeed'>P/T Speed</div></th>
+                      <th><div id='lang_camFocusSpeed'>Focus Speed</div></th>
+                    </tr>
+                    <tr>
+                      <th><div id='lang_camProtocol'>Protocol</div></th>
+                      <th><div id='lang_camBaudrate'>Baudrate</div></th>
+                      <th><div id='lang_camAutoIris'>Auto Iris</div></th>
+                      <th><div id='lang_camZoomSpeed'>Zoom Speed</div></th>
+                      <th><div id='lang_camIrisSpeed'>Iris Speed</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch1">1</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address0" id="address0" value=""
+                        onkeydown="NumObj(event);" maxlength="3"
+                        class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus0" name="autofocus0"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed0" name="ptspeed0"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed0" name="focusspeed0"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol0" name="protocol0"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate0" name="baudrate0"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris0" name="autoiris0"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed0" name="zoomspeed0"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed0" name="irisspeed0"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch2">2</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address1" id="address1" value=""
+                        onkeydown="NumObj(event);" maxlength="3"
+                        class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus1" name="autofocus1"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed1" name="ptspeed1"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed1" name="focusspeed1"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol1" name="protocol1"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate1" name="baudrate1"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris1" name="autoiris1"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed1" name="zoomspeed1"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed1" name="irisspeed1"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch3">3</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address2" id="address2" value=""
+                        onkeydown="NumObj(event);" maxlength="3"
+                        class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus2" name="autofocus2"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed2" name="ptspeed2"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed2" name="focusspeed2"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol2" name="protocol2"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate2" name="baudrate2"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris2" name="autoiris2"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed2" name="zoomspeed2"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed2" name="irisspeed2"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch4">4</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address3" id="address3" value=""
+                        onkeydown="NumObj(event);" maxlength="3"
+                        class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus3" name="autofocus3"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed3" name="ptspeed3"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed3" name="focusspeed3"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol3" name="protocol3"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate3" name="baudrate3"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris3" name="autoiris3"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed3" name="zoomspeed3"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed3" name="irisspeed3"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                  </tbody>
+                  <tbody class='chenable8'>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch5">5</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address4" id="address4" value=""
+                        onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus4" name="autofocus4"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed4" name="ptspeed4"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed4" name="focusspeed4"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol4" name="protocol4"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate4" name="baudrate4"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris4" name="autoiris4"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed4" name="zoomspeed4"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed4" name="irisspeed4"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch6">6</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address5" id="address5" value=""
+                        onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus5" name="autofocus5"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed5" name="ptspeed5"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed5" name="focusspeed5"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol5" name="protocol5"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate5" name="baudrate5"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris5" name="autoiris5"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed5" name="zoomspeed5"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed5" name="irisspeed5"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch7">7</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address6" id="address6" value=""
+                        onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus6" name="autofocus6"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed6" name="ptspeed6"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed6" name="focusspeed6"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol6" name="protocol6"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate6" name="baudrate6"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris6" name="autoiris6"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed6" name="zoomspeed6"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed6" name="irisspeed6"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div id="ch8">8</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address7" id="address7" value=""
+                        onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus7" name="autofocus7"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed7" name="ptspeed7"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed7" name="focusspeed7"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol7" name="protocol7"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate7" name="baudrate7"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris7" name="autoiris7"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed7" name="zoomspeed7"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed7" name="irisspeed7"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                  </tbody>
+                  <tbody class='chenable16'> 
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch9">9</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address8" id="address8"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus8" name="autofocus8"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed8" name="ptspeed8"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed8" name="focusspeed8"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol8" name="protocol8"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate8" name="baudrate8"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris8" name="autoiris8"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed8" name="zoomspeed8"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed8" name="irisspeed8"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch10">10</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address9" id="address9"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus9" name="autofocus9"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed9" name="ptspeed9"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed9" name="focusspeed9"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol9" name="protocol9"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate9" name="baudrate9"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris9" name="autoiris9"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed9" name="zoomspeed9"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed9" name="irisspeed9"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch11">11</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address10" id="address10"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus10" name="autofocus10"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed10" name="ptspeed10"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed10" name="focusspeed10"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol10" name="protocol10"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate10" name="baudrate10"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris10" name="autoiris10"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed10" name="zoomspeed10"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed10" name="irisspeed10"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch12">12</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address11" id="address11"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus11" name="autofocus11"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed11" name="ptspeed11"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed11" name="focusspeed11"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol11" name="protocol11"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate11" name="baudrate11"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris11" name="autoiris11"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed11" name="zoomspeed11"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed11" name="irisspeed11"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch13">13</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address12" id="address12"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus12" name="autofocus12"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed12" name="ptspeed12"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed12" name="focusspeed12"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol12" name="protocol12"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate12" name="baudrate12"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris12" name="autoiris12"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed12" name="zoomspeed12"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed12" name="irisspeed12"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch14">14</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address13" id="address13"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus13" name="autofocus13"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed13" name="ptspeed13"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed13" name="focusspeed13"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol13" name="protocol13"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate13" name="baudrate13"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris13" name="autoiris13"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed13" name="zoomspeed13"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed13" name="irisspeed13"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch15">15</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address14" id="address14"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus14" name="autofocus14"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed14" name="ptspeed14"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed14" name="focusspeed14"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol14" name="protocol14"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate14" name="baudrate14"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris14" name="autoiris14"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed14" name="zoomspeed14"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed14" name="irisspeed14"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="c_sp_td_cam_ptz_body1"><div
+                          id="ch16">16</div></td>
+                      <td class="c_sp_td_cam_ptz_body1"><input
+                        type="text" name="address15" id="address15"
+                        value="" onkeydown="NumObj(event);"
+                        maxlength="3" class="c_sp_txt_cam_ptz_addr"></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="autofocus15" name="autofocus15"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="c_sp_td_cam_ptz_body1"><select
+                          id="ptspeed15" name="ptspeed15"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="c_sp_td_cam_ptz_body2"><select
+                          id="focusspeed15" name="focusspeed15"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                    <tr>
+                      <td class="left_bottom_cel"><select
+                          id="protocol15" name="protocol15"
+                          class="c_sp_lst_cam_ptz_pt cam_protocol"></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="baudrate15" name="baudrate15"
+                          class="c_sp_lst_cam_ptz_sel">
+                          <option value="2400">2400</option>
+                          <option value="4800">4800</option>
+                          <option value="9600">9600</option>
+                          <option value="19200">19200</option>
+                          <option value="38400">38400</option>
+                          <option value="57600">57600</option>
+                          <option value="115200">115200</option>
+                      </select></td>
+                      <td class="left_bottom_cel"><select
+                          id="autoiris15" name="autoiris15"
+                          class="c_sp_lst_cam_ptz_sel"><option
+                          value="0">Off</option>
+                          <option value="1">On</option></select></td>
+                      <td class="left_bottom_cel"><select
+                          id="zoomspeed15" name="zoomspeed15"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                      <td class="right_bottom_cel"><select
+                          id="irisspeed15" name="irisspeed15"
+                          class="c_sp_lst_cam_ptz_sel set_speed"></select></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK"
+            class="c_sp_btn_okcancel" /> <input type="button"
+            value="lang_CANCEL" id="cancel"
+            class="c_sp_btn_okcancel" />
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg"></div>
+            <div id="printMsg"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+<script type="text/javascript">
+  ShowInit('CamPTZ');
+</script>
+
+<script type="text/javascript" src="../scripts/zzmvc.js"></script>
+<script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+
+<script type="text/javascript" src="../scripts/view/CamView.js"></script>
+<script type="text/javascript"
+  src="../scripts/controller/CamController.js"></script>
+
+<script type="text/javascript">
+  zzmvc({
+    name : 'CamPTZ',
+    action : 'index',
+    debug : false
+  });
+
+  dvrpoke();
+</script>
+  </body>
+</html>

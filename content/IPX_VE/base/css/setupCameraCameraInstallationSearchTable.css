@@ -1,0 +1,146 @@
+/*********************************************************************************************************/
+/* setupCameraCameraInstallationSearchTable */
+/*********************************************************************************************************/
+#setupCameraCameraInstallationSearchTable{
+
+}
+
+/*********************************************************************************************************/
+/* search & options */
+/*********************************************************************************************************/
+
+#setupCameraCameraInstallationSearchTable #buttonSetupCameraCameraInstallationSearch {
+  width: 15%;
+}
+
+#setupCameraCameraInstallationSearchTable #selectSetupCameraCameraInstallationSearchType {
+  width: 25%;
+  margin-right: 30px;
+}
+
+#setupCameraCameraInstallationSearchTable #setupCameraCameraInstallationSearchSpecificHost {
+  width: 22%;
+}
+
+#setupCameraCameraInstallationSearchTable #setupCameraCameraInstallationSearchSpecificPort {
+  width: 7%;
+}
+
+#setupCameraCameraInstallationSearchTable #setupCameraCameraInstallationSearchSearchingImage {
+  width: 14px;
+}
+
+/*********************************************************************************************************/
+/* tableCameraCameraInstallationSearch */
+/*********************************************************************************************************/
+
+.tableCameraCameraInstallationSearch {
+  width:100%;
+}
+
+.tableCameraCameraInstallationSearch .col-Model {
+  width:25%
+}
+
+.tableCameraCameraInstallationSearch .col-Address {
+  width:25%;
+}
+
+.tableCameraCameraInstallationSearch .col-Status {
+  width:10%;
+}
+
+.tableCameraCameraInstallationSearch .col-Occupied {
+  width:10%;
+}
+
+.tableCameraCameraInstallationSearch .col-AssignedChannel {
+  width:15%;
+}
+
+.tableCameraCameraInstallationSearch .col-Setup {
+  width:5%;
+}
+
+.tableCameraCameraInstallationSearch .col-preview {
+  width:5%;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchSetup {
+  /* background: url(button.png) no-repeat */
+  background: url(/images/ITX_OLD/bt_pop_setting_n.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchSetup.needSetup {
+  background: url(/images/ITX_OLD/bt_pop_setting_n2.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchSetup:hover {
+  background: url(/images/ITX_OLD/bt_pop_setting_o.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchSetup:active {
+  background: url(/images/ITX_OLD/bt_pop_setting_p.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchSetup:disabled {
+  background: url(/images/ITX_OLD/bt_pop_setting_d.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchPieview {
+  /* background: url(button.png) no-repeat */
+  background: url(/images/ITX_OLD/bt_playback_play_n.gif) no-repeat center;
+  height: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchPieview:hover {
+  background: url(/images/ITX_OLD/bt_playback_play_o.gif) no-repeat center;
+  height: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchPieview:active {
+  background: url(/images/ITX_OLD/bt_playback_play_p.gif) no-repeat center;
+  height: 20px;
+}
+
+.tableCameraCameraInstallationSearch .tdCameraCameraInstallationSearchPieview:disabled {
+  background: url(/images/ITX_OLD/bt_playback_pause_n.gif) no-repeat center;
+  height: 20px;
+}
+
+.tdCameraCameraInstallationSearchPrevious {
+  margin-left: 125px;
+  width: 100px;
+}
+
+.tdCameraCameraInstallationSearchNext {
+  width: 100px;
+}
+
+/*********************************************************************************************************/
+/* preview */
+/*********************************************************************************************************/
+#imgCameraInstallationPreview {
+  border: 1px solid #2694e8;
+  width: 205px;
+  height: 115px;
+}
+
+/*********************************************************************************************************/
+/*  */
+/*********************************************************************************************************/

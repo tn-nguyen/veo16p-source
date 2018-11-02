@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css"> 
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">info_include();</script>
+
+        
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+        <script type="text/javascript">
+        passwordRenewCheck();
+        language_include();</script>
+
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+                
+        <title></title>
+    </head>
+
+    <body>
+        <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                        <script type="text/javascript">print_left_menu(document, "Sound", "Audio/Buzzer");</script>
+                    </ul>
+                </div>
+
+                <form name="soundsetting_audio" id="soundsetting_audio" action='/cgi-bin/webra_fcgi.fcgi'>
+                    <div id="c_sp_div_contents">
+                        <div class="c_sp_div_frame c_sp_div_frame_dot">
+                            <h2>
+                            <span id='lang_AudioSetting'>
+                                Audio setting
+                            </span>
+                            </h2>
+                            <div id="divsound" class="c_sp_div_sound">
+                            	<dl class="liveaud">
+                            		<dt><span id='lang_Defaultaudiochannel'> Live audio </span></dt>
+                            		<dd>
+                                        <select id="live" name="live" class="lstdisp">
+                                            <option value="255">Off</option>
+                                        </select>
+                            		</dd>
+                            	</dl>
+                            </div>
+                            <div id="divnetaudio" class="c_sp_div_sound">
+                            	<dl class="netaud">
+                            		<dt>
+                                            <span id='lang_Networkaudiotransmission'>
+                                                Network audio transmission
+                                            </span>
+                            		</dt>
+                            		<dd>
+                                        <select  id="netaudiotrans" name="netaudiotrans" class="lstdisp">
+                                            <option value="0">Off</option>
+                                            <option value="1">On</option>
+                                        </select>
+                            		</dd>
+                            		<dt>
+                                        <span class="list">
+                                            <span id='lang_Networkaudioreceive'>
+                                                Network audio receive
+                                            </span>
+                                        </span>
+                            		</dt>
+                            		<dd>
+                                        <select  id="netaudiorecv" name="netaudiorecv" class="lstdisp">
+                                            <option value="0">Off</option>
+                                            <option value="1">On</option>
+                                        </select>
+                            		</dd>
+                            	</dl>
+                            </div>
+                            <!-- 
+                            <div id="divaudioin" class="c_sp_div_sound">
+                            	<dl>
+                            		<dt>Audio Ch1 Input</dt>
+                            		<dd>
+                            			<select name="indev0" id="indev0" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch2 Input</dt>
+                            		<dd>
+                            			<select name="indev1" id="indev1" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch3 Input</dt>
+                            		<dd>
+                            			<select name="indev2" id="indev2" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch4 Input</dt>
+                            		<dd>
+                            			<select name="indev3" id="indev3" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            	</dl>
+                            	<dl class="chenable8">
+                            		<dt>Audio Ch5 Input</dt>
+                            		<dd>
+                            			<select name="indev4" id="indev4" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch6 Input</dt>
+                            		<dd>
+                            			<select name="indev5" id="indev5" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch7 Input</dt>
+                            		<dd>
+                            			<select name="indev6" id="indev6" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch8 Input</dt>
+                            		<dd>
+                            			<select name="indev7" id="indev7" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            	</dl>
+                            	<dl class="chenable16">
+                            		<dt>Audio Ch9 Input</dt>
+                            		<dd>
+                            			<select name="indev0" id="indev0" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch10 Input</dt>
+                            		<dd>
+                            			<select name="indev1" id="indev1" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch11 Input</dt>
+                            		<dd>
+                            			<select name="indev2" id="indev2" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch12 Input</dt>
+                            		<dd>
+                            			<select name="indev3" id="indev3" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch13 Input</dt>
+                            		<dd>
+                            			<select name="indev0" id="indev0" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch14 Input</dt>
+                            		<dd>
+                            			<select name="indev1" id="indev1" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch15 Input</dt>
+                            		<dd>
+                            			<select name="indev2" id="indev2" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            		<dt>Audio Ch16 Input</dt>
+                            		<dd>
+                            			<select name="indev3" id="indev3" class="lstdisp">
+                            				<option value="0">Rear</option>
+                            				<option value="1">Camera</option>
+                            			</select>
+                            		</dd>
+                            	</dl>
+                            </div>
+                            -->
+                            <h2>
+                            <span id='lang_BuzzerSetting'>
+                                Buzzer setting
+                            </span>
+                            </h2>
+                            <div class="c_sp_div_sound">
+                            	<dl>
+                            		<dt>
+                            			<span id='lang_RemoteSetting'>Remote Controller</span>
+                            		</dt>
+                            		<dd>
+                                  <select  id="remote" name="remote" class="lstdisp">
+                                    <option value="0">Off</option>
+                                    <option value="1">On</option>
+                                  </select>
+                            		</dd>
+
+                                <dt>
+                                  <span id='lang_KeypadSetting'>Button control</span>
+                                </dt>
+                                <dd>
+                                  <select  id="keypad" name="keypad" class="lstdisp">
+                                    <option value="0">Off</option>
+                                    <option value="1">On</option>
+                                  </select>
+                                </dd>
+                                
+                            	</dl>
+                            </div>
+                        </div>
+
+                        <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../scripts/init/DispSndInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('SoundAudio');
+        </script>        
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/DispSndModel.js"></script>
+
+        <script type="text/javascript" src="../scripts/view/DispSndView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/DispSndController.js"></script>
+
+        <script type="text/javascript">
+            zzmvc({
+                name: 'SoundAudio',
+                action: 'index',
+                debug: false
+            });
+
+            dvrpoke();
+
+        </script>
+    </body>
+</html>

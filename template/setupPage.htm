@@ -1,0 +1,159 @@
+<!-- setupPage.htm -->
+{{#pages}}
+<div{{#id}} id="{{.}}"{{/id}} class="page{{#class}} {{.}}{{/class}}"{{#style}} style="{{.}}"{{/style}}>
+  {{#text}}<h2><span>{{.}}</span></h2>{{/text}}
+
+  {{#each rows}}
+  <div{{#id}} id="{{.}}"{{/id}} class="row{{#class}} {{.}}{{/class}}"{{#style}} style="{{.}}"{{/style}}>
+    {{#each this.cols}}
+    <div {{#id}} id="{{.}}"{{/id}}{{#style}} style="{{.}}"{{/style}}class="col-{{#if width}}{{width}}{{else}}10{{/if}}{{#if last}} last{{/if}} {{#class}} {{.}}{{/class}}">
+
+      <dl>
+        {{#each content}}
+
+        {{#subtitle}}
+        <div class="clear"><h4><span id="{{text}}">{{text}}</span></h4></div>
+        {{/subtitle}}
+
+        {{#br}}<br/>{{/br}}
+
+        {{#string}}
+        {{#if label}}
+        <dt><span>{{label}}</span></dt>
+        <dd>
+        {{/if}}
+          <span{{#id}} id="{{.}}"{{/id}} class="{{class}} {{#if label}}{{else}}clear{{/if}}"{{#style}} style="{{.}}"{{/style}}>{{text}}</span>
+          {{#br}}<br/>{{/br}}
+        {{#if label}}
+        </dd>
+        {{else}}
+        {{/if}}
+        {{/string}}
+
+        {{#select}}
+        {{#if label}}
+        <dt><span>{{label}}</span></dt>
+        <dd>
+        {{/if}}
+        <select{{#id}} id="{{.}}"{{/id}}{{#name}} name="{{.}}"{{/name}} class="{{class}} {{#if label}}{{else}}clear{{/if}}"{{#style}} style="{{.}}"{{/style}}{{#value}} value="{{.}}"{{/value}}{{#disabled}} disabled{{/disabled}}>
+          {{#if option}}
+          {{#option}}
+          <option  id="{{id}}" value="{{value}}"{{#disabled}} disabled{{/disabled}}>{{text}}</option>
+          {{/option}}
+          {{else}}
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          {{/if}}
+        </select>
+        {{#if label}}
+        </dd>
+        {{/if}}
+        {{/select}}
+
+        {{#input}}
+        {{#if label}}
+        <dt><span>{{label}}</span></dt>
+        <dd>
+        {{/if}}
+        <input{{#type}} type="{{.}}"{{/type}}{{#id}} id="{{.}}"{{/id}}{{#name}} name="{{.}}"{{/name}}{{#class}} class="{{.}}"{{/class}}{{#style}} style="{{.}}"{{/style}}{{#text}} value="{{.}}"{{/text}}{{#disabled}} disabled{{/disabled}}/>
+        {{#if label}}
+        </dd>
+        {{/if}}
+        {{/input}}
+
+        {{#input-input}}
+        {{#if label}}
+        <dt><span>{{label}}</span></dt>
+        <dd>
+        {{/if}}
+        <input{{#type0}} type="{{.}}"{{/type0}}{{#id0}} id="{{.}}"{{/id0}}{{#name0}} name="{{.}}"{{/name0}}{{#class0}} class="{{.}}"{{/class0}}{{#style0}} style="{{.}}"{{/style0}}{{#text0}} value="{{.}}"{{/text0}}{{#disabled0}} disabled{{/disabled0}}/>
+        <input{{#type1}} type="{{.}}"{{/type1}}{{#id1}} id="{{.}}"{{/id1}}{{#name1}} name="{{.}}"{{/name1}}{{#class1}} class="{{.}}"{{/class1}}{{#style1}} style="{{.}}"{{/style1}}{{#text1}} value="{{.}}"{{/text1}}{{#disabled1}} disabled{{/disabled1}}/>
+        {{#if label}}
+        </dd>
+        {{/if}}
+        {{/input-input}}
+
+        {{#div}}
+        {{#if label}}
+        <dt><span>{{label}}</span></dt>
+        <dd>
+        {{/if}}
+        <div{{#id}} id="{{.}}"{{/id}}{{#name}} name="{{.}}"{{/name}} class="{{class}} {{#if label}}{{else}}clear{{/if}}"{{#style}} style="{{.}}"{{/style}}{{#disabled}} disabled{{/disabled}}></div>
+        {{#if label}}
+        </dd>
+        {{/if}}
+        {{/div}}
+
+        {{#img}}
+        <img{{#id}} id="{{.}}"{{/id}}{{#name}} name="{{.}}"{{/name}}{{#class}} class="{{.}}"{{/class}}{{#style}} style="{{.}}"{{/style}}{{#src}} src="{{.}}"{{/src}}{{#disabled}} disabled{{/disabled}}></img>
+        {{#br}}<br/>{{/br}}
+        {{/img}}
+
+        {{#table}}
+        <table{{#id}} id="{{.}}"{{/id}}{{#class}} class="{{.}}"{{/class}}>
+          {{#cols}}
+          <colgroup>
+            {{#each col}}
+            <col class="col-{{id}}">
+            {{/each}}
+          </colgroup>
+          {{/cols}}
+          {{#cols}}
+          <thead>
+            <tr>
+              {{#each col}}
+              <th{{#span}} colspan="{{.}}"{{/span}} scope="colgroup">
+                <span>{{text}}</span>
+              </th>
+              {{/each}}
+            </tr>
+            {{/cols}}
+          </thead>
+
+          <tbody>
+            {{#each row}}
+            <tr{{#class}} class="{{.}}"{{/class}}>
+              {{#if text}}
+                <td><span id="{{../../idPrefix}}{{text}}">{{text}}</span></td>
+              {{/if}}
+
+              {{#each ../type}}
+              <td>
+                {{#string}}
+                <span {{#if id}} id="{{../../../../idPrefix}}{{id}}_{{../../../id}}"{{/if}}{{#if class}} class="{{../../../../idPrefix}}{{class}}"{{/if}}>{{text}}</span>
+                {{/string}}
+
+                {{#input}}
+                <input{{#type}} type="{{.}}"{{/type}} id="{{../../../idPrefix}}{{id}}_{{../../id}}"{{#name}} name="{{.}}"{{/name}} class="{{../../../idPrefix}}{{class}}"{{#style}} style="{{.}}"{{/style}}{{#text}} value="{{.}}"{{/text}}{{#disabled}} disabled{{/disabled}}/>
+                {{/input}}
+
+                {{#select}}
+                <select id="{{../../../idPrefix}}{{id}}_{{../../id}}"{{#name}} name="{{.}}"{{/name}} class="{{../../../idPrefix}}{{class}}"{{#style}} style="{{.}}"{{/style}}{{#text}} value="{{.}}"{{/text}}{{#disabled}} disabled{{/disabled}}>
+                  {{#if option}}
+                  {{#option}}
+                  <option {{#id}} id="{{.}}"{{/id}} value="{{value}}"{{#disabled}} disabled{{/disabled}}>{{text}}</option>
+                  {{/option}}
+                  {{else}}
+                  <option value="0">Off</option>
+                  <option value="1">On</option>
+                  {{/if}}
+                </select>
+                {{/select}}
+              </td>
+              {{/each}}
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{/table}}
+
+        {{/each}}
+      </dl>
+
+    </div> <!-- //col -->
+    {{/each}}
+  </div> <!-- //row -->
+  {{/each}}
+</div>
+{{/pages}}
+<!-- //setupPage.htm -->

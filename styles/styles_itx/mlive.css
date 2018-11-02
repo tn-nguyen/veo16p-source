@@ -1,0 +1,52 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet 
+
+file Name : mlive.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Frame */
+#c_m_div_contents {clear:both; width:320px; height:249px; background-color:#3e3e3e; border:1px solid #C5D5E0;}
+/**************************************************************************************************************************************/
+/* DISPLAY */
+#c_m_div_live {width:320px; height:218px; background-color:#eeeeee; border:1px solid #3e4e58; margin:0px 0px auto 0px;}
+/**************************************************************************************************************************************/
+/* Tool Bar */
+#c_m_div_toolbar {width:322px; height:29px; background-image:url(../../images/images_i3/live_control_bg.png); margin:0px 0px auto 0px; color:#003363;}
+#c_m_div_toolbar ul.btn1 {float:left; width: 155px; margin-left:1px; margin-right:0;} 
+#c_m_div_toolbar ul.btn2 {float:left; margin:0 192px 0 20px; width:94px;}
+#c_m_div_toolbar li.divided {float:left; width:30px; margin:0;}
+#c_m_div_toolbar li.bar {float:left; width:1px; margin:0; width:1; height:29px;}
+#c_m_div_toolbar .ch_sel {
+	float:left;
+	position:relative;
+	top:3px;
+	width:159px;
+	height:21px;
+	border: 1px solid #A3BCD3;
+	font-size: 14px;
+	color: #373487;
+	text-align: center;
+}
+/**************************************************************************************************************************************/
+
+/**************************************************************************************************************************************/
+/* Live */
+.c_ml_jpg_jpeg1 {width:320px; height:218px; z-index:2000;}
+.c_ml_jpg_jpeg2 {width:320px; height:218px; margin-top:-218px; z-index:1000;}
+.c_ml_lst_channel {width:80px; margin-left:3px;}
+.c_ml_lst_interval {width:80px; margin-left:3px;}
+.c_ml_btn_auto {margin:0px 10px auto 5px;}
+.c_ml_btn_live {width:70px; height:19px; margin:5px 5px auto 5px;}
+.c_ml_btn_sysinfo {width:60px; height:19px; margin:5px 0px auto 0px;}
+/**************************************************************************************************************************************/
+/* Sysinfo */
+/**************************************************************************************************************************************/
+.c_ms_InfoTable {width:320px; height:198px; padding:0; table-layout:fixed; margin:12px auto 3px auto; border-collapse:collapse; font-size:12px; color:#373487; text-align:left;}
+.c_ms_InfoTable td.tdright {height:20px; padding-left:10px; background-color:#3e3e3e; font-weight:normal; letter-spacing:-1; text-decoration:none; border-bottom:1px solid #E6F0F9;}
+.c_ms_InfoTable td.tdleft {height:20px; padding-left:10px; border-right:1px solid #E6F0F9;background-color:#3e3e3e; font-weight:normal; letter-spacing:-1; text-decoration:none; border-bottom:1px solid #E6F0F9;}
+
+.c_ms_btn_live {width:80px; height:19px; margin:5px 15px auto 125px;}

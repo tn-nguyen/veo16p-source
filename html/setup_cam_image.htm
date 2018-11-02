@@ -1,0 +1,1260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css">
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">info_include();</script>
+
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+        <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+        <script type="text/javascript" src="../scripts/bitFieldWidget.js"></script>
+
+        <script type="text/javascript">
+        passwordRenewCheck();
+        language_include();
+        </script>
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+    </head>
+
+    <body>
+
+        <div id="c_g_div_wrapper">
+          <div id="title_layer">
+            <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+          </div>
+          <div id="c_sp_div_menubar">
+            <div id="c_sp_div_menubar_sub">
+              <ul style="padding-left:10px; padding-top:10px;">
+                <script type="text/javascript">print_left_menu(document, "Camera", "Image");</script>
+              </ul>
+            </div>
+
+            <form name="camsetting_image" id="camsetting_image" action='/cgi-bin/webra_fcgi.fcgi'>
+              <div id="c_sp_div_contents">
+                <div class="c_sp_div_frame c_sp_div_frame_dot">
+                  <h2>
+                    <span id='lang_CamImage'>
+                      Camera Image setting
+                    </span>
+                  </h2>
+                  <div id="image_tabs">
+                    <ul>
+                      <li>
+                        <a href="#image_tab_setup">
+                          <span id="lang_image_setup">
+                            Image Setup
+                          </span>
+                        </a>
+                      </li>
+                      <li id="tab_stream">
+                        <a href="#image_tab_stream">
+                          <span id="lang_stream_setup">
+                            Stream Setup
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div id="image_tab_setup">
+                      <table class="c_sp_tb_cam_image4">
+                        <tbody>
+                          <tr>
+                            <td class="c_sp_tb_cam_image_head1">
+                              <span id='lang_camCh'>
+                                Ch.
+                              </span>
+                            </td>
+                            <td class="c_sp_tb_cam_image_head2">
+                              <span id='lang_camBrightness'>
+                                Brightness
+                              </span>
+                            </td>
+                            <td class="c_sp_tb_cam_image_head2">
+                              <span id='lang_camContrast'>
+                                Contrast
+                              </span>
+                            </td>
+                            <td class="c_sp_tb_cam_image_head2">
+                              <span id='lang_camTint'>
+                                Tint
+                              </span>
+                            </td>
+                            <td class="c_sp_tb_cam_image_head2" id="colortitle">
+                              <span id='lang_camColor'>
+                                Color
+                              </span>
+                            </td>
+                            <td class="c_sp_tb_cam_image_head2" id="sharpness">
+                              <span id='lang_camSharpness'>
+                                SHARPNESS
+                              </span>
+                            </td>
+                            <td class="c_sp_tb_cam_image_head3" id="eqtitle">
+                              <span id='lang_camEqualizer'>
+                                EQUALIZER
+                              </span>
+                            </td>
+                            <td class="c_sp_tb_cam_image_head4" id="noise">
+                              <span id='lang_camNoise'>
+                                NOISE
+                              </span>
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch1">
+                                1
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness0" id="brightness0" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast0" id="contrast0" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint0" id="tint0" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell0">
+                              <input type="text" name="color0" id="color0" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell0">
+                              <input type="text" name="sharpness0" id="sharpness0" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell0">
+                              <select id="eq0" name="eq0" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell0">
+                              <select id="noise0" name="noise0" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch2">
+                                2
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness1" id="brightness1" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast1" id="contrast1" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint1" id="tint1" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell1">
+                              <input type="text" name="color1" id="color1" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell1">
+                              <input type="text" name="sharpness1" id="sharpness1" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell1">
+                              <select id="eq1" name="eq1" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell1">
+                              <select id="noise1" name="noise1" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch3">
+                                3
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness2" id="brightness2" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast2" id="contrast2" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint2" id="tint2" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell2">
+                              <input type="text" name="color2" id="color2" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell2">
+                              <input type="text" name="sharpness2" id="sharpness2" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell2">
+                              <select id="eq2" name="eq2" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell2">
+                              <select id="noise2" name="noise2" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch4">
+                                4
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness3" id="brightness3" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast3" id="contrast3" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint3" id="tint3" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell3">
+                              <input type="text" name="color3" id="color3" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell3">
+                              <input type="text" name="sharpness3" id="sharpness3" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell3">
+                              <select id="eq3" name="eq3" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell3">
+                              <select id="noise3" name="noise3" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+
+                          </tr>
+                        </tbody>
+                        <tbody class='chenable8'>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch5">
+                                5
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness4" id="brightness4" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast4" id="contrast4" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint4" id="tint4" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell4">
+                              <input type="text" name="color4" id="color4" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell4">
+                              <input type="text" name="sharpness4" id="sharpness4" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell4">
+                              <select id="eq4" name="eq4" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell4">
+                              <select id="noise4" name="noise4" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch6">
+                                6
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness5" id="brightness5" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast5" id="contrast5" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint5" id="tint5" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell5">
+                              <input type="text" name="color5" id="color5" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell5">
+                              <input type="text" name="sharpness5" id="sharpness5" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell5">
+                              <select id="eq5" name="eq5" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell5">
+                              <select id="noise5" name="noise5" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch7">
+                                7
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness6" id="brightness6" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast6" id="contrast6" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint6" id="tint6" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell6">
+                              <input type="text" name="color6" id="color6" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell6">
+                              <input type="text" name="sharpness6" id="sharpness6" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell6">
+                              <select id="eq6" name="eq6" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell6">
+                              <select id="noise6" name="noise6" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch8">
+                                8
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness7" id="brightness7" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast7" id="contrast7" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint7" id="tint7" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell7">
+                              <input type="text" name="color7" id="color7" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell7">
+                              <input type="text" name="sharpness7" id="sharpness7" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell7">
+                              <select id="eq7" name="eq7" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell7">
+                              <select id="noise7" name="noise7" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tbody class='chenable16'>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch9">
+                                9
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness8" id="brightness8" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast8" id="contrast8" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint8" id="tint8" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell8">
+                              <input type="text" name="color8" id="color8" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell8">
+                              <input type="text" name="sharpness8" id="sharpness8" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell8">
+                              <select id="eq8" name="eq8" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell8">
+                              <select id="noise8" name="noise8" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch10">
+                                10
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness9" id="brightness9" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast9" id="contrast9" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint9" id="tint9" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell9">
+                              <input type="text" name="color9" id="color9" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell9">
+                              <input type="text" name="sharpness9" id="sharpness9" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell9">
+                              <select id="eq9" name="eq9" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell9">
+                              <select id="noise9" name="noise9" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch11">
+                                11
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness10" id="brightness10" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast10" id="contrast10" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint10" id="tint10" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell10">
+                              <input type="text" name="color10" id="color10" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell10">
+                              <input type="text" name="sharpness10" id="sharpness10" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell10">
+                              <select id="eq10" name="eq10" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell10">
+                              <select id="noise10" name="noise10" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch12">
+                                12
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness11" id="brightness11" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast11" id="contrast11" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint11" id="tint11" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell11">
+                              <input type="text" name="color11" id="color11" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell11">
+                              <input type="text" name="sharpness11" id="sharpness11" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell11">
+                              <select id="eq11" name="eq11" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell11">
+                              <select id="noise11" name="noise11" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch13">
+                                13
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness12" id="brightness12" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast12" id="contrast12" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint12" id="tint12" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell12">
+                              <input type="text" name="color12" id="color12" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell12">
+                              <input type="text" name="sharpness12" id="sharpness12" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell12">
+                              <select id="eq12" name="eq12" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell12">
+                              <select id="noise12" name="noise12" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch14">
+                                14
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness13" id="brightness13" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast13" id="contrast13" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint13" id="tint13" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell13">
+                              <input type="text" name="color13" id="color13" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell13">
+                              <input type="text" name="sharpness13" id="sharpness13" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell13">
+                              <select id="eq13" name="eq13" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell13">
+                              <select id="noise13" name="noise13" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch15">
+                                15
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness14" id="brightness14" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast14" id="contrast14" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint14" id="tint14" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell14">
+                              <input type="text" name="color14" id="color14" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell14">
+                              <input type="text" name="sharpness14" id="sharpness14" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell14">
+                              <select id="eq14" name="eq14" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell14">
+                              <select id="noise14" name="noise14" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_td_cam_image1" >
+                              <div id="ch16">
+                                16
+                              </div>
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="brightness15" id="brightness15" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="contrast15" id="contrast15" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" >
+                              <input type="text" name="tint15" id="tint15" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="colorcell15">
+                              <input type="text" name="color15" id="color15" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image2" id="sharpnesscell15">
+                              <input type="text" name="sharpness15" id="sharpness15" value="" class="c_sp_txt_cam_image" maxlength="3">
+                            </td>
+                            <td class="c_sp_td_cam_image3" id="eqcell15">
+                              <select id="eq15" name="eq15" class="c_sp_select_cam_image">
+                                <option value='0'>Off</option>
+                                <option value='1'>On</option>
+                              </select>
+                            </td>
+                            <td class="c_sp_td_cam_image4" id="noisecell15">
+                              <select id="noise15" name="noise15" class="c_sp_select_cam_image">
+                                <option value='0'>0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                              </select>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <input type="button" value="Advanced" id="goto_advanced" class="c_sp_btn_okcancel"/>
+                    </div>
+                    <div id="image_tab_stream">
+                      <div>
+                        <select class="add_width_150" id="stream_ch"></select>
+                      </div>
+                      <table>
+                        <tbody>
+                           <tr>
+                            <td rowspan="2" class="c_sp_tb_cam_stream_head">
+                              <span id="lang_property">속성</span>
+                            </td>
+                            <td colspan="2" class="c_sp_tb_cam_stream_head">
+                              <span id="lang_video_stream">비디오 영상</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_video_1">비디오1</span>
+                            </td>
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_video_2">비디오2</span>
+                            </td>
+                          </tr>
+                          <tr style="display:none">
+                            <td>
+                            </td>
+                            <td>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt0" name="encoder_cnt0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt1" name="encoder_cnt1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt2" name="encoder_cnt2"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt3" name="encoder_cnt3"></input>
+
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt4" name="encoder_cnt4"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt5" name="encoder_cnt5"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt6" name="encoder_cnt6"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt7" name="encoder_cnt7"></input>
+
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt8" name="encoder_cnt8"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt9" name="encoder_cnt9"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt10" name="encoder_cnt10"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt11" name="encoder_cnt11"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt12" name="encoder_cnt12"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt13" name="encoder_cnt13"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt14" name="encoder_cnt14"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="encoder_cnt15" name="encoder_cnt15"></input>
+                            </td>
+                            <td>
+
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_codec">코덱</span>
+                            </td>
+                            <td>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default0_0" name="vcodec_default0_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default1_0" name="vcodec_default1_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default2_0" name="vcodec_default2_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default3_0" name="vcodec_default3_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default4_0" name="vcodec_default4_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default5_0" name="vcodec_default5_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default6_0" name="vcodec_default6_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default7_0" name="vcodec_default7_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default8_0" name="vcodec_default8_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default9_0" name="vcodec_default9_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default10_0" name="vcodec_default10_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default11_0" name="vcodec_default11_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default12_0" name="vcodec_default12_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default13_0" name="vcodec_default13_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default14_0" name="vcodec_default14_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default15_0" name="vcodec_default15_0">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                            </td>
+                            <td>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default0_1" name="vcodec_default0_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default1_1" name="vcodec_default1_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default2_1" name="vcodec_default2_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default3_1" name="vcodec_default3_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default4_1" name="vcodec_default4_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default5_1" name="vcodec_default5_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default6_1" name="vcodec_default6_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default7_1" name="vcodec_default7_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default8_1" name="vcodec_default8_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default9_1" name="vcodec_default9_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default10_1" name="vcodec_default10_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default11_1" name="vcodec_default11_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default12_1" name="vcodec_default12_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default13_1" name="vcodec_default13_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default14_1" name="vcodec_default14_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="vcodec_default15_1" name="vcodec_default15_1">
+                                <!-- <option>H.264</option>
+                                <option>H.265</option> -->
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_record_size">해상도</span>
+                            </td>
+                            <td>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default0_0" name="res_default0_0"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default1_0" name="res_default1_0"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default2_0" name="res_default2_0"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default3_0" name="res_default3_0"></select>
+
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default4_0" name="res_default4_0"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default5_0" name="res_default5_0"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default6_0" name="res_default6_0"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default7_0" name="res_default7_0"></select>
+
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default8_0" name="res_default8_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default9_0" name="res_default9_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default10_0" name="res_default10_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default11_0" name="res_default11_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default12_0" name="res_default12_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default13_0" name="res_default13_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default14_0" name="res_default14_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default15_0" name="res_default15_0"></select>
+                            </td>
+                            <td>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default0_1" name="res_default0_1"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default1_1" name="res_default1_1"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default2_1" name="res_default2_1"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="res_default3_1" name="res_default3_1"></select>
+
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default4_1" name="res_default4_1"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default5_1" name="res_default5_1"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default6_1" name="res_default6_1"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default7_1" name="res_default7_1"></select>
+
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default8_1" name="res_default8_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default9_1" name="res_default9_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default10_1" name="res_default10_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default11_1" name="res_default11_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default12_1" name="res_default12_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default13_1" name="res_default13_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default14_1" name="res_default14_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="res_default15_1" name="res_default15_1"></select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_maximum_frame_rate">최대 FPS</span>
+                            </td>
+                            <td>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default0_0" name="fps_max_default0_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default1_0" name="fps_max_default1_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default2_0" name="fps_max_default2_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default3_0" name="fps_max_default3_0"></input>
+
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default4_0" name="fps_max_default4_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default5_0" name="fps_max_default5_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default6_0" name="fps_max_default6_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default7_0" name="fps_max_default7_0"></input>
+
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default8_0" name="fps_max_default8_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default9_0" name="fps_max_default9_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default10_0" name="fps_max_default10_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default11_0" name="fps_max_default11_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default12_0" name="fps_max_default12_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default13_0" name="fps_max_default13_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default14_0" name="fps_max_default14_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default15_0" name="fps_max_default15_0"></input>
+                            </td>
+                            <td>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default0_1" name="fps_max_default0_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default1_1" name="fps_max_default1_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default2_1" name="fps_max_default2_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default3_1" name="fps_max_default3_1"></input>
+
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default4_1" name="fps_max_default4_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default5_1" name="fps_max_default5_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default6_1" name="fps_max_default6_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default7_1" name="fps_max_default7_1"></input>
+
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default8_1" name="fps_max_default8_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default9_1" name="fps_max_default9_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default10_1" name="fps_max_default10_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default11_1" name="fps_max_default11_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default12_1" name="fps_max_default12_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default13_1" name="fps_max_default13_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default14_1" name="fps_max_default14_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="fps_max_default15_1" name="fps_max_default15_1"></input>
+                            </td>
+                          </tr>
+                          <tr id="tr_bitrate_control">
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_bitrate_control">비트레이트 제어</span>
+                            </td>
+                            <td>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default0_0" name="bitctrl_default0_0"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default1_0" name="bitctrl_default1_0"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default2_0" name="bitctrl_default2_0"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default3_0" name="bitctrl_default3_0"></select>
+
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default4_0" name="bitctrl_default4_0"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default5_0" name="bitctrl_default5_0"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default6_0" name="bitctrl_default6_0"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default7_0" name="bitctrl_default7_0"></select>
+
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default8_0" name="bitctrl_default8_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default9_0" name="bitctrl_default9_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default10_0" name="bitctrl_default10_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default11_0" name="bitctrl_default11_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default12_0" name="bitctrl_default12_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default13_0" name="bitctrl_default13_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default14_0" name="bitctrl_default14_0"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default15_0" name="bitctrl_default15_0"></select>
+                            </td>
+                            <td>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default0_1" name="bitctrl_default0_1"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default1_1" name="bitctrl_default1_1"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default2_1" name="bitctrl_default2_1"></select>
+                              <select class="add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default3_1" name="bitctrl_default3_1"></select>
+
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default4_1" name="bitctrl_default4_1"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default5_1" name="bitctrl_default5_1"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default6_1" name="bitctrl_default6_1"></select>
+                              <select class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default7_1" name="bitctrl_default7_1"></select>
+
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default8_1" name="bitctrl_default8_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default9_1" name="bitctrl_default9_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default10_1" name="bitctrl_default10_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default11_1" name="bitctrl_default11_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default12_1" name="bitctrl_default12_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default13_1" name="bitctrl_default13_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default14_1" name="bitctrl_default14_1"></select>
+                              <select class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="bitctrl_default15_1" name="bitctrl_default15_1"></select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_maximum_bit_rate">최대 전송속도(kbps)</span>
+                            </td>
+                            <td>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default0_0" name="br_max_default0_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default1_0" name="br_max_default1_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default2_0" name="br_max_default2_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default3_0" name="br_max_default3_0"></input>
+
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default4_0" name="br_max_default4_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default5_0" name="br_max_default5_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default6_0" name="br_max_default6_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default7_0" name="br_max_default7_0"></input>
+
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default8_0" name="br_max_default8_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default9_0" name="br_max_default9_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default10_0" name="br_max_default10_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default11_0" name="br_max_default11_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default12_0" name="br_max_default12_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default13_0" name="br_max_default13_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default14_0" name="br_max_default14_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default15_0" name="br_max_default15_0"></input>
+                            </td>
+                            <td>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default0_1" name="br_max_default0_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default1_1" name="br_max_default1_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default2_1" name="br_max_default2_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default3_1" name="br_max_default3_1"></input>
+
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default4_1" name="br_max_default4_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default5_1" name="br_max_default5_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default6_1" name="br_max_default6_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default7_1" name="br_max_default7_1"></input>
+
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default8_1" name="br_max_default8_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default9_1" name="br_max_default9_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default10_1" name="br_max_default10_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default11_1" name="br_max_default11_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default12_1" name="br_max_default12_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default13_1" name="br_max_default13_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default14_1" name="br_max_default14_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_max_default15_1" name="br_max_default15_1"></input>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="c_sp_tb_cam_stream_head">
+                              <span id="lang_minumum_bit_rate">최소 전송속도(kbps)</span>
+                            </td>
+                            <td>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default0_0" name="br_min_default0_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default1_0" name="br_min_default1_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default2_0" name="br_min_default2_0"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default3_0" name="br_min_default3_0"></input>
+
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default4_0" name="br_min_default4_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default5_0" name="br_min_default5_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default6_0" name="br_min_default6_0"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default7_0" name="br_min_default7_0"></input>
+
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default8_0" name="br_min_default8_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default9_0" name="br_min_default9_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default10_0" name="br_min_default10_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default11_0" name="br_min_default11_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default12_0" name="br_min_default12_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default13_0" name="br_min_default13_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default14_0" name="br_min_default14_0"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default15_0" name="br_min_default15_0"></input>
+                            </td>
+                            <td>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default0_1" name="br_min_default0_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default1_1" name="br_min_default1_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default2_1" name="br_min_default2_1"></input>
+                              <input class="add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default3_1" name="br_min_default3_1"></input>
+
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default4_1" name="br_min_default4_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default5_1" name="br_min_default5_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default6_1" name="br_min_default6_1"></input>
+                              <input class="chenable8 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default7_1" name="br_min_default7_1"></input>
+
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default8_1" name="br_min_default8_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default9_1" name="br_min_default9_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default10_1" name="br_min_default10_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default11_1" name="br_min_default11_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default12_1" name="br_min_default12_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default13_1" name="br_min_default13_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default14_1" name="br_min_default14_1"></input>
+                              <input class="chenable16 add_width_150 add_margin_left_25 add_margin_right_25" id="br_min_default15_1" name="br_min_default15_1"></input>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                </div>
+                <div id="c_g_div_button">
+                  <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                  <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                </div>
+                <div id="c_g_div_msg">
+                  <div id="errMsg">
+                  </div>
+                  <div id="printMsg">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('CamImage');
+        </script>
+
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+
+        <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/CamController.js"></script>
+
+        <script type="text/javascript">
+            zzmvc({
+                name: 'CamImage',
+                action: 'index',
+                debug: false
+            });
+
+            dvrpoke();
+        </script>
+    </body>
+</html>

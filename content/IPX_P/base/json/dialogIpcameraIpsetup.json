@@ -1,0 +1,66 @@
+{
+  "id": "dialogIpcameraIpsetup",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "dialog": true,
+  "text": "IP SETUP FOR CAMERA",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "input": {
+                    "label": "DHCP",
+                    "id": "dialogIpCameraIpsetupDhcp",
+                    "type": "checkbox"
+                  }
+                },
+                {
+                  "div": {
+                    "label": "IP ADDRESS",
+                    "id": "dialogIpCameraIpsetupIpAddress",
+                    "class": "ip"
+                  }
+                },
+                {
+                  "div": {
+                    "label": "GATEWAY",
+                    "id": "dialogIpCameraIpsetupGateway",
+                    "class": "ip"
+                  }
+                },
+                {
+                  "div": {
+                    "label": "SUBNET MASK",
+                    "id": "dialogIpCameraIpsetupSubnetMask",
+                    "class": "ip"
+                  }
+                },
+                {
+                  "div": {
+                    "label": "1ST DNS SERVER",
+                    "id": "dialogIpCameraIpsetupDnsServer1",
+                    "class": "ip"
+                  }
+                },
+                {
+                  "div": {
+                    "label": "2ND DNS SERVER",
+                    "id": "dialogIpCameraIpsetupDnsServer2",
+                    "class": "ip"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

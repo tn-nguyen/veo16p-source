@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    <!--
+    @import url("../styles/styles/global.css");
+    @import url("../styles/styles/live.css");
+    -->
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+
+  <script type="text/javascript">
+    <!--
+    info_include();
+    -->
+  </script>
+
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+
+  <script type="text/javascript" src="../scripts/activex_request.js"></script>
+  <script type="text/javascript" src="../scripts/live_request.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/toolbar_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/validate.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+  <script type="text/javascript" src="../scripts/libs/jquery.qrcode.min.js"></script>
+
+  <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();
+  </script>
+
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+
+  <link href="../styles/styles/i3custom.css" rel="stylesheet" type="text/css" />
+  <link href="../styles/styles/i3-layout.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet/less" type="text/css" href="less/fixbug-veo16p.less" />
+
+  <script language="JavaScript" for="itxview" event="OnBackupStatus(nStatus)">
+    self.CallbackBackup(nStatus);
+  </script>
+
+  <script language="JavaScript">
+
+
+        // nStatus
+        // 0 : nomal
+        // 1 : restore button to unclicked
+        // 3 : backup storage is less than 1 gigabyte capacity
+        // 6 : other webra is running search or playback
+        // 5 : Network Disconnect
+        // 7 : Max client is connection
+
+
+
+    function CallbackBackup(nStatus)
+    {
+      if ( parseInt(nStatus) == 3 )
+      {
+        alert(errLiveBackupHdd);
+        LiveBackupInit();
+        var btbackup = document.getElementById("btbackup");
+        btbackup.setAttribute("src", "../images/images/live_bt_backup_n.gif");
+      }
+      else if ( parseInt(nStatus) == 1 ) {
+        if (browerIE == true)
+        {
+          //onLiveStop();
+          livebackupCh = -1;
+          var btbackup = document.getElementById("btbackup");
+          btbackup.setAttribute("src", "../images/images/live_bt_backup_n.gif");
+        }
+      }
+      else if ( parseInt(nStatus) == 5 )
+      {
+        if (browerIE == true)
+        {
+          onLiveStop();
+          var btbackup = document.getElementById("btbackup");
+          btbackup.setAttribute("src", "../images/images/live_bt_backup_n.gif");
+        }
+          alert(errDisconnectNetwork);
+      }
+      else if ( parseInt(nStatus) == 7 )
+      {
+        if (browerIE == true)
+        {
+          onLiveStop();
+          var btbackup = document.getElementById("btbackup");
+          btbackup.setAttribute("src", "../images/images/live_bt_backup_n.gif");
+        }
+          alert(errMaxClientConnect);
+      }
+      else if ( parseInt(nStatus) == 8 )
+      {
+          display_channelmode_change();
+      }
+      else if ( parseInt(nStatus) == 9 )
+      {
+        if (browerIE == true)
+        {
+            var btbackup = document.getElementById("btbackup");
+          btbackup.setAttribute("src", "../images/images/live_bt_backup_n.gif");
+        }
+          alert(errUserPasswd);
+      }
+    }
+
+  </script>
+</head>
+
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+        <!--
+        print_top_menu(document, "LIVE");
+        -->
+      </script>
+    </div>
+    <div id="c_l_div_contents">
+      <div id="c_l_div_livefrm">
+        <div id="c_l_div_live">
+          <div id="liveJpegDiv"></div>
+            <script language="javascript">
+              ActiveX_Include();
+            </script>
+          </div>
+          <div id="c_l_div_toolbar">
+            <script language="javascript">
+              <!--
+                print_toolbar_live_menu(document, INFO_DVRCHANNEL);
+              -->
+            </script>
+          </div>
+
+        <div id="c_l_div_tab">
+          <ul>
+            <li id="statusli" class="on" onClick="live_status_visible();"><span id='lang_Status'>Status</span></li>
+            <li id="logli" class="off" onClick="live_log_visible();"><span id="lang_Log">Log</span></li>
+            <li id="ptzli" class="off" onClick="live_ptz_visible();"><span id="lang_PTZ">PTZ</span></li>
+            <li id="qrcodeli" class="off" onClick="live_qrcode_visible();"><span id="lang_QRCODE">SEQURINET</span></li>
+          </ul>
+        </div>
+        <form name="livesetting_status" id="livesetting_status">
+          <!--STATUS-->
+          <div id="c_l_div_status_contents">
+            <table class="c_l_tb_status">
+              <tr>
+                <td class="head"><span id="lang_ChannelNo">Channel No.</span></td>
+                <td class="ch_1">1</td>
+                <td class="ch_1">2</td>
+                <td class="ch_1">3</td>
+                <td class="ch_1">4</td>
+                <td class="ch_2">5</td>
+                <td class="ch_2">6</td>
+                <td class="ch_2">7</td>
+                <td class="ch_2">8</td>
+                <td class="ch_1">9</td>
+                <td class="ch_1">10</td>
+                <td class="ch_1">11</td>
+                <td class="ch_1">12</td>
+                <td class="ch_2">13</td>
+                <td class="ch_2">14</td>
+                <td class="ch_2">15</td>
+                <td class="ch_2">16</td>
+              </tr>
+              <tr class="alarm_cam">
+                <td class="head"><span id="lang_AlarmInCAM">Alarm In(CAM)</span></td>
+                <td class="alarm_01 status_bar1" id="arcam_status_0"><img id="ar_img_0"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="arcam_status_1"><img id="ar_img_1"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="arcam_status_2"><img id="ar_img_2"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="arcam_status_3"><img id="ar_img_3"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_05 status_bar2" id="arcam_status_4"><img id="ar_img_4"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="arcam_status_5"><img id="ar_img_5"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="arcam_status_6"><img id="ar_img_6"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="arcam_status_7"><img id="ar_img_7"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_09 status_bar1" id="arcam_status_8"><img id="ar_img_8"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="arcam_status_9"><img id="ar_img_9"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="arcam_status_10"><img id="ar_img_10" src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="arcam_status_11"><img id="ar_img_11" src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_13 status_bar2" id="arcam_status_12"><img id="ar_img_12" src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="arcam_status_13"><img id="ar_img_13" src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="arcam_status_14"><img id="ar_img_14" src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="arcam_status_15"><img id="ar_img_15" src="../images/images/status_alarm_off_02.gif"></td>
+              </tr>
+              <tr>
+                <td class="head"><span id="lang_AlarmInDVR">Alarm In(DVR)</span></td>
+                <td class="alarm_01 status_bar1" id="ar_status_0"><img id="ar_dvr_img_0"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="ar_status_1"><img id="ar_dvr_img_1"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="ar_status_2"><img id="ar_dvr_img_2"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="ar_status_3"><img id="ar_dvr_img_3"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_05 status_bar2" id="ar_status_4"><img id="ar_dvr_img_4"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="ar_status_5"><img id="ar_dvr_img_5"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="ar_status_6"><img id="ar_dvr_img_6"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="ar_status_7"><img id="ar_dvr_img_7"  src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_09 status_bar1" id="ar_status_8"><img id="ar_dvr_img_8"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="ar_status_9"><img id="ar_dvr_img_9"  src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="ar_status_10"><img id="ar_dvr_img_10" src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="ar_status_11"><img id="ar_dvr_img_11" src="../images/images/status_alarm_off_01.gif"></td>
+                <td class="alarm_13 status_bar2" id="ar_status_12"><img id="ar_dvr_img_12" src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="ar_status_13"><img id="ar_dvr_img_13" src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="ar_status_14"><img id="ar_dvr_img_14" src="../images/images/status_alarm_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="ar_status_15"><img id="ar_dvr_img_15" src="../images/images/status_alarm_off_02.gif"></td>
+              </tr>
+              <tr>
+                <td class="head"><span id="lang_Motion">Motion</span></td>
+                <td class="alarm_01 status_bar1" id="mt_status_0"><img id="mt_img_0"  src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="mt_status_1"><img id="mt_img_1"  src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="mt_status_2"><img id="mt_img_2"  src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="mt_status_3"><img id="mt_img_3"  src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_05 status_bar2" id="mt_status_4"><img id="mt_img_4"  src="../images/images/status_motion_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="mt_status_5"><img id="mt_img_5"  src="../images/images/status_motion_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="mt_status_6"><img id="mt_img_6"  src="../images/images/status_motion_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="mt_status_7"><img id="mt_img_7"  src="../images/images/status_motion_off_02.gif"></td>
+                <td class="alarm_09 status_bar1" id="mt_status_8"><img id="mt_img_8"  src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="mt_status_9"><img id="mt_img_9"  src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="mt_status_10"><img id="mt_img_10" src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="mt_status_11"><img id="mt_img_11" src="../images/images/status_motion_off_01.gif"></td>
+                <td class="alarm_13 status_bar2" id="mt_status_12"><img id="mt_img_12" src="../images/images/status_motion_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="mt_status_13"><img id="mt_img_13" src="../images/images/status_motion_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="mt_status_14"><img id="mt_img_14" src="../images/images/status_motion_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="mt_status_15"><img id="mt_img_15" src="../images/images/status_motion_off_02.gif"></td>
+              </tr>
+              <tr>
+                <td class="head"><span id="lang_Videoloss">Video loss</span></td>
+                <td class="alarm_01 status_bar1" id="vl_status_0"><img id="vloss_img_0"  src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="vl_status_1"><img id="vloss_img_1"  src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="vl_status_2"><img id="vloss_img_2"  src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="vl_status_3"><img id="vloss_img_3"  src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_05 status_bar2" id="vl_status_4"><img id="vloss_img_4"  src="../images/images/status_vloss_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="vl_status_5"><img id="vloss_img_5"  src="../images/images/status_vloss_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="vl_status_6"><img id="vloss_img_6"  src="../images/images/status_vloss_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="vl_status_7"><img id="vloss_img_7"  src="../images/images/status_vloss_off_02.gif"></td>
+                <td class="alarm_09 status_bar1" id="vl_status_8"><img id="vloss_img_8"  src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="vl_status_9"><img id="vloss_img_9"  src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="vl_status_10"><img id="vloss_img_10" src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="vl_status_11"><img id="vloss_img_11" src="../images/images/status_vloss_off_01.gif"></td>
+                <td class="alarm_13 status_bar2" id="vl_status_12"><img id="vloss_img_12" src="../images/images/status_vloss_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="vl_status_13"><img id="vloss_img_13" src="../images/images/status_vloss_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="vl_status_14"><img id="vloss_img_14" src="../images/images/status_vloss_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="vl_status_15"><img id="vloss_img_15" src="../images/images/status_vloss_off_02.gif"></td>
+              </tr>
+              <tr>
+                <td class="head"><span id="lang_Recording">Recording</span></td>
+                <td class="alarm_01 status_bar1" id="rec_status_0"><img id="rec_img_0"  src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="rec_status_1"><img id="rec_img_1"  src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="rec_status_2"><img id="rec_img_2"  src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="rec_status_3"><img id="rec_img_3"  src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_05 status_bar2" id="rec_status_4"><img id="rec_img_4"  src="../images/images/status_recording_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="rec_status_5"><img id="rec_img_5"  src="../images/images/status_recording_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="rec_status_6"><img id="rec_img_6"  src="../images/images/status_recording_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="rec_status_7"><img id="rec_img_7"  src="../images/images/status_recording_off_02.gif"></td>
+                <td class="alarm_09 status_bar1" id="rec_status_8"><img id="rec_img_8"  src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="rec_status_9"><img id="rec_img_9"  src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="rec_status_10"><img id="rec_img_10" src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="rec_status_11"><img id="rec_img_11" src="../images/images/status_recording_off_01.gif"></td>
+                <td class="alarm_13 status_bar2" id="rec_status_12"><img id="rec_img_12" src="../images/images/status_recording_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="rec_status_13"><img id="rec_img_13" src="../images/images/status_recording_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="rec_status_14"><img id="rec_img_14" src="../images/images/status_recording_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="rec_status_15"><img id="rec_img_15" src="../images/images/status_recording_off_02.gif"></td>
+              </tr>
+              <tr class="alarm_cam">
+                <td class="head"><span id="lang_AlarmoutCAM">Alarm out(CAM)</span></td>
+                <td class="alarm_01 status_bar1" id="aroutcam_status_0"><img id="arout_img_0"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="aroutcam_status_1"><img id="arout_img_1"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="aroutcam_status_2"><img id="arout_img_2"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="aroutcam_status_3"><img id="arout_img_3"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_05 status_bar2" id="aroutcam_status_4"><img id="arout_img_4"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="aroutcam_status_5"><img id="arout_img_5"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="aroutcam_status_6"><img id="arout_img_6"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="aroutcam_status_7"><img id="arout_img_7"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_09 status_bar1" id="aroutcam_status_8"><img id="arout_img_8"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="aroutcam_status_9"><img id="arout_img_9"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="aroutcam_status_10"><img id="arout_img_10" src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="aroutcam_status_11"><img id="arout_img_11" src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_13 status_bar2" id="aroutcam_status_12"><img id="arout_img_12" src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="aroutcam_status_13"><img id="arout_img_13" src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="aroutcam_status_14"><img id="arout_img_14" src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="aroutcam_status_15"><img id="arout_img_15" src="../images/images/status_alarmout_off_02.gif"></td>
+              </tr>
+              <tr>
+                <td class="head"><span id="lang_AlarmoutDVR">Alarm out(DVR)</span></td>
+                <td class="alarm_01 status_bar1" id="arout_status_0"><img id="arout_dvr_img_0"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="arout_status_1"><img id="arout_dvr_img_1"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="arout_status_2"><img id="arout_dvr_img_2"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_01 status_bar1" id="arout_status_3"><img id="arout_dvr_img_3"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_05 status_bar2" id="arout_status_4"><img id="arout_dvr_img_4"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="arout_status_5"><img id="arout_dvr_img_5"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="arout_status_6"><img id="arout_dvr_img_6"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_05 status_bar2" id="arout_status_7"><img id="arout_dvr_img_7"  src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_09 status_bar1" id="arout_status_8"><img id="arout_dvr_img_8"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="arout_status_9"><img id="arout_dvr_img_9"  src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="arout_status_10"><img id="arout_dvr_img_10" src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_09 status_bar1" id="arout_status_11"><img id="arout_dvr_img_11" src="../images/images/status_alarmout_off_01.gif"></td>
+                <td class="alarm_13 status_bar2" id="arout_status_12"><img id="arout_dvr_img_12" src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="arout_status_13"><img id="arout_dvr_img_13" src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="arout_status_14"><img id="arout_dvr_img_14" src="../images/images/status_alarmout_off_02.gif"></td>
+                <td class="alarm_13 status_bar2" id="arout_status_15"><img id="arout_dvr_img_15" src="../images/images/status_alarmout_off_02.gif"></td>
+              </tr>
+
+              <!--
+              <tr>
+               <td class="head"><div id="lang_Relay">Relay</div></td>
+               <td class="alarm_01" id="relay_status_0"><img id="relay_img_0"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_01" id="relay_status_1"><img id="relay_img_1"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_01" id="relay_status_2"><img id="relay_img_2"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_01" id="relay_status_3"><img id="relay_img_3"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_05" id="relay_status_4"><img id="relay_img_4"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_05" id="relay_status_5"><img id="relay_img_5"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_05" id="relay_status_6"><img id="relay_img_6"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_05" id="relay_status_7"><img id="relay_img_7"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_09" id="relay_status_8"><img id="relay_img_8"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_09" id="relay_status_9"><img id="relay_img_9"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_09" id="relay_status_10"><img id="relay_img_10"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_09" id="relay_status_11"><img id="relay_img_11"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_13" id="relay_status_12"><img id="relay_img_12"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_13" id="relay_status_13"><img id="relay_img_13"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_13" id="relay_status_14"><img id="relay_img_14"  src="../images/images/status_relay_off_01.gif"></td>
+               <td class="alarm_13" id="relay_status_15"><img id="relay_img_15"  src="../images/images/status_relay_off_01.gif"></td>
+              </tr>
+              -->
+            </table>
+
+            <div class="c_l_tb_status_button_components">
+              <ul >
+                <li>
+                  <span class="list">
+                    <span id="lang_refreshtime" class="refresh_time">Refresh Time :</span>
+                  </span>
+                </li>
+                <li>
+                  <input type="button" id="pwrenew" name="pwrenew" value="lang_PWChange" onClick="show_renewpw_dialog()"/>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <select id="reloadTime" class="c_l_lst_reftime i3-select" onChange="live_Status_func();"></select>
+                </li>
+                <li>
+                  <input type="button" id="reload" name="reload" value="lang_Reload" class="c_l_btn_re" onClick="live_status_reClick_func();"/>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--LOG-->
+          <div id="c_l_div_log_contents">
+            <!--
+            <div class="c_l_div_chk">
+              <h2>Event Filter</h2>
+              <input type="checkbox" id="alarmcheck" value="Alarm" ><span class="check">Alarm</span>
+              <input type="checkbox" id="motioncheck" value="Motion"><span class="check">Motion</span>
+              <input type="checkbox" id="timercheck" value="Timer"><span class="check">Timer</span>
+              <input type="checkbox" id="systemcheck" value="System"><span class="check">System</span>
+            </div>
+            -->
+            <table class="c_l_tb_log">
+              <tr class="c_l_tb_head">
+                <td class="table-head head_01"><span id='lang_lognumber'>No.</span></td>
+                <td class="table-head head_02"><span id='lang_logcamtitle'>Camera Title</span></td>
+                <td class="table-head head_03"><span id='lang_logdatetime'>Date Time</span></td>
+                <td class="table-head head_04"><span id='lang_loglog'>Log</span></td>
+              </tr>
+              <tr id="logdate0" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum0"></td>
+                <td class="left_cel"  id="logtbcam0"></td>
+                <td class="left_cel"  id="logtbdate0"></td>
+                <td class="right_cel" id="logtblog0"></td>
+              </tr>
+              <tr id="logdate1" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum1"></td>
+                <td class="left_cel"  id="logtbcam1"></td>
+                <td class="left_cel"  id="logtbdate1"></td>
+                <td class="right_cel" id="logtblog1"></td>
+              </tr>
+              <tr id="logdate2" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum2"></td>
+                <td class="left_cel"  id="logtbcam2"></td>
+                <td class="left_cel"  id="logtbdate2"></td>
+                <td class="right_cel" id="logtblog2"></td>
+              </tr>
+              <tr id="logdate3" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum3"></td>
+                <td class="left_cel"  id="logtbcam3"></td>
+                <td class="left_cel"  id="logtbdate3"></td>
+                <td class="right_cel" id="logtblog3"></td>
+              </tr>
+              <tr id="logdate4" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum4"></td>
+                <td class="left_cel"  id="logtbcam4"></td>
+                <td class="left_cel"  id="logtbdate4"></td>
+                <td class="right_cel" id="logtblog4"></td>
+              </tr>
+              <tr id="logdate5" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum5"></td>
+                <td class="left_cel"  id="logtbcam5"></td>
+                <td class="left_cel"  id="logtbdate5"></td>
+                <td class="right_cel" id="logtblog5"></td>
+              </tr>
+              <tr id="logdate6" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum6"></td>
+                <td class="left_cel"  id="logtbcam6"></td>
+                <td class="left_cel"  id="logtbdate6"></td>
+                <td class="right_cel" id="logtblog6"></td>
+              </tr>
+              <tr id="logdate7" onClick="onClickLogTable(this);">
+                <td class="left_cel"  id="logtbnum7"></td>
+                <td class="left_cel"  id="logtbcam7"></td>
+                <td class="left_cel"  id="logtbdate7"></td>
+                <td class="right_cel" id="logtblog7"></td>
+              </tr>
+            </table>
+                    <div class="button-container">
+                            <input type="button" class="c_l_btn_page icon-button-up" value="" onclick="pageupbtn();">
+                            <input type="button" class="c_l_btn_page icon-button-down" value="" onclick="pagedownbtn();">
+                        </div>
+                        <div class="refresh-container" style="margin-bottom: 5px; margin-left: 362px;">
+                            <!--
+              <ul style="float: left; width: 105px; text-align: right; margin-right: 5px;">
+              -->
+                            <ul style="float: left; width: 210px; height: 30px; text-align: right; margin-right: 5px;">
+                                <li class="text-refresh-container"><span class="list"><span id="lang_refreshtime" class="refresh_time">Refresh Time :</span></span></li>
+                            </ul>
+                            <ul class="button-refresh-container">
+                                <li class="l1">
+                                    <select id="reloadlogTime" class="c_l_lst_reftime i3-select" onchange="live_Log_func();"></select></li>
+                                <li class="l2">
+                                    <input name="OK" value="lang_Reload" class="c_l_btn_re i3-refresh-button" onclick="live_Log_reClick_func();" type="button"></li>
+                            </ul>
+                        </div>
+
+          </div>
+          <!--PTZ-->
+           <div id="c_l_div_ptz_contents">
+                        <table>
+                            <tr>
+                                <td>
+                                    <table class="c_l_tb_pantilt">
+                                        <tr>
+                                            <td>
+                                                <img id="ptzupleft" class="ptz_control" src="../images/images_i3/bt_ptz_up_left_n.png" />
+                                            </td>
+                                            <td>
+                                                <img id="tiltup" class="ptz_control" src="../images/images_i3/bt_ptz_up_n.png" />
+                                            </td>
+                                            <td>
+                                                <img id="ptzupright" class="ptz_control" src="../images/images_i3/bt_ptz_up_right_n.png" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img id="panleft" class="ptz_control" src="../images/images_i3/bt_ptz_left_n.png" />
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span class="list"><span id='lang_ptzPtz'>PTZ</span></span>                                               
+                                            </td>
+                                            <td>
+                                                <img id="panright" class="ptz_control" src="../images/images_i3/bt_ptz_right_n.png" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img id="ptzdownleft" class="ptz_control" src="../images/images_i3/bt_ptz_down_left_n.png" />
+                                            </td>
+                                            <td>
+                                                <img id="tiltdown" class="ptz_control" src="../images/images_i3/bt_ptz_down_n.png" />
+                                            </td>
+                                            <td>
+                                                <img id="ptzdownright" class="ptz_control" src="../images/images_i3/bt_ptz_down_right_n.png" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <div class="c_l_tb_ptz_settings_line"></div>
+                                    <table class="c_l_tb_zoom">
+                                        <tr>
+                                            <td>
+                       
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                       
+                                                <div style="margin: 9px 0px 8px; width: 135px;">
+                                                    <ul>
+                                                        <li style="float: left;">
+                                                            <img height="21" width="21" id="zoomminus" src="../images/images/bt_zoom_minus_n.gif" class="ptz_control" />
+                                                        </li>
+                                                        <li style="float: left; width: 86px; text-align: center;">
+                                                            <span class="list"><span id='lang_ptzZoom'>Zoom</span></span>
+                                                        </li>
+                                                        <li>
+                                                            <img height="21" width="21" id="zoomplus" src="../images/images/bt_zoom_plus_n.gif" class="ptz_control" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                        
+                                                <div style="margin: 9px 0px 8px; width: 135px;">
+                                                    <ul>
+                                                        <li style="float: left;">
+                                                            <img height="21" width="21" id="focusminus" src="../images/images/bt_focus_minus_n.gif" class="ptz_control" />
+                                                        </li>
+                                                        <li style="float: left; width: 86px; text-align: center;">
+                                                            <span class="list"><span id='lang_ptzFocus'>Focus</span></span>
+                                                        </li>
+                                                        <li>
+                                                            <img height="21" width="21" id="focusplus" src="../images/images/bt_focus_plus_n.gif" class="ptz_control" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>                                               
+                                                <div style="margin: 9px 0px 24px; width: 135px;">
+                                                    <ul>
+                                                        <li style="float: left;">
+                                                            <img height="21" width="21" id="irisminus" src="../images/images/bt_iris_minus_n.gif" class="ptz_control" />
+                                                        </li>
+                                                        <li style="float: left; width: 86px; text-align: center;">
+                                                            <span class="list"><span id='lang_ptzIris'>Iris</span></span>
+                                                        </li>
+                                                        <li>
+                                                            <img height="21" width="21" id="irisplus" src="../images/images/bt_iris_plus_n.gif" class="ptz_control" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <div class="c_l_tb_ptz_settings_line"></div>
+                                    <table class="c_l_tb_papre">
+                                        <tr id="pattern_tr">
+                                            <td colspan="2">
+                                                <h2><span id='lang_ptzPattern'>Pattern</span></h2>
+                                                <select class="c_l_lst_pnpre" id="pattern_sel">
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr id="pattern_tr_btn">
+                                            <td width="100%">
+                                                <input type="button" id="pattern_set" class="c_l_btn_papre" value="lang_patternSET">
+                                            </td>
+                                            <td width="100%">
+                                                <input type="button" id="pattern_run" class="c_l_btn_papre" value="lang_patternRUN">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <h2 class="title"><span id='lang_ptzPreset'>Preset</span></h2>
+                                                <select class="c_l_lst_pnpre" id="preset_sel">
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="100%">
+                                                <input type="button" id="preset_set" class="c_l_btn_papre" id="preset_set" value="lang_presetSET">
+                                            </td>
+                                            <td width="100%">
+                                                <input type="button" id="preset_run" class="c_l_btn_papre" id="preset_run" value="lang_presetRUN">
+                                            </td>
+                                        </tr>
+                                        <tr class="foripx">
+                                            <td colspan="2">
+                                                <h2><span id="lang_aux">Auxiliary</span></h2>
+                                                <p>
+                                                    <select class="c_l_lst_pnpre" id="aux_select"></select></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="foripx">
+                                            <td width="100%" colspan="2">
+                                                <input type="button" id="aux_run" class="c_l_btn_aux" value="lang_presetRUN"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <div class="c_l_tb_ptz_settings_line"></div>
+                                    <table class="c_l_tb_swsp">
+                                        <tr id="swing_tr">
+                                            <td>
+                                                <h2><span id='lang_ptzSwing'>Swing</span></h2>
+                                                <ul style="float: left; width: 60px;">
+                                                    <li>
+                                                        <span class="list"><span id='lang_swingStart'>Start</span></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="list"><span id='lang_swingEnd'>End</span></span>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>
+                                                        <select class="c_l_lst_swsp" id="swing_s_sel">
+                                                        </select>
+                                                    </li>
+                                                    <li>
+                                                        <select class="c_l_lst_swsp" id="swing_e_sel">
+                                                        </select>
+                                                    </li>
+                                                </ul>
+                                                <input class="c_l_btn_papre" id="swing_run" type="button" value="lang_swingRUN" style="margin-left: 64px;" name="button" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h2 class="title"><span id='lang_ptzPositionStep'>Position Step</span></h2>
+                                                <select class="c_l_lst_speed" id="posstep">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5" selected="selected">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                                <div id="conti_ptz">
+                                                    <input id="ptz_continuous" type="checkbox" class="c_l_lst_continuous" checked>
+                                                        <span id='lang_Continuous' class="list">Continuous</span>
+                                                    </input>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+          <div id="c_l_div_qrcode_contents">
+            <table>
+              <tr>
+                <td>
+                  <table>
+                    <tr id="pattern_tr">
+                      <td colspan="2">
+                        <h2><span id='lang_qrcode'>QR CODE</span></h2>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+                        <div id="qrcodeTable" style="border:1px solid black"></div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                
+              </tr>
+            </table>
+          </div>
+        </form>
+        <!--
+        <div style="margin-left:379px;">
+          <input type="button" name="reroad" value="Live Start" class="c_sp_btn_okcancel" onClick="onClickLiveStart();"/>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    lang_file(INFO_LANGUAGE,'LIVE');
+
+    var timerid = null;
+    var timerlogid = null;
+    var info_change_timer = null;
+
+    var statusdiv;
+    var c_l_div_status_contents;
+
+    if(parseInt(INFO_PASSWD_CHANGED) == 0)
+    {
+      $("#pwrenew").hide();
+    }
+
+    if ( parseInt(INFO_DVRCHANNEL) == 16 )
+    {
+        statusdiv = document.getElementById("c_l_div_status_contents");
+    }
+    else if ( parseInt(INFO_DVRCHANNEL) == 8 )
+    {
+        statusdiv = document.getElementById("c_l_div_status_contents8");
+    }
+    else
+    {
+       statusdiv = document.getElementById("c_l_div_status_contents4");
+    }
+
+    statusdiv = document.getElementById("c_l_div_status_contents");
+    var logdiv = document.getElementById("c_l_div_log_contents");
+    var ptzdiv = document.getElementById("c_l_div_ptz_contents");
+    
+    if( false && INFO_USE_SEQURINET == 1) // TODO
+    {
+      var qrcodediv = document.getElementById("c_l_div_qrcode_contents");
+    }
+    else
+    {
+      document.getElementById("qrcodeli").style.display = "none";
+      c_l_div_qrcode_contents.style.display = "none";
+    }
+
+    live_postSetup(document.livesetting_status, "action=get_info&menu=login.passwd");
+
+    live_VichEnDis();
+    tablealpha();
+
+    live_status_visible();
+
+    var itxview = document.getElementById("itxview");
+    if(itxview)
+    {
+    //  itxview.focus();
+    }
+
+    if ( parseInt(INFO_DVRREADY) == 1 )
+    {
+      if (!parseInt(INFO_EXISTDISK))
+      {
+        onClickLiveStart();
+      }
+      else
+      {
+        var disoffset = parseInt(INFO_DISCONNECTRESON) - parseInt(DISCONECTOFFSET);
+
+        if ( parseInt(disoffset) > 0 && parseInt(disoffset) < 10 )
+        {
+            alert(errDisConnectReason[disoffset]);
+        }
+        else
+        {
+            onClickLiveStart();
+        }
+      }
+    }
+    else if ( parseInt(INFO_DVRREADY) == 0 )
+    {
+      alert(errFileSystem);
+    }
+    else
+    {
+      onClickLiveStart();
+    }
+
+    addUnLoadEvent(onClickLiveStop);
+    addUnLoadEvent(info_timer_stop);
+
+    if (browerIE == true)
+    {
+      addUnLoadEvent(onLiveStop);
+    }
+    else
+    {
+      addUnLoadEvent(onLiveTimerStop);
+    }
+
+    if( (typeof(INFO_ALARM_SENSOR) != 'undefined') && (INFO_ALARM_SENSOR.aout_dvr == 0) ) {
+      var elem_alarmout_tr = document.getElementById('lang_AlarmoutDVR').parentNode.parentNode;
+      elem_alarmout_tr.parentNode.removeChild(elem_alarmout_tr);
+    }
+
+    if( (typeof(INFO_ALARM_SENSOR) != 'undefined') && (INFO_ALARM_SENSOR.ain_dvr == 0) ) {
+      var elem_alarmin_tr = document.getElementById('lang_AlarmInDVR').parentNode.parentNode;
+      elem_alarmin_tr.parentNode.removeChild(elem_alarmin_tr);
+    }
+
+    checkFwUpdateStatus();
+
+  </script>
+  <script src="less/less.min.js" ></script>
+
+</body>
+</html>

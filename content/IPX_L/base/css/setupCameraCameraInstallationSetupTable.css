@@ -1,0 +1,62 @@
+/*********************************************************************************************************/
+/* setupCameraCameraInstallationSetupTable */
+/*********************************************************************************************************/
+#tableCameraCameraInstallationSetup {
+  width:100%;
+}
+
+#tableCameraCameraInstallationSetup .col-Cam {
+  width:10%
+}
+
+#tableCameraCameraInstallationSetup .col-Model {
+  width:30%;
+}
+
+#tableCameraCameraInstallationSetup .col-Address {
+  width:25%;
+}
+
+#tableCameraCameraInstallationSetup .col-Status {
+  width:30%;
+}
+
+#tableCameraCameraInstallationSetup .col-Setup {
+  width:5%;
+}
+
+.tableCameraCameraInstallationSetup .tdCameraCameraInstallationSetupSetup {
+  /* background: url(button.png) no-repeat */
+  background: url(/images/ITX_OLD/bt_pop_setting_n.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSetup .tdCameraCameraInstallationSetupSetup.needSetup {
+  background: url(/images/ITX_OLD/bt_pop_setting_n2.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSetup .tdCameraCameraInstallationSetupSetup:hover {
+  background: url(/images/ITX_OLD/bt_pop_setting_o.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSetup .tdCameraCameraInstallationSetupSetup:active {
+  background: url(/images/ITX_OLD/bt_pop_setting_p.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.tableCameraCameraInstallationSetup .tdCameraCameraInstallationSetupSetup:disabled {
+  background: url(/images/ITX_OLD/bt_pop_setting_d.png) no-repeat center;
+  background-size:20px 20px;
+  height: 20px;
+  width: 20px;
+}

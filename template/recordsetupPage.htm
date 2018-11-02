@@ -1,0 +1,22 @@
+<!-- setupPage.htm -->
+<div class="row">
+  <h2><span{{#pageTitleId}} id="{{.}}"{{/pageTitleId}}>{{pageTitle}}</span></h2>
+</div>
+<section>
+  <div id="content">
+    {{#each rows}}
+      <div id="{{this.id}}" class="row">
+        {{#each this.cols}}
+          <div class="col-{{width}}">
+            <fieldset>
+              <legend>{{legend}}</legend>
+              <div id="{{template}}"></div>
+            </fieldset>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+    <!-- //row -->
+  </div>
+</section>
+<!-- //setupPage.htm -->

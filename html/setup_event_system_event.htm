@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+      language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link href="../scripts/jquery/jquery.dropdownMulti.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet/less" type="text/css" href="less/fixbug-veo16p.less" />
+
+    <script src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+    <script src="../scripts/jquery/jquery.dropdownMulti.js"></script>
+
+    <title></title>
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Event", "System Event");
+            </script>
+          </ul>
+        </div>
+
+        <form name="eventsetting_system" id="eventsetting_system" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div id="c_sp_div_contents">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2><span id="lang_SystemEvent"> System Event </span></h2>
+              <div id="event_tabs">
+                <ul>
+                  <li><a href="#fragment-disk"><span id='lang_disk'>Disk</span></a></li>
+                  <li><a href="#fragment-rec"><span id='lang_rec'>Record</span></a></li>
+                  <li><a href="#fragment-sys"><span id='lang_sys'>System</span></a></li>
+                  <li><a href="#fragment-net"><span id='lang_net'>Network</span></a></li>
+                </ul>
+                <div id="fragment-disk">
+                  <table class='event event_system'>
+                    <colgroup>
+                      <col class='col1'/>
+                      <col class='col2'/>
+                      <col class='col3'/>
+                      <col class='col4'/>
+                      <col class='col5'/>
+                      <col class='col6'/>
+                      <col class='col7'/>
+                      <col class='col8'/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                      <th class='head0'></th>
+                      <th class='head0 colspan disk_colspan' colspan="7">
+                        <span id='lang_action'>Action</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class='head1'>
+                        <span id='lang_type'>Event Type</span>
+                      </th>
+                      <th class='head2'>
+                        <span id="lang_alarmout">Alarm Out</span>
+                      </th>
+                      <th class='head3'>
+                        <span id="lang_buzzer">Buzzer</span>
+                      </th>
+                      <th class='head4'>
+                        <span id="lang_opopup">Osd Popup</span>
+                      </th>
+                      <th class='head5'>
+                        <span id="lang_email">E-Mail</span>
+                      </th>
+                      <th class='head6 ftp'>
+                        <span>FTP</span>
+                      </th>
+                      <th class='head7 mobile'>
+                        <span id="lang_mobile">Mobile</span>
+                      </th>
+                      <th class='head8 mobilepush'>
+                        <span id="lang_mobilepush">Mobile Push</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th><span id="lang_selectAll">ALL</span></th>
+                      <th>
+                        <select id="disk_arout_all" multiple="multiple">
+                        </select>
+                      </th>
+                      <th><input type="checkbox"  id="disk_buzzer_all"/></th>
+                      <th><input type="checkbox"  id="disk_opopup_all"/></th>
+                      <th><input type="checkbox"  id="disk_email_all"/></th>
+                      <th class='ftp'><input type="checkbox"  id="disk_ftp_all"/></th>
+                      <th class='mobile'><input type="checkbox"  id="disk_mobile_all"/></th>
+                      <th class='mobilepush'><input type="checkbox"  id="disk_mobilepush_all"/></th>
+                    </tr>
+                    </thead>
+                    <tr>
+                      <td class='left'>
+                        <span id="lang_overwrite">Overwrite Start Event</span>
+                      </td>
+                      <td>
+                        <select name="disk_over_arout" id="disk_over_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="disk_over_buzzer" id="disk_over_buzzer"/></td>
+                      <td><input type="checkbox" name="disk_over_opopup" id="disk_over_opopup"/></td>
+                      <td><input type="checkbox" name="disk_over_email" id="disk_over_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="disk_over_ftp" id="disk_over_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="disk_over_mobile" id="disk_over_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="disk_over_mobilepush" id="disk_over_mobilepush"/></td>
+                    </tr>
+                    <tr>
+                      <td class='left'>
+                        <span id="lang_diskfull">Disk Full Event</span>
+                      </td>
+                      <td>
+                        <select name="disk_full_arout" id="disk_full_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="disk_full_buzzer" id="disk_full_buzzer"/></td>
+                      <td><input type="checkbox" name="disk_full_opopup" id="disk_full_opopup"/></td>
+                      <td><input type="checkbox" name="disk_full_email" id="disk_full_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="disk_full_ftp" id="disk_full_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="disk_full_mobile" id="disk_full_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="disk_full_mobilepush" id="disk_full_mobilepush"/></td>
+                    </tr>
+                    <tr>
+                      <td class='left'>
+                        <select id="disk_exhau_threshold" name="disk_exhau_threshold">
+                          <option value='90'>90%</option>
+                          <option value='80'>80%</option>
+                          <option value='70'>70%</option>
+                          <option value='60'>60%</option>
+                          <option value='50'>50%</option>
+                        </select>
+                        <span id="lang_diskexhau">Disk Space Exhausted Event</span>
+                      </td>
+                      <td>
+                        <select name="disk_exhau_arout" id="disk_exhau_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="disk_exhau_buzzer" id="disk_exhau_buzzer"/></td>
+                      <td><input type="checkbox" name="disk_exhau_opopup" id="disk_exhau_opopup"/></td>
+                      <td><input type="checkbox" name="disk_exhau_email" id="disk_exhau_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="disk_exhau_ftp" id="disk_exhau_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="disk_exhau_mobile" id="disk_exhau_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="disk_exhau_mobilepush" id="disk_exhau_mobilepush"/></td>
+                    </tr>
+                    <tr>
+                      <td class='left'>
+                        <span id="lang_smart">S.M.A.R.T. Event</span></td>
+                      <td>
+                        <select name="disk_smart_arout" id="disk_smart_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="disk_smart_buzzer" id="disk_smart_buzzer"/></td>
+                      <td><input type="checkbox" name="disk_smart_opopup" id="disk_smart_opopup"/></td>
+                      <td><input type="checkbox" name="disk_smart_email" id="disk_smart_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="disk_smart_ftp" id="disk_smart_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="disk_smart_mobile" id="disk_smart_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="disk_smart_mobilepush" id="disk_smart_mobilepush"/></td>
+                    </tr>
+                    <tr>
+                      <td class='left'>
+                        <span id="lang_nodisk">No Disk Event</span>
+                      </td>
+                      <td>
+                        <select name="disk_nodisk_arout" id="disk_nodisk_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="disk_nodisk_buzzer" id="disk_nodisk_buzzer"/></td>
+                      <td><input type="checkbox" name="disk_nodisk_opopup" id="disk_nodisk_opopup"/></td>
+                      <td><input type="checkbox" name="disk_nodisk_email" id="disk_nodisk_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="disk_nodisk_ftp" id="disk_nodisk_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="disk_nodisk_mobile" id="disk_nodisk_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="disk_nodisk_mobilepush" id="disk_nodisk_mobilepush"/></td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="fragment-rec">
+                  <table class='event event_system'>
+                    <colgroup>
+                      <col class='col1'/>
+                      <col class='col2'/>
+                      <col class='col3'/>
+                      <col class='col4'/>
+                      <col class='col5'/>
+                      <col class='col6'/>
+                      <col class='col7'/>
+                      <col class='col8'/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                      <th class='head0'></th>
+                      <th class='head0 colspan rec_colspan' colspan="7">
+                        <span id='lang_action'>Action</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class='head1'>
+                        <span id='lang_type'>Event Type</span>
+                      </th>
+                      <th class='head2'>
+                        <span id="lang_alarmout">Alarm Out</span>
+                      </th>
+                      <th class='head3'>
+                        <span id="lang_buzzer">Buzzer</span>
+                      </th>
+                      <th class='head4 remove_dvr'>
+                        <span id="lang_opopup">Osd Popup</span>
+                      </th>
+                      <th class='head5'>
+                        <span id="lang_email">E-Mail</span>
+                      </th>
+                      <th class='head6 ftp'>
+                        <span>FTP</span>
+                      </th>
+                      <th class='head7 mobile'>
+                        <span id="lang_mobile">Mobile</span>
+                      </th>
+                      <th class='head8 mobilepush'>
+                        <span id="lang_mobilepush">Mobile Push</span>
+                      </th>
+                    </tr>
+                    <tr class="show_alsok">
+                      <th><span id="lang_selectAll">ALL</span></th>
+                      <th>
+                        <select id="rec_arout_all" multiple="multiple">
+                        </select>
+                      </th>
+                      <th><input type="checkbox"  id="rec_buzzer_all"/></th>
+                      <th class="remove_dvr"><input type="checkbox"  id="rec_opopup_all"/></th>
+                      <th><input type="checkbox"  id="rec_email_all"/></th>
+                      <th class='ftp'><input type="checkbox"  id="rec_ftp_all"/></th>
+                      <th class='mobile'><input type="checkbox"  id="rec_mobile_all"/></th>
+                      <th class='mobilepush'><input type="checkbox"  id="rec_mobilepush_all"/></th>
+                    </tr>
+                    </thead>
+                    <tr>
+                      <td class='left'>
+                        <span id="lang_panicrec">Panic Record Start Event</span>
+                      </td>
+                      <td>
+                        <select name="rec_pstart_arout" id="rec_pstart_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="rec_pstart_buzzer" id="rec_pstart_buzzer"/></td>
+                      <td class="remove_dvr"><input type="checkbox" name="rec_pstart_opopup" id="rec_pstart_opopup"/ disabled></td>
+                      <td><input type="checkbox" name="rec_pstart_email" id="rec_pstart_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="rec_pstart_ftp" id="rec_pstart_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="rec_pstart_mobile" id="rec_pstart_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="rec_pstart_mobilepush" id="rec_pstart_mobilepush"/></td>
+                    </tr>
+                    <tr class="show_alsok">
+                      <td class='left'>
+                        <span id="lang_recstop">Record Stop</span>
+                      </td>
+                      <td>
+                        <select name="rec_stop_arout" id="rec_stop_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="rec_stop_buzzer" id="rec_stop_buzzer"/></td>
+                      <td class="remove_dvr"><input type="checkbox" name="rec_stop_opopup" id="rec_stop_opopup"/ disabled></td>
+                      <td><input type="checkbox" name="rec_stop_email" id="rec_stop_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="rec_stop_ftp" id="rec_stop_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="rec_stop_mobile" id="rec_stop_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="rec_stop_mobilepush" id="rec_stop_mobilepush"/></td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="fragment-sys">
+                  <table class='event event_system'>
+                    <colgroup>
+                      <col class='col1'/>
+                      <col class='col2'/>
+                      <col class='col3'/>
+                      <col class='col4'/>
+                      <col class='col5'/>
+                      <col class='col6'/>
+                      <col class='col7'/>
+                      <col class='col8'/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                      <th class='head0'></th>
+                      <th class='head0 colspan system_colspan' colspan="7">
+                        <span id='lang_action'>Action</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class='head1'>
+                        <span id='lang_type'>Event Type</span>
+                      </th>
+                      <th class='head2'>
+                        <span id="lang_alarmout">Alarm Out</span>
+                      </th>
+                      <th class='head3'>
+                        <span id="lang_buzzer">Buzzer</span>
+                      </th>
+                      <th class='head4'>
+                        <span id="lang_opopup">Osd Popup</span>
+                      </th>
+                      <th class='head5'>
+                        <span id="lang_email">E-Mail</span>
+                      </th>
+                      <th class='head6 ftp'>
+                        <span>FTP</span>
+                      </th>
+                      <th class='head7 mobile'>
+                        <span id="lang_mobile">Mobile</span>
+                      </th>
+                      <th class='head8 mobilepush'>
+                        <span id="lang_mobilepush">Mobile Push</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th><span id="lang_selectAll">ALL</span></th>
+                      <th>
+                        <select  id="sys_arout_all" multiple="multiple">
+                        </select>
+                      </th>
+                      <th><input type="checkbox"  id="sys_buzzer_all"/></th>
+                      <th><input type="checkbox"  id="sys_opopup_all"/></th>
+                      <th><input type="checkbox"  id="sys_email_all"/></th>
+                      <th class='ftp'><input type="checkbox"  id="sys_ftp_all"/></th>
+                      <th class='mobile'><input type="checkbox"  id="sys_mobile_all"/></th>
+                      <th class='mobilepush'><input type="checkbox"  id="sys_mobilepush_all"/></th>
+                    </tr>
+                    </thead>
+                    <tr>
+                      <td class='left'>
+                        <span id="lang_booting">Booting Event</span>
+                      </td>
+                      <td>
+                        <select name="sys_booting_arout" id="sys_booting_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="sys_booting_buzzer" id="sys_booting_buzzer"/></td>
+                      <td><input type="checkbox" name="sys_booting_opopup" disabled="disabled" id="sys_booting_opopup"/></td>
+                      <td><input type="checkbox" name="sys_booting_email" id="sys_booting_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="sys_booting_ftp" id="sys_booting_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="sys_booting_mobile" id="sys_booting_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="sys_booting_mobilepush" id="sys_booting_mobilepush"/></td>
+
+                    </tr>
+                    <tr>
+                      <td class='left'>
+                        <select id="sys_logon_fail_count" name="sys_logon_fail_count">
+                          <option value='5' id="lang_fail_retry5">RETRY 5 TIMES</option>
+                          <option value='4' id="lang_fail_retry4">RETRY 4 TIMES</option>
+                          <option value='3' id="lang_fail_retry3">RETRY 3 TIMES</option>
+                          <option value='2' id="lang_fail_retry2">RETRY 2 TIMES</option>
+                          <option value='1' id="lang_fail_retry1">RETRY 1 TIMES</option>
+                        </select>
+                        <span id="lang_loginfail">Logon Fail Event</span>
+                      </td>
+                      <td>
+                        <select name="sys_logon_fail_arout" id="sys_logon_fail_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="sys_logon_fail_buzzer" id="sys_logon_fail_buzzer"/></td>
+                      <td><input type="checkbox" name="sys_logon_fail_opopup" disabled="disabled" id="sys_logon_fail_opopup"/></td>
+                      <td><input type="checkbox" name="sys_logon_fail_email" id="sys_logon_fail_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="sys_logon_fail_ftp" id="sys_logon_fail_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="sys_logon_fail_mobile" id="sys_logon_fail_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="sys_logon_fail_mobilepush" id="sys_logon_fail_mobilepush"/></td>
+                    </tr>
+                    <tr class='exceptUTM'>
+                      <td class='left'>
+                        <span id="lang_fanfail">Fan Fail Event</span>
+                      </td>
+                      <td>
+                        <select name="sys_fan_fail_arout" id="sys_fan_fail_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="sys_fan_fail_buzzer" id="sys_fan_fail_buzzer"/></td>
+                      <td><input type="checkbox" name="sys_fan_fail_opopup" id="sys_fan_fail_opopup"/></td>
+                      <td><input type="checkbox" name="sys_fan_fail_email" id="sys_fan_fail_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="sys_fan_fail_ftp" id="sys_fan_fail_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="sys_fan_fail_mobile" id="sys_fan_fail_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="sys_fan_fail_mobilepush" id="sys_fan_fail_mobilepush"/></td>
+                    </tr>
+                    <tr class='forANF'>
+                      <td class='left'>
+                        <span id="lang_temperfail">Temperature Fail Event</span>
+                      </td>
+                      <td>
+                        <select name="sys_temper_fail_arout" id="sys_temper_fail_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="sys_temper_fail_buzzer" id="sys_temper_fail_buzzer"/></td>
+                      <td><input type="checkbox" name="sys_temper_fail_opopup" id="sys_temper_fail_opopup"/></td>
+                      <td><input type="checkbox" name="sys_temper_fail_email" id="sys_temper_fail_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="sys_temper_fail_ftp" id="sys_temper_fail_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="sys_temper_fail_mobile" id="sys_temper_fail_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="sys_temper_fail_mobilepush" id="sys_temper_fail_mobilepush"/></td>
+                    </tr>
+                    <tr class='foripx'>
+                      <td class='left'>
+                        <select id="sys_POE_fail_threshold" name="sys_POE_fail_threshold">
+                          <option value='100'>100%</option>
+                          <option value='90'>90%</option>
+                          <option value='80'>80%</option>
+                          <option value='70'>70%</option>
+                        </select>
+                        <span id="lang_POEfail">POE Fail Event</span>
+                      </td>
+                      <td>
+                        <select name="sys_POE_fail_arout" id="sys_POE_fail_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="sys_POE_fail_buzzer" id="sys_POE_fail_buzzer"/></td>
+                      <td><input type="checkbox" name="sys_POE_fail_opopup" id="sys_POE_fail_opopup"/></td>
+                      <td><input type="checkbox" name="sys_POE_fail_email" id="sys_POE_fail_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="sys_POE_fail_ftp" id="sys_POE_fail_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="sys_POE_fail_mobile" id="sys_POE_fail_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="sys_POE_fail_mobilepush" id="sys_POE_fail_mobilepush"/></td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="fragment-net">
+                  <table class='event event_system'>
+                    <colgroup>
+                      <col class='col1'/>
+                      <col class='col2'/>
+                      <col class='col3'/>
+                      <col class='col4'/>
+                      <col class='col5'/>
+                      <col class='col6'/>
+                      <col class='col7'/>
+                      <col class='col8'/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                      <th class='head0'></th>
+                      <th class='head0 colspan network_colspan' colspan="8">
+                        <span id='lang_action'>Action</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class='head1'>
+                        <span id='lang_type'>Event Type</span>
+                      </th>
+                      <th class='head2'>
+                        <span id="lang_alarmout">Alarm Out</span>
+                      </th>
+                      <th class='head3'>
+                        <span id="lang_buzzer">Buzzer</span>
+                      </th>
+                      <th class='head4 search_ip_conflict'>
+                        <span id="lang_opopup">Osd Popup</span>
+                      </th>
+                      <th class='head5'>
+                        <span id="lang_email">E-Mail</span>
+                      </th>
+                      <th class='head6 ftp'>
+                        <span>FTP</span>
+                      </th>
+                      <th class='head7 mobile'>
+                        <span id="lang_mobile">Mobile</span>
+                      </th>
+                      <th class='head8 mobilepush'>
+                        <span id="lang_mobilepush">Mobile Push</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th><span id="lang_selectAll">ALL</span></th>
+                      <th>
+                        <select  id="net_arout_all" multiple="multiple">
+                        </select>
+                      </th>
+                      <th><input type="checkbox"  id="net_buzzer_all"/></th>
+                      <th class='search_ip_conflict'><input type="checkbox"  id="net_opopup_all"/></th>
+                      <th><input type="checkbox"  id="net_email_all"/></th>
+                      <th class='ftp'><input type="checkbox"  id="net_ftp_all"/></th>
+                      <th class='mobile'><input type="checkbox"  id="net_mobile_all"/></th>
+                      <th class='mobilepush'><input type="checkbox"  id="net_mobilepush_all"/></th>
+                    </tr>
+                    </thead>
+                    <tr>
+                      <td class='left'>
+                        <span id="lang_netconn_trouble">Internet Connection Trouble Event</span>
+                      </td>
+                      <td>
+                        <select name="net_eth_trouble_arout" id="net_eth_trouble_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="net_eth_trouble_buzzer" id="net_eth_trouble_buzzer"/></td>
+                      <td class='search_ip_conflict'><input type="checkbox" name="net_eth_trouble_opopup" id="net_eth_trouble_opopup"/></td>
+                      <td><input type="checkbox" name="net_eth_trouble_email" id="net_eth_trouble_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="net_eth_trouble_ftp" id="net_eth_trouble_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="net_eth_trouble_mobile" id="net_eth_trouble_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="net_eth_trouble_mobilepush" id="net_eth_trouble_mobilepush"/></td>
+                    </tr>
+                    <tr>
+                      <td class='left'>
+                        <select id="net_rfail_count" name="net_rfail_count">
+                          <option value='5' id="lang_fail_retry5">RETRY 5 TIMES</option>
+                          <option value='4' id="lang_fail_retry4">RETRY 4 TIMES</option>
+                          <option value='3' id="lang_fail_retry3">RETRY 3 TIMES</option>
+                          <option value='2' id="lang_fail_retry2">RETRY 2 TIMES</option>
+                          <option value='1' id="lang_fail_retry1">RETRY 1 TIMES</option>
+                        </select>
+                        <span id="lang_remote_logon_fail">Remote Logon Fail Event</span>
+                      </td>
+                      <td>
+                        <select name="net_rfail_arout" id="net_rfail_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="net_rfail_buzzer" id="net_rfail_buzzer"/></td>
+                      <td class='search_ip_conflict'><input type="checkbox" name="net_rfail_opopup" id="net_rfail_opopup"/></td>
+                      <td><input type="checkbox" name="net_rfail_email" id="net_rfail_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="net_rfail_ftp" id="net_rfail_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="net_rfail_mobile" id="net_rfail_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="net_rfail_mobilepush" id="net_rfail_mobilepush"/></td>
+                    </tr>
+                    <tr>
+                      <td class='left'>
+                        <select id="net_ddns_fail_count" name="net_ddns_fail_count">
+                          <option value='5' id="lang_fail_retry5">RETRY 5 TIMES</option>
+                          <option value='4' id="lang_fail_retry4">RETRY 4 TIMES</option>
+                          <option value='3' id="lang_fail_retry3">RETRY 3 TIMES</option>
+                          <option value='2' id="lang_fail_retry2">RETRY 2 TIMES</option>
+                          <option value='1' id="lang_fail_retry1">RETRY 1 TIMES</option>
+                        </select>
+                        <span id="lang_ddns_fail">Ddns Update Fail Event</span>
+                      </td>
+                      <td>
+                        <select name="net_ddns_fail_arout" id="net_ddns_fail_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="net_ddns_fail_buzzer" id="net_ddns_fail_buzzer"/></td>
+                      <td class='search_ip_conflict'><input type="checkbox" name="net_ddns_fail_opopup" id="net_ddns_fail_opopup"/></td>
+                      <td><input type="checkbox" name="net_ddns_fail_email" id="net_ddns_fail_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="net_ddns_fail_ftp" id="net_ddns_fail_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="net_ddns_fail_mobile" id="net_ddns_fail_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="net_ddns_fail_mobilepush" id="net_ddns_fail_mobilepush"/></td>
+                    </tr>
+                    <tr class='search_ip_conflict'>
+                      <td class='left'>
+                        <span id="lang_dhcp_fail">IP CONFLICT EVENT</span>
+                      </td>
+                      <td>
+                        <select name="net_dhcp_fail_arout" id="net_dhcp_fail_arout" multiple="multiple">
+                        </select>
+                      </td>
+                      <td><input type="checkbox" name="net_dhcp_fail_buzzer" id="net_dhcp_fail_buzzer"/></td>
+                      <td><input type="checkbox" name="net_dhcp_fail_opopup" id="net_dhcp_fail_opopup"/></td>
+                      <td><input type="checkbox" name="net_dhcp_fail_email" id="net_dhcp_fail_email"/></td>
+                      <td class='ftp'><input type="checkbox" name="net_dhcp_fail_ftp" id="net_dhcp_fail_ftp"/></td>
+                      <td class='mobile'><input type="checkbox" name="net_dhcp_fail_mobile" id="net_dhcp_fail_mobile"/></td>
+                      <td class='mobilepush'><input type="checkbox" name="net_dhcp_fail_mobilepush" id="net_dhcp_fail_mobilepush" disabled="disabled"/></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../scripts/selectAll.js"></script>
+    <script type="text/javascript" src="../scripts/init/EventInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('EventSystem');
+    </script>
+
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+    <script type="text/javascript" src="../scripts/model/EventModel.js"></script>
+
+    <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+    <script type="text/javascript" src="../scripts/view/EventView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/EventController.js"></script>
+
+    <script type="text/javascript">
+      zzmvc({
+        name: 'EventSystem',
+        action: 'index',
+        debug: false
+      });
+
+      dvrpoke();
+
+    </script>
+    <script src="less/less.min.js" ></script>
+  </body>
+</html>

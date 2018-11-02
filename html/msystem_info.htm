@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;" />
+
+		<style type="text/css">
+			<!--
+			@import url("../styles/styles/mglobal.css");
+			@import url("../styles/styles/mlive.css");
+			-->
+		</style>
+		<script type="text/javascript" src="../scripts/global.js"></script>
+
+		<script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+        <script type="text/javascript">
+	        <!--
+			info_include();
+	        -->
+    	</script>
+
+		
+		<script type="text/javascript" src="../scripts/mlive_request.js"></script>
+		<script type="text/javascript" src="../scripts/Validator.js"></script>
+      
+	</head>
+
+	<body>
+		<form name="systemsetting_info" id="systemsetting_info">
+			<div id="c_m_div_contents">
+				<table class="c_ms_InfoTable">
+                    <tr>
+	                  <td class="tdleft"><span class="mlist">S/W version</span></td>
+					  <td class="tdright" id="swver" name="swver" ></td>
+	                </tr>
+	               <tr>
+	                  <td class="tdleft"><span class="mlist">H/W Version</span></td>
+					  <td class="tdright" id="hwver" name="hwver" ></td>
+	                </tr>
+					<tr>
+	                  <td class="tdleft"><span class="mlist">Video signal type</span></td>
+					  <td class="tdright" id="vstype" name="vstype" ></td>
+	                </tr>
+					<tr>
+	                  <td class="tdleft"><span class="mlist">Disk capacity</span></td>
+					  <td class="tdright" id="diskcap" name="diskcap" ></td>
+	                </tr>
+					<tr>
+	                  <td class="tdleft"><span class="mlist">IP address</span></td>
+					  <td class="tdright" id="ipaddr" name="ipaddr" ></td>
+	                </tr>
+					<tr>
+	                  <td class="tdleft"><span class="mlist">MAC address</span></td>
+					  <td class="tdright" id="macaddr" name="macaddr" ></td>
+	                </tr>
+					<tr>
+	                  <td class="tdleft"><span class="mlist">DDNS domain name</span></td>
+					  <td class="tdright" id="ddnsdomain" name="ddnsdomain" ></td>
+	                </tr>
+					<tr>
+	                  <td class="tdleft"><span class="mlist">Net client port</span></td>
+					  <td class="tdright" id="netclntport" name="netclntport" ></td>
+	                </tr>
+					<tr>
+	                  <td class="tdleft"><span class="mlist">Web server port</span></td>
+					  <td class="tdright" id="webservport" name="webservport" ></td>
+	                </tr>
+	            </table>
+	            <input type="button" id="livepage" value="Live" class="c_ms_btn_live" onClick="Mlive_location_move();" />
+	        </div>
+		</form>
+<script type="text/javascript">
+	function Msystem_OnLoad_func()
+	{                  
+		system_btn_init();
+		
+		Mlive_postSetup(document.systemsetting_info, "action=get_setup&menu=system.manage");
+	}                      
+	
+	addUnLoadEvent(dvr_led_on_stop);            
+	addLoadEvent(Msystem_OnLoad_func);
+	
+	function Mlive_location_move()
+	{
+	    var urlhref = location.href;
+	    var recvdata = recv_encode(urlhref);
+	    
+		self.location='../html/mlive.htm?'+'&livech='+escape(recvdata['livech'])+'&interval='+escape(recvdata['interval']);
+	}
+</script>
+</body>
+</html>

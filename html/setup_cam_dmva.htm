@@ -1,0 +1,753 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/activex_request.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+    
+
+    <title></title>
+
+    <script language="JavaScript" for="itxview" event="OnVCAEnableChanged(bFlag)">
+      self.CallbackStatus(bFlag);
+    </script>
+
+    <script language="JavaScript">
+      function CallbackStatus(bFlag) {
+        // console.log("TEST!!");
+        // console.log(bFlag);
+        if(bFlag){
+          // console.log("true!!!");
+          $("#ch_activation").val("0");
+        } else {
+          // console.log("false!!!");
+          $("#ch_activation").val("1");
+        }
+
+      }
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Camera", "Dmva");
+            </script>
+          </ul>
+        </div>
+        <form name="camsetting_cam" id="camsetting_cam" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div id="c_sp_div_contents">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2><span id='lang_vasetup'>VA SETUP</span></h2>
+
+                <div id="dmva_tabs">
+                    <ul>
+                        <li>
+                            <a href='#dmva_tab_rule'><span id='lang_vaRule'>Rule</span></a>
+                        </li>
+                        <li>
+                            <a href='#dmva_tab_sched'><span id='lang_vaSchedule'>Schedule</span></a>
+                        </li>
+                    </ul>
+                    <!-- ==================== First Tab ========================= -->
+                    <div id="dmva_tab_rule">
+                    <div id="ch_area">
+                        <span id="lang_vaChannel">Channel</span>
+
+                        <select id="ch_select"></select>
+                        <span id="lang_activation">Activation</span>
+                        <select id="ch_activation">
+                          <option id="lang_on" value="0">OFF</option>
+                          <option id="lang_off" value="1">ON</option>
+                        </select>
+                        <p><br></p>
+                    </div>
+                    <script language="javascript">
+                      ActiveX_Include_680_382();
+                    </script>
+                    <p><br></p>
+                    
+                    <div class="dmva_wizardArea">
+                      <input type="button" id="vca_wizard" value="lang_vcaStartWizard"/>
+                      <input type="button" id="vca_submenu" value="lang_vcaShowSubmenu"/>
+                    </div>
+
+                    <div class="dmva_resetArea">
+                      <input type="button" id="vca_reset" value="lang_vcaReset"/></div>
+                    </div>
+                    <!-- ==================== Second Tab ========================= -->
+                    <div id="dmva_tab_sched">
+                        <div class="c_sp_div_dmva_contents">
+                            <div class="schdmvadiv">
+                                <select id='schmodeSelect'>
+                                    <option value='0' selected>Sun</option>
+                                    <option value='1'>Mon</option>
+                                    <option value='2'>Tue</option>
+                                    <option value='3'>Wed</option>
+                                    <option value='4'>Thu</option>
+                                    <option value='5'>Fri</option>
+                                    <option value='6'>Sat</option>
+                                </select>
+                            </div>
+                            <table class="dmva-time-index">
+                                <tr>
+                                    <th class="left"></th>
+                                    <th class="left2">0</th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right">6</th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right">12</th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right">18</th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right"></th>
+                                    <th class="right">24</th>
+                                </tr>
+                                <tr>
+                                    <td class="left"><span id='lang_Time'>Time</span></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>   
+                                    <td class="left3"></td> 
+                                    <td class="left3 c_6hr"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3 c_6hr"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3 c_6hr"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                    <td class="left3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="left1"></td>
+                                    <td class="td_isoff"></td>
+                                    <td class="left" colspan="2"><span id='lang_off'>Off</span></td>
+                                    <td class="left1"></td>
+                                    <td class="td_ison"></td>
+                                    <td class="left" colspan="2"><span id='lang_on'>On</span></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left1"></td>
+                                    <td class="left" colspan=3><div id="mousepos"></div></td>
+                                </tr>
+                                <tr>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                    <td class="left2"></td>
+                                </tr>
+                            </table>
+                            <div id=''>
+                              <table id='select_sched' class="dmva-sched">
+                                    <tbody>
+                                        <tr>
+                                            <th class="left"><span class='title1'>1</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>
+                                        <tr>
+                                            <th class="left"><span class='title2'>2</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr>
+                                            <th class="left"><span class='title3'>3</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr>
+                                            <th class="left"><span class='title4'>4</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>
+                                    </tbody>
+                                    <tbody class='chenable8'>  
+                                        <tr class='ch8tr'>
+                                            <th class="left"><span class='title5'>5</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>
+                                        <tr class='ch8tr'>
+                                            <th class="left"><span class='title6'>6</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr class='ch8tr'>
+                                            <th class="left"><span class='title7'>7</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr class='ch8tr'>
+                                            <th class="left"><span class='title8'>8</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>  
+                                    </tbody>
+                                    <tbody class='chenable16'>  
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title9'>9</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title10'>10</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title11'>11</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title12'>12</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>  
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title13'>13</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title14'>14</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title15'>15</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>                
+                                        <tr class='ch16tr'>
+                                            <th class="left"><span class='title16'>16</span></th>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched c_6hr"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td>
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                            <td class="cell_sched"></td> 
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div id="c_g_div_button">
+              <input type="submit" id="submit" value="lang_OK" class="c_sp_btn_okcancel"  />
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </div>      
+        </form>
+
+        
+      </div>
+    </div>
+
+  </body>
+
+  <script type="text/javascript" src="../scripts/selectAll.js"></script>
+  <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('CamDmva');
+  </script>        
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+
+  <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+  <script type="text/javascript" src="../scripts/ParamWidget.js"></script>
+
+  <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/CamController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+      name: 'CamDmva',
+      action: 'index',
+      debug: false
+    });
+
+    dvrpoke();
+
+  </script>            
+</html>

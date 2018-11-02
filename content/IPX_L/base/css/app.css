@@ -1,0 +1,144 @@
+/*
+ * body
+ */
+body {
+    margin: 0;
+    padding: 0;
+    background-image:url(/images/ITX_OLD/bg.gif);
+    background-repeat:repeat-x;
+    background-position:top left;
+    font: 0.75em 굴림, Arial, Gulim, sans-serif;
+}
+
+body ul, body ol, body dl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  width:1020px;
+  top:0;
+  margin:auto;
+}
+
+/*********************************************************************************************************/
+/* h tags */
+/*********************************************************************************************************/
+h2{
+  font-weight: bold;
+  color: #373487;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+h2 span{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+  color: #373487;
+  background-color: #E6F0F9;
+  text-decoration: none;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
+/*********************************************************************************************************/
+/* dl & dt */
+/*********************************************************************************************************/
+dl {
+  line-height: 1.5em;
+  margin: 5px;
+}
+
+dl dt {
+  width: 35%;
+  margin-right: 3%;
+  font-weight: normal;
+  color: #78ABCD;
+  text-align: right;
+  float: left;
+}
+
+dl dd {
+  width: 60%;
+  margin-bottom: 4px;
+  float: left;
+}
+
+/*********************************************************************************************************/
+/* table */
+/*********************************************************************************************************/
+table {
+  text-align:center;
+}
+
+table th {
+  border: 1px solid #C5D5E0;
+  background-color: #E6F0F9;
+  font-weight: normal;
+  color: #6CA4C8;
+}
+
+table tr {
+}
+
+table td {
+  white-space: nowrap;
+  border: 1px solid #ddd;
+  font-weight: normal;
+  color: #373487;
+}
+
+/*********************************************************************************************************/
+/* input */
+/*********************************************************************************************************/
+input {
+  width: 98%;
+  margin: 2px 0 1px 0;
+  color: #373487;
+  text-align: center;
+}
+
+table td input{
+  color: #373487;
+  text-align: center;
+}
+
+input:disabled {
+  cursor: default !important;
+}
+
+input[type="button"]:disabled {
+  cursor: default !important;
+  color: #CBCBD3;
+}
+
+/*********************************************************************************************************/
+/* select */
+/*********************************************************************************************************/
+select {
+  width: 98%;
+  margin: 2px 0 1px 0;
+  color: #373487;
+}
+
+table select{
+  color: #373487;
+  text-align: center;
+}
+
+
+/*********************************************************************************************************/
+/* Button */
+/*********************************************************************************************************/
+.default button{
+  width: 111px;
+  height: 22px;
+  padding:0px;
+  margin-left: 3px;
+  margin-top: 10px;
+}

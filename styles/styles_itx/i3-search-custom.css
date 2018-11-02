@@ -1,0 +1,294 @@
+﻿#c_sh_div_contents {
+    width: 1010px;
+    float: none;
+    background-color: #272727;
+    border: 1px solid #272727;
+}
+#c_sh_div_shfrm {
+    margin: 20px 135px auto 12px;
+    width: 833px;
+    background-color: #272727;
+    border: none;
+}
+#c_sh_div_search {
+    width: 984px;
+    height: 567px;
+    border: 1px solid #DEE8EF;
+    padding-top: 1px;
+    margin-top: -15px;
+}
+#c_sh_div_toolbar {
+    width: 984px;
+    margin: -2px 135px auto 0px;
+    height: 41px;
+}
+#c_sh_div_toolbar .lst_ch {
+    padding: 6px;
+    width: 130px;
+    height: 28px;
+    color: #fff;
+    font-size: 12px;
+    background-color: rgb(68, 68, 68);
+    border-radius: 3px;
+    margin-left: 30px;
+    margin-top: 3px;
+}
+    #c_sh_div_toolbar li.divided {
+        margin-right: 2px;
+        width: 35px;
+    }
+        #c_sh_div_toolbar li.divided img {
+            width: 35px;
+            height: 35px;
+        }
+    #c_sh_div_toolbar li.bar {
+        display: none;
+    }
+    #c_sh_div_toolbar ul.btn1 {
+        margin-left: 5px;
+        width: 185px !important;
+        height: 35px !important;
+        margin-top: 2px;
+    }
+    #c_sh_div_toolbar ul.btn2 {
+        width: 195px !important;
+        height: 35px !important;
+        margin-top: 2px;
+        margin-left: 20px;
+    }
+    #c_sh_div_toolbar ul.btn4 {
+        width: 190px !important;
+        height: 35px !important;
+        margin-top: 2px;
+        margin-left: 40px;
+    }
+    #c_sh_div_toolbar ul.btn3 {
+        width: 120px !important;
+        margin-top: 2px;
+        margin-left: 35px;
+    }
+#c_sh_div_tab {
+    margin-left: 0px;
+}
+#c_sh_div_time_contents, #c_sh_div_event_contents {
+    width: 983px !important;
+    margin-left: 0px;
+    background-color: #272727;
+    border: 1px solid #717171;
+    padding-bottom: 5px;
+    border-bottom: none;
+    margin-top: 61px;
+}
+#c_g_div_msg {
+    width: 983px;
+    margin-left: 12px;
+    background-color: #272727;
+    border: 1px solid #717171;
+    border-top: none;
+}
+.c_sh_tb_time_setting {
+    background-color: #272727;
+    width: 900px;
+    margin-left: 45px;
+}
+.c_sh_tb_time_info {
+    float:right;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+.c_sh_tb_time_info tbody tr td {
+    height: 25px;
+}
+.c_sh_tb_time_info td.colortxt {
+    width: 70px;
+    vertical-align: bottom;
+    color: #fff;
+    padding-left: 5px;
+}
+.c_sh_tb_time_setting .lstdate, .c_sh_tb_time_setting .lstyear {
+    padding: 4px;
+    width: 60px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+.c_sh_tb_time_setting td.tddate {
+    width: 30%;
+    font-size: 14px;
+    color: #fff;
+}
+#daydiv {
+    font-size: 14px;
+    color: #fff;
+}
+.c_sh_tb_time_line {
+    font-size: 12px;
+    background-color: #272727;
+    font-weight: normal;
+}
+#search_rec_top0 {
+    background-color: #525252;
+    color: #fff;
+}
+.c_sh_tb_time_line td.tdleft {
+    color: #fff;
+    background-color: #525252;
+}
+.c_sh_tb_time_line tr.trtop td:first-child {
+    background-color: #272727;
+}
+#button_backup {
+    margin-left: 30px;
+    width: 150PX;
+}
+.start_button {
+    margin-left: 10px;
+}
+.c_sh_tb_time_info td.colorpre,
+.c_sh_tb_time_info td.colorcont,
+.c_sh_tb_time_info td.coloralarm,
+.c_sh_tb_time_info td.colormotion,
+.c_sh_tb_time_info td.colorpanic {
+    width: 3px;
+}
+#c_sh_div_bplayer {
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.c_sh_tb_event_logprint {
+    width: 900px;
+}
+.c_sh_tb_event_logprint td.table-head {
+    padding: 3px;
+    background-color: #CACACA;
+    color: #000;
+    font-size:13px;
+    border: 1px solid #717171;
+}
+.c_sh_tb_event_logprint td.tdbigc, .c_sh_tb_event_logprint td.tdbiglc {
+    color: #fff;
+    background-color: #272727;
+    padding: 1px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #717171;
+}
+.c_sh_tb_event_logprint td.tdbiglc {
+    padding-left: 20px;
+    text-align: left;
+}
+.c_sh_btn_page_up, .c_sh_btn_page_down {
+    width: 70px;
+    height: 32px;
+}
+.button-container {
+    margin-left: 445px;
+}
+div#event-check ul li {
+    width: 80px;
+    color: #fff;
+}
+div#event-check {
+    width: 250px;
+}
+div#eventdiv {
+    float:right;
+    margin-top: 10px;
+}
+div#event-check input[type='checkbox'] {
+    font-size: 12px;
+    margin-bottom: -1px;
+}
+.c_sh_div_event_title {
+    color: #fff;
+    margin-left: 0px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    background: linear-gradient(to right, #454545 70% , #272727);
+    width: 150px;
+    font-size: 12px;
+    padding: 5px;
+}
+#searchtimediv {
+    margin-top: 10px;
+}
+    #searchtimediv div.c_sh_div_event_title {
+        margin-left: 15px;
+    }
+.c_sh_tb_event_period {
+    margin-left: 0px;
+}
+    .c_sh_tb_event_period .lstperiod {
+        width: 60px;
+        padding: 4px;
+        font-size: 12px;
+        border-radius: 3px;
+    }
+    .c_sh_tb_event_period td.tdtitle {
+        color: #fff;
+        font-size: 12px;
+    }
+    .c_sh_tb_event_period .lstsort {
+        padding: 3px;
+        font-size: 12px;
+    }
+#searchtimediv table.c_sh_tb_event_period {
+    width: 530px;
+}
+#searchtimediv table.c_sh_tb_event_period input#logprintbtn {
+    margin-top: 5px;
+}
+    #searchtimediv table.c_sh_tb_event_period select#logsort {
+        margin-right: 13px;
+        margin-bottom: 3px;
+    }
+.c_sh_tb_event_period td.order_text {
+    text-align: right;
+    color: #fff;
+    font-size: 12px;
+    padding-right: 4px;
+}
+#c_sh_div_tab li {
+    border-radius: 3px;
+}
+#searchbytimeli {
+    margin-right: 1px;
+}
+.c_sh_tb_time_setting .btn_play {
+    width: 100px;
+}
+
+#c_sh_div_tab li {
+    margin-right: 1px;
+    border-radius: 3px 3px 0px 0px;
+    margin-top: 1px;
+    padding-top: 5px;
+}
+
+    #c_sh_div_tab li.on {
+        height: 25px;
+        border: 1px solid #717171;
+        border-bottom: none;
+        border-top: 2px solid #8bc34a;
+        margin-top: 0px;
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+    }
+    #c_sh_div_tab li.off {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+        height: 25px;
+        margin-top: 0px;
+    }
+        #c_sh_div_tab li.on span {
+            font-size: 12px;
+            font-weight: normal;
+            color: #fff;
+        }
+.c_l_tb_ptz_settings_line {
+    float: right;
+    margin: 20px 85px 20px 30px;
+    height: 120px;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+  @import url("../styles/styles/global.css");
+  @import url("../styles/styles/setup.css");
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+
+  <script type="text/javascript">
+  info_include();
+  </script>
+
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/validate.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+  passwordRenewCheck();
+  language_include();
+  </script>
+
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+      print_top_menu(document, "SETUP");
+      </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+          <script type="text/javascript">
+          print_left_menu(document, "System", "Control device");
+          </script>
+        </ul>
+      </div>
+
+      <form name="systemsetting_controldev" id="systemsetting_controldev">
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <h2><span id='lang_ControldeviceSetting'>Control device setting</span></h2>
+            <table class="c_sp_tb_system_dev">
+              <tr>
+                <td class="table-head tdhead1"></td>
+                <td class="table-head tdhead2"><span id='lang_SystemID'>System ID</span></td>
+                <td class="table-head tdhead2" id="tdProtocoltitle"><span id='lang_Protocol'>Protocol</span></td>
+                <td class="table-head tdhead3" id="tdBaudratetitle"><span id='lang_Baudrate'>Baud rate</span></td>
+              </tr>
+              <tr>
+                <td class="tdleft" style="text-align:center;"><span id='lang_Device'>Device</span></td>
+                <td class="tdleft" >
+                  <select  id="systemid" name="systemid" class="lstdev"></select>
+                </td>
+                <td class="tdleft" id="tdProtocol">
+                  <select id="protocol" name="protocol" class="lstdev">
+                    <option value="0">D-Max</option>
+                    <option value="1">Ganz</option>
+                    <option value="2">Simens</option>
+                    <option value="3">Mesa-KB</option>
+                    <option value="4">ICK-3000</option>
+                  </select>
+                </td>
+                <td class="tdright" id="tdBaudrate">
+                  <select id="baud" name="baud" class="lstdev">
+                    <option value="2400">2400</option>
+                    <option value="4800">4800</option>
+                    <option value="9600">9600</option>
+                    <option value="19200">19200</option>
+                    <option value="38400">38400</option>
+                    <option value="57600">57600</option>
+                    <option value="115200">115200</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+
+            <table class="c_sp_tb_system_dev" id="c_sp_tb_system_dev">
+              <tr>
+                <td class="table-head tdhead1"></td>
+                <td class="table-head tdhead2"><span id='lang_rmc'>REMOTE CONTROLLER</span></td>
+              </tr>
+              <tr>
+                <td class="tdleft" style="text-align:center;"><span id='lang_rmcID'>REMOTE CONTROLLER ID</span></td>
+                <td class="tdleft" >
+                  <input  style='text-align:center' id="input_rmcid" name="rmcID" class="lstdev">
+                </td>
+              </tr>
+            </table>
+
+            <br/>
+            <div class="show_s1 ">
+              <h2><span id='lang_secom_dual'>SECOM DUAL</span></h2>
+              <dl>
+                <dt>
+                  <span id='lang_controller_linkage' class="list">CONTROLLER LINKAGE</span>
+                </dt>
+                <dd>
+                  <select id="secom_dual_act" name="secom_dual_act" class="lstdisp" >
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+                <dt>
+                  <span id="lang_controller_ip_address" class="list">CONTROLLER IP ADDRESS</span>
+                </dt>
+                <dd>
+                  <input type="text" id="secom_dual_ip" name="secom_dual_ip" class="iptextbox ipsetting" maxlength="15">
+                </dd>
+                <dt>
+                  <span id="lang_controller_port" class="list">CONTROLLER PORT</span>
+                </dt>
+                <dd>
+                  <input type="text" id="secom_dual_port" name="secom_dual_port" class="portsetting" maxlength="5">
+                </dd>
+
+              </dl>
+              <ul>
+                <li>
+                  <input type="button" id="s1RequestInfo" value="registration_request" class="testButton" disabled/>
+                  <input type="button" id="s1ShowInfo"    value="registration_view" class="testButton" disabled/>
+                </li>
+                <li>
+                  <input type="button" id="s1ShowStatus"  value="communication_view" class="testButton" disabled/>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg">
+            </div>
+            <div id="printMsg">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/SystemInit.js"></script>
+  <script type="text/javascript">
+  ShowInit('SystemControlDevice');
+  </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/SystemModel.js"></script>
+
+  <script type="text/javascript" src="../scripts/view/SystemView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/SystemController.js"></script>
+
+  <script type="text/javascript">
+  zzmvc({
+    name: 'SystemControlDevice',
+    action: 'index',
+    debug: false
+  });
+
+  dvrpoke();
+
+  </script>
+</body>
+</html>

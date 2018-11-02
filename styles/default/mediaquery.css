@@ -1,0 +1,29 @@
+/*
+@CHARSET "utf-8";
+@media screen and (max-width: 767px) {
+  .logo { display: none; }
+  .gnb { position: relative; top: auto; right: auto; width: 100%; }
+  .row, body {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #container {}
+  .gnb ul li a:hover, .lnb ul li a:hover { color: #f00; text-shadow: none; }
+  
+  .row .col-1,.row .col-2,.row .col-3,.row .col-4,.row .col-5,.row .col-6,.row .col-7,.row .col-8,.row .col-9,.row .col-10,.row .col-11,.row .col-12 {
+    float: none; width: auto; margin-left: 0; margin-right: 0;
+    padding-left: 20px; padding-right: 20px;
+  }}
+}
+ 
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+/*
+}
+*/

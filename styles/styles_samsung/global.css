@@ -1,0 +1,70 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet 
+
+file Name : global.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Body */
+
+* {margin:0; padding:0;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image:url(../../images/images/bg.gif);
+    background-repeat:repeat-x;
+    background-position:top left;
+}
+/**************************************************************************************************************************************/
+
+div,ul,li {margin:0; padding:0; font-size:14px; font-family:"Arial";}
+ul,ol {list-style:none;}
+img {border:none;}
+
+h2 {font-weight:bold; color:#283956; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none; line-height:24px;} 
+
+span.list {font-weight:normal; font-size:14px; color:#283956; letter-spacing:-1; text-decoration:none; line-height:24px;}
+
+span.check {color:#78ABCD; letter-spacing:-1; text-decoration:none; line-height:24px; padding-left:5px; padding-right:65px; cursor:pointer; cursor:hand;}
+
+/* Button */
+input[type="button"] {background-image: url(../../images/images/bt_bg_n.gif); background-repeat:repeat; border:1px solid #7E9DB9; color:#ffffff; cursor:pointer; cursor:hand;}
+input[type="text"] {border:1px solid #91a8c1; color:#3d3d3d;}
+input[type="checkbox"] {cursor:pointer; cursor:hand;}
+/* Select */
+select {width:100%; border:1px solid #91a8c1; color:#3d3d3d; font-size:14px; text-align:center; vertical-align: middle; cursor:pointer; cursor:hand;}
+
+/**************************************************************************************************************************************/
+
+#c_g_div_wrapper {width:990px;top:0;margin:auto;}
+
+/* Top live/search/setup Bar */
+#c_g_div_top{float:left; width:818px;}
+
+/* Branch Logo */
+#c_g_div_logo{float:left; width:172px; cursor:pointer; cursor:hand}
+
+/*Tab Image*/
+#c_g_div_tab {float:left; position:relative; top:20px; left:0; z-index:3; margin-left:4px;}
+/* #c_g_div_tab ul {margin:0; padding:0; width:365px; overflow:hidden;left: 0px; top: 1px;} */
+#c_g_div_tab ul {margin:0; padding:0; width:495px; overflow:hidden;left: 0px; top: 1px;}
+#c_g_div_tab li {float:left; position:relative; width:120px; height:34px; padding-top:9px; padding-left:1px;background:url(../../images/images/tab_nor.gif) no-repeat; text-align:center;} 
+#c_g_div_tab li span {font-weight:bold; color:#ffffff; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_g_div_tab li a {color:#304561; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_g_div_tab li.on {width:122px; height:34px; background:url(../../images/images/tab_sel.gif) no-repeat;font-weight:bold; color:#ffffff; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+
+/*상단_타이틀*/
+/* #c_g_div_title{ float:left; position:relative; top:23px; left:183px; padding-top:2px; width:260px; height:30px; text-align:right;} */
+#c_g_div_title{ float:left; position:relative; top:23px; left:53px; padding-top:2px; width:260px; height:30px; text-align:right;}
+#c_g_div_title span{font-weight:bold;color:#0342a2;font-size:16px;font-family:Arial;vertical-align:bottom;letter-spacing:-1px;line-height: 30px;}
+/**************************************************************************************************************************************/
+
+/* Message */
+#c_g_div_msg {margin-left:1px; background-color:#ffffff; border:1px; text-align:center;}
+#errMsg {color:#CC006A;}
+#printMsg {color:#1FA908;}
+

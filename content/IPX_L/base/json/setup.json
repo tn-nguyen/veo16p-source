@@ -1,0 +1,13 @@
+{
+  "id": "setup",
+  "html": "template/setup.htm",
+  "initializePage": "setup",
+  "defaultPage": "setup/Camera/CameraTitle",
+  "loadTemplate": {
+    "setuplnb" : "setupNavigation",
+    "confirm": "confirm"
+  },
+  "lnb": "setuplnb",
+  "formFcgi": "../cgi-bin/webra_fcgi.fcgi",
+  "formId": "mainForm"
+}

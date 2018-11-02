@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>DVR Web Viewer Infomation</title>
+
+        <style type="text/css">
+    		  @import url("../styles/styles/global.css");
+    		  @import url("../styles/styles/setup.css");
+    	  </style>
+
+        <script src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+
+    	<script type="text/javascript" src="../scripts/global.js"></script>
+    	<script type="text/javascript">
+    		info_include();
+    	</script>
+    	<script type="text/javascript" src="../scripts/top_menu.js"></script>
+    	<script type="text/javascript" src="../scripts/left_menu.js"></script>
+    	<script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+      <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+		<script type="text/javascript" src="../scripts/activex_request.js"></script>
+
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+        <link href="../styles/styles/i3custom.css" rel="stylesheet" type="text/css"/>
+        <link href="../styles/styles/i3-versioninfo-custom.css" rel="stylesheet" type="text/css"/>
+
+    	<script type="text/javascript">
+            passwordRenewCheck();
+    		language_include();
+    	</script>
+
+    </head>
+
+    <body>
+    	<div id="c_g_div_wrapper">
+    		<div id="title_layer">
+    			<div id="title_layer">
+    				<script type="text/javascript">
+    					print_top_menu(document, "INFOMATION");
+    				</script>
+    			</div>
+    			<div id="c_info_div_contents">
+                    <div id='divheader'>
+                        <h2><span id='infoheader'></span></h2>
+                    </div>
+
+                    <ul id='verinfo'>
+                        <li><span id='infobody1'></span><a href='/cgi-bin/webra_fcgi.fcgi?action=get_log&menu=nand' target="_new">.</a></li>
+                        <li><span id='infobody2'></span></li>
+                        <li><span id='infobody3'></span></li>
+                        <li><span id='infobottom'></span></li>
+                    </ul>
+    			</div>
+    		</div>
+    	</div>
+        <script type="text/javascript" src="/scripts/libs.js"></script>
+    	<script type="text/javascript" src="/scripts/Version.js"></script>
+    	<script type="text/javascript">
+    		lang_file(INFO_LANGUAGE,'INFOMATION');
+
+    		var version = new Version();
+    		version.update();
+    	</script>
+    </body>
+</html>
+

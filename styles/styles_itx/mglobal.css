@@ -1,0 +1,35 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet 
+
+file Name : mglobal.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Body */
+* {margin:0; padding:0;}
+
+body {
+width: 800px;
+margin: 0;
+padding: 0;
+background-repeat:repeat-x;
+}
+/**************************************************************************************************************************************/
+div,ul,li {margin:0; padding:0; font-size:14px; font-family:"Arial";}
+ul,ol {list-style:none;}
+img {border:none;}
+
+h2 {font-weight:bold; color:#373487; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none; line-height:24px;} 
+
+span.list {font-weight:normal; font-size:14px; color:#78ABCD; letter-spacing:-1; text-decoration:none; line-height:22px;}
+/**************************************************************************************************************************************/
+/* Button */
+input[type="button"] {background-image: url(../../images/images/bt_bg_n.gif); background-repeat:repeat-x; border:1px solid #7E9DB9; color:#373487; cursor:pointer; cursor:hand;}
+input[type="text"] {border:1px solid #91a8c1; color:#3d3d3d;}
+
+/* Select */
+select {width:100%; border:1px solid #91a8c1; color:#3d3d3d; font-size:14px; text-align:center; vertical-align: middle; cursor:pointer; cursor:hand;}
+/**************************************************************************************************************************************/

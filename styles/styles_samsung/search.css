@@ -1,0 +1,113 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet 
+
+file Name : search.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Frame */
+#c_sh_div_contents {float:left; width:990px; min-height:950px; margin-left:1px; margin-top:0px;background-color:#ffffff; border:1px solid #8b8b8b; z-index:2;}
+#c_sh_div_shfrm {width:722px; min-height:480px; background-color:#ffffff; border:0px; margin:20px 135px auto 111px; border:1px solid #ffffff;}
+/**************************************************************************************************************************************/
+/* DISPLAY */
+#c_sh_div_search {width:720px; height:480px; background-color:#eeeeee; border:1px solid #3e4e58; margin:0px 135px auto 0px;}
+
+/* Tool Bar */
+#c_sh_div_toolbar {width:722px; height:29px; background-image:url(../../images/images/live_control_bg.gif); margin:1px 135px auto 0px;}
+#c_sh_div_toolbar ul.btn1 {float:left; width: 155px; margin-left:1px; margin-right:0; cursor:pointer; cursor:hand;} 
+#c_sh_div_toolbar ul.btn2 {float:left; margin-right:5px; margin-left:5px; width:126px; cursor:pointer; cursor:hand;}
+#c_sh_div_toolbar ul.btn3 {float:left; width:93px; margin-left:40px; cursor:pointer; cursor:hand;}
+#c_sh_div_toolbar ul.btn4 {float:left; width:156px; margin:0 1px 0 7px; cursor:pointer; cursor:hand;}
+#c_sh_div_toolbar li.divided {float:left; width:30px; margin:0;}
+#c_sh_div_toolbar li.bar {float:left; width:1px; margin:0; width:1; height:29px;}
+#c_sh_div_toolbar .lst_ch {
+	float:left;
+	position:relative;
+	top:3px;
+    	left:20px;
+	width:130px;
+	height:21px;
+	border: 1px solid #A3BCD3;
+	font-size: 14px;
+	color: #373487;
+	text-align: center;
+	cursor:pointer; 
+	cursor:hand;
+}
+
+/* Tab */
+#c_sh_div_tab {float:left; position:relative; top:30px; left:0; z-index:1; margin-left:-11px;}
+#c_sh_div_tab ul {margin:0; padding:0; width:365px; overflow:hidden;left: 0px; top: 0px;}
+#c_sh_div_tab li {float:left; position:relative; width:158px; height:20px; padding-top:2px; padding-left:1px;background:url(../../images/images/rec_tab_nor.gif) no-repeat; text-align:center;} 
+#c_sh_div_tab li span {font-weight:bold; color:#304561; font-size:12px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_sh_div_tab li a {color:#304561; font-size:12px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_sh_div_tab li.on {width:159px; height:20px; padding-right:1px; background:url(../../images/images/rec_tab_sel.gif) no-repeat;font-weight:bold; color:#304561; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none; cursor:pointer; cursor:hand;}
+#c_sh_div_tab li.off {width:159px; height:32px; padding-right:1px; no-repeat;font-weight:normal; color:#304561; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none; cursor:pointer; cursor:hand;}
+
+/**************************************************************************************************************************************/
+
+/* Search by time */
+#c_sh_div_time_contents {width:744px; background-color:#e6ebf2; border:1px solid #8b8b8b; margin:50px auto auto -11px;}
+
+/* Search by time - time setting table */
+.c_sh_tb_time_setting {width:730px; height:45px; margin:10px auto auto 10px; background-color:#e6ebf2; color:#304561; font-size:8pt; text-align:center;}
+.c_sh_tb_time_setting td.tddate {width:27%; text-align:left;}
+.c_sh_tb_time_setting td.tdrefresh {width:14%; text-align:left;}
+.c_sh_tb_time_setting td.tddateblk {width:2%; text-align:center;}
+.c_sh_tb_time_setting td.tdbackup {width:14%; text-align:left;}
+.c_sh_tb_time_setting .lstdate {width:26%; text-align:left;}
+.c_sh_tb_time_setting .lstyear {width:30%; text-align:left;}
+.c_sh_tb_time_setting .btn_play {width:100%;}
+
+/* Search by time - time info */
+.c_sh_tb_time_info {width:720px; height:10px; margin:-5px auto auto auto; color:#304561;}
+.c_sh_tb_time_info td.timeview {width:24%; font-weight:bold; text-align:right; color:#304561;}
+.c_sh_tb_time_info td.colortimer {width:2%; text-align:left; background-color:RGB(108,176,1);}
+.c_sh_tb_time_info td.colormanual {width:2%; text-align:left; background-color:RGB(255,198,0);}
+.c_sh_tb_time_info td.coloralarm {width:2%; text-align:left; background-color:RGB(224,136,1);}
+.c_sh_tb_time_info td.colormotion {width:2%; text-align:left; background-color:RGB(51,132,236);}
+.c_sh_tb_time_info td.colorpre {width:2%; text-align:left; background-color:#e6ebf2;}
+.c_sh_tb_time_info td.colortxt {width:8%; text-align:left; text-align:left; }
+.c_sh_tb_time_info td.colorblk {width:10%; text-align:left;}
+
+/* Search by time - time line draw */                   
+.c_sh_tb_time_line {width:744px; margin:3px auto auto auto; background-color:#e6ebf2; font-size:7pt; font-weight:bold; board-width:0px; color:#304561; text-align:center; table-layout:fixed;}
+.c_sh_tb_time_line tr.trtop {height:12px; background-color:#cbd9e7;}  
+.c_sh_tb_time_line tr.trline {height:12px;}
+.c_sh_tb_time_line td.tdleft {width:20px; height:10px; background-color:#E6F0F9; }
+.c_sh_tb_time_line td.tdcel {width:3px;}
+
+/**************************************************************************************************************************************/
+/* Search by event */
+#c_sh_div_event_contents {width:744px; background-color:#e6ebf2; border:1px solid #8b8b8b; margin:50px auto auto -11px;}
+
+/* Search by event - title */
+.c_sh_div_event_title{color:#000080; font-weight:bold; font-size:15px; margin:1px auto 3px 10px;}
+
+/* search by event - event setting */
+.c_sh_tb_event_setting {width:720px; margin:1px auto auto auto; text-align:left; font-size:10pt;}
+.c_sh_tb_event_setting td.tdl {width:23%; color:#304561}
+.c_sh_tb_event_setting td.tds {width:2%; color:#304561}
+
+/* search by event - from/to time setting */
+.c_sh_tb_event_period {width:744px; margin:1px auto auto auto; text-align:left; font-size:10pt; text-align:center;}
+.c_sh_tb_event_period td.tdtitle {width:8%; font-size:13px; color:#304561;}
+.c_sh_tb_event_period td.tddate {width:25%; text-align:left; }
+.c_sh_tb_event_period td.tdblk {width:3%; }
+.c_sh_tb_event_period td.tdsearch {width:25%; text-align:right;}
+.c_sh_tb_event_period .lstperiod {width:26%; }
+.c_sh_tb_event_period .lstsort {width:40%;}
+.c_sh_tb_event_period .btn {width:40%; margin-top:3px;}
+
+/* search by event - log print */
+.c_sh_tb_event_logprint {width:744px; padding:0; table-layout:fixed; margin:12px auto 5px auto; border-collapse:collapse;}
+.c_sh_tb_event_logprint td.tdbig {width:25%; text-align:center; background-color:#cbd9e7; color:#283956; border-right:1px solid #91a8c1; border-bottom:1px solid #91a8c1;}
+.c_sh_tb_event_logprint td.tdbigl {width:75%; text-align:center; background-color:#cbd9e7; color:#283956; border-left:1px solid #91a8c1; border-bottom:1px solid #91a8c1;}
+.c_sh_tb_event_logprint td.tdbigc {width:25%; height:16px; background-color:#ffffff; color:#283956; border-right:1px solid #91a8c1; border-bottom:1px solid #91a8c1; cursor:pointer; cursor:hand;}
+.c_sh_tb_event_logprint td.tdbiglc {width:75%; height:16px; background-color:#ffffff; color:#283956; border-left:1px solid #91a8c1; border-bottom:1px solid #91a8c1; cursor:pointer; cursor:hand;}
+
+.c_sh_btn_page_up {width:100px; margin-left:0px;}
+.c_sh_btn_page_down {width:100px; margin-left:10px;}

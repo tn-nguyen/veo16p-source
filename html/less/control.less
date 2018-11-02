@@ -1,0 +1,65 @@
+// --------------------------------------------------
+// START :: Define for selectbox
+
+  #selecbox-medium {
+    /*Same height with the button*/
+    & > select {
+      height: 28px
+    }
+  }
+
+  select.dark-style {
+    background-color: #444444;
+    color: #fff;
+  }
+// END :: Define for selectbox
+// --------------------------------------------------
+
+// --------------------------------------------------
+// START :: table
+table {
+
+}
+// END :: table
+// --------------------------------------------------
+
+// --------------------------------------------------
+// START :: button-container
+.button-container {
+  input[type="button"] {
+    min-width: 48px;
+    width: auto;
+  }
+}
+// END :: button-container
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// START :: Change jquery UI dialog style
+.ui-dialog.ui-widget {
+  .ui-dialog-content {
+    dl {
+      dt {
+        color: #fff;
+      }
+    }
+  }
+}
+// END :: Change jquery UI dialog style
+// --------------------------------------------------
+
+
+/*Nguyen - 20180831*/
+input{
+  &[Type="checkbox"]{
+    cursor:pointer;
+    cursor:hand;
+    &[disabled]{
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+/* END ::  Nguyen - 20180831*/

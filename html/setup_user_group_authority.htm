@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">info_include();</script>
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();</script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+  </head>
+
+	<body>
+
+        <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">
+                    print_top_menu(document, "SETUP");
+                </script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                        <script type="text/javascript">
+                            print_left_menu(document, "User", "User authority");
+                        </script>
+                    </ul>
+                </div>
+
+                <form name="usrsetting_usrauthority" id="usrsetting_usrauthority" action="/cgi-bin/webra_fcgi.fcgi">
+                    <div id="c_sp_div_contents">
+                        <div class="c_sp_div_frame c_sp_div_frame_dot">
+                            <h2>
+                            <span id='lang_Groupauthoritysetting'>
+                                Group authority setting
+                            </span>
+                            </h2>
+                            <table class="c_sp_tb_userautho">
+                                <tr>
+                                    <td height="24" class="table-head tdhead1"></td>
+                                    <td class="table-head tdhead2">
+                                        MANAGER
+                                    </td>
+                                    <td class="table-head tdhead3">
+                                        USER
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_Search'>
+                                        Search
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="searchman" name="searchman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="searchusr" name="searchusr" value="1"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_Archiving'>
+                                        Archiving
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="archman" name="archman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="archusr" name="archusr" value="1"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_SysSetup'>
+                                        System Setup
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="setupman" name="setupman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="setupusr" name="setupusr" value="1"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_RecSet'>
+                                        Record Setup
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="recsetman" name="recsetman" value="1" />
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="recsetusr" name="recsetusr" value="1"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_EvtAct'>
+                                        Event Action Control
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="eventman" name="eventman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="eventusr" name="eventusr" value="1"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_AudListen'>
+                                        Audio Listening
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="audioman" name="audioman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="audiousr" name="audiousr" value="1"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_mic'>
+                                        Microphone
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="micman" name="micman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="micusr" name="micusr" value="1"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_RemoteAgent'>
+                                        Remote Agent
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="remoteman" name="remoteman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="remoteusr" name="remoteusr" value="1"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tdleft" >
+                                    <span id='lang_shutdown'>
+                                        Shutdown
+                                    </span>
+                                    </td>
+                                    <td class="tdleft"  >
+                                    <input type="checkbox" id="shutman" name="shutman" value="1"/>
+                                    </td>
+                                    <td class="tdright" >
+                                    <input type="checkbox" id="shutusr" name="shutusr" value="1"  />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../scripts/init/UserInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('UserAuth');
+        </script>
+
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/UserModel.js"></script>
+        <script type="text/javascript" src="../scripts/view/UserView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/UserController.js"></script>
+
+        <script type="text/javascript">
+
+            zzmvc({
+                name: 'UserAuth',
+                action: 'index',
+                debug: false
+            });
+
+            dvrpoke();
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    @import url("../styles/styles/global.css");
+    @import url("../styles/styles/setup.css");
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+  <script type="text/javascript">info_include();</script>
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+  <script type="text/javascript" src="../scripts/ie8_compatibility.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();
+  </script>
+
+  <link href="../scripts/jquery/jquery.dropdownMulti.css" rel="stylesheet" type="text/css"/>
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery.dropdownMulti.js"></script>
+</head>
+
+<body>
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+          <script type="text/javascript">print_left_menu(document, "User", "User management");</script>
+        </ul>
+      </div>
+      <div id="c_sp_div_contents">
+        <form name="usrsetting_usrmange" id="usrsetting_usrmange" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <h2>
+              <span id='lang_Usermanagementsetting'>
+                User management setting
+              </span>
+            </h2>
+            <table class="c_sp_tb_userman">
+              <thead>
+                <tr>
+                  <th class="head hd1"><span id='lang_UserID'> User ID </span></th>
+                  <th class="head hd2"><span id='lang_Group'> Group </span></th>
+                  <th class="head hd3"><span id='lang_Covert'> Covert </span></th>
+                  <th class="head hd4"><span id='lang_EMail'> E-Mail </span></th>
+                  <th class="head hd5"><span id='lang_Notification'> Notify </span></th>
+                  <th class="head hd6 td_edit"><span id='lang_Edit'> Edit </span></th>
+                  <th class="head hd7"><span id='lang_Del'> Del </span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id='trUsr0'>
+                  <td>
+                    <input type="text" name="usrid0" id="usrid0" value="" disabled size="15" maxlength="32" style='ime-mode:disabled'>
+                  </td>
+                  <td>
+                    <select  id="grpname0" name="grpname0" disabled class="lstgroup"  style2="display:none ;">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert0" name="covert0" multiple="true">
+                    </select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email0" id="email0" value="" maxlength="63" style='ime-mode:disabled'>
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti0" id="noti0"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor0" id="editor0" usrRow='0' style2="display:none ;" />
+                  </td>
+                  <td></td>
+                </tr>
+                <tr id='trUsr1'>
+                  <td>
+                    <input disabled type="text" name="usrid1" id="usrid1" value=""  size="15" maxlength="32" style2="display:none ; ime-mode:disabled">
+                  </td>
+                  <td>
+                    <select disabled  id="grpname1" name="grpname1"  class="lstgroup" style2="display:none ;">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert1" name="covert1" multiple="true"  style2="display:none ;"></select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email1" id="email1" value="" size="15" maxlength="63" style2="display:none ; ime-mode:disabled">
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti1" id="noti1" style2="display:none ;"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor1" id="editor1" usrRow='1' style2="display:none ;" />
+                  </td>
+                  <td>
+                    <input type="button" class="btn_delete" value="lang_Del" name="del1" id="del1" usrRow='1' style2="display:none;"/>
+                  </td>
+                </tr>
+                <tr id='trUsr2'>
+                  <td>
+                    <input disabled type="text" name="usrid2" id="usrid2" value=""  size="15" maxlength="32" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <select disabled  id="grpname2" name="grpname2"  class="lstgroup" style2="display:none ;">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert2" name="covert2" multiple="true"  style2="display:none ;"></select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email2" id="email2" value="" size="15" maxlength="63" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti2" id="noti2" style2="display:none ;"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor2" id="editor2" usrRow='2' style2="display:none ;" />
+                  </td>
+                  <td>
+                    <input type="button" class="btn_delete" value="lang_Del" name="del2" id="del2" usrRow='2' style2="display:none ;" />
+                  </td>
+                </tr>
+                <tr id='trUsr3'>
+                  <td>
+                    <input disabled type="text" name="usrid3" id="usrid3" value=""  size="15" maxlength="32" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <select disabled  id="grpname3" name="grpname3"  class="lstgroup" style2="display:none ;">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert3" name="covert3" multiple="true"  style2="display:none ;"></select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email3" id="email3" value="" size="15" maxlength="63" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti3" id="noti3" style2="display:none ;"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor3" id="editor3" usrRow='3' style2="display:none ;" />
+                  </td>
+                  <td>
+                    <input type="button" class="btn_delete" value="lang_Del" name="del3" id="del3" usrRow='3' style2="display:none ;" />
+                  </td>
+                </tr>
+                <tr id='trUsr4'>
+                  <td>
+                    <input disabled type="text" name="usrid4" id="usrid4" value=""  size="15" maxlength="32" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <select disabled  id="grpname4" name="grpname4"  class="lstgroup" style2="display:none ;">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert4" name="covert4" multiple="true"  style2="display:none ;"></select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email4" id="email4" value="" size="15" maxlength="63" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti4" id="noti4" style2="display:none ;"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor4" id="editor4" usrRow='4' style2="display:none ;" />
+                  </td>
+                  <td>
+                    <input type="button" class="btn_delete" value="lang_Del" name="del4" id="del4" usrRow='4' style2="display:none ;" />
+                  </td>
+                </tr>
+                <tr id='trUsr5'>
+                  <td>
+                    <input disabled type="text" name="usrid5" id="usrid5" value=""  size="15" maxlength="32" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <select disabled  id="grpname5" name="grpname5"  class="lstgroup" style2="display:none ;">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert5" name="covert5" multiple="true"  style2="display:none ;"></select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email5" id="email5" value="" size="15" maxlength="63" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti5" id="noti5" style2="display:none ;"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor5" id="editor5" usrRow='5' style2="display:none ;" />
+                  </td>
+                  <td>
+                    <input type="button" class="btn_delete" value="lang_Del" name="del5" id="del5" usrRow='5' style2="display:none ;" />
+                  </td>
+                </tr>
+                <tr id='trUsr6'>
+                  <td>
+                    <input disabled type="text" name="usrid6" id="usrid6" value=""  size="15" maxlength="32" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <select disabled  id="grpname6" name="grpname6"  class="lstgroup" style2="display:none ;">
+                        <option value="ADMIN">ADMIN</option>
+                        <option value="MANAGER">MANAGER</option>
+                        <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert6" name="covert6" multiple="true"  style2="display:none ;"></select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email6" id="email6" value="" size="15" maxlength="63" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti6" id="noti6" style2="display:none ;"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor6" id="editor6" usrRow='6' style2="display:none ;" />
+                  </td>
+                  <td>
+                    <input type="button" class="btn_delete" value="lang_Del" name="del6" id="del6" usrRow='6' style2="display:none ;" />
+                  </td>
+                </tr>
+                <tr id='trUsr7'>
+                  <td>
+                    <input disabled type="text" name="usrid7" id="usrid7" value=""  size="15" maxlength="32" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <select disabled  id="grpname7" name="grpname7"  class="lstgroup" style2="display:none ;">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </td>
+                  <td>
+                    <!--covert-->
+                    <select class='covert' id="covert7" name="covert7" multiple="true"  style2="display:none ;"></select>
+                  </td>
+                  <td>
+                    <input disabled type="text" class='email' name="email7" id="email7" value="" size="15" maxlength="63" style2="display:none ; ime-mode:disabled;">
+                  </td>
+                  <td>
+                    <input disabled type="checkbox" name="noti7" id="noti7" style2="display:none ;"/>
+                  </td>
+                  <td class="td_edit">
+                    <input type="button" class="btn_edit" value="lang_Edit" name="editor7" id="editor7" usrRow='7' style2="display:none ;" />
+                  </td>
+                  <td>
+                    <input type="button" class="btn_delete" value="lang_Del" name="del7" id="del7" usrRow='7' style2="display:none ;"/>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="c_g_div_button">
+            <input type="button" value="lang_Add" class="c_sp_btn_okcancel" id="adder"/>
+            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg">
+            </div>
+            <div id="printMsg">
+            </div>
+          </div>
+          <input type="hidden" id="usrcnt0" name="usrcnt0" value="0"/>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="user_dialog" title="ADD"  style="display:none ;">
+    <form id='form_new_user'>
+      <table id='userdlg'>
+        <tbody>
+          <tr>
+            <th class="head">
+              <span id="lang_userid">User ID</span>
+            </th>
+            <td class="cell">
+              <input type="text"  id="usrid_new" name="usrid_new" maxlength="10" style="ime-mode:disabled">
+            </td>
+          </tr>
+          <tr>
+            <th class="head">
+              <span id="lang_current_pw">CURRENT PASSWORD</span>
+            </th>
+            <td>
+              <input type="password" id="passwd_current" name="passwd_current" maxlength="16">
+            </td>
+          </tr>
+          <tr>
+            <th class="head">
+              <span id="lang_new_pw">PASSWORD</span>
+            </th>
+            <td>
+              <input type="password" id="passwd_new" name="passwd_new" maxlength="16">
+            </td>
+          </tr>
+          <tr class='passwd_rule' style="display:none;"> <!-- for strong security setting -->
+            <th class="head"></th>
+            <td class='passwd_rule_contents'>
+              <span id='passwd_rule0'>password rule</span><br>
+              <span id='passwd_rule1'>pass length</span><br>
+              <span id='passwd_rule2'>combination</span><br>
+              <span id='passwd_rule3'>repetitive char</span><br>
+              <span id='passwd_rule4'>sequence num</span><br>
+              <span id='passwd_rule5'>equal to id</span><br>
+              <span id='passwd_rule6'>invalid char</span><br>
+            </td>
+          </tr>
+          <tr class='id_rule' style="display:none;">
+            <th class="head"></th>
+            <td>
+              <span id='passwd_rule7'>minimum length of id is 5</span><br>
+            </td>
+          </tr>
+          <tr>
+            <th class="head">
+              <span id="lang_confirm_pw">CONFIRM PASSWORD</span>
+            </th>
+            <td>
+              <input type="password" id="confirm_new" maxlength="16">
+            </td>
+          </tr>
+          <tr>
+            <th class="head">
+              <span id="lang_group">Group</span>
+            </th>
+            <td>
+              <select id="grpname_new" name="grpname_new">
+                <option value="ADMIN">ADMIN</option>
+                <option value="MANAGER">MANAGER</option>
+                <option value="USER">USER</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th class="head">
+              <span id="lang_email">E-Mail</span>
+            </th>
+            <td>
+              <input type="text" id="email_new" name="email_new" maxlength="63" style="ime-mode:disabled">
+            </td>
+          </tr>
+          <tr>
+            <th class="head">
+              <span id="lang_emailnoti">E-Mail Notification</span>
+            </th>
+            <td>
+              <select id="noti_new" name="noti_new">
+                <option value="1">On</option>
+                <option value="0">Off</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="email_server">
+            <th class="head">
+              <span id="lang_Email_Server">E-Mail Server</span>
+            </th>
+            <td>
+              <input type="radio" id="email_serv" name="email_serv" value="0">1
+              <input type="radio" id="email_serv" name="email_serv" value="1">2
+            </td>
+          </tr>
+          <tr class="mobile">
+            <th class="head">
+              <span id="lang_mobile">Mobile</span>
+            </th>
+            <td>
+              <input type="text" id="phone_new" name="phone_new" maxlength="63">
+            </td>
+          </tr>
+          <tr class="mobile">
+            <th class="head">
+              <span id="lang_mobile_notify">Mobile Notification</span>
+            </th>
+            <td>
+              <select id="phone_notify_new" name="phone_notify_new">
+                <option value="1">On</option>
+                <option value="0">Off</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th class="head">
+              <span id="lang_covert">Covert</span>
+            </th>
+            <td id='new_covert'>
+              <ul>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/UserInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('UserManage');
+  </script>
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/UserModel.js"></script>
+  <script type="text/javascript" src="../scripts/view/UserView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/UserController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+      name: 'UserManage',
+      action: 'index',
+      debug: false
+    });
+
+    dvrpoke();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+@import url("../styles/styles/global.css");
+@import url("../styles/styles/setup.css");
+</style>
+<script type="text/javascript" src="../scripts/global.js"></script>
+
+<script type="text/javascript">info_include();</script>
+
+<script type="text/javascript" src="../scripts/libs.js"></script>
+<script type="text/javascript" src="../scripts/top_menu.js"></script>
+<script type="text/javascript" src="../scripts/left_menu.js"></script>
+<script type="text/javascript" src="../scripts/Validator.js"></script>
+<script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+<script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+<script type="text/javascript">language_include();</script>
+
+<link href="../scripts/jquery/themes/ipx/jquery.ui.all.css"
+  rel="stylesheet" type="text/css"
+/>
+<script type="text/javascript"
+  src="../scripts/jquery/jquery-1.6.1.js"
+></script>
+<script type="text/javascript"
+  src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"
+></script>
+
+<title></title>
+</head>
+
+<body>
+
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left: 10px; padding-top: 10px;">
+          <script type="text/javascript">print_left_menu(document, "Record", "Audio Mapping");</script>
+        </ul>
+      </div>
+      <form name="recset_audio" id="recset_audio"
+        action='/cgi-bin/webra_fcgi.fcgi'
+      >
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot audio_mapping">
+            <h2>
+              <span id='lang_audio_mapping'> AUDIO MAPPING </span>
+            </h2>
+            <table class="chenable4">
+                <tr>
+                  <td class="cam_no"></th>
+                  <td class="right"><select class="audio_in" id="audio_in"
+                    name="audio_in"/></th>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam0">CAM1</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in0"
+                    name="audio_in0"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam1">CAM2</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in1"
+                    name="audio_in1"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam2">CAM3</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in2"
+                    name="audio_in2"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam3">CAM4</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in3"
+                    name="audio_in3"/></td>
+                </tr>
+              </tbody>
+            </table> <!-- end of class="chenable4" -->
+            
+            <table class="chenable8">
+                <tbody>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam4">CAM5</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in4"
+                    name="audio_in4"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam5">CAM6</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in5"
+                    name="audio_in5"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam6">CAM7</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in6"
+                    name="audio_in6"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam7">CAM8</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in7"
+                    name="audio_in7"/></td>
+                </tr>
+              </tbody>
+            </table> <!-- end of class="chenable8" -->
+            
+            <table class="chenable16">
+                <tbody>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam8">CAM9</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in8"
+                    name="audio_in8"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam9">CAM10</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in9"
+                    name="audio_in9"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam10">CAM11</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in10"
+                    name="audio_in10"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam11">CAM12</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in11"
+                    name="audio_in11"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam12">CAM13</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in12"
+                    name="audio_in12"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam13">CAM14</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in13"
+                    name="audio_in13"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam14">CAM15</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in14"
+                    name="audio_in14"/></td>
+                </tr>
+                <tr>
+                  <td class="cam_no">
+                    <div id="cam15">CAM16</div>
+                  </td>
+                  <td class="right"><select class="audio_in" id="audio_in15"
+                    name="audio_in15"/></td>
+                </tr>
+              </tbody>
+            </table> <!-- end of class="chenable16" -->
+            
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK"
+              class="c_sp_btn_okcancel"
+            /> <input type="button" value="lang_CANCEL" id="cancel"
+              class="c_sp_btn_okcancel"
+            />
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg"></div>
+            <div id="printMsg"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/RecordInit.js"></script>
+  <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+  <script type="text/javascript" src="../scripts/ParamWidget.js"></script>
+  <script type="text/javascript">
+            ShowInit('RecAudioMap');
+        </script>
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/RecordModel.js"></script>
+  <script type="text/javascript" src="../scripts/view/RecordView.js"></script>
+  <script type="text/javascript"
+    src="../scripts/controller/RecordController.js"
+  ></script>
+
+  <script type="text/javascript">
+        
+            zzmvc({
+                name: 'RecAudioMap',
+                action: 'index',
+                debug: false
+            });
+            dvrpoke();
+        </script>
+</body>
+</html>

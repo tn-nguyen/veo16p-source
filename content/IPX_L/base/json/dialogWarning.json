@@ -1,0 +1,15 @@
+{
+  "id": "dialogWarning",
+  "html": "template/dialogSimple.htm",
+  "loadTemplate": {
+  },
+
+  "imgDiv": "imgDialogWarning",
+  "imgClass": "imgDialogWarning",
+
+  "textDiv": "divDialogWarningText",
+  "textClass": "divDialogWarningText",
+
+  "dialog": true,
+  "text": "WARNING"
+}

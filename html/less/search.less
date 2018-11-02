@@ -1,0 +1,251 @@
+.playback {
+  background: orange;
+
+  #c_sh_div_shfrm {
+    // --------------------------------------------------
+    #c_sh_div_search {
+      margin-bottom: 61px;
+      border: none;
+      background: transparent;
+    }
+    // END :: c_sh_div_search
+    // --------------------------------------------------
+    // --------------------------------------------------
+    // Start :: 3 tab header
+    #c_sh_div_tab {
+      ul {
+        width: 470px;
+
+        li {
+          display: inline-block;
+
+          &#searchbytextdevli {
+            display: none !important;
+          }
+        }
+      }
+    }
+    // END :: 3 tab header
+    // --------------------------------------------------
+    // --------------------------------------------------
+    #c_g_div_msg {
+      margin-left: 0px;
+    }
+    // END :: #c_g_div_msg --> this style for internal #c_sh_div_shfrm
+    // --------------------------------------------------
+    // --------------------------------------------------
+    #searchsetting_searchbytime {
+      #c_sh_div_time_contents {
+        #c_sh_tb_time_setting {
+        }
+      }
+    }
+    // END :: searchsetting_searchbytime
+    // --------------------------------------------------
+  }
+  // END :: #c_sh_div_shfrm
+  #c_g_div_msg {
+    margin-top: -42px;
+  }
+  /* END :: #c_g_div_msg  --> This style for global case in play back*/
+}
+/* END  :: CSS for playback*/
+// --------------------------------------------------
+// --------------------------------------------------
+// START :: searchsetting_searchbytime
+
+#searchsetting_searchbytime[name="searchsetting_searchbytime"] {
+  width: 983px;
+
+  #c_sh_div_text_search_contents {
+    width: 983px;
+    border-color: #717171;
+    border-bottom: none;
+    margin: 61px auto auto 0px;
+    background: transparent;
+
+    & > #searchtimediv {
+      padding: 0px 40px;
+
+      .c_sh_div_event_title {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 30px;
+        text-transform: capitalize;
+      }
+      /* END :: c_sh_div_event_title */
+      table.c_sh_tb_event_period {
+        width: 100%;
+
+        tr {
+          td {
+            padding: 5px 0;
+
+            span {
+              color: #fff;
+            }
+          }
+        }
+      }
+      /* END :: table.c_sh_tb_event_period  */
+      #event-check {
+        width: 720px;
+
+        ul {
+          li {
+            padding: 5px 0px;
+          }
+        }
+      }
+      /* END :: #event-check */
+      #searchtimediv.has-period {
+        table.c_sh_tb_event_period {
+          width: 100%;
+
+          tbody {
+            tr {
+              td {
+                &.tdtitle {
+                  width: 3%;
+                }
+
+                &.tddate {
+                  width: 14%;
+                  color: #fff;
+                }
+
+                &.tdblk {
+                  width: 1%;
+                }
+
+                &.tdsearch {
+                  width: 18%;
+                  vertical-align: bottom;
+                }
+              }
+              /* END :: td */
+            }
+          }
+        }
+        /* END :: table.c_sh_tb_event_period*/
+      }
+      /* END :: searchtimediv ( child div )*/
+    }
+    /* END :: searchtimediv */
+
+    #logtablediv {
+      table.c_sh_tb_event_logprint {
+        tbody {
+          tr:first-child {
+            td {
+              background: #cacaca;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    /* EMD :: #logtablediv */
+  }
+  /* END :: #c_sh_div_text_search_contents */
+
+
+  #c_sh_div_event_contents {
+    padding: 0px 40px;
+    width: 903px !important;
+
+    #eventdiv {
+      float: none;
+      width: 100%;
+
+      #event-check {
+        width: 750px;
+
+        ul {
+          li {
+            padding: 5px 0px;
+          }
+        }
+      }
+      /* END :: #event-check */
+    }
+    /* END :: eventdiv */
+
+    #searchtimediv {
+      table.c_sh_tb_event_period {
+        width: 100%;
+
+        tbody {
+          tr {
+            td {
+              &.tdtitle {
+                width: 3%;
+              }
+
+              &.tddate {
+                width: 14%;
+                color: #fff;
+              }
+
+              &.tdblk {
+                width: 1%;
+              }
+
+              &.tdsearch {
+                width: 18%;
+                vertical-align: bottom;
+              }
+            }
+            /* END :: td */
+          }
+        }
+      }
+      /* END :: table.c_sh_tb_event_period*/
+    }
+    /* END :: searchtimediv */
+    .button-container {
+      margin-left: 350px;
+    }
+
+    .c_sh_div_event_title {
+      width: 100%;
+      margin-left: 0px;
+      text-transform: uppercase;
+      margin-top: 30px;
+    }
+  }
+  /* END :: c_sh_div_event_contents */
+
+}
+// END : :searchsetting_searchbytime
+// --------------------------------------------------
+// --------------------------------------------------
+// START : :export dialog
+
+#dialog_export {
+  #form_export {
+    div {
+      padding: 10px 0;
+    }
+    #dialog_export_dev_list  {
+      float: right;
+      width: 162px;
+  }
+  #dialog_export_arch_type  {
+    float: right;
+    width: 162px;
+}
+#dialog_export_tag_name  {
+  float: right;
+  width: 158px;
+}
+#dialog_export_memo  {
+  float: right;
+  width: 156px;
+}
+.progressbar-export{
+  margin-top: 24px;
+}
+}
+}

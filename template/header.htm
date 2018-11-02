@@ -1,0 +1,28 @@
+<!-- header -->
+<div class="row">
+  <header>
+    <div class="logo">
+      <h1>
+        <a href="{{homeURL}}"><span>{{text}}</span></a>
+      </h1>
+    </div>
+    <nav class="gnb">
+      <a href="#contents" class="hidden">skip navigation</a>
+      <ul class="clearfix">
+        {{#each gnb}}
+        <li {{#id}} id="{{.}}"{{/id}} class="globalNavigationMenu{{#class}} {{.}}{{/class}}">
+          <a href="{{this.href}}">
+            <span>{{text}}</span>
+          </a>
+        </li>
+        {{/each}}</ul>
+    </nav>
+  </header>
+</div>
+<!-- //header -->
+
+<!--  stb -->
+<div class="stb row clearfix">
+  <p id="camera_name"></p>
+</div>
+<!--  //stb -->

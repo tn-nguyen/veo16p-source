@@ -1,0 +1,1008 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+    <script type="text/javascript">
+      info_include();
+    </script>
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+    <script type="text/javascript">
+      passwordRenewCheck();
+        language_include();
+    </script>
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Event", "Event notification");
+            </script>
+          </ul>
+        </div>
+        <form name="eventsetting_emailnoti" id="eventsetting_emailnoti" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div id="c_sp_div_contents">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2><span id='lang_EventNoti'>Event Notification</span></h2>
+              <div id="event_tabs">
+                <ul>
+                  <li><a href="#fragment-buzzer"><span id="lang_Buzzeroutsetting">BUZZER</span></a></li>
+                  <li><a href="#fragment-disp"><span id="lang_disp">DISPLAY</span></a></li>
+                  <li><a href="#fragment-email"><span id="lang_email">EMAIL</span></a></li>
+                  <li class='ftp remove_alsok'><a href="#fragment-ftp"><span id="lang_ftp">FTP</span></a></li>
+                  <li class='mobilepush'><a href="#fragment-push"><span id="lang_push">MOBILE PUSH</span></a></li>
+                  <li class='sms'><a href="#fragment-sms"><span id="lang_sms">SMS</span></a></li>
+                </ul>
+                <div id="fragment-buzzer">
+                  <h2><span id='lang_Buzzeroutsetting'>Buzzer out setting</span></h2>
+                  <div class="container">
+                    <dl>
+                      <dt><span class="list"><span id='lang_Duration'>Duration</span></span></dt>
+                      <dd>
+                        <select id="buzzer_duration" name="buzzer_duration" class="lstdisp" >
+                          <option value="0">TRANSPARENT</option>
+                          <option value="5">5 SEC</option>
+                          <option value="10">10 SEC</option>
+                          <option value="15">15 SEC</option>
+                          <option value="20">20 SEC</option>
+                          <option value="30">30 SEC</option>
+                          <option value="40">40 SEC</option>
+                          <option value="60">60 SEC</option>
+                          <option value="120">120 SEC</option>
+                          <option value="180">180 SEC</option>
+                          <option value="300">300 SEC</option>
+                          <option value="9999">UNTIL KEY</option>
+                        </select>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+                <div id="fragment-disp">
+                  <h2><span id='lang_vpopup'>VIDEO POPUP</span></h2>
+                  <div class="container">
+                    <dl>
+                      <dt><span class="list"><span id='lang_vpopup_Duration'>Video Popup Duration</span></span></dt>
+                      <dd>
+                        <select id="vpopup_duration" name="vpopup_duration" class="lstdisp" >
+                          <option value="5">5 SEC</option>
+                          <option value="10">10 SEC</option>
+                          <option value="15">15 SEC</option>
+                          <option value="20">20 SEC</option>
+                          <option value="30">30 SEC</option>
+                          <option value="40">40 SEC</option>
+                          <option value="60">60 SEC</option>
+                          <option value="120">120 SEC</option>
+                          <option value="180">180 SEC</option>
+                          <option value="300">300 SEC</option>
+                          <option value="9999">UNTIL KEY</option>
+                        </select>
+                      </dd>
+                      <!--
+                        <dt><span class="list"><span id='lang_vpopup__multi'>Multi view display during Simultaneous event</span></span></dt>
+                        <dt>
+                        <span class="list">
+                          <input type='checkbox' id='vpopup_spot' name='vpopup_spot' class='chkdisp'>
+                          Enable Spot Monitor OSD Popup
+                        </span>
+                        </dt>
+                        -->
+                      <!--
+                        <dd>
+                        <select id="vpopup_multi" name="vpopup_multi" class="lstdisp" >
+                          <option value="1">On</option>
+                          <option value="0">Off</option>
+                        </select>
+                        </dd>
+                        <dd>
+                        </dd>
+                        -->
+                    </dl>
+                  </div>
+                  <h2><span id='lang_opopup'>OSD POPUP</span></h2>
+                  <div class="container">
+                    <dl>
+                      <dt><span class="list"><span id='lang_opopup_Duration'>OSD Popup Duration</span></span></dt>
+                      <dd>
+                        <select id="opopup_duration" name="opopup_duration" class="lstdisp" >
+                          <option value="5">5 SEC</option>
+                          <option value="10">10 SEC</option>
+                          <option value="15">15 SEC</option>
+                          <option value="20">20 SEC</option>
+                          <option value="30">30 SEC</option>
+                          <option value="40">40 SEC</option>
+                          <option value="60">60 SEC</option>
+                          <option value="120">120 SEC</option>
+                          <option value="180">180 SEC</option>
+                          <option value="300">300 SEC</option>
+                          <option value="9999">UNTIL KEY</option>
+                        </select>
+                      </dd>
+                      <!--
+                        <dt>
+                        <span class="list">
+                          <input type='checkbox' id='opopup_spot' name='opopup_spot' class='chkdisp'>
+                          Enable Spot Monitor OSD Popup
+                        </span>
+                        </dt>
+                        -->
+                    </dl>
+                  </div>
+                </div>
+                <div id="fragment-email">
+                  <h2><span id='lang_emailnoti'>E-mail notification setting</span></h2>
+                  <div class="container">
+                    <dl>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_Add_Email'>Add New E-Mail</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <input type="button" id='email_list_open' value="ADD_EDIT" class="lstbut"/>
+                      </dd>
+                      <dt class="fragment-email_server">
+                        <span class="list"><span id='lang_Email_Server'>EMAIL SERVER</span></span>
+                      </dt>
+                      <dd class="fragment-email_server">
+                        <input type="radio" id="email_serv" name="email_serv" value="0">1
+                        <input type="radio" id="email_serv" name="email_serv" value="1">2
+                      </dd>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_mail_freq'>Minimum E-Mail Frequency</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <select id="email_freq" name="email_freq" class="lstdisp" >
+                          <option value="0">IMMEDIATELY</option>
+                          <option value="1">1 MIN</option>
+                          <option value="5">5 MIN</option>
+                          <option value="10">10 MIN</option>
+                          <option value="15">15 MIN</option>
+                          <option value="30">30 MIN</option>
+                          <option value="60">60 MIN</option>
+                        </select>
+                      </dd>
+                      <dt>
+                        <span id='lang_include_snapshot_image'>INCLUDE SNAPSHOT IMAGE</span>
+                      </dt>
+                      <dd>
+                        <input type="checkbox" name="email_jpeg" id="email_jpeg"/>
+                      </dd>
+                    </dl>
+                    <dl id="physical_switch">
+                      <dt>
+                        <span id="lang_alarm_switch_mode">ALARM SWITCH MODE</span>
+                      </dt>
+                      <dd>
+                        <select id="alarm_switch_mode" name="alarm_switch_mode">
+                          <option value="0">NOT USED</option>
+                          <option value="1">USE</option>
+                        </select>
+                      </dd>
+                      <dt>
+                        <span id="lang_alarm_switch_port">ALARM SWITCH PORT</span>
+                      </dt>
+                      <dd>
+                        <select id="alarm_switch_port" name="alarm_switch_port">
+                          <option value="0">DUMMY</option>
+                        </select>
+                      </dd>
+                    </dl>
+                    <h2><span id="lang_emailsched">RECEIVING EMAIL SETUP</span></h2>
+                    <dl>
+                      <dt><span id="lang_day">day</span></dt>
+                      <dd>
+                        <table id="sched_table">
+                          <thead>
+                            <tr>
+                              <th class="thead schedindex">
+                                <span class="scheddate"></span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_all">ALL</span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_sun">Sun</span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_mon">Mon</span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_tue">Tue</span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_wed">Wed</span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_thu">Thr</span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_fri">Fri</span>
+                              </th>
+                              <th class="thead">
+                                <span class="scheddate" id="lang_sched_sat">Sat</span>
+                              </th>
+                              <th class="thead email_sched_time">
+                                <span class="scheddate" id="lang_FromTo">From ~ To</span>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule1">ACTIVATION0</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday0_0" id="email_sched_wday0_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday0_1" id="email_sched_wday0_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday0_2" id="email_sched_wday0_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday0_3" id="email_sched_wday0_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday0_4" id="email_sched_wday0_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday0_5" id="email_sched_wday0_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday0_6" id="email_sched_wday0_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_0" name="email_from_h_0">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_0" name="email_from_m_0">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_0" name="email_to_h_0">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_0" name="email_to_m_0">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule2">ACTIVATION1</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday1_0" id="email_sched_wday1_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday1_1" id="email_sched_wday1_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday1_2" id="email_sched_wday1_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday1_3" id="email_sched_wday1_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday1_4" id="email_sched_wday1_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday1_5" id="email_sched_wday1_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday1_6" id="email_sched_wday1_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_1" name="email_from_h_1">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_1" name="email_from_m_1">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_1" name="email_to_h_1">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_1" name="email_to_m_1">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule3">ACTIVATION2</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday2_0" id="email_sched_wday2_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday2_1" id="email_sched_wday2_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday2_2" id="email_sched_wday2_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday2_3" id="email_sched_wday2_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday2_4" id="email_sched_wday2_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday2_5" id="email_sched_wday2_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday2_6" id="email_sched_wday2_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_2" name="email_from_h_2">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_2" name="email_from_m_2">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_2" name="email_to_h_2">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_2" name="email_to_m_2">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule4">ACTIVATION3</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday3_0" id="email_sched_wday3_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday3_1" id="email_sched_wday3_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday3_2" id="email_sched_wday3_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday3_3" id="email_sched_wday3_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday3_4" id="email_sched_wday3_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday3_5" id="email_sched_wday3_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday3_6" id="email_sched_wday3_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_3" name="email_from_h_3">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_3" name="email_from_m_3">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_3" name="email_to_h_3">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_3" name="email_to_m_3">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule5">ACTIVATION4</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday4_0" id="email_sched_wday4_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday4_1" id="email_sched_wday4_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday4_2" id="email_sched_wday4_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday4_3" id="email_sched_wday4_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday4_4" id="email_sched_wday4_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday4_5" id="email_sched_wday4_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday4_6" id="email_sched_wday4_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_4" name="email_from_h_4">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_4" name="email_from_m_4">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_4" name="email_to_h_4">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_4" name="email_to_m_4">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule6">ACTIVATION5</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday5_0" id="email_sched_wday5_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday5_1" id="email_sched_wday5_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday5_2" id="email_sched_wday5_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday5_3" id="email_sched_wday5_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday5_4" id="email_sched_wday5_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday5_5" id="email_sched_wday5_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday5_6" id="email_sched_wday5_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_5" name="email_from_h_5">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_5" name="email_from_m_5">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_5" name="email_to_h_5">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_5" name="email_to_m_5">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule7">ACTIVATION6</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_6" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday6_0" id="email_sched_wday6_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday6_1" id="email_sched_wday6_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday6_2" id="email_sched_wday6_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday6_3" id="email_sched_wday6_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday6_4" id="email_sched_wday6_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday6_5" id="email_sched_wday6_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday6_6" id="email_sched_wday6_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_6" name="email_from_h_6">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_6" name="email_from_m_6">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_6" name="email_to_h_6">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_6" name="email_to_m_6">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule8">ACTIVATION7</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_7" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday7_0" id="email_sched_wday7_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday7_1" id="email_sched_wday7_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday7_2" id="email_sched_wday7_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday7_3" id="email_sched_wday7_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday7_4" id="email_sched_wday7_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday7_5" id="email_sched_wday7_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday7_6" id="email_sched_wday7_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_7" name="email_from_h_7">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_7" name="email_from_m_7">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_7" name="email_to_h_7">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_7" name="email_to_m_7">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule9">ACTIVATION8</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_8" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday8_0" id="email_sched_wday8_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday8_1" id="email_sched_wday8_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday8_2" id="email_sched_wday8_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday8_3" id="email_sched_wday8_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday8_4" id="email_sched_wday8_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday8_5" id="email_sched_wday8_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday8_6" id="email_sched_wday8_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_8" name="email_from_h_8">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_8" name="email_from_m_8">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_8" name="email_to_h_8">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_8" name="email_to_m_8">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="thead">
+                                <span class="email_sched_wday0" id="lang_schedule10">ACTIVATION9</span>
+                              </th>
+                              <td>
+                                <input id="email_sched_all_9" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday9_0" id="email_sched_wday9_0" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday9_1" id="email_sched_wday9_1" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday9_2" id="email_sched_wday9_2" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday9_3" id="email_sched_wday9_3" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday9_4" id="email_sched_wday9_4" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday9_5" id="email_sched_wday9_5" type="checkbox">
+                              </td>
+                              <td>
+                                <input name="email_sched_wday9_6" id="email_sched_wday9_6" type="checkbox">
+                              </td>
+                              <td class="email_sched_time">
+                                <select class="lstdisp_sched_select" id="email_from_h_9" name="email_from_h_9">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_from_m_9" name="email_from_m_9">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                                ~
+                                <select class="lstdisp_sched_select" id="email_to_h_9" name="email_to_h_9">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option>
+                                </select>
+                                :
+                                <select class="lstdisp_sched_select" id="email_to_m_9" name="email_to_m_9">
+                                  <option value=0>00</option> <option value=1>01</option> <option value=2>02</option> <option value=3>03</option> <option value=4>04</option> <option value=5>05</option> <option value=6>06</option> <option value=7>07</option> <option value=8>08</option> <option value=9>09</option> <option value=10>10</option> <option value=11>11</option> <option value=12>12</option> <option value=13>13</option> <option value=14>14</option> <option value=15>15</option> <option value=16>16</option> <option value=17>17</option> <option value=18>18</option> <option value=19>19</option> <option value=20>20</option> <option value=21>21</option> <option value=22>22</option> <option value=23>23</option> <option value=24>24</option> <option value=25>25</option> <option value=26>26</option> <option value=27>27</option> <option value=28>28</option> <option value=29>29</option> <option value=30>30</option> <option value=31>31</option> <option value=32>32</option> <option value=33>33</option> <option value=34>34</option> <option value=35>35</option> <option value=36>36</option> <option value=37>37</option> <option value=38>38</option> <option value=39>39</option> <option value=30>40</option> <option value=41>41</option> <option value=42>42</option> <option value=43>43</option> <option value=44>44</option> <option value=45>45</option> <option value=46>46</option> <option value=47>47</option> <option value=48>48</option> <option value=49>49</option> <option value=50>50</option> <option value=51>51</option> <option value=52>52</option> <option value=53>53</option> <option value=54>54</option> <option value=55>55</option> <option value=56>56</option> <option value=57>57</option> <option value=58>58</option> <option value=59>59</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+                <div id="fragment-push">
+                  <h2>
+                    <span id='lang_pushnoti'>Push notification setting</span>
+                  </h2>
+                  <div class="container">
+                    <dl>
+                      <dt class="push-service">
+                        <span class="list">
+                          <span id="lang_push_service">Push Service</span>
+                        </span>
+                      </dt>
+                      <dd class="push-service">
+                        <select id="push_pushservice" name="push_pushservice" class="lstdisp">
+                          <option value="1">SEQURINET</option>
+                        </select>
+                      </dd>
+                      <dt>
+                        <span class="list">
+                          <span id="lang_push_freq">
+                            Minimum Push Frequency
+                          </span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <select id="push_freq" name="push_freq" class="lstdisp">
+                          <option value="0">IMMEDIATELY</option>
+                          <option value="1">1 MIN</option>
+                          <option value="5">5 MIN</option>
+                          <option value="10">10 MIN</option>
+                          <option value="15">15 MIN</option>
+                          <option value="30">30 MIN</option>
+                          <option value="60">60 MIN</option>
+                        </select>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+                <div id="fragment-ftp" class='ftp'>
+                  <h2><span id='lang_ftpnotification'>FTP NOTIFICATION</span></h2>
+                  <div class="container">
+                    <dl>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_ftpserver'>FTP SERVER</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <input type='button' id="button_ftpserver_edit" name="button_ftpserver_edit" value='EDIT' class="lstbut" />
+                      </dd>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_directory'>DIRECTORY</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <select id="ftp_dir_mode" name="ftp_dir_mode" class="lstdisp" >
+                          <option value='0'>MANUAL</option>
+                          <option value='1'>MANUAL_DATE</option>
+                          <option value='2'>SYSTEM ID</option>
+                          <option value='3'>SYSTEM ID_DATE</option>
+                        </select>
+                        <input type='text' id="ftp_dir_path" name="ftp_dir_path" class="lsttxt" maxlength="31"/>
+                      </dd>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_file_name'>FILE NAME</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <select id="ftp_fname_mode" name="ftp_fname_mode" class="lstdisp" >
+                          <option value='0'>MANUAL</option>
+                          <option value='1'>MANUAL_DATE_TIME</option>
+                          <option value='2'>SYSTEM ID</option>
+                          <option value='3'>SYSTEM ID_DATE_TIME</option>
+                        </select>
+                        <input type='text' id="ftp_fname_prefix" name="ftp_fname_prefix" class="lsttxt" maxlength="31"/>
+                      </dd>
+                      <br/>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_minimum_frequency'>MINIMUM FREQUENCY</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <select id="ftp_freq" name="ftp_freq" class="lstdisp" >
+                          <option value='1'>1 MIN</option>
+                          <option value='5'>5 MIN</option>
+                          <option value='10'>10 MIN</option>
+                          <option value='15'>15 MIN</option>
+                          <option value='30'>30 MIN</option>
+                          <option value='60'>60 MIN</option>
+                        </select>
+                      </dd>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_webra_link'>INCLUDE WEBRA LINK</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <input type="checkbox" name="ftp_weblink" id="ftp_weblink"/>
+                      </dd>
+                      <dt>
+                        <span class="list">
+                          <span id='lang_include_snapshot_image'>INCLUDE SNAPSHOT IMAGE</span>
+                        </span>
+                      </dt>
+                      <dd>
+                        <input type="checkbox" name="ftp_jpeg" id="ftp_jpeg"/>
+                      </dd>
+                    </dl>
+                    <input id="btn_help" type="button" value="HELP"></input>
+                  </div>
+                </div>
+                <!-- end of div 'fragment-ftp' -->
+                <div id="fragment-sms" class='sms'>
+                  <h2><span id='lang_smsnotification'>SMS NOTIFICATION</span></h2>
+                  <div class="container">
+                    <dl>
+                      <dt><span class="list"><span id='lang_server'>SERVER</span></span></dt>
+                      <dd>
+                        <select id="sms_server" name="sms_server">
+                          <option value="BIZ PPURIO">BIZ PPURIO</option>
+                          <option value="CLICKATELL">CLICKATELL</option>
+                        </select>
+                      </dd>
+                      <dt><span class="list"><span id='lang_app_id'>APP ID</span></span></dt>
+                      <dd>
+                        <input type='text' id="sms_appid" name="sms_appid" class="lsttxt" maxlength="31"/>
+                      </dd>
+                      <dt><span class="list"><span id='lang_user'>USER</span></span></dt>
+                      <dd>
+                        <input type='text' id="sms_user" name="sms_user" class="lsttxt" maxlength="31"/>
+                      </dd>
+                      <dt><span class="list"><span id='lang_password'>PASSWORD</span></span></dt>
+                      <dd>
+                        <input type='password' id="sms_password" name="sms_password" class="lsttxt" maxlength="31"/>
+                      </dd>
+                      <br/>
+                      <dt><span class="list"><span id='lang_schedule'>SCHEDULE</span></span></dt>
+                      <dd>
+                        <select id="sms_sched_from" name="sms_sched_from" class="lstdisp" disabled>
+                          <option value='0'>00:00</option>
+                        </select>
+                        ~
+                        <select id="sms_sched_to" name="sms_sched_to" class="lstdisp" disabled>
+                          <option value='0'>00:00</option>
+                        </select>
+                      </dd>
+                      <dt>
+                        <span id='lang_sms_limit_count' class="list">SMS LIMIT COUNT</span>
+                      </dt>
+                      <dd>
+                        <input type="text" name="sms_count" id="sms_count" value="0" disabled/>
+                      </dd>
+                      <br/>
+                      <dt>
+                        <span id='lang_test_number' class="list">TEST NUMBER</span>
+                      </dt>
+                      <dd>
+                        <input type="text" id="sms_test_number"/>
+                        <input type="button" id="sms_test" value="TEST"/>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              <!-- end of div 'fragment-sms' -->
+              </div>
+            </div>
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </div>
+          <input type='hidden' name='email_cnt' id='email_cnt'/>
+        </form>
+      </div>
+    </div>
+    <div id="dialog_email">
+      <div id="email_noti">
+        <dl>
+          <dt>
+            <span id="lang_dialog_email">E-Mail</span>
+          </dt>
+          <dd>
+            <input type="text" id="email_new" name="email_new" style="ime-mode:disabled"/>
+            <input type="button" id="email_add" name="email_add" value="ADD"/>
+          </dd>
+          <dt>
+            <span id="lang_list">List</span>
+          </dt>
+          <dd>
+            <select id="email_list" name="email_list" multiple="multiple" size="8">
+            </select>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div id="dialog_help" style="display: none">
+      <p>
+        <span id="lang_evtftp_help_1">1. Because the file name will continuously be overwritten if set to "MANUAL," please choose "SYSTEM ID_DATE_TIME" for FILENAME entry to maintain information for every event that occurs.</span>
+      </p>
+      <p>
+        <span id="lang_evtftp_help_2">2. When using "OVERWRITE" disk write mode, it may not be possible to play a Web-Link after a long period of time has elapsed due to overwrite.</span>
+      </p>
+    </div>
+    <div id="dialog_please_wait" style="display: none">
+      <p>
+        <span id="lang_please_wait">
+        Please wait...
+        </span>
+      </p>
+      <p>
+        <span id="lang_sms_test_success">
+        Test SMS sending succeeded.
+        </span>
+      </p>
+      <p>
+        <span id="lang_sms_test_fail">
+        Test SMS sending failed.
+        </span>
+      </p>
+    </div>
+    <div id="dialog_please_wait_ftp" style="display:none;">
+      <p>
+        <span id="lang_please_wait_ftp">
+        Please wait...
+        </span>
+      </p>
+      <p>
+        <span id="lang_ftp_test_success">
+        Entire configurations are applied. It's possible to upload into the server.
+        </span>
+      </p>
+      <p>
+        <span id="lang_ftp_test_fail1">
+        It has beel failed for testing of the authentication.
+        </span>
+      </p>
+      <p>
+        <span id="lang_ftp_test_fail2">
+        It has been failed for testing of connection to the FTP server.
+        </span>
+      </p>
+      <p>
+        <span id="lang_ftp_test_fail3">
+        It has been failed for testing of reading and writing.
+        </span>
+      </p>
+    </div>
+    <div id="dialog_ftpserver" class='ftp' style="display:none">
+      <dl>
+        <dt><span id='lang_host_name'>HOST NAME</span></dt>
+        <dd><input type='text' id='ftp_host' style="ime-mode:disabled"></input></dd>
+        <dt><span id='lang_port'>PORT</span></dt>
+        <dd><input type='text' id='ftp_port' value='21' maxlength="5" style="ime-mode:disabled"></input></dd>
+        <dt><span id='lang_user_name'>USER NAME</span></dt>
+        <dd><input type='text' id='ftp_username' style="ime-mode:disabled"></input></dd>
+        <dt><span id='lang_password'>PASASWORD</span></dt>
+        <dd><input type='password' id='ftp_passwd' style="ime-mode:disabled"></input></dd>
+      </dl>
+      <input type='button' id='button_connection_test' value="CONNECTION_TEST" class='btn'/>
+    </div>
+    <!-- end of div "dialog_ftpserver" -->
+    <script type="text/javascript" src="../scripts/init/EventInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('EventNoti');
+    </script>
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+    <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+    <script type="text/javascript" src="../scripts/model/EventModel.js"></script>
+    <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+    <script type="text/javascript" src="../scripts/view/EventView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/EventController.js"></script>
+    <script type="text/javascript">
+      zzmvc({
+        name: 'EventNoti',
+        action: 'index',
+        debug: false
+      });
+      
+      dvrpoke();
+    </script>
+  </body>
+</html>

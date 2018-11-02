@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <title>SCM EVT LOG</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="button_set">
+      <input type="button" id="btn_update_all_start" value="update all">
+      <input type="button" id="btn_update_simple_start" value="update simple">
+      <input type="button" id="btn_update_end" value="update stop">
+      <input type="button" id="btn_delete_log" value="delete log">
+    </div>
+
+    <div>
+      <pre id="callback_log" style="width:auto;border:black solid 1px;">
+      </pre>
+      <pre id="event_log" style="min-height:700px;height:auto;width:auto;border:black solid 1px;">
+      </pre>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+  <script type="text/javascript">
+    $('#btn_update_all_start').click(function() {
+      $.scm.SetDebug("all");
+      $.scm.Start();
+    });
+
+    $('#btn_update_simple_start').click(function() {
+      $.scm.SetDebug("simple");
+      $.scm.Start();
+    });
+
+    $('#btn_update_end').click(function() {
+      $.scm.Stop();
+    });
+
+    $('#btn_delete_log').click(function() {
+      $('#event_log').html('');
+      $.scm.DeleteLog();
+    });
+  </script>
+
+</body>
+
+</html>

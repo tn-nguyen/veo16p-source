@@ -1,0 +1,22 @@
+/*********************************************************************************************************/
+/* dialogIpcameraConfiguration.css */
+/*********************************************************************************************************/
+
+#dialogIpcameraConfiguration {
+  width: 750px !important;
+}
+
+#dialogIpcameraConfiguration input{
+  width: 48%;
+  float: left;
+  font-size: 10px;
+}
+
+#dialogIpcameraConfiguration #dialogIpcameraConfigurationPreview {
+  width: 280px;
+  height: 158px;
+}
+
+#dialogIpcameraConfiguration dt {
+  width: 36%;
+}

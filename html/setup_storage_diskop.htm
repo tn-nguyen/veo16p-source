@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    @import url("../styles/styles/global.css");
+    @import url("../styles/styles/setup.css");
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+
+  <script type="text/javascript">
+    info_include();
+  </script>
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/validate.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+  
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();
+  </script>
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+  <title></title>
+</head>
+
+<body>
+
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+        print_top_menu(document, "SETUP");
+      </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+        <script type="text/javascript">
+          print_left_menu(document, "Storage", "Disk Operation");
+         </script>
+        </ul>
+      </div>
+
+      <form name="recordsetting_operation" id="recordsetting_operation">
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <h2><span id='lang_diskoperations'>Storage Disk Operation</span></h2>
+            <div class="c_sp_div_storage_diskop" disabled>
+              <ul class="left">
+                <li><span id="lang_writemode" class="list">Disk Write Mode</span></li>
+                <li><span id="lang_timelimit" class="list">Recording Time Limit</span></li>
+                <br/>
+                <li><span id="lang_diskformat" class="list">DISK FORMAT</span></li>
+                <!--
+                <li><span id="lang_erasevideo" class="list">ERASE VIDEO</span></li>
+                -->
+              </ul>
+              <ul>
+                <li>
+                  <select class='stor' name="overwrite" id="overwrite">
+                    <option value="1">OVERWRITE</option>
+                    <option value="0">ONCE</option>
+                  </select>
+                </li>
+                <li>
+                  <input type="number" id="timelimit" name="timelimit" style="display:none;">
+                  <div class="timelimit_simple">
+                    <select class='stor' id="timelimit_s">
+                      <option value="0">Off</option>
+                      <option value="43200">12 HOUR</option>
+                      <option value="86400">1 DAY</option>
+                      <option value="172800">2 DAY</option>
+                      <option value="259200">3 DAY</option>
+                      <option value="345600">4 DAY</option>
+                      <option value="432000">5 DAY</option>
+                      <option value="518400">6 DAY</option>
+                      <option value="604800">1 WEEK</option>
+                      <option value="1209600">2 WEEK</option>
+                      <option value="1814400">3 WEEK</option>
+                      <option value="2592000">1 MONTH</option>
+                      <option value="5184000">2 MONTH</option>
+                      <option value="10368000">3 MONTH</option>
+                    </select>
+                  </div>
+                  <div class="timelimit_complex">
+                    <input type="number" id="timelimit_c" class="stor">
+                    <select id="timelimit_c_type" class="stor">
+                      <option value="0">Off</option>
+                      <option value="3600">HOUR</option>
+                      <option value="86400">DAY</option>
+                      <option value="604800">WEEK</option>
+                     </select>
+                  </div>
+                </li>
+                <br/>
+                <li><input type="button" class="btn" id="format_btn" value="FORMAT" /> </li>
+                <!--  <li><input type="button" class="btn" id="erase" value="ERASE" /> </li> -->
+              </ul>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg"></div>
+            <div id="printMsg"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="dialog_format" title="DISK FORMAT" style="display: none;">
+      <form id='form_format'>
+        <div id="div_password_check">
+          <p><span id="lang_confirm_password">CONFIRM PASSWORD</span></p>
+          <input type="password" id="password"/>
+        </div>
+        <div id="div_format_message" style="display:none;">
+          <p class="format_message">
+            <span id='lang_format_message'>WARNING</span>
+          </p>
+        </div>
+        <p class="tips"></p>
+
+        <div id="div_format_progress" style="display:none;" >
+          <div id="progressbar"></div>
+        </div> <!-- div id="div_update_progress" -->
+      </form> <!-- end of form id='form_new_user' -->
+    </div> <!-- end of div id="user_dialog" -->
+  </div>
+
+  <div id="dialog_pleasewait" style="display: none;">
+    <p class="tips"></p>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/StorageInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('StorageDiskop');
+  </script>
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+  <script type="text/javascript" src="../scripts/model/StorageModel.js"></script>
+  <script type="text/javascript" src="../scripts/view/StorageView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/StorageController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+      name: 'StorageDiskop',
+      action: 'index',
+      debug: false
+    });
+    dvrpoke();
+  </script>
+
+</body>
+</html>

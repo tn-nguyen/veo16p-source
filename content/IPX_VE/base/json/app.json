@@ -1,0 +1,10 @@
+{
+  "id": "app",
+  "html": "template/app.htm",
+  
+  "loadTemplate": {
+    "header" : "header",
+    "container" : "container",
+    "footer": "footer"
+  }
+}

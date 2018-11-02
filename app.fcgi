@@ -1,0 +1,1 @@
+link cgi-bin/webra_fcgi.fcgi

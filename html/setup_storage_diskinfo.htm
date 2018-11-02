@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css">
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">
+            info_include();
+        </script>
+
+        
+        
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+        
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+        
+        <script type="text/javascript">
+        passwordRenewCheck();
+            language_include();
+        </script>
+        
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+        
+        <title></title>
+    </head>
+
+    <body>
+
+        <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">
+                      print_top_menu(document, "SETUP");
+                </script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                    <script type="text/javascript">
+                          print_left_menu(document, "Storage", "Disk Information");
+                     </script>
+                    </ul>
+                </div>
+    
+                <form name="recordsetting_operation" id="recordsetting_operation">
+                    <div id="c_sp_div_contents">
+                        <div class="c_sp_div_frame">
+                            <h2><span id='lang_Storagediskinfo'>Storage Disk Information</span></h2>
+                            <div id="diskinfo_tabs">
+                                <ul>
+                                    <li>
+                                        <a href='#tab_internal'><span id='lang_MenuStorageInternal'>lang_MenuStorageInternal</span></a>
+                                    </li>
+                                    <li class="exist_external remove_alsok">
+                                        <a href='#tab_external'><span id='lang_MenuStorageExternal'>lang_MenuStorageExternal</span></a>
+                                    </li>
+                                </ul>
+                                <div id="tab_internal">
+                                    <table class="c_sp_tb_storage_diskinfo">
+                                        <colgroup></colgroup>
+                                        <colgroup span="6"></colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="head head1"></th>
+                                                <th class="head head2">
+                                                  <span id="lang_start">Data Start Time</span>
+                                                </th>
+                                                <th class="head head3">
+                                                  <span id="lang_end">Data End Time</span>
+                                                </th>
+                                                <th class="head head4">
+                                                  <span id="lang_status">Status</span>
+                                                </th>
+                                                <th class="head head5">
+                                                  <span id="lang_capacity">Capacity</span>
+                                                </th>
+                                                <th class="head head6">
+                                                  <span id="lang_model">Model</span>
+                                                </th>
+                                                <th class="head head7">
+                                                  <span id="lang_smart">S.M.A.R.T. Status</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                              <th class="head head11">
+                                                <span id="lang_selectAll">ALL</span>
+                                              </th>
+                                              <td class="tdright" id="in_tstart"></td>
+                                              <td class="tdright" id="in_tend"></td>
+                                              <td class="tdright" id="in_status_all">-</td>
+                                              <td class="tdright" id="in_capacity_all"></td>
+                                              <td class="tdright" id="in_model_all">-</td>
+                                              <td class="tdright" id="in_smart_all">-</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>1</th>
+                                                <td class="tdright" id="in_start_time0"></td>
+                                                <td class="tdright" id="in_end_time0"></td>
+                                                <td class="tdright" id="in_status0"></td>
+                                                <td class="tdright" id="in_capacity0"></td>
+                                                <td class="tdright" id="in_model0"></td>
+                                                <td class="tdright" id="in_smart0"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>2</th>
+                                                <td class="tdright" id="in_start_time1"></td>
+                                                <td class="tdright" id="in_end_time1"></td>
+                                                <td class="tdright" id="in_status1"></td>
+                                                <td class="tdright" id="in_capacity1"></td>
+                                                <td class="tdright" id="in_model1"></td>
+                                                <td class="tdright" id="in_smart1"></td>
+                                            </tr>
+                                            <tr class="remove_alsok">
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>3</th>
+                                                <td class="tdright" id="in_start_time2"></td>
+                                                <td class="tdright" id="in_end_time2"></td>
+                                                <td class="tdright" id="in_status2"></td>
+                                                <td class="tdright" id="in_capacity2"></td>
+                                                <td class="tdright" id="in_model2"></td>
+                                                <td class="tdright" id="in_smart2"></td>
+                                            </tr>
+                                            <tr class="remove_alsok">
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>4</th>
+                                                <td class="tdright" id="in_start_time3"></td>
+                                                <td class="tdright" id="in_end_time3"></td>
+                                                <td class="tdright" id="in_status3"></td>
+                                                <td class="tdright" id="in_capacity3"></td>
+                                                <td class="tdright" id="in_model3"></td>
+                                                <td class="tdright" id="in_smart3"></td>
+                                            </tr>
+                                            <tr class="remove_alsok">
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>5</th>
+                                                <td class="tdright" id="in_start_time4"></td>
+                                                <td class="tdright" id="in_end_time4"></td>
+                                                <td class="tdright" id="in_status4"></td>
+                                                <td class="tdright" id="in_capacity4"></td>
+                                                <td class="tdright" id="in_model4"></td>
+                                                <td class="tdright" id="in_smart4"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>                                                    
+                                <div id="tab_external">
+                                    <table class="c_sp_tb_storage_diskinfo">
+                                        <colgroup></colgroup>
+                                        <colgroup span="6"></colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="head head1"></th>
+                                                <th class="head head2">
+                                                  <span id="lang_start">Data Start Time</span>
+                                                </th>
+                                                <th class="head head3">
+                                                  <span id="lang_end">Data End Time</span>
+                                                </th>
+                                                <th class="head head4">
+                                                  <span id="lang_status">Status</span>
+                                                </th>
+                                                <th class="head head5">
+                                                  <span id="lang_capacity">Capacity</span>
+                                                </th>
+                                                <th class="head head6">
+                                                  <span id="lang_model">Model</span>
+                                                </th>
+                                                <th class="head head7">
+                                                  <span id="lang_smart">S.M.A.R.T. Status</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_selectAll">ALL</span></th>
+                                                <td class="tdright" id="ex_tstart"></td>
+                                                <td class="tdright" id="ex_tend"></td>
+                                                <td class="tdright" id="ex_status_all">-</td>
+                                                <td class="tdright" id="ex_capacity_all"></td>
+                                                <td class="tdright" id="ex_model_all">-</td>
+                                                <td class="tdright" id="ex_smart_all">-</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>1</th>
+                                                <td class="tdright" id="ex_start_time0"></td>
+                                                <td class="tdright" id="ex_end_time0"></td>
+                                                <td class="tdright" id="ex_status0"></td>
+                                                <td class="tdright" id="ex_capacity0"></td>
+                                                <td class="tdright" id="ex_model0"></td>
+                                                <td class="tdright" id="ex_smart0"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>2</th>
+                                                <td class="tdright" id="ex_start_time1"></td>
+                                                <td class="tdright" id="ex_end_time1"></td>
+                                                <td class="tdright" id="ex_status1"></td>
+                                                <td class="tdright" id="ex_capacity1"></td>
+                                                <td class="tdright" id="ex_model1"></td>
+                                                <td class="tdright" id="ex_smart1"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>3</th>
+                                                <td class="tdright" id="ex_start_time2"></td>
+                                                <td class="tdright" id="ex_end_time2"></td>
+                                                <td class="tdright" id="ex_status2"></td>
+                                                <td class="tdright" id="ex_capacity2"></td>
+                                                <td class="tdright" id="ex_model2"></td>
+                                                <td class="tdright" id="ex_smart2"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>4</th>
+                                                <td class="tdright" id="ex_start_time3"></td>
+                                                <td class="tdright" id="ex_end_time3"></td>
+                                                <td class="tdright" id="ex_status3"></td>
+                                                <td class="tdright" id="ex_capacity3"></td>
+                                                <td class="tdright" id="ex_model3"></td>
+                                                <td class="tdright" id="ex_smart3"></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="head head11"><span id="lang_storage_disk">Disk</span>5</th>
+                                                <td class="tdright" id="ex_start_time4"></td>
+                                                <td class="tdright" id="ex_end_time4"></td>
+                                                <td class="tdright" id="ex_status4"></td>
+                                                <td class="tdright" id="ex_capacity4"></td>
+                                                <td class="tdright" id="ex_model4"></td>
+                                                <td class="tdright" id="ex_smart4"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                       <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>                    
+                    </div>                     
+                </form> 
+            </div>                     
+        </div>                     
+    
+        <script type="text/javascript" src="../scripts/init/StorageInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('StorageDiskinfo');
+        </script>        
+        
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        
+        <script type="text/javascript" src="../scripts/model/StorageModel.js"></script>
+        <script type="text/javascript" src="../scripts/view/StorageView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/StorageController.js"></script>
+                   
+        <script type="text/javascript">
+            zzmvc({
+                name: 'StorageDiskinfo',
+                action: 'index',
+                debug: false
+            });
+    
+            dvrpoke();                
+        </script>
+    
+    </body>                            
+</html>                    

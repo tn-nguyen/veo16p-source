@@ -1,0 +1,120 @@
+{
+  "id": "setupDisplayOsd",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "pages": [{
+    "pageTitle": "setupDisplayOsd",
+    "rows": [
+      {
+        "id": "",
+        "cols": [
+          {
+            "id": "setupDisplayOsdContent",
+            "content": [
+              { "subtitle": { "subtitle": "Display" } },
+              {
+                "select": {
+                  "label": "Camera title",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode"
+                }
+              },
+              {
+                "select": {
+                  "label": "Recording mode icon",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "value": "0"
+                }
+              },
+              {
+                "select": {
+                  "label": "Audio icon",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "value": "0"
+                }
+              },
+              { "subtitle": { "subtitle": "Screen Mode" } },
+              {
+                "select": {
+                  "label": "Status bar on full screen mode",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "value": "0",
+                  "option": [
+                    {"value": "0", "text": "Always"},
+                    {"value": "1", "text": "Auto Hide"},
+                    {"value": "2", "text": "5 sec"},
+                    {"value": "3", "text": "10 sec"},
+                    {"value": "4", "text": "15 sec"},
+                    {"value": "5", "text": "30 sec"},
+                    {"value": "6", "text": "1 min"}
+                  ]
+                }
+              },
+              {
+                "select": {
+                  "label": "Timeline on full screen mode",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "value": "0",
+                  "option": [
+                    {"value": "0", "text": "Auto Hide"},
+                    {"value": "1", "text": "Always off"},
+                    {"value": "2", "text": "Always on"}
+                  ]
+                }
+              },
+              {
+                "select": {
+                  "label": "Border line",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode"
+                }
+              },
+              {
+                "select": {
+                  "label": "Border color",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "value": "0",
+                  "option": [
+                    {"value": "0", "text": "White"},
+                    {"value": "1", "text": "Dark Gray"},
+                    {"value": "2", "text": "Yellow"},
+                    {"value": "3", "text": "Blue"},
+                    {"value": "4", "text": "Green"},
+                    {"value": "5", "text": "Red"}
+                  ]
+                }
+              },
+              {
+                "select": {
+                  "label": "User name",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "value": "0"
+                }
+              },
+              { "subtitle": { "subtitle": "Language" } },
+              {
+                "select": {
+                  "label": "Language",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "option": [
+                    {"value": "0", "text": "English"},
+                    {"value": "1", "text": "Korean"}
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }]
+}

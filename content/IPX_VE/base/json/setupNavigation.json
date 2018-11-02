@@ -1,0 +1,112 @@
+{
+  "id": "setupNavigation",
+  "html": "template/setupNavigation.htm",
+
+  "class": "lnb",
+
+  "menuImage": "/images/ITX_OLD/dot_some.gif",
+  "submenuImage": "/images/ITX_OLD/dot_focus.gif",
+
+  "menu": [
+    {
+      "text": "CAMERA",
+      "class": "Camera",
+      "submenu": [
+        {"id": "lnbCameraCameraInstallation", "text": "CAMERA INSTALLATION", "url": "#setup/Camera/CameraInstallation", "class": "hidden"},
+        {"id": "lnbCameraCameraTitle", "text": "CAMERA TITLE", "url": "html/setup_cam_title.htm"},
+        {"id": "lnbCameraCameraSetup", "text": "CAMERA SETUP", "url": "html/setup_cam_compatibility.htm"},
+        {"id": "lnbCameraCovertSetup", "text": "COVERT SETUP", "url": "html/setup_cam_covert.htm"},
+        {"id": "lnbCameraMotionSensor", "text": "MOTION SENSOR","url": "html/setup_cam_motion.htm"},
+        {"id": "lnbCameraPtzSetup", "text": "PTZ SETUP", "url": "html/setup_cam_ptz_ipx.htm"},
+        {"id": "lnbCameraPrivacyMask", "text": "PRIVACY MASK", "url": "html/setup_cam_privmask.htm"},
+        {"id": "lnbCameraDMVA", "text": "VCA SETUP", "url": "html/setup_cam_dmva.htm"},
+        {"id": "lnbCameraInstallationMode", "text": "INSTALLATION MODE", "url": "#setup/Camera/InstallationMode"}
+      ]
+    },
+    {
+      "text": "DISPLAY",
+      "class": "Display",
+      "submenu": [
+        {"id": "lnbDisplayOsd", "text": "OSD", "url": "html/setup_display_osd.htm"},
+        {"id": "lnbDisplayMonitor", "text": "Monitor", "url": "#setup/Display/Monitor"},
+        {"id": "lnbDisplaySequence", "text": "Sequence", "url": "#setup/Display/Sequence"},
+        {"id": "lnbDisplaySpot", "text": "Spot", "url": "#setup/Display/Spot"},
+        {"id": "lnbDisplayHdSpot", "text": "HD Spot", "url": "#setup/Display/HdSpot"}
+      ]
+    },
+    {
+      "text": "AUDIO",
+      "class": "Audio",
+      "submenu": [
+        {"id": "lnbAudioAudioSetup", "text": "Audio Setup", "url": "html/setup_sound_audio.htm"},
+        {"id": "lnbAudioBuzzerSetup", "text": "Buzzer Setup", "url": "#setup/Audio/BuzzerSetup"}
+      ]
+    },
+    {
+      "text": "USER",
+      "class": "User",
+      "submenu": [
+        {"id": "lnbUserUserManagement", "text": "User Management", "url": "html/setup_user_management.htm"},
+        {"id": "lnbUserUserAuthority", "text": "User Authority", "url": "#setup/User/UserAuthority"}
+      ]
+    },
+    {
+      "text": "NETWORK",
+      "class": "Network",
+      "submenu": [
+        {"id": "lnbNetworkIpSetup", "text": "IP Setup", "url": "html/setup_network_ipsetup.htm"},
+        {"id": "lnbNetworkDdns", "text": "DDNS", "url": "#setup/Network/Ddns"},
+        {"id": "lnbNetworkEmail", "text": "E-mail", "url": "#setup/Network/Email"},
+        {"id": "lnbNetworkNetworkStatus", "text": "Network Status","url": "#setup/Network/NetworkStatus"},
+        {"id": "lnbNetworkSecurity", "text": "Security", "url": "#setup/Network/Security"}
+      ]
+    },
+    {
+      "text": "SYSTEM",
+      "class": "System",
+      "submenu": [
+        {"id": "lnbSystemDateTime", "text": "Date/Time", "url": "html/setup_system_datetime.htm"},
+        {"id": "lnbSystemSystemManagement", "text": "System Management", "url": "#setup/System/SystemManagement"},
+        {"id": "lnbSystemSystemInformation", "text": "System Information", "url": "#setup/System/SystemInformation"},
+        {"id": "lnbSystemControlDevice", "text": "Control device", "url": "#setup/System/ControlDevice"},
+        {"id": "lnbSystemSecurity", "text": "Security", "url": "#setup/System/Security"}
+      ]
+    },
+    {
+      "text": "STORAGE",
+      "class": "Storage",
+      "submenu": [
+        {"id": "lnbStorageDiskInformation", "text": "Disk Information", "url": "html/setup_storage_diskinfo.htm"},
+        {"id": "lnbStorageDiskOperation", "text": "Disk Operation", "url": "#setup/Storage/DiskOperation"},
+        {"id": "lnbStorageDiskConfiguration", "text": "Disk Configuration", "url": "#setup/Storage/DiskConfig"},
+        {"id": "lnbStorageSmartSetup", "text": "S.M.A.R.T Setup", "url": "#setup/Storage/SmartSetup"}
+      ]
+    },
+    {
+      "text": "EVENT",
+      "class": "Event",
+      "submenu": [
+        {"id": "lnbEventAlarmOut", "text": "Alarm Out", "url": "html/setup_event_alarm_output.htm"},
+        {"id": "lnbEventEventNotification", "text": "Event Notification", "url": "#setup/Event/EventNotification"},
+        {"id": "lnbEventAlarmSensor", "text": "Alarm Sensor", "url": "#setup/Event/AlarmSensor"},
+        {"id": "lnbEventMotionSensor", "text": "Motion Sensor", "url": "#setup/Event/MotionSensor"},
+        {"id": "lnbEventVideoLoss", "text": "Video Loss",  "url": "#setup/Event/VideoLoss"},
+        {"id": "lnbEventTamperDetection", "text": "Tamper Detection", "url": "#setup/Event/TamperDetection"},
+        {"id": "lnbEventSystemEvent", "text": "System Event", "url": "#setup/Event/SystemEvent"}
+      ]
+    },
+    {
+      "text": "RECORD",
+      "class": "Record",
+      "submenu": [
+        {"id": "lnbRecordRecordingOperation", "text": "Recording operation", "url": "html/setup_record_operation.htm"},
+        {"id": "lnbRecordEventNotification", "text": "Event Notification", "url": "#setup/Event/EventNotification"},
+        {"id": "lnbRecordAlarmSensor", "text": "Alarm Sensor", "url": "#setup/Event/AlarmSensor"},
+        {"id": "lnbRecordMotionSensor", "text": "Motion Sensor", "url": "#setup/Event/MotionSensor"},
+        {"id": "lnbRecordVideoLoss", "text": "Video Loss", "url": "#setup/Event/VideoLoss"},
+        {"id": "lnbRecordTamperDetection", "text": "Tamper Detection", "url": "#setup/Event/TamperDetection"},
+        {"id": "lnbRecordSystemEvent", "text": "System Event", "url": "#setup/Event/SystemEvent"}
+      ]
+    }
+  ]
+}

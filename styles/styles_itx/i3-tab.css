@@ -1,0 +1,32 @@
+﻿
+#motion-legend > dd > span{
+  text-transform: uppercase;
+}
+/*END :: Sunny 20171030*/
+
+
+#eventsetting_alarm_input table.event.event_sensor tbody tr td > .ptzdialog > h2 {
+  text-align: left;
+}
+#eventsetting_alarm_input table.event.event_sensor tbody tr td > .ptzdialog > div:last-child {
+  background: #3e3e3e;
+  padding: 5px;
+}
+/*END :: Sunny 20171030*/
+
+
+#automatic_config #auto{
+  margin-left: 0px;
+}
+
+#automatic_config #auto li {
+  color: #f2f2f2;
+}
+
+
+
+
+#eventsetting_alarm_input table.event_sensor thead div.ui-multiselect-menu ul.ui-multiselect-horizontal li{
+  width: 38px;
+}
+/*END :: Sunny 20171031*/

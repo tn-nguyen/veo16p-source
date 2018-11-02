@@ -1,0 +1,1005 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();</script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+    <title></title>
+
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Camera", "Tamper");
+            </script>
+          </ul>
+        </div>
+        <div id="c_sp_div_contents">
+          <form name="camsetting_tamper" id="camsetting_tamper">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2>
+                <span id='lang_TamperSetting'>Tamper setting</span>
+              </h2>
+              <div id="tamper_block">
+                <div class="c_sp_div_motion_jpeg">
+                  <img id="tamper_jpegarea" class="tamper_jpegarea" src="../images/images/loading_01.gif">
+                </div>
+                <table id="tblock" class="tamper_area_table">
+                </table>
+                <div class="tamper_selectall">
+                  <input class="btnmotion" id="selectall" value="lang_Selectall" name="selectall" type="button"> 
+                  <input class="btnmotion" id="deleteall" value="lang_Deleteall" name="deleteall" type="button">
+                </div>
+              </div>
+              <div class='clear'></div> 
+
+              <div id="cam_tamper">
+                <div class='chdiv'>
+                  <dl>
+                    <dt><span class='lang_camCh'>Ch</span></dt>
+                    <dd>
+                    <select id="chno" name="chno">
+                    </select>
+                    </dd>
+                  </dl>
+                </div>
+
+                <div id="tamper-tabs">
+                  <ul>
+                    <li>
+                    <a href="#tamper-blre">
+                      <span id="lang_BlRe">Blockage/Redirection</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#tamper-defocusing">
+                      <span id="lang_Defocusing">Defocusing</span>
+                    </a>
+                    </li>
+                  </ul>
+                  <div id="tamper-blre">
+                    <dl>
+                      <dt>
+                      <span id='lang_activation'>ACTIVATION</span>
+                      </dt>
+                      <dd>
+                      <select id="rebl_act" name="rebl_act">
+                        <option value='0'>OFF</option>
+                        <option value='1'>ON</option>
+                      </select>
+                      </dd>
+                      <dt>
+                      <span id='lang_daytime'>DAYTIME</span>
+                      </dt>
+                      <dd>
+                      <select id="rebl_time_start" name="rebl_time_start">
+                        <option value='0'>0:00</option>
+                        <option value='1'>1:00</option>
+                        <option value='2'>2:00</option>
+                        <option value='3'>3:00</option>
+                        <option value='4'>4:00</option>
+                        <option value='5'>5:00</option>
+                        <option value='6'>6:00</option>
+                        <option value='7'>7:00</option>
+                        <option value='8'>8:00</option>
+                        <option value='9'>9:00</option>
+                        <option value='10'>10:00</option>
+                        <option value='11'>11:00</option>
+                        <option value='12'>12:00</option>
+                        <option value='13'>13:00</option>
+                        <option value='14'>14:00</option>
+                        <option value='15'>15:00</option>
+                        <option value='16'>16:00</option>
+                        <option value='17'>17:00</option>
+                        <option value='18'>18:00</option>
+                        <option value='19'>19:00</option>
+                        <option value='20'>20:00</option>
+                        <option value='21'>21:00</option>
+                        <option value='22'>22:00</option>
+                        <option value='23'>23:00</option>
+                      </select> ~ 
+                      <select id="rebl_time_end" name="rebl_time_end">
+                        <option value='0'>0:00</option>
+                        <option value='1'>1:00</option>
+                        <option value='2'>2:00</option>
+                        <option value='3'>3:00</option>
+                        <option value='4'>4:00</option>
+                        <option value='5'>5:00</option>
+                        <option value='6'>6:00</option>
+                        <option value='7'>7:00</option>
+                        <option value='8'>8:00</option>
+                        <option value='9'>9:00</option>
+                        <option value='10'>10:00</option>
+                        <option value='11'>11:00</option>
+                        <option value='12'>12:00</option>
+                        <option value='13'>13:00</option>
+                        <option value='14'>14:00</option>
+                        <option value='15'>15:00</option>
+                        <option value='16'>16:00</option>
+                        <option value='17'>17:00</option>
+                        <option value='18'>18:00</option>
+                        <option value='19'>19:00</option>
+                        <option value='20'>20:00</option>
+                        <option value='21'>21:00</option>
+                        <option value='22'>22:00</option>
+                        <option value='23'>23:00</option>
+                      </select>
+                      </dd>
+                    </dl>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th colspan="4"><span class='lang_blockage'>Blockage</span></th>
+                          <th colspan="4"><span class='lang_redirection'>Redirection</span></th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <th rowspan="2">
+                            <span class='lang_mark'>MARK</span>
+                          </th>
+                          <th colspan="3" class="title">
+                            <span class='lang_Sensitivity'>SENSITIVITY</span>
+                          </th>
+                          <th rowspan="2">
+                            <span class='lang_mark'>MARK</span>
+                          </th>
+                          <th colspan="3" class="title">
+                            <span class='lang_Sensitivity'>SENSITIVITY</span>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th></th>
+                          <!-- spanned col. -->
+                          <th class="title">
+                            <span class='lang_level'>LEVEL</span>
+                          </th>
+                          <th class="title">
+                            <span class='lang_spatial'>SPATIAL</span>
+                          </th>
+                          <th class="title">
+                            <span class='lang_temporal'>TEMPORAL</span>
+                          </th>
+                          <!-- spanned col. -->
+                          <th class="title">
+                            <span class='lang_level'>LEVEL</span>
+                          </th>
+                          <th class="title">
+                            <span class='lang_spatial'>SPATIAL</span>
+                          </th>
+                          <th class="title">
+                            <span class='lang_temporal'>TEMPORAL</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th class="title">
+                            <span id='lang_daytime'>DAYTIME</span>
+                          </th>
+                          <td rowspan="2">
+                            <select id="blockage_mark" name="blockage_mark">
+                              <option value='0'>OFF</option>
+                              <option value='1'>ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="blockage_level_d" name="blockage_level_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="blockage_spatial_d" name="blockage_spatial_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="blockage_temporal_d" name="blockage_temporal_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                            </select>
+                          </td>
+                          <td rowspan="2">
+                            <select id="redirect_mark" name="redirect_mark">
+                              <option value='0'>OFF</option>
+                              <option value='1'>ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="redirect_level_d" name="redirect_level_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="redirect_spatial_d" name="redirect_spatial_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="redirect_temporal_d" name="redirect_temporal_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                        </tr>
+                        <tr>
+                          <th class="title"><span id='lang_nighttime'>NIGHTTIME</span></th>
+                          <!-- spanned col. -->
+                          <td>
+                            <select id="blockage_level_n" name="blockage_level_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="blockage_spatial_n" name="blockage_spatial_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="blockage_temporal_n" name="blockage_temporal_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                            </select>
+                          </td>
+                          <!-- spanned col. -->
+                          <td>
+                            <select id="redirect_level_n" name="redirect_level_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="redirect_spatial_n" name="redirect_spatial_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="redirect_temporal_n" name="redirect_temporal_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div id="tamper-defocusing">
+                    <dl>
+                      <dt>
+                      <span id='lang_activation'>ACTIVATION</span>
+                      </dt>
+                      <dd>
+                      <select id="defocus_act" name="defocus_act">
+                        <option value='0'>OFF</option>
+                        <option value='1'>ON</option>
+                      </select>
+                      </dd>
+                      <dt>
+                      <span id='lang_daytime'>DAYTIME</span>
+                      </dt>
+                      <dd>
+                      <select id="defocus_time_start" name="defocus_time_start">
+                        <option value='0'>0:00</option>
+                        <option value='1'>1:00</option>
+                        <option value='2'>2:00</option>
+                        <option value='3'>3:00</option>
+                        <option value='4'>4:00</option>
+                        <option value='5'>5:00</option>
+                        <option value='6'>6:00</option>
+                        <option value='7'>7:00</option>
+                        <option value='8'>8:00</option>
+                        <option value='9'>9:00</option>
+                        <option value='10'>10:00</option>
+                        <option value='11'>11:00</option>
+                        <option value='12'>12:00</option>
+                        <option value='13'>13:00</option>
+                        <option value='14'>14:00</option>
+                        <option value='15'>15:00</option>
+                        <option value='16'>16:00</option>
+                        <option value='17'>17:00</option>
+                        <option value='18'>18:00</option>
+                        <option value='19'>19:00</option>
+                        <option value='20'>20:00</option>
+                        <option value='21'>21:00</option>
+                        <option value='22'>22:00</option>
+                        <option value='23'>23:00</option>
+                      </select> ~ 
+                      <select id="defocus_time_end" name="defocus_time_end">
+                        <option value='0'>0:00</option>
+                        <option value='1'>1:00</option>
+                        <option value='2'>2:00</option>
+                        <option value='3'>3:00</option>
+                        <option value='4'>4:00</option>
+                        <option value='5'>5:00</option>
+                        <option value='6'>6:00</option>
+                        <option value='7'>7:00</option>
+                        <option value='8'>8:00</option>
+                        <option value='9'>9:00</option>
+                        <option value='10'>10:00</option>
+                        <option value='11'>11:00</option>
+                        <option value='12'>12:00</option>
+                        <option value='13'>13:00</option>
+                        <option value='14'>14:00</option>
+                        <option value='15'>15:00</option>
+                        <option value='16'>16:00</option>
+                        <option value='17'>17:00</option>
+                        <option value='18'>18:00</option>
+                        <option value='19'>19:00</option>
+                        <option value='20'>20:00</option>
+                        <option value='21'>21:00</option>
+                        <option value='22'>22:00</option>
+                        <option value='23'>23:00</option>
+                      </select>
+                      </dd>
+                    </dl>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th rowspan="2"></th>
+                          <th rowspan="2">
+                            <span class='lang_mark'>MARK</span>
+                          </th>
+                          <th colspan="3" class="title">
+                            <span id='lang_Sensitivity'>SENSITIVITY</span>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th class="title">
+                            <span id='lang_level'>LEVEL</span>
+                          </th>
+                          <th class="title">
+                            <span id='lang_spatial'>SPATIAL</span>
+                          </th>
+                          <th class="title">
+                            <span id='lang_temporal'>TEMPORAL</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th class="title">
+                            <span id='lang_daytime'>DAYTIME</span>
+                          </th>
+                          <td rowspan="2">
+                            <select id="defocus_mark" name="defocus_mark">
+                              <option value='0'>OFF</option>
+                              <option value='1'>ON</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select id="defocus_level_d" name="defocus_level_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="defocus_spatial_d" name="defocus_spatial_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="defocus_temporal_d" name="defocus_temporal_d">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                        </tr>
+                        <tr>
+                          <th class="title"><span id='lang_nighttime'>NIGHTTIME</span></th>
+                          <td>
+                            <select id="defocus_level_n" name="defocus_level_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="defocus_spatial_n" name="defocus_spatial_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                          <td>
+                            <select id="defocus_temporal_n" name="defocus_temporal_n">
+                              <option value='0'>0</option>
+                              <option value='1'>1</option>
+                              <option value='2'>2</option>
+                              <option value='3'>3</option>
+                              <option value='4'>4</option>
+                              <option value='5'>5</option>
+                              <option value='6'>6</option>
+                              <option value='7'>7</option>
+                              <option value='8'>8</option>
+                              <option value='9'>9</option>
+                              <option value='10'>10</option>
+                              <option value='11'>11</option>
+                              <option value='12'>12</option>
+                              <option value='13'>13</option>
+                              <option value='14'>14</option>
+                              <option value='15'>15</option>
+                              <option value='16'>16</option>
+                              <option value='17'>17</option>
+                              <option value='18'>18</option>
+                              <option value='19'>29</option>
+                              <option value='20'>20</option>
+                              <option value='21'>21</option>
+                              <option value='22'>22</option>
+                              <option value='23'>23</option>
+                              <option value='24'>24</option>
+                              <option value='25'>25</option>
+                              <option value='26'>26</option>
+                              <option value='27'>27</option>
+                              <option value='28'>28</option>
+                              <option value='29'>29</option>
+                              <option value='30'>30</option>
+                          </select></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </form>
+        </div>	
+      </div>
+    </div>
+
+  </body>
+
+  <script type="text/javascript" src="../scripts/init/CamInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('CamTamper');
+  </script>        
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/CamModel.js"></script>
+
+  <script type="text/javascript" src="../scripts/MotionWidgets.js"></script>
+  <script type="text/javascript" src="../scripts/view/CamView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/CamController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+      name: 'CamTamper',
+      action: 'index',
+      debug: false
+    });
+
+    dvrpoke();
+
+  </script>            
+</html>
+

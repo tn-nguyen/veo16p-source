@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+@import url("../styles/styles/global.css");
+
+@import url("../styles/styles/setup.css");
+</style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+
+  <script type="text/javascript">
+      info_include();
+    </script>
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/validate.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+  passwordRenewCheck();
+      language_include();
+    </script>
+
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css"
+    rel="stylesheet" type="text/css"
+  />
+  <script type="text/javascript"
+    src="../scripts/jquery/jquery-1.6.1.js"
+  ></script>
+  <script type="text/javascript"
+    src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"
+  ></script>
+
+  <title></title>
+</head>
+
+<body>
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+              print_top_menu(document, "SETUP");
+            </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left: 10px; padding-top: 10px;">
+          <script type="text/javascript">
+                      print_left_menu(document, "System", "Security");
+                    </script>
+        </ul>
+      </div>
+      <div id="c_sp_div_contents">
+        <form name="systemsetting_security" id="systemsetting_security" action='/cgi-bin/webra_fcgi.fcgi'>
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+
+            <h2>
+              <!--<span id='lang_System_security'> SECURITY
+              </span>-->
+              <span id='lang_data_security'>DATA SECURITY
+              </span>
+            </h2>
+
+            <div class="c_sp_div_system">
+              <dl>
+                <dt class="list">
+                  <span id='lang_audio_support'>AUDIO SUPPORT</span>
+                </dt>
+                <dd>
+                  <select id="audio_support" class="lstdisp"
+                    name="audio_support"
+                  >
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+                <dt class="list">
+                  <span id='lang_snapshot_support'>SNAPSHOT SUPPORT</span>
+                </dt>
+                <dd>
+                  <select id="snapshot_support" class="lstdisp"
+                    name="snapshot_support"
+                  >
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+                <dt class="list password_check_when_search_or_backup">
+                  <span id='lang_password_check_when_search_or_backup'>PASSWORD CHECK WHEN SEARCH OR BACKUP</span>
+                </dt>
+                <dd class="password_check_when_search_or_backup">
+                  <select id="password_check" class="lstdisp"
+                    name="password_check">
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+                <dt class="list">
+                  <span id='lang_dual_login'>DOUBLE LOGIN</span>
+                </dt>
+                <dd>
+                  <select id="dual_login" class="lstdisp"
+                    name="dual_login">
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+              </dl>
+              <h2>
+                <span id='lang_account_security'>ACCOUNT SECURITY
+                </span>
+              </h2>
+              <dl>
+                <dt class="list">
+                  <span id='lang_id_input_mode'>ID INPUT MODE</span>
+                </dt>
+                <dd>
+                  <select id="id_input_mode" class="lstdisp" name="id_input_mode">
+                    <option value="0">ID SELECTION METHOD</option>
+                    <option value="1">DIRECT INPUT METHOD</option>
+                  </select>
+                </dd>
+                <dt class="list">
+                  <span id='lang_enhanced_id_rule'>ENHANCED USER ID RULE</span>
+                </dt>
+                <dd>
+                  <select id="enhanced_id" class="lstdisp" name="enhanced_id">
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+                <dt class="list">
+                  <span id='lang_enhanced_password_rule'>ENHANCED PASSWORD RULE</span>
+                </dt>
+                <dd>
+                  <select id="enhanced_password" class="lstdisp" name="enhanced_password">
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+
+              </dl>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input type="submit" value="lang_OK"
+              class="c_sp_btn_okcancel"
+            /> <input type="button" value="lang_CANCEL" id="cancel"
+              class="c_sp_btn_okcancel"
+            />
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg"></div>
+            <div id="printMsg"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/SystemInit.js"></script>
+  <script type="text/javascript">
+      ShowInit('SystemSecurity');
+    </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/SystemModel.js"></script>
+
+  <script type="text/javascript" src="../scripts/view/SystemView.js"></script>
+  <script type="text/javascript"
+    src="../scripts/controller/SystemController.js"
+  ></script>
+
+  <script type="text/javascript">
+      zzmvc({
+        name : 'SystemSecurity',
+        action : 'index',
+        debug : false
+      });
+
+      dvrpoke();
+    </script>
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+      info_include();
+    </script>
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+      language_include();
+    </script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link href="../scripts/jquery/jquery.dropdownMulti.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+    <script src="../scripts/jquery/jquery.dropdownMulti.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">
+          print_top_menu(document, "SETUP");
+        </script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">
+              print_left_menu(document, "Event", "Tamper");
+            </script>
+          </ul>
+        </div>
+        <div id="c_sp_div_contents">
+          <form action="/cgi-bin/webra_fcgi.fcgi" name="eventsetting_tamper" id="eventsetting_tamper">
+            <div class="c_sp_div_frame">
+              <h2>
+                <span id='lang_EventTampersetting'>Tamper Event setting</span>
+              </h2>
+              <table class="event event_tamper">
+                <colgroup>
+                  <col class='col1'/>
+                </colgroup>
+                <colgroup>
+                  <col class='col2'/>
+                  <col class='col3'/>
+                </colgroup>
+                <colgroup>
+                  <col class='col4'/>
+                  <col class='col5'/>
+                  <col class='col6'/>
+                  <col class='col7'/>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <!--
+                    <th>
+                      <span id='lang_parameter'>Event Parameter</span>
+                    </th>
+                    -->
+                    <th colspan="9" scope='colgroup' class="colspan">
+                      <span id='lang_action'>Action</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th><span id='lang_CAM'>CAM</span></th>
+                    <!-- Event Parameter -->
+                    <!-- Action -->
+                    <th>
+                      <span id='lang_lcamera'>Linked Camera</span>
+                    </th>
+                    <th>
+                      <span id='lang_alarmout'>Alarm Out</span>
+                    </th>
+                    <th class="small">
+                      <span id='lang_ptzpreset'>PTZ Preset</span>
+                    </th>
+                    <th class="small">
+                      <span id='lang_buzzer'>Buzzer</span>
+                    </th>
+                    <th class="small">
+                      <span id='lang_vpopup'>Video</span>
+                    </th>
+                    <th class="small">
+                      <span id='lang_email'>Email</span>
+                    </th>
+                    <th class="small ftp">
+                        <span>FTP</span>
+                    </th>
+                    <th class="small mobile">
+                        <span id="lang_mobile">Mobile</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th><span id="lang_selectAll">ALL</span></th>
+                    <th>
+                      <select class="lcam" id="lcamera_all" multiple="multiple">
+                      </select>
+                    </th>
+                    <th>
+                      <select  id="arout_all"  multiple="multiple" class="arout">
+                      </select>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                      <input type="checkbox"  id="buzzer_all">
+                    </th>
+                    <th>
+                      <input type="checkbox"  id="vpopup_all">
+                    </th>
+                    <th>
+                      <input type="checkbox"  id="email_all">
+                    </th>
+                    <th class='ftp'>
+                      <input type="checkbox" id="ftp_all">
+                    </th>
+                    <th class='mobile'>
+                      <input type="checkbox" id="mobile_all">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      <select name="lcamera0" class="lcam" id="lcamera0" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+                      <select  id="arout0" name="arout0" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre0" id="ptzpre0">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer0" id="buzzer0">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup0" id="vpopup0">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email0" id="email0">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp0" id="ftp0">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile0" id="mobile0">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      2
+                    </td>
+                    <td>
+                      <select name="lcamera1" class="lcam" id="lcamera1" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+                      <select  id="arout1" name="arout1" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre1" id="ptzpre1">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer1" id="buzzer1">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup1" id="vpopup1">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email1" id="email1">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp1" id="ftp1">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile1" id="mobile1">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      <select name="lcamera2" class="lcam" id="lcamera2" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+                      <select  id="arout2" name="arout2" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre2" id="ptzpre2">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer2" id="buzzer2">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup2" id="vpopup2">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email2" id="email2">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp2" id="ftp2">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile2" id="mobile2">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      4
+                    </td>
+                    <td>
+                      <select name="lcamera3" class="lcam" id="lcamera3" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout3" name="arout3" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre3" id="ptzpre3">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer3" id="buzzer3">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup3" id="vpopup3">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email3" id="email3">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp3" id="ftp3">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile3" id="mobile3">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class='chenable8'>
+                  <tr>
+                    <td>
+                      5
+                    </td>
+                    <td>
+                      <select name="lcamera4" class="lcam" id="lcamera4" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+                      <select  id="arout4" name="arout4" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre4" id="ptzpre4">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer4" id="buzzer4">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup4" id="vpopup4">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email4" id="email4">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp4" id="ftp4">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile4" id="mobile4">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      6
+                    </td>
+                    <td>
+                      <select name="lcamera5" class="lcam" id="lcamera5" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout5" name="arout5" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre5" id="ptzpre5">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer5" id="buzzer5">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup5" id="vpopup5">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email5" id="email5">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp5" id="ftp5">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile5" id="mobile5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      7
+                    </td>
+                    <td>
+                      <select name="lcamera6" class="lcam" id="lcamera6" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout6" name="arout6" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre6" id="ptzpre6">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer6" id="buzzer6">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup6" id="vpopup6">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email6" id="email6">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp6" id="ftp6">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile6" id="mobile6">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      <select name="lcamera7" class="lcam" id="lcamera7" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout7" name="arout7" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre7" id="ptzpre7">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer7" id="buzzer7">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup7" id="vpopup7">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email7" id="email7">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp7" id="ftp7">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile7" id="mobile7">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class='chenable16'>
+                  <tr>
+                    <td>
+                      9
+                    </td>
+                    <td>
+                      <select name="lcamera8" class="lcam" id="lcamera8" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout8" name="arout8" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre8" id="ptzpre8">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer8" id="buzzer8">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup8" id="vpopup8">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email8" id="email8">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp8" id="ftp8">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile8" id="mobile8">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      10
+                    </td>
+                    <td>
+                      <select name="lcamera9" class="lcam" id="lcamera9" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout9" name="arout9" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre9" id="ptzpre9">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer9" id="buzzer9">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup9" id="vpopup9">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email9" id="email9">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp9" id="ftp9">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile9" id="mobile9">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      11
+                    </td>
+                    <td>
+                      <select name="lcamera10" class="lcam" id="lcamera10" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout10" name="arout10" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre10" id="ptzpre10">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer10" id="buzzer10">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup10" id="vpopup10">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email10" id="email10">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp10" id="ftp10">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile10" id="mobile10">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      12
+                    </td>
+                    <td>
+                      <select name="lcamera11" class="lcam" id="lcamera11" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout11" name="arout11" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre11" id="ptzpre11">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer11" id="buzzer11">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup11" id="vpopup11">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email11" id="email11">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp11" id="ftp11">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile11" id="mobile11">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      13
+                    </td>
+                    <td>
+                      <select name="lcamera12" class="lcam" id="lcamera12" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout12" name="arout12" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre12" id="ptzpre12">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer12" id="buzzer12">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup12" id="vpopup12">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email12" id="email12">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp12" id="ftp12">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile12" id="mobile12">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      14
+                    </td>
+                    <td>
+                      <select name="lcamera13" class="lcam" id="lcamera13" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout13" name="arout13" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre13" id="ptzpre13">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer13" id="buzzer13">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup13" id="vpopup13">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email13" id="email13">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp13" id="ftp13">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile13" id="mobile13">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      15
+                    </td>
+                    <td>
+                      <select name="lcamera14" class="lcam" id="lcamera14" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout14" name="arout14" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre14" id="ptzpre14">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer14" id="buzzer14">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup14" id="vpopup14">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email14" id="email14">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp14" id="ftp14">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile14" id="mobile14">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      16
+                    </td>
+                    <td>
+                      <select name="lcamera15" class="lcam" id="lcamera15" multiple="multiple">
+                      </select>
+                    </td>
+                    <td>
+
+                      <select  id="arout15" name="arout15" multiple="multiple" class="arout">
+                      </select>
+                    </td>
+                    <td>
+                      <input type="button" name="ptzpre15" id="ptzpre15">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="buzzer15" id="buzzer15">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="vpopup15" id="vpopup15">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="email15" id="email15">
+                    </td>
+                    <td class='ftp'>
+                      <input type="checkbox" name="ftp15" id="ftp15">
+                    </td>
+                    <td class='mobile'>
+                      <input type="checkbox" name="mobile15" id="mobile15">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+            <div id="c_g_div_msg">
+              <div id="errMsg">
+              </div>
+              <div id="printMsg">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../scripts/selectAll.js"></script>
+    <script type="text/javascript" src="../scripts/init/EventInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('EventTamper');
+    </script>
+
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+    <script type="text/javascript" src="../scripts/model/EventModel.js"></script>
+
+    <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+    <script type="text/javascript" src="../scripts/PTZActionDialog.js"></script>
+    <script type="text/javascript" src="../scripts/view/EventView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/EventController.js"></script>
+
+    <script type="text/javascript">
+      zzmvc({
+        name: 'EventTamper',
+        action: 'index',
+        debug: false
+      });
+
+      dvrpoke();
+    </script>
+  </body>
+</html>

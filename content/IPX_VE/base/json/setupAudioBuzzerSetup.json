@@ -1,0 +1,33 @@
+{
+  "id": "setupAudioBuzzerSetup",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    
+  },
+
+  "pageTitle": "setupAudioBuzzerSetup",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "id": "",
+          "cols": [
+            {
+              "content": [
+              { "subtitle": { "subtitle": "BUZZER SETUP" } },
+              {
+                "select": {
+                  "label": "REMOTE CONTROLLER",
+                  "id": "remote_controller",
+                  "name": "remote_controller"
+                }
+              }
+            ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

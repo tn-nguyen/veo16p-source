@@ -1,0 +1,42 @@
+{
+  "id": "dialogRestart",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "dialog": true,
+  "dialogTitle": "Restart",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "string": {
+                    "id": "dialogRestartMsg",
+                    "text": "Please Wait. Restarting NVR..."
+                  }
+                },
+                {
+                  "div": {
+                    "id": "dialogRestartProgressBar",
+                    "class": "dialogRestartProgressBar"
+                  }
+                },
+                {
+                  "string": {
+                    "id": "dialogRestartProgressMsg",
+                    "text": "Remain : 180"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

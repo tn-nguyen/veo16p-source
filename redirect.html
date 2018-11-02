@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="scripts/global.js"></script>
+  <script type="text/javascript" src="scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+  <script type="text/javascript" src="scripts/Validator.js"></script>
+  <script type="text/javascript">
+  <!--
+  function to_str(obj)
+  {
+    var temp = parseInt(obj);
+    if(temp < 10) return '0' + temp;
+    return obj;
+  }
+  var d = new Date();
+  var wString = "<script type=\"text/javascript\" src=\"/info/info.js?"+to_str(d.getHours())+to_str(d.getMinutes())+to_str(d.getSeconds())+"\"><\/script>";
+  document.write(wString);
+  d = null;
+  -->
+  </script>
+
+  <script type="text/javascript">
+    language_include();
+  </script>
+
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+
+  <!--password renew dialog-->
+  <div id="dialog_renew_pwd" title="Renew Password" align="center" style="display:none">
+    <input type='hidden' id='pre_password_set' name='pre_password_set' disabled>
+    <table>
+      <tbody>
+        <!-- <tr>
+          <th style="color:#004879;
+            font-size:12pt;
+            font-weight:bold;
+            text-align: right">
+            <span id="lang_password">Password</span>
+          </th>
+          <td>
+            <input type="password" id="pre_password" name="pre_password" maxlength="16">
+          </td>
+        </tr> -->
+        <tr>
+          <th style="color:#004879;
+            font-size:12pt;
+            font-weight:bold;
+            text-align: right">
+            <span id="lang_new_password">New Password</span>
+          </th>
+          <td>
+            <input type="password" id="new_password" name="new_password" maxlength="16">
+          </td>
+        </tr>
+        <tr>
+          <th style="color:#004879;
+            font-size:12pt;
+            font-weight:bold;
+            text-align: right">
+            <span id="lang_confirm_password">Confirm</span>
+          </th>
+          <td>
+            <input type="password" id="confirm_password" name="confirm_password" maxlength="16">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+var passwdChecker;
+
+addLoadEvent(function () {
+  lang_file(INFO_LANGUAGE,'REDIRECT');
+
+  $("#dialog_renew_pwd").dialog({
+    autoOpen: false,
+    resizable: false,
+    modal: true,
+    dialogClass: 'no-close',
+    width: 460,
+    open: function(event, ui){
+      $("#dialog_renew_pwd").dialog("option", "title", langArray["LTXT_SETUPCAMINSTALLATION_CAMERA_CONFIG_CHANGE"]);
+      $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
+
+      //get password from local-D.B.
+      $.ajax({
+        type: "POST",
+        url: "/cgi-bin/webra_fcgi.fcgi",
+        data: "action=get_live&menu=live.password",
+        async: false,
+        cache: false,
+        success: function(request){
+          if(request != null)
+          {
+            if(request.indexOf("No Permission Error!") >= 0)
+            {
+              return;
+            }
+            else if(request.indexOf("Password Incorrect!") >= 0)
+            {
+              alert(langArray["LTXT_INVALID_PASSWORD"]);
+              return;
+            }
+            var recvdata = recv_encode(request);
+            //set passwd to pre_password.
+            $("#pre_password_set").val(recvdata['passwd']);
+          }
+          else
+          {
+            alert(errReceive);
+          }
+        }
+      });
+
+      //set Interval for checking password is modified.
+      passwdChecker = setInterval(
+        function(){
+          $.ajax({
+            type: "POST",
+            url: "/cgi-bin/webra_fcgi.fcgi",
+            data: "action=get_live&menu=live.passwordcheck&passwd="+$("#pre_password_set").val(),
+            async: false,
+            cache: false,
+            success: function(request){
+              if(request != null)
+              {
+                if(request.indexOf("No Permission Error!") >= 0)
+                {
+                  return;
+                }
+                else if(request.indexOf("Password Incorrect!") >= 0)
+                {
+                  alert(langArray['LTXT_INVALID_PASSWORD']);
+                  return;
+                }
+                var recvdata = recv_encode(request);
+                if((recvdata!=null) && (recvdata['passwd']=='0') )
+                {
+                  clearInterval(passwdChecker);
+                  location.reload(true);
+
+                  //$("#dialog_renew_pwd").dialog('close');
+                }
+              }
+              else
+              {
+                alert(errReceive);
+              }
+            }
+          });
+        }, 500);
+    },
+    buttons: [{
+      text: langArray['LTXT_SETUP_APPLY'],
+      click : function()
+      {
+        var pre_password_set = $("#pre_password_set").val();
+        var new_password = $("#new_password").val();
+        var confirm_password = $("#confirm_password").val();
+
+        if(new_password.replace(/ /gi, '').length == 0)
+        {
+          alert(langArray["LTXT_INPUT_NEW_PASSWORD"]);
+          return;
+        }
+        if(confirm_password.replace(/ /gi, '').length == 0)
+        {              
+          alert(langArray["LTXT_INPUT_CONFIRM_PASSWORD"]);
+          return;
+        }
+        if (new_password != confirm_password) 
+        {
+          alert(langArray["LTXT_DIFF_CONFIRM_PASS"]);
+          return;
+        }
+
+        if(Validator.usrPasswd(new_password)
+          || Validator.usrPasswd(confirm_password))
+        {
+          //alert(langArray['LTXT_ERR_USERPASSWD']);
+          alert(langArray["LTXT_INVALID_PASSWORD"]);
+          return;
+        }
+
+        if (new_password != confirm_password)
+        {
+          alert(langArray["LTXT_DIFF_CONFIRM_PASS"]);
+          return;
+        };
+
+        if (new_password == pre_password_set) {
+          alert(langArray['LTXT_RENEW_PASSWORD_IS_ON_ALERT']);
+          location.reload(true);
+          return;
+        }
+
+        $.ajax({
+          type: "POST",
+          url: "/cgi-bin/webra_fcgi.fcgi",
+          data: "action=set_live&menu=live.password&passwd="+new_password+"&pre_passwd="+$("#pre_password_set").val(),
+          async: false,
+          cache: false,
+          success: function(request)
+          {
+            if(request != null)
+            {
+              if(request.indexOf("No Permission Error!") >= 0)
+              {
+                return;
+              }
+              else if(request.indexOf("Password Incorrect!") >= 0)
+              {
+                alert(langArray["LTXT_INVALID_PASSWORD"]);
+                return;
+              }
+              else if(new_password != $("#pre_password_set").val())
+              {
+                alert(langArray['LTXT_CONFIGURATION_SAVED']);
+                location.reload(true);
+              }
+
+              var recvdata = recv_encode(request);
+            }
+            else
+            {
+              alert(errReceive);
+            }
+          }
+        });
+
+        //init input...
+        $("#new_password").val("");
+        $("#confirm_password").val("");
+
+        $(this).dialog("close");
+      }
+    }]
+  });
+
+  if((typeof INFO_PASSWD_CHANGED !=undefined) && (INFO_PASSWD_CHANGED == 1))
+  {
+    $.ajax({
+    type: "POST",
+    url: "/cgi-bin/webra_fcgi.fcgi",
+    data: "action=get_live&menu=live.renewcheck",
+    async: false,
+    cache: false,
+    success: function(request)
+    {
+      if(request != null)
+      {
+        if(request.indexOf("No Permission Error!") >= 0)
+        {
+          alert("nopermission");
+          return;
+        }
+        else if(request.indexOf("Password is not initiallized!") >= 0)
+        {
+          $("#dialog_renew_pwd").dialog('open');
+        }
+        else
+        {
+          if (MobileBrowserCheck() == false) {
+            self.location='html/mlive.htm';
+            return true;
+          } else {
+            if ( browerIE == true ) {
+              var request_os = window.navigator.appVersion;
+                  request_os = request_os.toLowerCase();
+              if ( request_os.indexOf('nt 6.') > 0 
+                || request_os.indexOf('nt 10.') > 0) {
+                self.location='html/trustsite.htm';
+                return true;
+              }
+            }
+            self.location='html/live.htm';
+            return true;
+          }
+        }
+      }
+    }
+    });
+  }
+  else
+  {
+    if (MobileBrowserCheck() == false) {
+      self.location='html/mlive.htm';
+      return true;
+    } else {
+      if ( browerIE == true ) {
+        var request_os = window.navigator.appVersion;
+            request_os = request_os.toLowerCase();
+        if ( request_os.indexOf('nt 6.') > 0 
+          || request_os.indexOf('nt 10.') > 0) {
+          self.location='html/trustsite.htm';
+          return true;
+        }
+      }
+      
+      self.location='html/live.htm';
+      return true;
+    }
+  }
+});
+</script>

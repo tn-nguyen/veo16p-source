@@ -1,0 +1,28 @@
+<!-- help.htm -->
+<form class="helpform" action="{{formFcgi}}" method="post">
+
+  <article id="article">
+    <div class="row">
+      {{#pageTitle}}<h2><span id="{{.}}">{{.}}</span></h2>{{/pageTitle}}
+    </div>
+    <section>
+      <div id="content">
+        {{#each rows}}
+          <div id="{{this.id}}" class="row">
+            {{#each this.cols}}
+              <div class="col-{{width}}">
+                <fieldset>
+                  <legend>{{legend}}</legend>
+                  <div id="{{template}}"></div>
+                </fieldset>
+              </div>
+            {{/each}}
+          </div>
+        {{/each}}
+        <!-- //row -->
+      </div>
+    </section>
+  </article>
+
+</form>
+<!-- //help.htm -->

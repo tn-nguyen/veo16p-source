@@ -1,0 +1,11 @@
+{
+  "id": "help",
+  "html": "template/help.htm",
+
+  "pageTitle": "Help",
+  "formFcgi": "../cgi-bin/webra_fcgi.fcgi",
+
+  "rows": [
+
+    {}]
+}

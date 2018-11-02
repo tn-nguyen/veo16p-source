@@ -1,0 +1,11 @@
+{
+  "id": "live",
+  "html": "template/live.htm",
+
+  "pageTitle": "live",
+  "formFcgi": "../cgi-bin/webra_fcgi.fcgi",
+
+  "rows": [
+
+    {}]
+}

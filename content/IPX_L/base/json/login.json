@@ -1,0 +1,11 @@
+{
+  "id": "login",
+  "html": "template/login.htm",
+
+  "pageTitle": "login",
+  "formFcgi": "../cgi-bin/webra_fcgi.fcgi",
+
+  "rows": [
+
+    {}]
+}

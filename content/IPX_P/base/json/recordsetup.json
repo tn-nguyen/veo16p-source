@@ -1,0 +1,11 @@
+{
+  "id": "recordsetup",
+  "html": "template/recordsetup.htm",
+  "defaultPage": "OperationMode",
+  "loadTemplate": {
+    "recordsetuplnb" : "recordsetupNavigation",
+    "confirm": "confirm"
+  },
+  "lnb": "recordsetuplnb",
+  "formFcgi": "../cgi-bin/webra_fcgi.fcgi"
+}

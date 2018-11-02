@@ -1,0 +1,136 @@
+{
+  "id": "dialogIpcameraConfiguration",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    "dialogIpcameraIpsetup": "dialogIpcameraIpsetup",
+    "dialogIpcameraPortsetup": "dialogIpcameraPortsetup",
+    "dialogIpcameraChangePassword": "dialogIpcameraChangePassword"
+  },
+
+  "dialog": true,
+  "text": "IP CAMERA CONFIGURATION",
+
+  "pages": [
+    {
+      
+      "rows": [
+        {
+          "cols": [
+            {
+              "width": 6,
+              "content": [
+                { "subtitle": { "text": "CONFIGURATION"} },
+                {
+                  "input": {
+                    "label": "CAMERA NAME",
+                    "id": "dialogIpcameraConfigurationCameraName",
+                    "type": "text",
+                    "disabled": true
+                  }
+                },
+                {
+                  "input-input": {
+                    "label": "IP ADDRESS",
+                    "id0": "dialogIpcameraConfigurationIpAddress",
+                    "type0": "text",
+                    "disabled0": true,
+                    "id1": "dialogIpcameraConfigurationIpcameraIpsetup",
+                    "type1": "button",
+                    "text1": "IP SETUP"
+                  }
+                },
+                {
+                  "input-input": {
+                    "label": "HTTP PORT",
+                    "id0": "dialogIpcameraConfigurationHttpPort",
+                    "type0": "text",
+                    "disabled0": true,
+                    "id1": "dialogIpcameraConfigurationIpcameraPortsetup",
+                    "type1": "button",
+                    "text1": "PORT SETUP"
+                  }
+                },
+                {
+                  "input": {
+                    "label": "RTSP PORT",
+                    "id": "dialogIpcameraConfigurationRtspPort",
+                    "type": "text",
+                    "disabled": true
+                  }
+                },
+                {
+                  "input": {
+                    "label": "USER NAME",
+                    "id": "dialogIpcameraConfigurationUserName",
+                    "type": "text",
+                    "disabled": true
+                  }
+                },
+                {
+                  "input-input": {
+                    "label": "PASSWORD",
+                    "id0": "dialogIpcameraConfigurationPassword",
+                    "type0": "password",
+                    "disabled0": true,
+                    "id1": "dialogIpcameraConfigurationIpcameraChangePassword",
+                    "type1": "button",
+                    "text1": "CHANGE PASSWORD"
+                  }
+                }
+              ]
+            },
+            {
+              "width": 4,
+              "last": true,
+              "content": [
+                { "subtitle": { "text": "CAMERA INFO"} },
+                { "string": { "text": "MAC ADDRESS" } },
+                {
+                  "string": {
+                    "id": "dialogIpcameraConfigurationMacAddress",
+                    "text": "",
+                    "br": ""
+                  }
+                },
+                { "string": { "text": "F/W VERSION" } },
+                {
+                  "string": {
+                    "id": "dialogIpcameraConfigurationFwVersion",
+                    "text": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "width": 6,
+              "content": [
+                { "subtitle": { "text": "DIAGNOSTIC TOOLS"} },
+                {
+                  "input": {
+                    "label": "IP CAMERA RESET",
+                    "id": "dialogIpcameraConfigurationCameraReset",
+                    "type": "button",
+                    "text": "RESET",
+                    "disabled": true
+                  }
+                },
+                {
+                  "input": {
+                    "label": "NETWORK TEST",
+                    "id": "dialogIpcameraConfigurationNetworkTestPingTest",
+                    "type": "button",
+                    "text": "PING TEST"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

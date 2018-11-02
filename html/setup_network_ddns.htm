@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    @import url("../styles/styles/global.css");
+    @import url("../styles/styles/setup.css");
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+
+  <script type="text/javascript">info_include();</script>
+
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+  passwordRenewCheck();
+  language_include();</script>
+
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+  <title></title>
+
+</head>
+
+<body>
+
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+        <script type="text/javascript">print_left_menu(document, "Network", "DDNS");</script>
+        </ul>
+      </div>
+
+      <form name="networksetting_ddns" id="networksetting_ddns" action='/cgi-bin/webra_fcgi.fcgi'>
+        <div id="c_sp_div_contents">
+          <div class="c_sp_div_frame c_sp_div_frame_dot">
+            <h2><span id="lang_ddnssetup">DDNS</span></h2>
+            <div class="c_sp_div_net_ddns">
+              <dl>
+                <dt>
+                  <span class="list">DDNS</span>
+                </dt>
+                <dd>
+                  <select id="ddnson" name="ddnson" class="lstdisp" >
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+                <dt>
+                    <span id='lang_DDNSservername' class="list">DDNS Server</span>
+                </dt>
+                <dd>
+                  <select id="ddnsserver" name="ddnsserver" class="lstdisp hidden_s1">
+                  </select>
+                  <input id="ddnsserverone" style="display:none" class="txtnet hidden_s1 show_alsok" disabled>
+
+                  <input type="text" id='ddnsservers1' name="ddnsserver" class="txtnet alphanumeric show_s1" maxlength="63" style="display:none" disabled>
+                </dd>
+                <dd class="remove_alsok">
+                  <!-- <select id="ddnsserver" name="ddnsserver" class="lstdisp hidden_s1"> -->
+                  <!-- </select> -->
+                  <!-- <input type="text" id='ddnsservers1' name="ddnsserver" class="txtnet alphanumeric show_s1" maxlength="63" style="display:none" disabled> -->
+                </dd>
+                <br/>
+                <dt class="hidden_s1">
+                  <span id='lang_DVRName' class="list">DVR Name</span>
+                </dt>
+                <dd class="hidden_s1">
+                  <input type="text" id="hostname" name="hostname" class="txtnet alphanumeric" maxlength="63">
+		  <input type="text" id="hidehostname" class="txtnet alphanumeric" maxlength="63" hidden/>
+                  <input type="button" id="ddnsRegTest" value="lang_DDNSRegTest" />
+                </dd>
+                <dt class="remove_alsok">
+                  <span id='lang_userid' class="list hidden_s1 none_ipx">USER NAME</span>
+                </dt>
+                <dd class="remove_alsok">
+                  <input type="text" id="username" name="username" class="txtnet alphanumeric hidden_s1 none_ipx" maxlength="63">
+		  <input type="text" id="hideusername" class="txtnet alphanumeric hidden_s1 none_ipx" maxlength="63" hide/>
+                </dd>
+                <dt class="remove_alsok">
+                  <span id='lang_password' class="list hidden_s1 none_ipx">PASSWORD</span>
+                </dt>
+                <dd class="remove_alsok">
+                  <input type="password" id="passwd" name="passwd" class="txtnet alphanumeric hidden_s1 none_ipx" maxlength="32">
+		  <input type="password" id="hidepasswd" class="txtnet alphanumeric hidden_s1 none_ipx" maxlength="32" hide/>
+                </dd>
+                <dt>
+                  <span class="list"><span id='lang_NVRAddr'>NVR Address</span></span>
+                </dt>
+                <dd>
+                  <input type="text" id="dvraddress" class="txtnet">
+		  <input type="text" id="hidedvraddress" class="txtnet" hidden/>
+                  <input type="button" id="ddnsConnTest" value="lang_DDNSConnTest" />
+                </dd>
+                <br/>
+                <dt class="show_s1 none_ipx">
+                  <span id='lang_p2p_enable' class="list">P2P ENABLE</span>
+                </dt>
+                <dd class="show_s1 none_ipx">
+                  <select id="s1_p2pEnable" name="s1_p2pEnable" class="lstdisp" >
+                    <option value="0">Off</option>
+                    <option value="1">On</option>
+                  </select>
+                </dd>
+                <dt>
+                  <span class="list">&nbsp;</span>
+                </dt>
+                <dd>
+                </dd>
+              </dl>
+            </div>
+	    <h2 id="sequrinet_title" name="sequrinet_title">SEQURINET SETTINGS</h2>
+            <div class="c_sp_div_net_ddns" id="sequrinet_config" name="sequrinet_config">
+              <dl>
+                <dt>
+                  <span class="list" id="lang_sequrinet">SEQURINET</span>
+                </dt>
+                <dd>
+                  <select id="sequrinet_enable" name="sequrinet_enable" class="lstdisp" >
+                    <option value="0">DISABLE</option>
+                    <option value="1">ENABLE</option>
+                  </select>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg">
+            </div>
+            <div id="printMsg">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="dialog_pleasewait" title="WAIT" style="display: none;">
+    <form id="form_wait">
+      <p><span class="tips">Please Wait...</span></p>
+    </form>
+  </div>
+
+  <div id="dialog_dhcpmsg" title="NOTICE" style="display: none;">
+    <p><span id="lang_dhcpon">DHCP NOTICE</span></p>
+  </div>
+
+  <script type="text/javascript" src="../scripts/init/NetInit.js"></script>
+  <script type="text/javascript">
+      ShowInit('NetDDNS');
+  </script>
+
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/model/NetModel.js"></script>
+  <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+  <script type="text/javascript" src="../scripts/view/NetView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/NetController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+        name: 'NetDDNS',
+        action: 'index',
+        debug: false
+    });
+
+    dvrpoke();
+  </script>
+</body>
+</html>
+

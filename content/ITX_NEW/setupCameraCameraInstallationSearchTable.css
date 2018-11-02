@@ -1,0 +1,30 @@
+/*********************************************************************************************************/
+/* setupCameraCameraInstallationSearchTable */
+/*********************************************************************************************************/
+#tableCameraCameraInstallationSearch {
+  width:95%;
+}
+
+#tableCameraCameraInstallationSearch .col-Model {
+  width:25%
+}
+
+#tableCameraCameraInstallationSearch .col-Address {
+  width:25%;
+}
+
+#tableCameraCameraInstallationSearch .col-Status {
+  width:10%;
+}
+
+#tableCameraCameraInstallationSearch .col-Occupied {
+  width:10%;
+}
+
+#tableCameraCameraInstallationSearch .col-AssignedChannel {
+  width:20%;
+}
+
+#tableCameraCameraInstallationSearch .col-Setup {
+  width:10%;
+}

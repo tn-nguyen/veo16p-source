@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    @import url("../styles/styles/global.css");
+    @import url("../styles/styles/setup.css");
+  </style>
+  <script type="text/javascript" src="../scripts/global.js"></script>
+  <script type="text/javascript">
+    info_include();
+  </script>
+
+  <script type="text/javascript" src="../scripts/libs.js"></script>
+  <script type="text/javascript" src="../scripts/top_menu.js"></script>
+  <script type="text/javascript" src="../scripts/left_menu.js"></script>
+  <script type="text/javascript" src="../scripts/Validator.js"></script>
+  <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+  <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+  <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();
+  </script>
+
+  <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+  <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+
+  <title></title>
+</head>
+
+<body>
+
+  <div id="c_g_div_wrapper">
+    <div id="title_layer">
+      <script type="text/javascript">
+        print_top_menu(document, "SETUP");
+      </script>
+    </div>
+    <div id="c_sp_div_menubar">
+      <div id="c_sp_div_menubar_sub">
+        <ul style="padding-left:10px; padding-top:10px;">
+          <script type="text/javascript">
+            print_left_menu(document, "System", "Date/Time");
+          </script>
+        </ul>
+      </div>
+
+      <form name="systemsetting_datetime" id="systemsetting_datetime">
+        <div id="c_sp_div_contents">
+          <div id="datetime_tabs">
+            <!--
+            <ul>
+              <li>
+              <a href='#datetime_tab_datetime'>
+                <span id='lang_DateTime'>
+                  DATE/TIME
+                </span>
+              </a>
+              </li>
+              <li>
+              <a href='#datetime_tab_holiday'>
+                <span id='lang_Holiday'>
+                  Holiday
+                </span>
+              </a>
+              </li>
+            </ul>
+            -->
+
+            <div id="datetime_tab_datetime">
+              <div class="c_sp_div_frame">
+                <h2><span id='lang_DateTimeSetup'>Date/Time setting</span></h2>
+                <div class="c_sp_div_system_date">
+                  <dl>
+                    <dt class="datetime" style="display:none;"><span class="list"><span id='lang_DateTimeSetting'>Date/Time</span></span></dt>
+                    <dd class="datetime" style="display:none;">
+                    <input type="button" id="dayandtime" name="dayandtime" class="btndisp" value="time"/>
+                    </dd>
+
+                    <dt><span class="list"><span id='lang_Dateformat'>Date format</span></span></dt>
+                    <dd>
+                    <select  id="dateformat" name="dateformat" class="lstdisp">
+                      <option value="0">YYYY/MM/DD</option>
+                      <option value="1">MM/DD/YYYY</option>
+                      <option value="2">DD/MM/YYYY</option>
+                    </select>	
+                    </dd>
+                    <dt><span class="list"><span id='lang_Timeformat'>Time format</span></span></dt>
+                    <dd>
+                    <select  id="timeformat" name="timeformat" class="lstdisp">
+                      <option value="0">24 HOUR</option>
+                      <option value="1">AM / PM</option>
+                    </select>	
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <div class="c_sp_div_frame">
+                <h2><span id='lang_NetworkTimeSync'>Network Time Sync</span></h2>
+                <div class="c_sp_div_system_date">
+                  <dl>
+                    <dt><span class="list"><span id='lang_Networktimeserversetup'>Network time server setup</span></span></dt>
+                    <dd>
+                    <input type="text" class="lstdisp" id="nettimeservsetup" name="nettimeservsetup" maxlength="64" />
+                    </dd>
+                    <dt><span class="list"><span id='lang_AutoTimeSync'>Auto Time Sync</span></span></dt>
+                    <dd>
+                    <select  id="autotimesync" name="autotimesync" class="lstdisp">
+                      <option value="0">Off</option>
+                      <option value="1">On</option>
+                    </select>
+                    </dd>
+                    <dt><span class="list"><span id='lang_SyncCycle'>Sync Cycle</span></span></dt>
+                    <dd>
+                    <select id="syncfreq" name="syncfreq" class="lstdisp">
+                      <option value="86400" id="lang_everyday">EVERY DAY</option>
+                      <option value="604800" id="lang_7day">7 DAYS</option>
+                      <option value="2592000" id="lang_30day">30 DAYS</option>
+                      <option value="5184000" id="lang_60day">60 DAYS</option>
+                      <option value="15552000" id="lang_180day">180 DAYS</option>
+                    </select>
+                    </dd>
+                    <dt><span class="list"><span id='lang_SyncTime'>Sync Time</span></span></dt>
+                    <dd>
+                    <select  id="synctime" name="synctime" class="lstdisp">
+                      <option value="0">00:00</option>
+                      <option value="1">01:00</option>
+                      <option value="2">02:00</option>
+                      <option value="3">03:00</option>
+                      <option value="4">04:00</option>
+                      <option value="5">05:00</option>
+                      <option value="6">06:00</option>
+                      <option value="7">07:00</option>
+                      <option value="8">08:00</option>
+                      <option value="9">09:00</option>
+                      <option value="10">10:00</option>
+                      <option value="11">11:00</option>
+                      <option value="12">12:00</option>
+                      <option value="13">13:00</option>
+                      <option value="14">14:00</option>
+                      <option value="15">15:00</option>
+                      <option value="16">16:00</option>
+                      <option value="17">17:00</option>
+                      <option value="18">18:00</option>
+                      <option value="19">19:00</option>
+                      <option value="20">20:00</option>
+                      <option value="21">21:00</option>
+                      <option value="22">22:00</option>
+                      <option value="23">23:00</option>
+                    </select>
+                    </dd>
+                    <dt><span class="list"><span id='lang_NextSyncTime'>Next Sync Time</span></span></dt>
+                    <dd>
+                    <input type="text" class="lstdisp" id="nextsynctime" name="nextsynctime" maxlength="64" disabled="true" />
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <div class="c_sp_div_frame c_sp_div_frame_dot remove_alsok">
+                <h2><span id='lang_TimezoneDST'>Timezone / DST</span></h2>
+                <div class="c_sp_div_system_date">
+                  <dl>
+                    <dt><span class="list"><span id='lang_Timezonesetup'>Time zone setup</span></span></dt>
+                    <dd>
+                    <select  id="timezone" name="timezone" class="lstdisp">
+                      <option value="0"> GMT-12:00 </option>
+                      <option value="1"> GMT-11:00 Pacific/Midway</option>
+                      <option value="2"> GMT-10:00 Pacific/Hawaii</option>
+                      <option value="3"> GMT-09:00 America/Anchorage</option>
+                      <option value="4"> GMT-08:00 America/LA</option>
+
+                      <option value="5"> GMT-07:00 America/Phoenix</option>
+                      <option value="6"> GMT-06:00 America/CST</option>
+                      <option value="7"> GMT-05:00 America/EST</option>
+                      <option value="8"> GMT-04:00 America/Halifax</option>
+                      <option value="9"> GMT-03:30 America/St_Johns</option>
+
+                      <option value="10">GMT-03:00 America/Sao_Paulo</option>
+                      <option value="11">GMT-02:00 Mid Atlantic</option>
+                      <option value="12">GMT-01:00 Atlantic/Azores</option>
+                      <option value="13">GMT+00:00 Europe/London</option>
+                      <option value="14">GMT+01:00 Europe/Berlin</option>
+
+                      <option value="15">GMT+02:00 Europe/Istanbul</option>
+                      <option value="16">GMT+02:00 Africa/Cairo</option>
+                      <option value="17">GMT+03:00 Europe/Moscow</option>
+                      <option value="18">GMT+03:30 Asia/Tehran</option>
+                      <option value="19">GMT+04:00 Asia/Muscat</option>
+
+                      <option value="20">GMT+04:30 Asia/Kabul</option>
+                      <option value="21">GMT+05:00 Asia/Karachi</option>
+                      <option value="22">GMT+05:30 Asia/Calcutta</option>
+                      <option value="23">GMT+05:45 Asia/Katmandu</option>
+                      <option value="24">GMT+06:00 Asia/Dhaka</option>
+
+                      <option value="25">GMT+06:30 Asia/Rangoon</option>
+                      <option value="26">GMT+07:00 Asia/Bangkok</option>
+                      <option value="27">GMT+08:00 Asia/Beijing</option>
+                      <option value="28">GMT+09:00 Asia/Tokyo</option>
+                      <option value="29">GMT+09:00 Asia/Seoul</option>
+
+                      <option value="30">GMT+09:30 Australia/Darwin</option>
+                      <option value="31">GMT+09:30 Australia/Adelaide</option>
+                      <option value="32">GMT+10:00 Australia/Brisbane</option>
+                      <option value="33">GMT+11:00 Pacific/Noumea</option>
+                      <option value="34">GMT+12:00 Newzealand</option>
+
+                      <option value="35">GMT+08:00 Australia/Perth</option>
+                      <option value="36">GMT+02:00 Middle East/Jordan</option>
+                      <option value="37">GMT+02:00 Middle East/Lebanon</option>
+                      <option value="38">GMT+02:00 Middle East/Syria</option>
+                      <option value="39">GMT+03:00 Middle East/SaudiArabia</option>
+
+                      <option value="40">GMT+03:00 Middle East/Iraq</option>
+                      <option value="41">GMT+03:30 Middle East/Iran</option>
+                      <option value="42">GMT+04:00 Middle East/UAE</option>
+                      <option value="43">GMT+10:00 Australia/Sydney</option>
+                      <option value="44">GMT-07:00 America/Edmonton</option>
+                      <!--<option value="99">User-defined D.S.T.       </option>-->
+                    </select>
+                    </dd>
+                    <dt><span class="list"><span id='lang_DST'>D.S.T</span></span></dt>
+                    <dd>
+                    <select  id="dst" name="dst" class="lstdisp">
+                      <option value="0">Off</option>
+                      <option value="1">On</option>
+                    </select>	
+                    </dd>
+                    <!-- user dst
+                    <dt><span class="list"><span id='lang_UserDST'>User Defined D.S.T</span></span></dt>
+                    <dd>
+                    <select id="userdst_y1" name="userdst_y1" class="lst_userdst" style="width:60px" disabled='true'>
+                      <option value="2011">2010</option>
+                      <option value="2012">2011</option>
+                    </select>
+                    <select id="userdst_m1" name="userdst_m1" class="lst_userdst" disabled='true'>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    <select id="userdst_d1" name="userdst_d1" class="lst_userdst" disabled='true'>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                    </select>
+                    ~
+                    <select id="userdst_y2" name="userdst_y1" class="lst_userdst" style="width:50px" disabled='true'>
+                      <option value="2011">2010</option>
+                      <option value="2012">2011</option>
+                    </select>
+                    <select id="userdst_m2" name="userdst_m2" class="lst_userdst" disabled='true'>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    <select id="userdst_d2" name="userdst_d2" class="lst_userdst" disabled='true'>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                    </select>
+                    </dd>
+                    -->
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <div id="datetime_tab_holiday">
+
+            </div>
+          </div>
+          <div id="c_g_div_button">
+            <input id='submit_button' type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+          </div>
+          <div id="c_g_div_msg">
+            <div id="errMsg">
+            </div>
+            <div id="printMsg">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="dialog_timesetting" style="display: none;">
+    <form id='form_datetime'>
+      <input type='text' style="height:0px; border:none;">
+      <div class="datetime_selector">
+        <table>
+          <tr>
+            <td><span id="lang_date">DATE</span></td>
+            <td><span id="lang_Hour">HOUR</span></td>
+            <td><span id="lang_Min">MINUTE</span></td>
+            <td><span id="lang_Sec">SECOND</span></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" id="datepicker"/>
+            </td>
+            <td>
+              <select id="hourpicker">
+              </select>
+            </td>
+            <td>
+              <select id="minutepicker">
+              </select>
+            </td>
+            <td>
+              <select id="secondpicker">
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
+    <!-- end of form id='form_new_user' -->
+  </div>
+  <!-- end of div id="user_dialog" -->
+
+  <div id="dialog_change_confirm" style="display: none;">
+    <form id="form_change_confirm">
+      <div id="div_password_check">
+        <p><span id="lang_confirm_password">CONFIRM PASSWORD</span></p>
+        <input type="password" id="password"/>
+      </div>
+      <div id="div_confirm_msg" style="display:none">
+        <p class="confirm_msg">
+          <span id="lang_confirm_msg">Some part of record can be erased.</br>Are you sure to continue?</span>
+        </p>
+      </div>
+      <p class="tips"></p>
+    </form>
+  </div>
+
+  <div id="dialog_change_wait" style="display: none;">
+    <form id="form_change_wait">
+      <p class="tips"></p>
+    </form>
+  </div>
+
+</body>
+  <script type="text/javascript" src="../scripts/init/SystemInit.js"></script>
+  <script type="text/javascript">
+    ShowInit('SystemDatetime');
+  </script>
+
+  <script type="text/javascript" src="../scripts/TimeZone.js"></script>
+  <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+  <script type="text/javascript" src="../scripts/Scmevt.js"></script>
+  <script type="text/javascript" src="../scripts/model/SystemModel.js"></script>
+  <script type="text/javascript" src="../scripts/view/SystemView.js"></script>
+  <script type="text/javascript" src="../scripts/controller/SystemController.js"></script>
+
+  <script type="text/javascript">
+    zzmvc({
+      name: 'SystemDatetime',
+      action: 'index',
+      debug: false
+    });
+
+    dvrpoke();
+  </script>
+</html>

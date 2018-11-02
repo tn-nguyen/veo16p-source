@@ -1,0 +1,67 @@
+{
+  "id": "setupCameraInstallationMode",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    "dialogRestart": "dialogRestart"
+  },
+
+  "pages": [{
+    "text": "INSTALLATION MODE",
+    "rows": [
+      {
+        "id": "",
+        "cols": [
+          {
+            "id": "setupCameraInstallationMode",
+            "content": [
+              { "subtitle": { "text": "INSTALLATION MODE"} },
+              {
+                "select": {
+                  "label": "INSTALLATION MODE",
+                  "id": "selectInstallationMode",
+                  "name": "setectInstallationMode",
+                  "value": "",
+                  "option": [
+                    {"value": "0", "text": "CCTV MODE (Recommended)"},
+                    {"value": "1", "text": "OPEN MODE (Advanced)"}
+                  ]
+                }
+              },
+              { "subtitle": { "text": "EXAMPLE NETWORK MAP"} },
+              {
+                "img": {
+                  "id": "imgCctvmodeNetworkMap",
+                  "name": "imgCctvmodeNetworkMap",
+                  "src": "/images/ITX_OLD/open_network_sample_01.png"
+                }
+              },
+              {
+                "img": {
+                  "id": "imgOpenmodeNetworkMap",
+                  "name": "imgOpenmodeNetworkMap",
+                  "src": "/images/ITX_OLD/open_network_sample_02.png",
+                  "style": "display: none"
+                }
+              },
+              { "string": { "id": "cctvmodeTextLan", "class": "cctvmodeText", "text": "LAN" } },
+              { "string": { "id": "cctvmodeTextProtectedNetwork", "class": "cctvmodeText", "text": "PROTECTED NETWORK" } },
+              { "string": { "id": "cctvmodeTextInternet", "class": "cctvmodeText", "text": "INTERNET" } },
+              { "string": { "id": "cctvmodeTextGateway", "class": "cctvmodeText", "text": "GATEWAY /\nSWITCH" } },
+              { "string": { "id": "cctvmodeTextPc1", "class": "cctvmodeText", "text": "PC" } },
+              { "string": { "id": "cctvmodeTextPc2", "class": "cctvmodeText", "text": "PC" } },
+              { "string": { "id": "cctvmodeTextDedicatedSwitch", "class": "cctvmodeText", "text": "DEDICATED SWITCH" } },
+
+              { "string": { "id": "openmodeTextOpenNetwork", "class": "openmodeText", "text": "LAN/WAN(Open Network)" } },
+              { "string": { "id": "openmodeTextInternet", "class": "openmodeText", "text": "INTERNET" } },
+              { "string": { "id": "openmodeTextGateway", "class": "openmodeText", "text": "GATEWAY" } },
+              { "string": { "id": "openmodeTextPc1", "class": "openmodeText", "text": "PC" } },
+              { "string": { "id": "openmodeTextPc2", "class": "openmodeText", "text": "PC" } },
+              { "string": { "id": "openmodeTextGeneralSwitch", "class": "openmodeText", "text": "GENERAL SWITCH" } }
+
+            ]
+          }
+        ]
+      }
+    ]
+  }]
+}

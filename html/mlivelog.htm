@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;" />
+		<title>ATM</title>
+
+		<style type="text/css">
+			<!--
+			@import url("../styles/styles/mglobal.css");
+			@import url("../styles/styles/mlive.css");
+			-->
+		</style>
+		<script type="text/javascript" src="../scripts/global.js"></script>
+
+		<script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+        <script type="text/javascript">
+	        <!--
+			info_include();
+	        -->
+    	</script>
+
+		
+		<script type="text/javascript" src="../scripts/mlive_request.js"></script>
+		<script type="text/javascript" src="../scripts/Validator.js"></script>
+       
+	</head>
+
+	<body>
+
+		<form name="systemsetting_info" id="systemsetting_info">
+			<div id="c_m_div_contents">
+				<ul style="float:left; margin-right:5px;">
+					<li><span class="mlist">S/W version</span></li>
+					<li><span class="mlist">H/W Version</span></li>
+					<li><span class="mlist">Video signal type</span></li>
+					<li><span class="mlist">Disk capacity</span></li>
+					<li><span class="mlist">IP address</span></li>
+					<li><span class="mlist">MAC address</span></li>
+					<li><span class="mlist">DDNS domain name</span></li>
+					<li><span class="mlist">Net client port</span></li>
+					<li><span class="mlist">Web server port</span></li>
+				</ul>
+				<ul>
+					<li><input type="text" id="swver" name="swver" disabled class="csysinfo"/></li>
+					<li><input type="text" id="hwver" name="hwver" disabled class="csysinfo"/></li>
+					<li><input type="text" id="vstype" name="vstype" disabled class="csysinfo"/></li>
+					<li><input type="text" id="diskcap" name="diskcap" disabled class="csysinfo"/></li>
+					<li><input type="text" id="ipaddr" name="ipaddr" disabled class="csysinfo"/></li>
+					<li><input type="text" id="macaddr" name="macaddr" disabled class="csysinfo"/></li>
+					<li><input type="text" id="ddnsdomain" name="ddnsdomain" disabled class="csysinfo"/></li>
+					<li><input type="text" id="netclntport" name="netclntport" disabled class="csysinfo"/></li>
+					<li><input type="text" id="webservport" name="webservport" disabled class="csysinfo"/></li>
+				</ul>
+				<input type="button" id="livepage" value="Live" class="btn_live" onClick="Mlive_location_move();" />
+				<input type="button" id="livepage" value="Log" class="btn_live" onClick="Mlog_location_move();" />
+			</div>
+		</form>
+	<script type="text/javascript">
+		function Msystem_OnLoad_func()
+{                  
+	system_btn_init();
+
+	Mlive_postSetup(document.systemsetting_info, "action=get_setup&menu=system.manage");
+}                      
+
+addLoadEvent(Msystem_OnLoad_func);
+addUnLoadEvent(dvr_led_on_stop);
+function Mlive_location_move()
+{
+	self.location='../html/mlive.htm';
+}
+
+function Mlog_location_move()
+{
+	self.location='../html/mlivelog.htm';
+}
+
+addUnLoadEvent(onClickLiveStop);
+</script>
+</body>
+</html>

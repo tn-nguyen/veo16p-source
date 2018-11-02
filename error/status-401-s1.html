@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <style type="text/css">
+    .forgotPassword {width: 900px; border: 1px solid black; padding: 10px 10px 40px 10px; background-color: #E6F0F9; font-weight: normal}
+    .clear {clear:both;}
+    .language {float:right; position:relative; top: -30px;}
+    .language select {width: 100px;margin-left:10px;}
+    dl {margin-left: 33px;line-height: 1.5em;}
+    dt.label {width: 250px; text-align: right; float: left; margin-right: 10px;}
+    dt.label input.authType {float:left;}
+    dd select {width:150px;}
+    dd input[type='text'], input[type='password'] {width:150px}
+    dd input[type='button'] {width:150px}
+    .submitCancle {float:right;width:100px;}
+  </style>
+</head>
+
+<body>
+  <div class="forgotPassword">
+    <h2><span id="langFindPass">FIND PASSWORD</span></h2>
+    <div class="language">
+      <span id="langLanguage">LANGUAGE</span>
+      <select id="language">
+        <option value="english">English</option>
+        <option value="korean">한국어</option>
+      </select>
+    </div>
+    <hr class="clear"/>
+    <p><span id="langDiscript">The password may be changed after completing the verification process through a registered mobile phone/telephone number or e-mail.</span></p>
+    <dl>
+      <dt class="label"> <!-- user -->
+        <span id="langUserId">USER ID</span>
+      </dt>
+      <dd>
+        <select id="userId"/>
+        </select>
+      </dd> <!-- //user -->
+    </dl>
+    <div class="divAuthentication">
+      <div>
+        <dl>
+          <dt class="label"> <!-- phone -->
+            <input type="radio" id="phoneAuthetication" class="authType" name="authType" disabled/>
+            <label for="phoneAuthentication">
+              <span id="langPhone">MOBILE PHONE / TEHEPHONE</span>
+            </label>
+          </dt>
+          <dd>
+            <input id="phoneNumber" class="authfield" type="text" value="" maxlength="63" disabled/>
+            <input id="sendVerificationCodeByPhone" class="sendVerificationCode" type="button" value="인증번호받기" disabled/>
+          </dd> <!-- //phone -->
+        </dl>
+      </div>
+      <div>
+        <dl>
+          <dt class="label"> <!-- e-mail -->
+            <input type="radio" id="emailAuthetication" class="authType" name="authType" disabled/>
+            <label for="emailAuthentication">
+              <span id="langEmail">EMAIL</span>
+            </label>
+          </dt>
+          <dd>
+            <input id="emailAddress" class="authfield" type="text" value="" disabled maxlength="63"/>
+            <input id="sendVerificationCodeByEmail" class="sendVerificationCode langSendCode" type="button" value="SEND VERIFICATION CODE" disabled/>
+          </dd> <!-- //e-mail -->
+        </dl>
+      </div>
+      <div class="inputVerificationCode">
+        <dl>
+          <dt class="label">
+            <span id="langInputCode">INPUT VERIFICATION CODE</span>
+          </dt>
+          <dd>
+            <input type="text" id="authCode" value=""/>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="divNewPassword">
+      <dl>
+        <dt class="label">
+          <span id="langPassword">PASSWORD</span>
+        </dt>
+        <dd>
+          <input id="password" type="password" maxlength="16" value=""/>
+        </dd>
+        <dt class="label">
+          <span id="langConfirmPassword">CONFIRM PASSWORD</span>
+        </dt>
+        <dd>
+          <input id="confirmPassword" type="password" maxlength="16" value=""/>
+        </dd>
+      </dl>
+    </div>
+    <hr/>
+    <input id="cancel" type="button" class="submitCancle langCancel" value="CANCEL"/>
+    <input id="apply" type="button" class="submitCancle langApply" value="APPLY"/>
+  </div>
+
+  <script type="text/javascript">
+    lang = {
+      english: {
+        "langLanguage": "LANGUAGE",
+        "langUserAuth": "USER AUTHENTICATION",
+        "langFindPass": "FIND PASSWORD",
+        "langDiscript": "The password may be changed after completing the verification process through a registered mobile phone/telephone number or e-mail.",
+        "langUserId": "USER ID",
+        "langPhone": "MOBILE PHONE / TEHEPHONE",
+        "langEmail": "EMAIL",
+        "langApply": "APPLY",
+        "langCancel": "CANCEL",
+        "langInputCodeDiscript": 'please enter the authorization code',
+        "langSendCode": "SEND VERIFICATION CODE",
+        "langCodeSuccess": "Sending a verification code succeeded.",
+        "langCodeFail": "Sending a verification code failed.",
+        "langInputCode": "INPUT VERIFICATION CODE",
+        "langAuthSuccess": "User authentication succeeded.",
+        "langAuthFail": "User authentication failed.",
+        "langVaildCode": "Vaild authentication code.",
+        "langInvalidCode": "Invalid authentication code.",
+        "langNewPassword": 'Please input new password.',
+        "langDone": "Password Successfully Changed.\nRedirect to main page. Please Login with new password.",
+        "langChangaPasswordFail": "Password was not changed.",
+        "langCancelFindPassword": 'Cancel operation and revert to main page.',
+        "langEmailError": "E-mail format error!",
+        "langPassword": "PASSWORD",
+        "langConfirmPassword": "CONFIRM PASSWORD",
+        "langInternetError": "Must be connected to the Internet to use find password feature."
+      },
+      korean: {
+        "langLanguage": "언어",
+        "langUserAuth": "사용자 인증",
+        "langFindPass": "암호 찾기",
+        "langDiscript": "등록된 휴대폰/전화번호 또는 이메일로 확인 과정을 거친 후, 비밀번호를 변경할 수 있습니다.",
+        "langUserId": "사용자 ID",
+        "langPhone": "휴대폰 / 전화번호",
+        "langEmail": "이메일",
+        "langApply": "적용",
+        "langCancel": "취소",
+        "langInputCodeDiscript": '등록된 휴대폰/전화번호 또는 이메일로 발급받은 임시 암호를 입력하시기 바랍니다.',
+        "langSendCode": "인증번호받기",
+        "langCodeSuccess": "인증번호가 전송되었습니다..",
+        "langCodeFail": "인증번호 전송이 실패했습니다..",
+        "langInputCode": "인증번호입력",
+        "langAuthSuccess": "사용자 인증 성공",
+        "langAuthFail": "사용자 인증 실패",
+        "langVaildCode": "인증코드가 확인 되었습니다.",
+        "langInvalidCode": "올바르지 않은 인증 코드입니다.",
+        "langNewPassword": '새로운 암호를 설정해 주시기 바랍니다.',
+        "langDone": "비밀번호가 성공적으로 수정되었습니다.\n메인페이지로 돌아갑니다. 다시 로그인하세요.",
+        "langChangaPasswordFail": "비밀번호가 수정되지 않았습니다.",
+        "langCancelFindPassword": '진행을 취소하고 메인페이지로 돌아가시겠습니까?',
+        "langEmailError": "올바르지 않은 이메일 주소입니다.!",
+        "langPassword": "암호",
+        "langConfirmPassword": "암호 확인",
+        "langInternetError": "비밀번호 찾기 기능은 장비에 인터넷이 연결 되어있어야 가능합니다."
+      }
+    };
+  </script>
+
+  <script type="text/javascript">
+    var STATUS = "USERAUTHENTICATION",
+        USERDATA,
+        LANGUAGE = "english",
+        ENHANCED = false;
+
+    var ArrayProto = Array.prototype,
+        slice = ArrayProto.slice;
+
+    function checkInternet() {
+      if (!$) {
+        alert(lang[LANGUAGE].langInternetError);
+        history.back();
+        return false;
+      }
+      return true;
+    }
+
+    function arrayHead(array, n, guard) {
+      if (array == null) return void 0;
+      return (n != null) && !guard ? slice.call(array, 0, n) : array[0];
+    }
+
+    function resultToJson(data) {
+      var sn = '&',
+          se = '=',
+          key, tempKey, index, value,
+          ret = {};
+
+      if (data === null) return data;
+      if (data.indexOf(sn) < 0 || data.indexOf(se) < 0) return data;
+
+      data = data.split(sn);
+
+      for (var i in data) {
+        data[i] = data[i].split(se);
+        if (data[i][0] !== '') {
+          key = data[i][0].split('_');
+          index = key[key.length-1];
+          if (!isNaN(parseInt(index, 10))) {
+            if (typeof ret[index] !== 'object') {
+              ret[index] = {};
+            }
+            tempKey = decodeURIComponent(arrayHead(key, key.length-1).join('_'));
+            ret[index][tempKey] = decodeURIComponent(data[i][1]);
+          } else {
+            ret[data[i][0]] = decodeURIComponent(data[i][1]);
+          }
+        }
+      }
+
+      return ret;
+    }
+
+    function initialize() {
+      updateUserData();
+      $('#phoneNumber').attr('disabled', 'disabled');
+      $('#emailAddress').attr('disabled', 'disabled');
+      $('.divNewPassword').hide();
+      $('#sendVerificationCodeByPhone').attr('disabled', 'disabled');
+      $('#sendVerificationCodeByEmail').attr('disabled', 'disabled');
+      $('.sendVerificationCode').hide();
+      $('.inputVerificationCode').hide();
+    }
+
+    function updateUserData() {
+      $.ajax({
+        datatype : 'text',
+        success: updateUserDataReturn,
+        type : 'POST',
+        url : '/webra_findpw.fcgi',
+        data: 'action=recovery&menu=get_user_list'
+      });
+    }
+
+    function updateUserDataReturn(data, textStatus, jqXHR) {
+      // updateUserData's return callback
+      USERDATA = resultToJson(data);
+
+      var userid = $('#userId');
+
+      for (var i = 0 ; i < USERDATA.user_cnt ; i += 1) {
+        userid.append( $('<option value="' + i + '">').html(USERDATA[i].user) );
+      }
+      changeUserid();
+    }
+
+    function changeLanguage(events) {
+      var target;
+      LANGUAGE = $('#language').val();
+
+      for (var i in lang[LANGUAGE]) {
+        //console.log(lang[LANGUAGE][i]);
+        if (!i) continue;
+
+        target = $('#' + i);
+        target.html(lang[LANGUAGE][i]);
+
+        target = $('.' + i);
+        target.each(function (index) {
+          $(this).val(lang[LANGUAGE][i]);
+        });
+      }
+    }
+
+    function changeUserid(event) {
+      var index = $('#userId').val();
+
+      $('#phoneNumber').attr('disabled', 'disabled');
+      $('#phoneNumber').val('');
+      $('#emailAddress').attr('disabled', 'disabled');
+      $('#emailAddress').val('');
+      $('#phoneAuthetication').attr('disabled', 'disabled');
+      $('#phoneAuthetication').prop('checked', false);
+      $('#emailAuthetication').attr('disabled', 'disabled');
+      $('#emailAuthetication').prop('checked', false);
+      $('#sendVerificationCodeByPhone').attr('disabled', 'disabled');
+      $('#sendVerificationCodeByEmail').attr('disabled', 'disabled');
+
+      if (USERDATA[index].sms != '1' && USERDATA[index].email != '1') {
+        $('#apply').attr('disabled', 'disabled');
+        return;
+      }
+
+      if (USERDATA[index].sms == '1') {
+        $('#phoneAuthetication').removeAttr('disabled');
+      } else {
+        $('#phoneAuthetication').attr('disabled', 'disabled');
+      }
+
+      if (USERDATA[index].email == '1') {
+        $('#emailAuthetication').removeAttr('disabled');
+      } else {
+        $('#emailAuthetication').attr('disabled', 'disabled');
+      }
+    }
+
+    function changeAuthType(events) {
+      var checked;
+      if ($('#phoneAuthetication').prop('checked')) checked = '1';
+      else if ($('#emailAuthetication').prop('checked')) checked = '0';
+
+      switch (checked) {
+        case "1":
+          $('#phoneNumber').removeAttr('disabled');
+          $('#emailAddress').attr('disabled', 'disabled');
+          $('#sendVerificationCodeByPhone').removeAttr('disabled');
+          $('#sendVerificationCodeByEmail').attr('disabled', 'disabled');
+          break;
+        case "0":
+          $('#phoneNumber').attr('disabled', 'disabled');
+          $('#emailAddress').removeAttr('disabled');
+          $('#sendVerificationCodeByPhone').attr('disabled', 'disabled');
+          $('#sendVerificationCodeByEmail').removeAttr('disabled');
+          break;
+        default:
+          break;
+      }
+      $('#apply').removeAttr('disabled');
+    }
+
+    function UserAuthReturn(data, textStatus, jqXHR) {
+      var ret = resultToJson(data);
+      if (ret['return'] == '1') {
+        alert(lang[LANGUAGE].langAuthSuccess);
+        $('#userId').attr('disabled', 'disabled');
+        $('.authType').attr('disabled', 'disabled');
+        $('.authfield').attr('disabled', 'disabled');
+        $('.sendVerificationCode').show();
+      } else {
+        alert(lang[LANGUAGE].langAuthFail);
+      }
+    }
+
+    function sendVerificationReturn(data, textStatus, jqXHR) {
+      var ret = resultToJson(data);
+      if (ret['return'] == '1') {
+        alert(lang[LANGUAGE].langCodeSuccess);
+        STATUS = "VERIFICATION";
+        $(".inputVerificationCode").show();
+        $('#notice').html(lang[LANGUAGE].langInputCodeDiscript);
+      } else {
+        alert(lang[LANGUAGE].langCodeFail);
+      }
+    }
+
+    function verificationCodeReturn(data, textStatus, jqXHR) {
+      var ret = resultToJson(data);
+      if (ret['return'] == '1') {
+        alert(lang[LANGUAGE].langVaildCode);
+        STATUS = "NEWPASSWORD";
+        $('.divAuthentication').hide();
+        $('.divNewPassword').show();
+        ENHANCED = ret.use_complex_pw == "1" ? true : false;
+        $('#notice').html(lang[LANGUAGE].langNewPassword);
+      } else {
+        alert(lang[LANGUAGE].langInvalidCode);
+      }
+    }
+
+    function setNewPasswordReturn(data, textStatus, jqXHR) {
+      var ret = resultToJson(data);
+      if (ret['return'] == '1') {
+        alert(lang[LANGUAGE].langDone);
+        self.location = "";
+      } else {
+        alert(lang[LANGUAGE].langChangaPasswordFail);
+      }
+    }
+
+    function clickSendVerificationCode() {
+      var checked, data;
+
+      if ($('#phoneAuthetication').prop('checked')) checked = '1';
+      else if ($('#emailAuthetication').prop('checked')) checked = '0';
+      if (checked != '0' && checked != '1') return;
+
+      data = 'action=recovery&menu=send_auth_code'
+            + '&user=' + USERDATA[$('#userId').val()].user
+            + '&method=' + checked
+            + '&address=';
+      if (checked == '0') {
+        data += $('#emailAddress').val();
+      } else {
+        var number = $('#phoneNumber').val();
+        while (number.indexOf('-') >= 0) {
+          number = number.replace('-' , '');
+        }
+        data += number;
+      }
+
+      $.ajax({
+        datatype : 'text',
+        success: sendVerificationReturn,
+        type : 'POST',
+        url : '/webra_findpw.fcgi',
+        data: data
+      });
+    }
+
+    function validatePassword() {
+      return true;
+    }
+
+    function clickApply() {
+      var ret;
+      switch(STATUS) {
+        case "USERAUTHENTICATION":
+          var checked, data;
+
+          if ($('#phoneAuthetication').prop('checked')) checked = '1';
+          else if ($('#emailAuthetication').prop('checked')) checked = '0';
+          if (checked != '0' && checked != '1') return;
+
+          data = 'action=recovery&menu=auth_user'
+                + '&user=' + USERDATA[$('#userId').val()].user
+                + '&method=' + checked
+                + '&address=';
+          if (checked == '0') {
+            data += $('#emailAddress').val();
+          } else {
+            var number = $('#phoneNumber').val();
+            while (number.indexOf('-') >= 0) {
+              number = number.replace('-' , '');
+            }
+            data += number;
+          }
+
+          $.ajax({
+            datatype : 'text',
+            success: UserAuthReturn,
+            type : 'POST',
+            url : '/webra_findpw.fcgi',
+            data: data
+          });
+          break;
+        case "VERIFICATION":
+          var data = 'action=recovery&menu=input_auth_code'
+                + '&user=' + USERDATA[$('#userId').val()].user
+                + '&auth_codes=' + $('#authCode').val();
+
+          $.ajax({
+            datatype : 'text',
+            success: verificationCodeReturn,
+            type : 'POST',
+            url : '/webra_findpw.fcgi',
+            data: data
+          });
+          break;
+        case "NEWPASSWORD":
+          var data;
+          // if (!validatePassword()) {
+          //   return;
+          // }
+          data = 'action=recovery&menu=set_new_password'
+                + '&user=' + USERDATA[$('#userId').val()].user
+                + '&pw=' + $('#password').val()
+                + '&auth_codes=' + $('#authCode').val();
+
+          $.ajax({
+            datatype : 'text',
+            success: setNewPasswordReturn,
+            type : 'POST',
+            url : '/webra_findpw.fcgi',
+            data: data
+          });
+          break;
+      }
+    }
+
+    function clickCancel() {
+      var ret = confirm(lang[LANGUAGE].langCancelFindPassword);
+      if (ret) {
+        self.location = '/index.htm';
+      }
+    }
+
+    function registEvent() {
+      $('#language').change(function(events) {changeLanguage(events);});
+      $('#userId').change(function(events) {changeUserid(events);});
+      $('.authType').change(function(events) {changeAuthType(events);});
+      $('#sendVerificationCodeByPhone').click(function(events) {clickSendVerificationCode();});
+      $('#sendVerificationCodeByEmail').click(function(events) {clickSendVerificationCode();});
+      $('#apply').click(function(events) {clickApply();});
+      $('#cancel').click(function(events) {clickCancel();});
+    }
+
+    window.onload = function() {
+      checkInternet();
+      initialize();
+      registEvent();
+    };
+  </script>
+</body>
+
+</html>

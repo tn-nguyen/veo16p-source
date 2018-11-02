@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">info_include()</script>
+
+    
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include()</script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+    <title></title>
+
+  </head>
+
+	<body>
+
+    	<div id="c_g_div_wrapper">
+    		<div id="title_layer">
+    			<script type="text/javascript">print_top_menu(document, "SETUP")</script>
+            </div>
+    		<div id="c_sp_div_menubar">
+    			<div id="c_sp_div_menubar_sub">
+    				<ul style="padding-left:10px; padding-top:10px;">
+    					<script type="text/javascript">print_left_menu(document, "Record", "NetStreaming recording")</script>
+    			    </ul>
+    		    </div>
+    
+        		<form name="recordsetting_panic" id="recordsetting_panic">
+        			<div id="c_sp_div_contents">
+        				<div class="c_sp_div_frame c_sp_div_frame_dot">
+        					<h2><span id='lang_NetStreamingsetting'>Network Streaming setting</span></h2>
+        					<div id="rec_tabs">
+                                <!--- First Tab -->
+                                <div id="rec_tab_param">
+                                    <div id="c_sp_div_rec_contents">  
+                                        <table class="rec-param" summary="">
+                                            <thead>
+                                                <tr>
+                                                    <th class="tdhead1"></th>
+                                                    <th class="tdhead2"><span id='lang_MaxSize'>Max Resolution</span></th>
+                                                    <th class="tdhead3"><span>FPS</span></th>
+                                                    <th class="tdhead4"><span id='lang_Quality'>Quality</span></td>
+                                                </tr>         
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="tdsfq1" ><span class='title1'>Ch 1</span></td>
+                                                    <td class="tdsfq2">
+                                                        <select id="size0" name="size0" >
+                                                        </select>									
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps0" name="fps0" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality0" name="quality0">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdsfq1" ><span class='title2'>Ch 2</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size1" name="size1" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps1" name="fps1" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality1" name="quality1">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdsfq1" ><span class='title3'>Ch 3</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size2" name="size2" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps2" name="fps2" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality2" name="quality2">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdsfq1" ><span class='title4'>Ch 4</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size3" name="size3" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps3" name="fps3" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality3" name="quality3">
+   	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tbody class='chenable8'>  
+                                                <tr class='ch8tr'>
+                                                    <td class="tdsfq1" ><span class='title5'>Ch 5</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size4" name="size4" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps4" name="fps4" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality4" name="quality4">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch8tr'>
+                                                    <td class="tdsfq1" ><span class='title6'>Ch 6</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size5" name="size5" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps5" name="fps5" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality5" name="quality5">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch8tr'>
+                                                    <td class="tdsfq1" ><span class='title7'>Ch 7</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size6" name="size6" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps6" name="fps6" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality6" name="quality6">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch8tr'>
+                                                    <td class="tdsfq1" ><span class='title8'>Ch 8</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size7" name="size7" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps7" name="fps7" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality7" name="quality7">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tbody class='chenable16'>  
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title9'>Ch 9</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size8" name="size8" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps8" name="fps8" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality8" name="quality8">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title10'>Ch 10</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size9" name="size9" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps9" name="fps9" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality9" name="quality9">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title11'>Ch 11</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size10" name="size10" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps10" name="fps10" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality10" name="quality10">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title12'>Ch 12</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size11" name="size11" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps11" name="fps11" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality11" name="quality11">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title13'>Ch 13</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size12" name="size12" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps12" name="fps12" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality12" name="quality12">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title14'>Ch 14</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size13" name="size13" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps13" name="fps13" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality13" name="quality13">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title15'>Ch 15</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size14" name="size14" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >
+                                                        <select id="fps14" name="fps14" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality14" name="quality14">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class='ch16tr'>
+                                                    <td class="tdsfq1" ><span class='title16'>Ch 16</span></td>
+                                                    <td class="tdsfq2" >
+                                                        <select id="size15" name="size15" >
+                                                        </select>
+                                                    </td>
+                                                    <td class="tdsfq3" >												
+                                                        <select id="fps15" name="fps15" >
+                                                        </select>												
+                                                    </td>
+                                                    <td class="tdsfq4" >
+                                                        <select id="quality15" name="quality15">
+	                                                        <option value="A">Highest</option>
+	                                                        <option value="B">High</option>
+	                                                        <option value="C">Standard</option>
+	                                                        <option value="D">Low</option>
+	                                                        <option value="E">Lowest</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br/>
+                                        <div id='adaptive_streaming' class='remove_alsok'>
+                                          <input type='checkbox' id='stream_control' name='stream_control'>
+                                            <span id='lang_stream_control'>ENABLE ADAPTIVE STREAMING CONTROL FOR REMOTE CLIENTS.</span>
+                                          </input>
+                                        </div>
+                                        
+                                        <div id="rec-calc" class="rec-calc">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='help'>
+                              <input id="btn_help" type="button" value="HELP"></input>
+                            </div>
+                        </div>                     
+                        <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>            
+        			</div>                 
+        		</form> 	    
+    		</div>  
+    	</div>
+
+        <div id="dialog_rec_sched">
+        </div>
+        
+        <div id="dialog_rec_param">
+        </div>
+    
+    <div id="dialog_help" style="display:none">
+      <p><span id="lang_netst_help_1">Adaptive streaming control for remote clients</span></p>
+      <p><span id="lang_netst_help_2"> - Bitrate or frame rate can drop to 15FPS during SD recording.</span></p>
+    </div>
+
+    <script type="text/javascript">
+            $('#c_sp_div_menubar_sub').hide();
+            $('#c_sp_div_contents').hide();
+    </script>
+    
+        <script type="text/javascript" src="../scripts/init/RecordInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('NetStream');
+        </script>
+    
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/RecordModel.js"></script>
+    
+        <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+        <script type="text/javascript" src="../scripts/ParamWidget.js"></script>
+        <script type="text/javascript" src="../scripts/view/RecordView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/RecordController.js"></script>
+    
+        <script>
+            zzmvc({
+                name: 'NetStream',
+                action: 'index',
+                debug: false
+            });
+    
+            dvrpoke();
+        </script>
+    </body>
+</html>                    
+

@@ -1,0 +1,14 @@
+{
+  "id": "recordsetupNavigation",
+  "html": "template/recordsetupNavigation.htm",
+  "class": "lnb",
+
+  "menu": [
+    {"text": "Operation Mode", "textId": "operation.mode", "url": "#recordsetup/OperationMode"},
+    {"text": "Continuous Recording", "textId": "continuous.recording", "url": "#recordsetup/ContinuousRecording"},
+    {"text": "Motion Recording", "textId": "motion.recording", "url": "#recordsetup/MotionRecording"},
+    {"text": "Alarm Recording", "textId": "alarm.recording", "url": "#recordsetup/AlarmRecording"},
+    {"text": "Panic Recording", "textId": "panic.recording", "url": "#recordsetup/PanicRecording"},
+    {"text": "Network Streaming", "textId": "network.streaming", "url": "#recordsetup/NetworkStreaming"}
+  ]
+}

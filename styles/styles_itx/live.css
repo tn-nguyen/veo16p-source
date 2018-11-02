@@ -1,0 +1,159 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet
+
+file Name : live.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Frame */
+#c_l_div_contents {float:left; width:990px; min-height:700px; margin-left:0px; margin-top:0px;background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:2;}
+#div_change_password {margin-top:56px; float:left; width:auto; background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:2; padding:3px;}
+#c_l_div_livefrm {width:722px; min-height:405px; background-color:#3e3e3e; border:0px; margin:20px 135px auto 111px; border:1px solid #ffffff;}
+/**************************************************************************************************************************************/
+/* DISPLAY */
+#c_l_div_live {width:720px; height:405px; background-color:#eeeeee; border:1px solid #3e4e58; margin:0px 135px auto 0px;}
+.c_l_img_jpeglive {width:984px; height:557px;}
+
+/* Tool Bar */
+#c_l_div_toolbar {width:722px; height:29px; background-image:url(../../images/images_i3/live_control_bg.png); margin:1px 135px auto 0px;}
+#c_l_div_toolbar ul.btn1 {float:left; cursor:pointer; cursor:hand;}
+#c_l_div_toolbar ul.btn2 {float:left; cursor:pointer; cursor:hand;}
+#c_l_div_toolbar ul.btn3 {float:left; cursor:pointer; cursor:hand;}
+#c_l_div_toolbar ul.btn4 {float:left; cursor:pointer; cursor:hand;}
+#c_l_div_toolbar li.divided {float:left; width:30px; margin:0;}
+#c_l_div_toolbar li.divided img { width: 30px; height: 30px}
+#c_l_div_toolbar li.bar {float:left; width:1px; margin:0; width:1; height:29px;}
+#c_l_div_toolbar .lst_ch {
+	float:left;
+	position:relative;
+	top:3px;
+	width:130px;
+	height:21px;
+	border: 1px solid #A3BCD3;
+	font-size: 14px;
+	color: #373487;
+	text-align: center;
+	cursor:pointer;
+	cursor:hand;
+}
+
+/* Tab */
+#c_l_div_tab {width:484px; height:32px; margin:20px 493px auto 0px; z-index:6;}
+#c_l_div_tab ul {margin:0; padding:0; overflow:hidden;left: 0px;}
+#c_l_div_tab li {float:left; padding-top:5px; width:120px; height:32px; padding-right:1px;
+	/*background:url(../../images/images/live_tab_nor.gif) no-repeat;*/
+	background: #363636;
+	 text-align:center;
+}
+#c_l_div_tab li.on span {font-weight:bold; color:#c3c3c3; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_l_div_tab li a {color:#FFFFFF; font-size:14px; font-family:Arial; letter-spacing:-1; text-decoration:none;}
+#c_l_div_tab li.on {
+	border-top: 2px solid #8bc34a;
+	width:120px;
+	height:23px;
+	padding-right:1px;
+	/*background:url(../../images/images/live_tab_sel.gif) no-repeat;font-weight:bold; */
+	background: #444444;
+	color:#c3c3c3;
+	font-size:14px; font-family:Arial; letter-spacing:-1;
+	text-decoration:none; cursor:pointer; cursor:hand;}
+#c_l_div_tab li.off {width:120px;
+	height:25px;
+	padding-right:1px; no-repeat;font-weight:normal; color:#ffffff; font-size:14px;
+	font-family:Arial; letter-spacing:-1; text-decoration:none; cursor:pointer; cursor:hand;}
+
+/**************************************************************************************************************************************/
+/* Status/log -refresh time */
+.c_l_lst_reftime {width:109px; margin:2px 0 1px 0;}
+
+/* Status/log - refresh button */
+.c_l_btn_re {width:120px; height:23px; margin:10px auto auto auto; }
+/**************************************************************************************************************************************/
+/* Status */
+.c_l_tb_status img {display: block; margin-left: auto; margin-right: auto;width: 16px; height: auto;}
+
+#c_l_div_status_contents {margin:-1px 134px 20px 0px; width:722px; margin-bottom:20px; background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:4;}
+.c_l_tb_status {width:656px; height:139px; padding:0; table-layout:fixed; margin:19px auto 5px auto; border-collapse:collapse;}
+.c_l_tb_status td.head {width:141px; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; font-weight:normal; color:#373487; letter-spacing:-1; text-decoration:none; text-align:center;}
+*.c_l_tb_status td.head {width:auto; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; font-weight:normal; color:#373487; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status td.ch_1 {width:31px; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; color:#84B6D7; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status td.ch_2 {width:31px; padding:0; border:1px solid #ffffff; background-color:#D5E4F4; color:#6CA4C8; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status td.alarm_01 {width:31px; border:1px solid #ffffff; background-color:#F2F3F5;padding-left:8px; padding-right:7px;}
+.c_l_tb_status td.alarm_05 {width:31px; border:1px solid #ffffff; background-color:#ECEDEF;padding-left:8px; padding-right:7px;}
+.c_l_tb_status td.alarm_09 {width:31px; border:1px solid #ffffff; background-color:#F2F3F5;padding-left:8px; padding-right:7px;}
+.c_l_tb_status td.alarm_13 {width:31px; border:1px solid #ffffff; background-color:#ECEDEF;padding-left:8px; padding-right:7px;}
+
+/* Status 8channel */
+#c_l_div_status_contents8 {margin:-1px 134px 20px 0px; width:722px; margin-bottom:20px; background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:4;}
+.c_l_tb_status8 {width:656px; height:139px; padding:0; table-layout:fixed; margin:19px auto 5px auto; border-collapse:collapse;}
+.c_l_tb_status8 td.head {width:20%; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; font-weight:normal; color:#373487; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status8 td.ch_1 {width:10%; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; color:#84B6D7; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status8 td.ch_2 {width:10%; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; color:#84B6D7; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status8 td.alarm_01 {width:10%; border:1px solid #ffffff; background-color:#F2F3F5;padding-left:25px; padding-right:7px;}
+.c_l_tb_status8 td.alarm_05 {width:10%; border:1px solid #ffffff; background-color:#F2F3F5;padding-left:25px; padding-right:7px;}
+
+/* Status 4channel */
+#c_l_div_status_contents4 {margin:-1px 134px 20px 0px; width:722px; margin-bottom:20px; background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:4;}
+.c_l_tb_status4 {width:656px; height:139px; padding:0; table-layout:fixed; margin:19px auto 5px auto; border-collapse:collapse;}
+.c_l_tb_status4 td.head {width:20%; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; font-weight:normal; color:#373487; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status4 td.ch_1 {width:10%; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; color:#84B6D7; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status4 td.ch_2 {width:10%; padding:0; border:1px solid #ffffff; background-color:#E6F0F9; color:#84B6D7; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_status4 td.alarm_01 {width:10%; border:1px solid #ffffff; background-color:#F2F3F5;padding-left:25px; padding-right:7px;}
+.c_l_tb_status4 td.alarm_05 {width:10%; border:1px solid #ffffff; background-color:#F2F3F5;padding-left:25px; padding-right:7px;}
+
+/**************************************************************************************************************************************/
+/* Live Log */
+#c_l_div_log_contents {margin:-1px 134px 20px 0px; width:722px; margin-bottom:20px; background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:4;}
+.c_l_div_chk {margin-top:9px; margin-left:31px;}
+
+/*Live Log - log_table*/
+.c_l_tb_log {width:660px; height:207px; padding:0; table-layout:fixed; margin:12px auto 5px auto; border-collapse:collapse;}
+.c_l_tb_log td.right_cel {height:23px; padding-left:10px;border-bottom:1px solid #E6F0F9; background-color:#3e3e3e; font-weight:normal; color:#373487; letter-spacing:-1; text-decoration:none; text-align:left;}
+.c_l_tb_log td.left_cel {height:23px; border-bottom:1px solid #E6F0F9; border-right:1px solid #E6F0F9;background-color:#3e3e3e; font-weight:normal; color:#373487; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_log td.head_01 {width:60px; height:23px; padding:0; border-right:1px solid #C5D5E0; background-color:#E6F0F9; font-weight:normal; color:#6CA4C8; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_log td.head_02 {width:161px; height:23px; padding:0; border-right:1px solid #C5D5E0; background-color:#E6F0F9; font-weight:normal; color:#6CA4C8; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_log td.head_03 {width:162px; height:23px; padding:0; border-right:1px solid #C5D5E0; background-color:#E6F0F9; font-weight:normal; color:#6CA4C8; letter-spacing:-1; text-decoration:none; text-align:center;}
+.c_l_tb_log td.head_04 {width:296px; height:23px; padding:0; background-color:#E6F0F9; font-weight:normal; color:#6CA4C8; letter-spacing:-1; text-decoration:none; text-align:center;}
+
+/*Live Log - page up/down */
+.c_l_btn_page {width:125px; }
+/**************************************************************************************************************************************/
+/* Live PTZ */
+#c_l_div_ptz_contents {margin:-1px 134px 20px 0px; width:722px; margin-bottom:20px; background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:4;}
+
+.c_l_btn_papre {width:90px; height:19px; margin:2px 0 1px 0; }
+.c_l_btn_aux {width:180px; height:19px; margin:2px 0 1px 0; }
+
+/* Live PTZ - pattern/preset */
+.c_l_tb_papre {width:199px; margin: 14px 29px 5px 16px; width: 100px;}
+.c_l_lst_pnpre {margin: 1px 0pt 2px; width: 182px; height: 21px;}
+
+/* Live PTZ - swing/step */
+/* .c_l_tb_swsp {margin: 14px 0pt 5px; width: 150px;} */
+.c_l_tb_swsp {margin: 14px 0pt 5px; width: 160px;}
+.c_l_lst_swsp {margin: 1px 0pt 8px 10px; width: 85px; height: 21px; }
+.c_l_lst_speed {margin: 1px 0pt 2px; width: 50px; height: 21px; }
+
+/* Live PTZ - channel */
+.c_l_txt_channel {font-weight: bold; color: #373487; font-size: 14px; font-family: Arial; text-decoration: none; line-height: 24px;}
+
+/* Live PTZ - Pan Tilt */
+.c_l_tb_pantilt {}
+.c_l_tb_pantilt tr {}
+.c_l_tb_pantilt td {}
+
+.c_l_lst_continuous {width:13px;height:13px;vertical-align:text-top;}
+/**************************************************************************************************************************************/
+/*Live Sequrinet*/
+#c_l_div_qrcode_contents {margin:-1px 134px 20px 0px; width:722px; margin-bottom:20px; background-color:#3e3e3e; border:1px solid #C5D5E0; z-index:4;}
+/**************************************************************************************************************************************/
+/* Change Password */
+#div_change_password {font-size: 12pt; color:#004879; }
+#div_change_password .head {padding-right:7px;display: block; font-weight: bold; text-align: right;}
+#div_change_password .cell {width: 169px;}
+#div_change_password .table {margin-bottom:3px; border-bottom:1px dotted #C5D0E0;}
+#div_change_password .confirm {margin:3px; float:right;}
+#div_change_password #submit {width:100px; height:23px;}

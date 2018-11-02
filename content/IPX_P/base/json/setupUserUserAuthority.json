@@ -1,0 +1,47 @@
+{
+  "id": "setupUserUserAuthority",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+    
+  },
+
+  "pageTitle": "setupUserUserAuthority",
+
+  "pages": [
+    {
+      "rows": [
+        {
+          "id": "",
+          "cols": [
+            {
+              "id": "setupUserUserAuthorityContent",
+            "content": [
+                {
+                  "table": {
+                    "id": "setupUserUserAuthorityContentTable",
+                    "row": ["", "MANAGER","USER"],
+                    "col": ["SEARCH","ARCHIVING","SYSTEM SETUP","RECORD SETUP","EVENT ACTION CONTROL","LISTEN TO AUDIO","MIC","REMOTE LOG IN","SHUTDOWN"],
+                    "type": [
+                     {
+                        "input-checkbox": {
+                          "type": "checkbox",
+                          "idPostfix": "manager"
+                        }
+                      },
+                      {
+                        "input-checkbox": {
+                          "type": "checkbox",
+                          "idPostfix": "user"
+                        }
+                      }
+                     ]
+                  }
+                }              
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+Basic Style Sheet
+
+file Name : global.css
+version : 2.0
+author  : mybusisi
+email	: mybusisi@itxsecurity.com
+------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**************************************************************************************************************************************/
+/* Body */
+
+* {margin:0; padding:0;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image:url(../../images/images/bg.gif);
+    background-repeat:repeat-x;
+    background-position:top left;
+    font: 0.75em 굴림, Arial, Gulim, sans-serif;
+}
+/**************************************************************************************************************************************/
+
+div,ul,li {
+    margin:0;
+    padding-left: 0;
+}
+
+ul,ol {list-style:none;}
+img {border:none;}
+
+/*항목_타이틀*/
+h2 {font-weight:bold; color:#373487; font-size: 1.2em;  letter-spacing:-1; text-decoration:none; line-height:24px;}
+
+/*항목*/
+span#LTXT_ALLVIEW,
+span.lang_area {color:#c3c3c3; }
+span.list {font-weight:normal; color:#c3c3c3; letter-spacing:-1; text-decoration:none; line-height:24px;}
+th.list   {font-weight:normal; color:#78ABCD; letter-spacing:0; text-decoration:none; line-height:24px; text-align:right; padding-right: 5px;}
+
+/*항목_체크박스*/
+span.check {color:#78ABCD; letter-spacing:-1; text-decoration:none; line-height:24px; padding-left:5px; padding-right:65px; cursor:pointer; cursor:hand;}
+
+/* Button */
+input[type="button"] , input[type="submit"] {background-image: url(../../images/images/bt_bg_n.gif); background-repeat:repeat; border:1px solid #7E9DB9; color:#373487; cursor:pointer;}
+input[type="button"]:disabled,
+ button:disabled,
+ select:disabled,
+ option:disabled {
+   color: #444;
+   cursor: not-allowed !important;
+   opacity: 1;
+  }
+/*size button CAMERA INSTALLATION*/
+#div_dialog_ipcam_install_message > div > dl > dd > [type="button"] {
+  height: 18px;
+}
+/*Tin #10984 20171030 */
+
+/* Select */
+select {border:1px solid #7E9DB9; color:#000000; text-align:center; vertical-align: middle; cursor:pointer; cursor:hand;}
+input{ outline-style:none; }
+
+textarea{ outline-style:none; }
+
+/**************************************************************************************************************************************/
+
+th {font-weight:normal;}
+
+#c_g_div_wrapper {width:990px;top:0;margin:auto;}
+
+/* Top live/search/setup Bar */
+#c_g_div_top{float:left; width:785px;}
+
+/* Branch Logo */
+#c_g_div_logo{float:left; width:205px; cursor:pointer; cursor:hand; }
+
+/*Tab Image*/
+#c_g_div_tab {float:left; position:relative; top:20px; left:0; z-index:3; margin-left:5px;}
+/* #c_g_div_tab ul {margin:0; padding:0; width:365px; overflow:hidden;left: 0px; top: 1px;} */
+#c_g_div_tab ul {margin:0; padding:0; width:495px; overflow:hidden;left: 0px; top: 1px;}
+#c_g_div_tab li {float:left; position:relative; width:120px; height:34px; padding-top:9px; padding-left:1px;background:url(../../images/images/tab_nor.gif) no-repeat; text-align:center;}
+#c_g_div_tab li span strong {font-weight:bolder; color:#373487;  letter-spacing:-1px; text-decoration:none;}
+#c_g_div_tab li a {color:#FFFFFF;  letter-spacing:-1px; text-decoration:none; position:absolute;top: 0; left: 0; right: 0; bottom: 0; padding-top: 15px;}
+#c_g_div_tab a li {color:#FFFFFF;  letter-spacing:-1px; text-decoration:none;}
+#c_g_div_tab li.on {width:122px; height:34px; background:url(../../images/images/tab_sel.gif) no-repeat;font-weight:bold; color:#373487;  letter-spacing:-1px; text-decoration:none;}
+
+
+/*상단_타이틀*/
+/* #c_g_div_title{ float:left; position:relative; top:23px; left:183px; padding-top:2px; width:260px; height:30px; text-align:right;} */
+#c_g_div_title{ float:left; position:relative; top:23px; left:53px; padding-top:2px; width:260px; height:30px; text-align:right;}
+#c_g_div_title span{font-weight:bold;color:#437EA5;font-size:1.2em;vertical-align:bottom;letter-spacing:-1px;line-height: 30px;}
+/**************************************************************************************************************************************/
+
+/* button */
+#c_g_div_button {float:right; margin-right:100px;}
+#c_g_div_button input { float:left; margin-right:7px; }
+
+/* Message */
+#c_g_div_msg {width:90%; min-height:20px; background-color:#3e3e3e; text-align:center; margin-left:30px;clear: both;}
+#errMsg {color:#CC006A;}
+#printMsg {color:#1FA908;}
+
+/* height of textbox */ /*Tin #6530 - 20171025*/
+#networksetting_ipsetup input[type="text"] {height:25px}
+
+
+/*ip camera installation */
+#c_sp_div_contents > div > div > div > div > dl,
+#c_sp_div_contents > div > div > div > div > h2  {
+  margin: 0px 0px 10px 0px;
+}
+#analog_tab_ipcam > div > dl {
+  width:709px;
+}
+.c_sp_tb_cam_analog > table {
+  width:203px;
+}
+/*Tin #10993 - 20171030*/
+
+
+/*Sunny - 20171102*/
+div[aria-labelledby="ui-dialog-title-user_dialog"] > .ui-dialog-titlebar > .ui-dialog-titlebar-close {
+  display: none;
+}
+/* END ::  Sunny - 20171102*/

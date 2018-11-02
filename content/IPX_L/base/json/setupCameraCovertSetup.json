@@ -1,0 +1,59 @@
+{
+  "id": "setupCameraCovertSetup",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "pageTitle": "setupCameraCovertSetup",
+
+  "pages": [{
+    "rows": [
+      {
+        "id": "setupCameraCovertSetup",
+        "cols": [
+          {
+            "id": "setupCameraCovertSetupContent",
+            "content": [
+                {
+                  "table": {
+                    "id": "setupCameraCameraTitleContentTable",
+                    "row": ["CHANNEL", "ADMIN","MANAGER","USER","LOG OUT"],
+                    "col": ["ALL", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,"SHOW AS"],
+                    "type": [
+                     {
+                        "input-checkbox": {
+                          "type": "checkbox",
+                          "idPostfix": "camera_covert_admin_"
+                          
+                        }
+                      },
+                      {
+                        "input-checkbox": {
+                          "type": "checkbox",
+                          "idPostfix": "camera_covert_manager_"
+                          
+                        }
+                      },
+                      {
+                        "input-checkbox": {
+                          "type": "checkbox",
+                          "idPostfix": "camera_covert_user_"
+                          
+                        }
+                      },
+                      {
+                        "input-checkbox": {
+                          "type": "checkbox",
+                          "idPostfix": "camera_covert_logout_"
+                          
+                        }
+                      }
+                     ]
+                  }
+                }              
+            ]
+          }
+      ]}]     
+
+    }]
+}

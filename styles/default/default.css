@@ -1,0 +1,105 @@
+@CHARSET "utf-8";
+
+/*
+ * common
+ */
+a, abbr, acronym, address, applet, article, aside, audio,
+b, blockquote, big, body,
+center, canvas, caption, cite, code, command,
+datalist, dd, del, details, dfn, dl, div, dt,
+em, embed,
+figcaption, figure, font, footer, form,
+h1, h2, h3, h4, h5, h6, header, hgroup, html,
+i, iframe, img, ins,
+kbd,
+keygen,
+label, legend, li,
+meter,
+nav,
+object, ol, output,
+p, pre, progress,
+q,
+s, samp, section, small, span, source, strike, strong, sub, sup,
+table, tbody, tfoot, thead, th, tr, tdvideo, tt,
+u, ul,
+var{
+    background: transparent;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {height: 100%}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.ie6 .clearfix {
+  height: 1px;
+}
+.ie7 .clearfix {
+  min-height: 1px;
+}
+
+/*
+ * column, low
+ */
+.row {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /*min-width: 755px;*/
+  margin: 0 auto;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10 {
+  float: left;
+  margin-right: 0;
+  min-height: 1px;
+}
+
+.row .col-1  { width:  8%; margin: 0.5%; }
+.row .col-2  { width: 18%; margin: 0.5%; }
+.row .col-3  { width: 28%; margin: 0.5%; }
+.row .col-4  { width: 38%; margin: 0.5%; }
+.row .col-5  { width: 48%; margin: 0.5%; }
+.row .col-6  { width: 58%; margin: 0.5%; }
+.row .col-7  { width: 68%; margin: 0.5%; }
+.row .col-8  { width: 78%; margin: 0.5%; }
+.row .col-9  { width: 88%; margin: 0.5%; }
+.row .col-10 { width: 98%; margin: 0.5%; }
+
+.last { margin-right: 0; }
+[class^=col]>first-child { margin-top: 0; }
+
+.fl { float: left;}
+.fr { float: right;}
+.clear { clear: both;}
+
+/*
+ * hidden
+ */
+hr {display:none; }
+
+.hidden { display:none; }
+
+.blind {
+  visibility: hidden;
+  position: absolute;
+  top: -10000px;
+  height: 1px;
+  width: 1px;
+}
+
+/**
+* jquery ui css
+*/
+
+.ui-dialog-titlebar-close {
+  display: none;
+}

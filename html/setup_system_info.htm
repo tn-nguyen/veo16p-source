@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css">
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">
+            info_include();
+        </script>
+        
+        
+        
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+    
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+        
+        <script type="text/javascript">
+        passwordRenewCheck();
+            language_include();
+        </script>
+
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+                        
+        <title></title>
+    </head>
+    <body>
+        
+    <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                        <script type="text/javascript">print_left_menu(document, "System", "System Information");</script>
+                    </ul>
+                </div>
+                <div id="c_sp_div_contents">
+                    <form name="systemsetting_info" id="systemsetting_info">
+                        <div class="c_sp_div_frame">
+                            <h2><span id='lang_SystemInformation'>System Information</span></h2>
+                            <div class="c_sp_div_system_info">
+                                <dl class="sysinfo">
+                                    <dt class='info_model'>
+                                        <span id='lang_Model'>MODEL</span>
+                                    </dt>
+                                    <dd class='info_model'>
+                                        <input type="text" class="txtdisp" id="model" name="model" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_FWversion'>F/W version</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="swver" name="swver" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_FWupdate'>Last F/W Update Date</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="swverdate" name="swverdate" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_HWVersion'>H/W Version</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="hwver" name="hwver" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_Diskcapacity'>Disk capacity</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="diskcap" name="diskcap" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_DiskUsage'>Disk Usage</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="diskuse" name="diskuse" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_DiskNum'>Number of Disks</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="disknum" name="disknum" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_IPaddress'>IP address</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="ipaddr" name="ipaddr" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_IPv6address'>IPv6 address</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="ipv6addr" name="ipv6addr" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_MACaddress'>MAC address</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="macaddr" name="macaddr" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_DDNSdomainname'>DDNS domain name</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="ddnsdomain" name="ddnsdomain" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_Rtspport'>RTSP Service Port</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="netclntport" name="netclntport" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_Webserviceport'>Web server port</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="webservport" name="webservport" disabled="true"/>
+                                    </dd>
+									<dt>
+                                        <span id='lang_Resolution'>Resolution </span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="resolution" name="resolution" disabled="true"/>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_Systemid'>System ID</span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="txtdisp" id="sysname" name="sysname" disabled="true"/>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                                                
+                        <div class="c_sp_div_frame c_sp_div_frame02">
+                            <h2><span id='lang_SystemStatus'>Status</span></h2>
+                            <div class="c_sp_div_system_info">
+                                <dl class="sysstatus">
+                                    <dt>
+                                    	<span id='lang_CamConn'>Camera Connection </span>
+                                    </dt>
+                                    <dd>
+                                        <ul id="sysinfo_camera">                                    
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                        </ul>
+                                        <div class='clear'></div>
+                                    </dd>
+                                    <dt class='ain_oncam'>
+                                    	<span id='lang_SensorCAM'>Alarm In(Camera)</span>
+                                    </dt>
+                                    <dd class='oncam'>
+                                        <ul id='sysinfo_arincam'>
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                        </ul>
+                                        <div class='clear'></div>
+                                    </dd>
+                                    <dt class='ain_ondvr'>
+                                    	<span id='lang_SensorDVR'>Alarm In(DVR)</span>
+                                    </dt>
+                                    <dd class='ondvr'>
+                                        <ul id='sysinfo_arindvr'>
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                        </ul>
+                                        <div class='clear'></div>
+                                    </dd>
+                                    <dt class='aout_oncam'>
+                                    	<span id='lang_AlarmOutCAM'>Alarm Out(Camera)</span>
+                                    </dt>
+                                    <dd class='aout_oncam'>
+                                        <ul id='sysinfo_aroutcam'>
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                        </ul>
+                                        <div class='clear'></div>
+                                    </dd>
+                                    <dt class='ondvr aout_ondvr'>
+                                    	<span id='lang_AlarmOutDVR'>Alarm Out(DVR)</span>
+                                    </dt>
+                                    <dd class='ondvr'>
+                                        <ul id='sysinfo_aroutdvr'>
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                        </ul>
+                                        <div class='clear'></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!--
+                        <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        -->
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        
+        <script type="text/javascript" src="../scripts/init/SystemInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('SystemInfo');
+        </script>
+        
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/SystemModel.js"></script>
+
+        <script type="text/javascript" src="../scripts/view/SystemView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/SystemController.js"></script>
+
+        <script type="text/javascript">
+            zzmvc({
+                name: 'SystemInfo',
+                action: 'index',
+                debug: false
+            });
+
+            dvrpoke();
+        </script>
+    </body>
+</html>
+

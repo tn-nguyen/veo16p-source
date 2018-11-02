@@ -1,0 +1,1529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">info_include()</script>
+    
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include()</script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <title></title>
+
+  </head>
+
+  <body>
+
+    <div id="c_g_div_wrapper">
+      <div id="title_layer">
+        <script type="text/javascript">print_top_menu(document, "SETUP")</script>
+      </div>
+      <div id="c_sp_div_menubar">
+        <div id="c_sp_div_menubar_sub">
+          <ul style="padding-left:10px; padding-top:10px;">
+            <script type="text/javascript">print_left_menu(document, "Record", "Recording operation")</script>
+          </ul>
+        </div>
+    
+    			<div id="c_sp_div_contents">
+                          <form name="recordsetting_operation" id="recordsetting_operation">
+                            <div class="c_sp_div_frame c_sp_div_frame_dot">
+                              <h2 class="remove_alsok"><span id='lang_Recordingopperationsetting'>Recording Configuration Mode</span></h2>
+                              <div class="c_sp_div_rec_op remove_alsok">
+                                <ul style="float:left; width:300px; text-align:right; margin-right:5px;">
+                                <li><span class="list"><span id='lang_record_mode'>MODE</span></span></li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                    <select  id="recmode" name="recmode" class="lstrec">
+                                        <option value="0">Auto Configuration</option>
+                                        <option value="1">Manual Configuration</option>
+                                      <!--
+                                        <option value="0">lang_autoconfig</option>
+                                        <option value="1">lang_manualconfig</option>
+                                      -->
+                                    </select>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id='automatic_config'>
+                                <h2><span id='lang_automatic_record_option'>Automatic Record Configuration Options</span></h2>
+                                <div class="c_sp_div_rec_op">
+                                    <ul id='auto'>
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="0"/> 
+                                        <span id='lang_auto_continuous'>Continuous Record</span>
+                                      </label>
+                                      <select id="hd_priority" name="hd_priority">
+                                        </select>
+                                      </li>
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="1"/> 
+                                        <span id='lang_auto_motion'>Motion Record</span>
+                                      </label></li>
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="2"/> 
+                                        <span id='lang_auto_alarm'>Alarm Record</span>
+                                      </label></li>
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="3"/> 
+                                        <span id='lang_auto_motionalarm'>Motion/Alarm Record</span>
+                                      </label></li>
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="4"/> 
+                                        <span id='lang_auto_intense_motion'>Intensive Motion Record</span>
+                                      </label></li>
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="5"/> 
+                                        <span id='lang_auto_intense_alarm'>Intensive Alarm Record</span>
+                                      </label></li>
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="6"/> 
+                                        <span id='lang_auto_intense_motionalarm'>Intensive Motion/Alarm Record</span>
+                                      </label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id='manual_config'>
+                                <h2><span id='lang_manual_record_option'>Manual Record Configuration Options</span></h2>
+                                <div class="c_sp_div_rec_op">
+                                    <ul style="float:left; width:300px; text-align:right; margin-right:5px;">
+                                        <li><span class="list"><span id='lang_Schedulemode'>Schedule mode</span></span></li>
+                                        <li><span class="list"><span id='lang_Preeventrecordingtime'>Pre event recording time</span></span></li>
+                                        <li><span class="list"><span id='lang_Posteventrecordingtime'>Post event recording time</span></span></li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                        <select  id="schedmode" name="schedmode" class="lstrec">
+                                            <option value="0">Daily</option>
+                                            <option value="1">Weekly</option>
+                                        </select>
+                                        </li>
+                                        <li>    
+                                        <select  id="prerec" name="prerec" class="lstrec">
+                                            <option value="0">0 SEC</option>
+                                            <option value="1">1 SEC</option>
+                                            <option value="2">2 SEC</option>
+                                            <option value="3">3 SEC</option>
+                                            <option value="4">4 SEC</option>
+                                            <option value="5">5 SEC</option>
+                                            <option value="10" class="prerec hidden">10 SEC</option>
+                                            <option value="15" class="prerec hidden">15 SEC</option>
+                                        </select>   
+                                        </li>
+                                        <li>
+                                        <select  id="postrec" name="postrec" class="lstrec">
+                                            <option value="5">5 SEC</option>
+                                            <option value="10">10 SEC</option>
+                                            <option value="15">15 SEC</option>
+                                            <option value="20">20 SEC</option>
+                                            <option value="30">30 SEC</option>
+                                            <option value="60">60 SEC</option>
+                                            <option value="120">120 SEC</option>
+                                            <option value="180">180 SEC</option>
+                                        </select>   
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2><span id='lang_panic_record_option'>Panic Recording Options</span></h2>
+                            <div class="c_sp_div_rec_op">
+                              <ul style="float:left; width:300px; text-align:right; margin-right:5px;">
+                                <li><span class="list">
+                                  <span id='lang_PanicRecordTime'>Panic Recording Time</span>
+                                </span></li>
+                              </ul>
+                              <ul>
+                                <li>
+                                    <select id="panicrec" name="panicrec" class="lstrec">
+                                      <!--<option value="0">lang_manualconfig</option>-->
+                                      <option value="0">Manual</option>
+                                      <option value="60">1 MIN</option>
+                                      <option value="300">5 MIN</option>
+                                      <option value="600">10 MIN</option>
+                                      <option value="1200">20 MIN</option>
+                                      <option value="1800">30 MIN</option>
+                                      <option value="2400">40 MIN</option>
+                                      <option value="3000">50 MIN</option>
+                                      <option value="3600">60 MIN</option>
+                                    </select>
+                                    </li>
+                                  </ul>
+                                </div> 
+
+                                <h2 class='for4G remove_alsok' style='display:none'>
+                                    <span id='lang_bitrate'>BIT RATE</span><span> / </span><span id='lang_codec'>CODEC</span>
+                                </h2>
+                                <div class="for4G c_sp_div_rec_op remove_alsok" style='display:none'>
+                                  <ul style="float:left; width:300px; text-align:right; margin-right:5px;">
+                                    <li><span class="list">
+                                      <span id='lang_bitrate'>BIT RATE</span>
+                                    </span></li>
+                                  </ul>
+                                  <ul>
+                                    <li>
+                                      <select id="bitrate" name="bitrate" class="lstrec">
+                                        <!--<option value="0">lang_manualconfig</option>-->
+                                        <option value="0">VBR</option>
+                                        <option value="1">CBR</option>
+                                      </select>
+                                    </li>
+                                  </ul>
+                                  <ul style="float:left; width:300px; text-align:right; margin-right:5px;">
+                                    <li><span class="list">
+                                      <span id='lang_codec' class="codec">CODEC</span>
+                                    </span></li>
+                                  </ul>
+                                  <ul>
+                                    <li>
+                                      <select id="codec" name="codec" class="lstrec codec">
+                                        <option value="0">H.264</option>
+                                        <option value="1">H.265</option>
+                                      </select>
+                                    </li>
+                                  </ul>
+                                </div> 
+                                </div>
+
+                              </div>
+ 
+                              <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>    				 
+                    </form> 
+    			</div>                     
+    	    </div>                     
+        </div>
+        
+        <br/>
+        
+        <div id='dlgMotionAlarm' style='display:none;'>
+            <form id="alarm_rec">            
+                <table class="c_sp_tb_rec_op " style="width:100%;">
+                    <colgroup>
+                    </colgroup>
+                    <colgroup span="4">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="chenable16 forUTM4G tdhead0"></td>
+                            <th class="tdhead1"></td>
+                            <th class="tdhead2"><span id='lang_Size'>Size</span></th>
+                            <th class="tdhead3"><span id='lang_FrameRate'>Frame Rate</span></th>
+                            <th class="tdhead4"><span id='lang_Quality'>Quality</span></th>
+                            <th class="tdhead5"><span id='lang_Audio'>Audio</span></th>
+                        </tr>         
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="chenable16 forUTM4G tdsfq0" rowspan="8"><span id="lang_group1">GROUP1</span></td>
+                            <td class="tdsfq1" ><span class='title1'>Ch 1</span></td>
+                            <td class="tdsfq2">
+                                <select id="size0" name="size0"  class="c_sp_lst_rec_op">
+                                </select>                                   
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps0" name="fps0"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality0" name="quality0" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio0" name="audio0" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdsfq1" ><span class='title2'>Ch 2</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size1" name="size1"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps1" name="fps1"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality1" name="quality1" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio1" name="audio1" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdsfq1" ><span class='title3'>Ch 3</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size2" name="size2"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps2" name="fps2"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality2" name="quality2" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio2" name="audio2" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdsfq1" ><span class='title4'>Ch 4</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size3" name="size3"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps3" name="fps3"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality3" name="quality3" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio3" name="audio3" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                    <!-- </tbody>
+
+                    <tbody class='chenable8'> -->
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title5'>Ch 5</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size4" name="size4"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps4" name="fps4"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality4" name="quality4" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio4" name="audio4" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title6'>Ch 6</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size5" name="size5"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps5" name="fps5"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality5" name="quality5" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio5" name="audio5" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title7'>Ch 7</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size6" name="size6"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps6" name="fps6"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality6" name="quality6" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio6" name="audio6" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title8'>Ch 8</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size7" name="size7"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps7" name="fps7"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality7" name="quality7" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio7" name="audio7" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                    <!-- </tbody>
+                    <tbody class='chenable16'> -->
+                        <tr class='ch16tr chenable16'>
+                            <td class="chenable16 forUTM4G tdsfq0" rowspan="8"><span id="lang_group2">GROUP2</span></td>
+                            <td class="tdsfq1" ><span class='title9'>Ch 9</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size8" name="size8"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps8" name="fps8"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality8" name="quality8" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio8" name="audio8" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title10'>Ch 10</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size9" name="size9"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps9" name="fps9"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality9" name="quality9" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio9" name="audio9" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title11'>Ch 11</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size10" name="size10"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps10" name="fps10"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality10" name="quality10" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio10" name="audio10" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title12'>Ch 12</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size11" name="size11"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps11" name="fps11"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality11" name="quality11" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio11" name="audio11" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title13'>Ch 13</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size12" name="size12"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps12" name="fps12"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality12" name="quality12" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio12" name="audio12" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title14'>Ch 14</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size13" name="size13"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps13" name="fps13"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality13" name="quality13" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio13" name="audio13" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title15'>Ch 15</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size14" name="size14"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="fps14" name="fps14"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality14" name="quality14" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio14" name="audio14" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title16'>Ch 16</span></td>
+                            <td class="tdsfq2" >
+                                <select id="size15" name="size15"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >                                                
+                                <select id="fps15" name="fps15"  class="c_sp_lst_rec_op">
+                                </select>                                               
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="quality15" name="quality15" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="audio15" name="audio15" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+
+                <div id="rec-calc-ma" class="rec-calc">
+                </div>
+                
+                <div class='prerec'>
+                  <dl class='prerec'>
+                    <dt>
+                    <span id='lang_prerecord'>Pre Recording Time</span>
+                    </dt>
+                    <dd>
+                    <select id='prerec2' name='prerec2'>
+                      <option value='0'>0 SEC</option>
+                      <option value='1'>1 SEC</option>
+                      <option value='2'>2 SEC</option>
+                      <option value='3'>3 SEC</option>
+                      <option value='4'>4 SEC</option>
+                      <option value='5'>5 SEC</option>
+                      <option value="10">10 SEC</option>
+                      <option value="15">15 SEC</option>
+                    </select>
+                    </dd>
+                    <dt>
+                    <span id='lang_postrecord'>Post Recording Time</span>
+                    </dt>
+                    <dd>
+                    <select id='postrec2' name='postrec2'>
+                      <option value="5">5 SEC</option>
+                      <option value="10">10 SEC</option>
+                      <option value="15">15 SEC</option>
+                      <option value="20">20 SEC</option>
+                      <option value="30">30 SEC</option>
+                      <option value="60">60 SEC</option>
+                      <option value="120">120 SEC</option>
+                      <option value="180">180 SEC</option>
+                    </select>                 
+                    </dd>
+                  </dl>
+                </div>
+
+                <div class="add_float_left warning_1080p">
+                  <span>* </span><span id="lang_warn_resolution">Resolution of 1080p is recorded at a maximum of 15 fps.</span>
+                </div>
+            </form>
+        </div>
+        
+        <br/>
+        
+        <div id='dlgIntensive' style='display:none;'>
+            <form id="intensive_rec">
+                <table class="c_sp_tb_rec_op" style="width:100%;">
+                    <colgroup>
+                    </colgroup>
+                    <colgroup span="3">
+                    </colgroup>
+                    <colgroup span="3">
+                    </colgroup>
+                    <colgroup></colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="chenable16 forUTM4G tdhead0"></td>
+                            <th colspan="3"><span id='lang_Normal'>Normal</span></th>
+    
+                            <th colspan="3"><span id='lang_action'>Motion</span></th>
+                            
+                            <th></th>
+                        </tr>         
+                        <tr>
+                            <th></th>
+                            <th class="chenable16 forUTM4G tdhead0"></td>
+                            <th><span id='lang_Size'>Size</span></th>
+                            <th><span id='lang_FrameRate'>Frame Rate</span></th>
+                            <th><span id='lang_Quality'>Quality</span></th>
+    
+                            <th><span id='lang_Size'>Size</span></th>
+                            <th><span id='lang_FrameRate'>Frame Rate</span></th>
+                            <th><span id='lang_Quality'>Quality</span></th>
+                            
+                            <th><span id='lang_Audio'>Audio</span></th>
+                        </tr>         
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="chenable16 forUTM4G tdsfq0" rowspan="8"><span id="lang_group1">GROUP1</span></td>
+                            <td class="tdsfq1" ><span class='title1'>Ch 1</span></td>
+                            <td class="tdsfq2">
+                                <select id="n_size0" name="n_size0"  class="c_sp_lst_rec_op">
+                                </select>                                   
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps0" name="n_fps0"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality0" name="n_quality0" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2">
+                                <select id="a_size0" name="a_size0"  class="c_sp_lst_rec_op">
+                                </select>                                   
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps0" name="a_fps0"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality0" name="a_quality0" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio0" name="a_audio0" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdsfq1" ><span class='title2'>Ch 2</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size1" name="n_size1"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps1" name="n_fps1"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality1" name="n_quality1" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size1" name="a_size1"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps1" name="a_fps1"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality1" name="a_quality1" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio1" name="a_audio1" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdsfq1" ><span class='title3'>Ch 3</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size2" name="n_size2"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps2" name="n_fps2"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality2" name="n_quality2" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size2" name="a_size2"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps2" name="a_fps2"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality2" name="a_quality2" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio2" name="a_audio2" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdsfq1" ><span class='title4'>Ch 4</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size3" name="n_size3"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps3" name="n_fps3"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality3" name="n_quality3" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size3" name="a_size3"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps3" name="a_fps3"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality3" name="a_quality3" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio3" name="a_audio3" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                    <!-- </tbody>
+                    <tbody class='chenable8'> -->
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title5'>Ch 5</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size4" name="n_size4"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps4" name="n_fps4"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality4" name="n_quality4" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size4" name="a_size4"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps4" name="a_fps4"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality4" name="a_quality4" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio4" name="a_audio4" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title6'>Ch 6</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size5" name="n_size5"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps5" name="n_fps5"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality5" name="n_quality5" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size5" name="a_size5"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps5" name="a_fps5"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality5" name="a_quality5" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio5" name="a_audio5" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title7'>Ch 7</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size6" name="n_size6"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps6" name="n_fps6"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality6" name="n_quality6" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size6" name="a_size6"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps6" name="a_fps6"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality6" name="a_quality6" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio6" name="a_audio6" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch8tr chenable8'>
+                            <td class="tdsfq1" ><span class='title8'>Ch 8</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size7" name="n_size7"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps7" name="n_fps7"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality7" name="n_quality7" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size7" name="a_size7"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps7" name="a_fps7"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality7" name="a_quality7" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio7" name="a_audio7" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+<!--                     </tbody>
+                    <tbody class='chenable16'> -->
+                        <tr class='ch16tr chenable16'>
+                            <td class="chenable16 forUTM4G tdsfq0" rowspan="8"><span id="lang_group2">GROUP2</span></td>
+                            <td class="tdsfq1" ><span class='title9'>Ch 9</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size8" name="n_size8"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps8" name="n_fps8"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality8" name="n_quality8" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size8" name="a_size8"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps8" name="a_fps8"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality8" name="a_quality8" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio8" name="a_audio8" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title10'>Ch 10</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size9" name="n_size9"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps9" name="n_fps9"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality9" name="n_quality9" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size9" name="a_size9"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps9" name="a_fps9"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality9" name="a_quality9" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio9" name="a_audio9" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title11'>Ch 11</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size10" name="n_size10"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps10" name="n_fps10"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality10" name="n_quality10" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size10" name="a_size10"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps10" name="a_fps10"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality10" name="a_quality10" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio10" name="a_audio10" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title12'>Ch 12</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size11" name="n_size11"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps11" name="n_fps11"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality11" name="n_quality11" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size11" name="a_size11"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps11" name="a_fps11"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality11" name="a_quality11" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio11" name="a_audio11" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title13'>Ch 13</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size12" name="n_size12"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps12" name="n_fps12"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality12" name="n_quality12" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size12" name="a_size12"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps12" name="a_fps12"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality12" name="a_quality12" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio12" name="a_audio12" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title14'>Ch 14</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size13" name="n_size13"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps13" name="n_fps13"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality13" name="n_quality13" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size13" name="a_size13"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps13" name="a_fps13"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality13" name="a_quality13" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio13" name="a_audio13" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title15'>Ch 15</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size14" name="n_size14"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="n_fps14" name="n_fps14"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality14" name="n_quality14" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size14" name="a_size14"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >
+                                <select id="a_fps14" name="a_fps14"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality14" name="a_quality14" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio14" name="a_audio14" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class='ch16tr chenable16'>
+                            <td class="tdsfq1" ><span class='title16'>Ch 16</span></td>
+                            <td class="tdsfq2" >
+                                <select id="n_size15" name="n_size15"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >                                                
+                                <select id="n_fps15" name="n_fps15"  class="c_sp_lst_rec_op">
+                                </select>                                               
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="n_quality15" name="n_quality15" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq2" >
+                                <select id="a_size15" name="a_size15"  class="c_sp_lst_rec_op">
+                                </select>
+                            </td>
+                            <td class="tdsfq3" >                                                
+                                <select id="a_fps15" name="a_fps15"  class="c_sp_lst_rec_op">
+                                </select>                                               
+                            </td>
+                            <td class="tdsfq4" >
+                                <select id="a_quality15" name="a_quality15" class="c_sp_lst_rec_op">
+                                    <option value="A">Highest</option>
+                                    <option value="B">High</option>
+                                    <option value="C">Standard</option>
+                                    <option value="D">Low</option>
+                                    <option value="E">Lowest</option>
+                                </select>
+                            </td>
+                            <td class="tdsfq5">
+                                <select id="a_audio15" name="a_audio15" class="c_sp_lst_rec_op">
+                                    <option value="1">On</option>
+                                    <option value="0">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody id="intensive_fps_calc">
+                    <tr>
+                      <td colspan="4">
+                        <div id="rec-calc-ima1" class="rec-calc"></div>
+                      </td>
+                      <td colspan="4">
+                        <div id="rec-calc-ima2" class="rec-calc"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table>
+                  
+                </table>
+
+                <div class='prerec'>
+                  <dl class='prerec'>
+                    <dt>
+                    <span id='lang_prerecord'>Pre Recording Time</span>
+                    </dt>
+                    <dd>
+                    <select id='prerec3' name='prerec3'>
+                      <option value='0'>0 SEC</option>
+                      <option value='1'>1 SEC</option>
+                      <option value='2'>2 SEC</option>
+                      <option value='3'>3 SEC</option>
+                      <option value='4'>4 SEC</option>
+                      <option value='5'>5 SEC</option>
+                      <option value="10">10 SEC</option>
+                      <option value="15">15 SEC</option>
+                    </select>
+                    </dd>
+                    <dt>
+                    <span id='lang_postrecord'>Post Recording Time</span>
+                    </dt>
+                    <dd>
+                    <select id='postrec3' name='postrec3'>
+                      <option value="5">5 SEC</option>
+                      <option value="10">10 SEC</option>
+                      <option value="15">15 SEC</option>
+                      <option value="20">20 SEC</option>
+                      <option value="30">30 SEC</option>
+                      <option value="60">60 SEC</option>
+                      <option value="120">120 SEC</option>
+                      <option value="180">180 SEC</option>
+                    </select>                 
+                    </dd>
+                  </dl>
+                </div>
+
+                <div class="add_float_left warning_1080p">
+                  <span>* </span><span id="lang_warn_resolution">Resolution of 1080p is recorded at a maximum of 15 fps.</span>
+                </div>
+            </form>
+        </div>
+                             
+        <script type="text/javascript" src="../scripts/init/RecordInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('RecOp');
+        </script>
+        
+        
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+        <script type="text/javascript" src="../scripts/model/RecordModel.js"></script>
+
+        <script type="text/javascript" src="../scripts/SchedWidget.js"></script>
+        <script type="text/javascript" src="../scripts/ParamWidget.js"></script>
+        <script type="text/javascript" src="../scripts/view/RecordView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/RecordController.js"></script>
+
+        <script>
+            zzmvc({
+                name: 'RecOp',
+                action: 'index',
+                debug: false
+            });
+            
+            dvrpoke();
+        </script>
+    </body>                    
+</html>                    
+

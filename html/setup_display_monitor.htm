@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style type="text/css">
+            @import url("../styles/styles/global.css");
+            @import url("../styles/styles/setup.css");
+        </style>
+        <script type="text/javascript" src="../scripts/global.js"></script>
+
+        <script type="text/javascript">info_include();</script>
+
+
+        <script type="text/javascript" src="../scripts/libs.js"></script>
+        <script type="text/javascript" src="../scripts/top_menu.js"></script>
+        <script type="text/javascript" src="../scripts/left_menu.js"></script>
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script type="text/javascript" src="../scripts/Validator.js"></script>
+        <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+        <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+        <script type="text/javascript">
+        passwordRenewCheck();
+        language_include();</script>
+
+        <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+        <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+        <title></title>
+    </head>
+
+    <body>
+
+        <div id="c_g_div_wrapper">
+            <div id="title_layer">
+                <script type="text/javascript">print_top_menu(document, "SETUP");</script>
+            </div>
+            <div id="c_sp_div_menubar">
+                <div id="c_sp_div_menubar_sub">
+                    <ul style="padding-left:10px; padding-top:10px;">
+                        <script type="text/javascript">print_left_menu(document, "Display", "Monitor");</script>
+                    </ul>
+                </div>
+
+                <form name="displaysetting_monitor" id="displaysetting_monitor" action='/cgi-bin/webra_fcgi.fcgi'>
+                    <div id="c_sp_div_contents">
+                        <div class="c_sp_div_frame c_sp_div_frame_dot">
+                            <h2>
+                            <span id='lang_Monitorsetting'>
+                                Monitor setting
+                            </span>
+                            </h2>
+                            <div class="c_sp_div_disp">
+                                <dl class='dispmon'>
+                                    <dt>
+                                    <span id='lang_Sequencedwell'>
+                                      Sequence dwell
+                                    </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="seq_dwell" name="seq_dwell">
+                                            <option value="1">1 SEC</option>
+                                            <option value="2">2 SEC</option>
+                                            <option value="3">3 SEC</option>
+                                            <option value="5">5 SEC</option>
+                                            <option value="10">10 SEC</option>
+                                            <option value="15">15 SEC</option>
+                                            <option value="20">20 SEC</option>
+                                            <option value="30">30 SEC</option>
+                                            <option value="40">40 SEC</option>
+                                            <option value="60">60 SEC</option>
+                                        </select>
+                                    </dd>
+                                  </dl>
+                                  <dl class='dispmon nonipx'>
+
+                                    <dt class="spotdwell">
+                                    <span id='lang_Spotdwell'>
+                                      Spot dwell
+                                    </span>
+                                    </dt>
+                                    <dd class="spotdwell">
+                                        <select  id="spot_dwell" name="spot_dwell" class="lstdisp">
+                                            <option value="1">1 SEC</option>
+                                            <option value="2">2 SEC</option>
+                                            <option value="3">3 SEC</option>
+                                            <option value="5">5 SEC</option>
+                                            <option value="10">10 SEC</option>
+                                            <option value="15">15 SEC</option>
+                                            <option value="20">20 SEC</option>
+                                            <option value="30">30 SEC</option>
+                                            <option value="40">40 SEC</option>
+                                            <option value="60">60 SEC</option>
+                                        </select>
+                                    </dd>
+
+				    <dt class="hdspotdwell">
+                                        <span id='lang_HdSpotdwell'>
+                                            HD Spot dwell
+                                        </span>
+                                    </dt>
+                                    <dd class="hdspotdwell">
+                                        <select  id="hdspot_dwell" name="hdspot_dwell" class="lstdisp">
+                                            <option value="1">1 SEC</option>
+                                            <option value="2">2 SEC</option>
+                                            <option value="3">3 SEC</option>
+                                            <option value="5">5 SEC</option>
+                                            <option value="10">10 SEC</option>
+                                            <option value="15">15 SEC</option>
+                                            <option value="20">20 SEC</option>
+                                            <option value="30">30 SEC</option>
+                                            <option value="40">40 SEC</option>
+                                            <option value="60">60 SEC</option>
+                                        </select>
+                                    </dd>
+									<!--
+                                    <dt>
+                                        <span id='lang_AspectRatio'>
+                                            Video Aspect Ratio
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="aspect_ratio" name="aspect_ratio">
+                                            <option value="0">Full</option>
+                                            <option value="1">Keep</option>
+                                        </select>
+                                    </dd>
+                                    <dt>
+                                        <span id='lang_monitor_type'>
+                                            Output Monitor Type
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <select  id="monitor_type" name="monitor_type">
+                                            <option value="0">HDMI</option>
+                                            <option value="1">VGA</option>
+                                            <option value="2">HD-SDI</option>
+                                        </select>
+                                    </dd>
+                                    -->
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div id="c_g_div_button">
+                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                        </div>
+                        <div id="c_g_div_msg">
+                            <div id="errMsg">
+                            </div>
+                            <div id="printMsg">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="../scripts/init/DispSndInit.js"></script>
+        <script type="text/javascript">
+            ShowInit('DispMonitor');
+        </script>
+        <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+
+        <script type="text/javascript" src="../scripts/model/DispSndModel.js"></script>
+
+        <script type="text/javascript" src="../scripts/view/DispSndView.js"></script>
+        <script type="text/javascript" src="../scripts/controller/DispSndController.js"></script>
+
+        <script type="text/javascript">
+
+            zzmvc({
+                name: 'DispMonitor',
+                action: 'index',
+                debug: false
+            });
+
+            dvrpoke();
+
+        </script>
+    </body>
+</html>

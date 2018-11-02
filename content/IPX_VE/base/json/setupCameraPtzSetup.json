@@ -1,0 +1,105 @@
+{
+  "id": "setupCameraPtzSetup",
+  "html": "template/setupPage.htm",
+  "loadTemplate": {
+  },
+
+  "pages": [
+    {
+      "pageTitle": "setupCameraPtzSetup",
+      "rows": [
+        {
+          "cols": [
+            {
+              "content": [
+                {
+                  "table": {
+                    "id": "tableCameraPtzSetup",
+                    "idPrefix": "tdCameraPtzSetup",
+                    "row": [
+                      {"id": "1", "text": "1"},
+                      {"id": "2", "text": "2"},
+                      {"id": "3", "text": "3"},
+                      {"id": "4", "text": "4"},
+                      {"id": "5", "text": "5"},
+                      {"id": "6", "text": "6"},
+                      {"id": "7", "text": "7"},
+                      {"id": "8", "text": "8"},
+                      {"id": "9", "text": "9"},
+                      {"id": "10", "text": "10"},
+                      {"id": "11", "text": "11"},
+                      {"id": "12", "text": "12"},
+                      {"id": "13", "text": "13"},
+                      {"id": "14", "text": "14"},
+                      {"id": "15", "text": "15"},
+                      {"id": "16", "text": "16"}
+                    ],
+                    "cols": [
+                      {
+                        "col": [
+                          {"id": "Channel", "span": "1"},
+                          {"id": "Address"},
+                          {"id": "Protocol"},
+                          {"id": "Baudrate"}
+                        ]
+                      }
+                    ],
+                    "type": [
+                      {
+                        "input": {
+                          "id": "Address",
+                          "type": "text"
+                        }
+                      },
+                      {
+                        "select" : {
+                          "id": "Protocol",
+                          "option": [
+                            {"value": "PELCO-D", "text": "PELCO-D"},
+                            {"value": "PELCO-P", "text": "PELCO-P"},
+                            {"value": "MESA-DOME", "text": "MESA-DOME"},
+                            {"value": "D-Max", "text": "D-Max"},
+                            {"value": "FastraxII_2", "text": "FastraxII_2"},
+                            {"value": "Ganz_PT_V3_2", "text": "Ganz_PT_V3_2"},
+                            {"value": "SCC_641", "text": "SCC_641"},
+                            {"value": "SCC_643a", "text": "SCC_643a"},
+                            {"value": "Spd_3300", "text": "Spd_3300"},
+                            {"value": "Multix", "text": "Multix"},
+                            {"value": "MRX_1000", "text": "MRX_1000"},
+                            {"value": "WV-cs850", "text": "WV-cs850"},
+                            {"value": "WV-csr604", "text": "WV-csr604"},
+                            {"value": "PTC-400c", "text": "PTC-400c"},
+                            {"value": "PTC-200", "text": "PTC-200"},
+                            {"value": "TAKEX", "text": "TAKEX"},
+                            {"value": "LPT-A100L", "text": "LPT-A100L"},
+                            {"value": "interM", "text": "interM"},
+                            {"value": "VITEK", "text": "VITEK"},
+                            {"value": "LILIN", "text": "LILIN"}
+                          ]
+                        }
+                      },
+                      {
+                        "select" : {
+                          "id": "Baudrate",
+                          "option": [
+                            {"value": "2400", "text": "2400"},
+                            {"value": "4800", "text": "4800"},
+                            {"value": "9600", "text": "9600"},
+                            {"value": "19200", "text": "19200"},
+                            {"value": "38400", "text": "38400"},
+                            {"value": "57600", "text": "57600"},
+                            {"value": "115200", "text": "115200"}
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

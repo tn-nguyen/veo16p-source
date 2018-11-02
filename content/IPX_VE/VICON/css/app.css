@@ -1,0 +1,138 @@
+/*
+ * body
+ */
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(255,255,255);
+    background-color: rgb(44,44,44);
+    font: 0.75em sans-serif,굴림, Arial, Gulimf;
+}
+
+body ul, body ol, body dl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  width:1020px;
+  top:0;
+  margin:auto;
+}
+
+/*********************************************************************************************************/
+/* h tags */
+/*********************************************************************************************************/
+h2{
+  font-weight: bold;
+  color: rgb(255,255,255);
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+h2 span{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+  color: rgb(255,255,255);
+  text-decoration: none;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
+/*********************************************************************************************************/
+/* dl & dt */
+/*********************************************************************************************************/
+dl {
+  line-height: 1.5em;
+  margin: 5px;
+}
+
+dl dt {
+  width: 35%;
+  margin-right: 3%;
+  font-weight: normal;
+  color: rgb(255,255,255);
+  text-align: right;
+  float: left;
+}
+
+dl dd {
+  width: 60%;
+  margin-bottom: 4px;
+  float: left;
+}
+
+/*********************************************************************************************************/
+/* table */
+/*********************************************************************************************************/
+table {
+  text-align:center;
+}
+
+table th {
+  border: 1px solid #C5D5E0;
+}
+
+table tr {
+}
+
+table td {
+  white-space: nowrap;
+  border: 1px solid #ddd;
+  font-weight: normal;
+}
+
+/*********************************************************************************************************/
+/* input */
+/*********************************************************************************************************/
+input {
+  width: 98%;
+  margin: 2px 0 1px 0;
+  color: rgb(255,255,255);
+  background-color: rgb(44,44,44);
+  text-align: center;
+}
+
+table td input{
+  text-align: center;
+}
+
+input:disabled {
+  cursor: default !important;
+}
+
+input[type="button"]:disabled {
+  cursor: default !important;
+  color: #606060;
+}
+
+/*********************************************************************************************************/
+/* select */
+/*********************************************************************************************************/
+select {
+  width: 98%;
+  margin: 2px 0 1px 0;
+  color: rgb(255,255,255);
+  background-color: rgb(44,44,44);
+}
+
+table select{
+  text-align: center;
+}
+
+
+/*********************************************************************************************************/
+/* Button */
+/*********************************************************************************************************/
+.default button{
+  width: 111px;
+  height: 22px;
+  padding:0px;
+  margin-left: 3px;
+  margin-top: 10px;
+}

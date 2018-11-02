@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+      @import url("../styles/styles/global.css");
+      @import url("../styles/styles/setup.css");
+    </style>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+
+    <script type="text/javascript">info_include();</script>
+
+
+
+    <script type="text/javascript" src="../scripts/libs.js"></script>
+    <script type="text/javascript" src="../scripts/top_menu.js"></script>
+    <script type="text/javascript" src="../scripts/left_menu.js"></script>
+    <script type="text/javascript" src="../scripts/Validator.js"></script>
+    <script type="text/javascript" src="../scripts/AuthorityCheck.js"></script>
+
+    <script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+    passwordRenewCheck();
+    language_include();</script>
+
+    <link href="../scripts/jquery/themes/ipx/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../scripts/jquery/jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+
+    <title></title>
+
+  </head>
+
+	<body>
+
+    	<div id="c_g_div_wrapper">
+    		<div id="title_layer">
+    			<script type="text/javascript">
+            print_top_menu(document, "SETUP");
+          </script>
+        </div>
+    		<div id="c_sp_div_menubar">
+    			<div id="c_sp_div_menubar_sub">
+    				<ul style="padding-left:10px; padding-top:10px;">
+    				<script type="text/javascript">
+              print_left_menu(document, "Network", "SNMP");
+            </script>
+    		  </ul>
+    		</div>
+
+        <form name="networksetting_snmp" id="networksetting_snmp">
+          <div id="c_sp_div_contents">
+            <div class="c_sp_div_frame c_sp_div_frame_dot">
+              <h2><span id='lang_SNMPsetting'>SNMP Setting</span></h2>
+
+              <div class="c_sp_div_net_ddns">
+              <dl>
+                <dt>
+                  <input name='version' type='radio' value='0'></input>
+                  <span id='lang_SNMPserverNone'>SNMP SERVER NONE</span>
+                </dt>
+                <dd>
+                  
+                </dd>
+              </dl>
+              </div>
+              <div class="c_sp_div_net_ddns">
+              <dl>
+                <dt>
+                  <input name='version' type='radio' value='1'></input>
+                  <span id='lang_DDNSservername' class="list">SNMP V2c</span>
+                </dt>
+              </dl>
+              </div>
+              <div class="c_sp_div_net_ddns">
+              <dl>
+                <br/>
+                <dt>
+                  <span id='lang_CommunityStrings' class="list">COMMUNITY STRINGS</span>
+                </dt>
+                <dd>
+                  <input type="text" id="v2_communitystring" name="v2_communitystring"/>
+                </dd>
+                <dt>
+                  <span>TRAP CONFIGURATION</span>
+                </dt>
+                <br/>
+                <dt>
+                  <span id="lang_address">ADDRESS</span>
+                </dt>
+                <dd>
+                  <input type="text" id="v2_trap_conf_address" name="v2_trap_conf_address"/>
+                </dd>
+                <dt>
+                  <span class="list"><span id='lang_NVRAddr'>COMMUNITY STRINGS</span></span>
+                </dt>
+                <dd>
+                  <input type="text" id="v2_trap_conf_communitystring" name="v2_trap_conf_communitystring">
+                </dd>
+              </dl>
+              <dl>
+                <dt>
+                  <input name='version' type='radio' value='2'></input>
+                  <span id='lang_SNMPv3' class="list">SNMP V3</span>
+                </dt>
+                <br/>
+                <dt>
+                  <span class="list">ENGINE ID</span>
+                </dt>
+                <dd>
+                  <input id='v3_engineid' name="v3_engineid" disabled></input>
+                </dd>
+                <dt>
+                  <span class="list">SNMP USER</span>
+                </dt>
+                <dd>
+                  <input id='v3_userid' name="v3_userid"></input>
+                </dd>
+                <dt>
+                  <span class="list">AUTHENTICATION</span>
+                </dt>
+                <dd>
+                  <select id="v3_user_priv" name="v3_user_priv" disabled>
+                    <option value="NONE">NONE</option>
+                    <option value="MD5">MD5</option>
+                    <option value="SHA">SHA</option>
+                  </select>
+                  <input id="v3_user_priv_key" name="v3_user_priv_key" disabled></input>
+                </dd>
+                <dt>
+                  <span class="list">PERSONAL INFORMATION</span>
+                </dt>
+                <dd>
+                  <select id="v3_user_auth" name="v3_user_auth" disabled>
+                    <option value="NONE">NONE</option>
+                    <option value="DES">DES</option>
+                    <option value="AES">AES</option>
+                  </select>
+                  <input id="v3_user_auth_key" name="v3_user_auth_key" maxlength="64" disabled></input>
+                </dd>
+              </dl>
+                <dl>
+                  <dt>
+                    <span class="list">TRAP CONFIGURATION</span>
+                  </dt>
+                  <br/>
+                  <dt>
+                    <span class="list">ADDRESS</span>
+                  </dt>
+                  <dd>
+                    <input id="v3_receiver_address" type="text" min="8" max="64" name="v3_receiver_address"></input>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+
+            <div id="c_g_div_button">
+              <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+              <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+            </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../scripts/init/NetInit.js"></script>
+    <script type="text/javascript">
+      ShowInit('NetSNMP');
+    </script>
+
+    <script type="text/javascript" src="../scripts/zzmvc.js"></script>
+      <script type="text/javascript" src="../scripts/model/NetModel.js"></script>
+
+      <script type="text/javascript" src="../scripts/view/NetView.js"></script>
+      <script type="text/javascript" src="../scripts/controller/NetController.js"></script>
+
+      <script type="text/javascript">
+        zzmvc({
+          name: 'NetSNMP',
+          action: 'index',
+          debug: false
+        });
+
+      dvrpoke();
+    </script>
+  </body>
+</html>

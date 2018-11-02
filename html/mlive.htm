@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;" />
+
+	<style type="text/css">
+		<!--
+		@import url("../styles/styles/mglobal.css");
+		@import url("../styles/styles/mlive.css");
+		-->
+	</style>
+		<script type="text/javascript" src="../scripts/global.js"></script>
+
+		<script type="text/javascript" src="../scripts/libs/json3.min.js"></script>
+
+    <script type="text/javascript">
+	        <!--
+			info_include();
+	        -->
+    	</script>
+
+
+	<script type="text/javascript" src="../scripts/mlive_request.js"></script>
+	<script type="text/javascript" src="../scripts/Validator.js"></script>
+	<script type="text/javascript">
+		language_include();
+	</script>
+</head>
+
+<body>
+	<div id="c_m_div_contents">
+		<div id="c_m_div_live">
+		    <img id="livejpeg1" class="c_ml_jpg_jpeg1" src="../images/images/mobile_main.gif">
+			<!--<img id="livejpeg2" class="c_ml_jpg_jpeg2" src="../images/images/mobile_main.gif">-->
+		</div>
+		<div id="c_m_div_toolbar">
+			<select id="liveCh" class="c_ml_lst_channel" onChange="onChangeCh(this);" >
+			</select>
+			<select id="interval" class="c_ml_lst_interval" onChange="onChangeInterval(this);">
+			    <option value="0">Manual</option>
+			    <option value="300">Max FPS</option>
+			    <option value="500">2 FPS</option>
+			    <option value="1000">1 FPS</option>
+			    <option value="2000">0.5 FPS</option>
+			    <option value="3000">0.3 FPS</option>
+			    <option value="10000">0.1 FPS</option>
+			</select>
+			<input type="button" id="livestart" value="Refresh" class="c_ml_btn_live" onClick="onClickLiveStart();" >
+			<input type="button" id="sysinfo" value="Info" class="c_ml_btn_sysinfo" onClick="Minfo_location_move();" >
+		</div>
+	</div>
+
+	<div id="printMsg"></div>
+
+<script type="text/javascript">
+
+	function Mlive_OnLoad_func()
+	{
+	    //Mlive_jpeg_init();
+		Mlive_btn_init();
+	}
+
+	Mlive_OnLoad_func();
+	addUnLoadEvent(Mlive_jpeg_live_stop);
+
+	function Minfo_location_move()
+	{
+	    var urlch = document.getElementById("liveCh");
+	    var urlinterval = document.getElementById("interval");
+
+		self.location='../html/msystem_info.htm?'+'&livech='+escape(urlch.value)+'&interval='+escape(urlinterval.value);
+	}
+
+</script>
+</body>
+</html>
