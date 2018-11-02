@@ -48,13 +48,13 @@ select:disabled {background-color:#AAA;}
    margin:-15px -1px 0px 0px;
  }
 
-#c_sp_div_menubar_sub li.on {font-weight:bold; color:#8bc34a; letter-spacing:0;
+#c_sp_div_menubar_sub li.on {font-weight:bold; color:#00B1FF; letter-spacing:0;
   text-decoration:none; background-color:#343434; border:none;}
 
 #c_sp_div_menubar_sub li {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;  padding: 5px 0px;}
 #c_sp_div_menubar_sub ul li a {color:#cacaca; line-height:28px; text-decoration:none;}
 #c_sp_div_menubar_sub li.on a {
-  color:#8bc34a;
+  color:#00B1FF;
 }
 #c_sp_div_menubar_sub img {margin-right:6px;}
 
@@ -75,7 +75,7 @@ select:disabled {background-color:#AAA;}
 /* Version Infomation*/
 #c_info_div_contents {float:left; width:990px; min-height:700px; margin-top:0px;background-color:#343434; /*border:1px solid #C5D5E0; z-index:2;*/}
 #c_info_div_contents a {color:#dfdfdf; text-decoration:none;}
-#c_info_div_contents #divheader h2 { color : #8bc34a; margin:50px 224px 0px 30%;  border:1px solid #6c6c6c; padding : 10px 0px; background: #3e3e3e; text-transform: uppercase;}
+#c_info_div_contents #divheader h2 { color : #00B1FF; margin:50px 224px 0px 30%;  border:1px solid #6c6c6c; padding : 10px 0px; background: #3e3e3e; text-transform: uppercase;}
 .c_sp_tb_verinfo {font-size:1.2em; width:119px; height:50px; margin:10px auto 5px 15px; border:1px solid #C5D5E0; color:#373487; font-weight:bold; text-align:center;}
 .c_sp_tb_verinfo td.tdinfo {cursor:pointer; cursor:hand;}
 /* .c_sp_tb_infomation {width:350px; height:100px; margin:10px auto 5px 20px; border:1px solid #C5D5E0; color:#373487; text-align:left;} */
@@ -979,7 +979,7 @@ table#userdlg td#new_covert li label span#covertch{ width:65%; display:inline-bl
 /* Network DDNS */
 .c_sp_div_net_ddns {margin-bottom:28px;}
 .c_sp_div_net_ddns .lstdisp {width:170px; height:21px; margin:2px 0 1px 0; border:1px solid #A3BCD3;  color: black; text-align: left;} /*nguyen #10991 - 20171026*/
-.c_sp_div_net_ddns .txtnet  {width:170px; height:19px; margin:2px 0 1px 0; border:1px solid #A3BCD3;  color: black; ime-mode:disabled;} /*nguyen #10991 - 20171026*/
+.c_sp_div_net_ddns .txtnet  {width:170px; height:24px; margin:2px 0 1px 0; border:1px solid #A3BCD3;  color: black; ime-mode:disabled;} /*nguyen #10991 - 20171026*/
 input#port_status {width:170px;}
 .c_sp_div_net_ddns input[type="text"]:disabled {background-color:#ebebe4;}
 .c_sp_div_net_ddns input[type="password"]:disabled {background-color:#ebebe4;}
@@ -1004,7 +1004,7 @@ input#port_status {width:170px;}
 .c_sp_div_net dl {line-height: 34px;}
 .c_sp_div_net dl dt {width:200px; margin-right: 14px; font-weight:normal;  color:#78ABCD; letter-spacing:0; text-decoration:none; text-align:left; float:left; }
 .c_sp_div_net dl dd select  {width:170px; margin:2px 0 1px 55px; border:1px solid #A3BCD3;  color: #373487;}
-.c_sp_div_net input[type="text"].portsetting {width:40px; }
+.c_sp_div_net input[type="text"].portsetting {width:108px; }
 
 .c_sp_div_net .2nddisp {width:170px; height:21px; margin:2px 0 1px 50px; border:1px solid #A3BCD3;  color: #373487; text-align: left; }
 .c_sp_div_net .chkdhcp {margin:2px 0 1px 0; border:1px solid #ffffff;  color: #373487; text-align: left;}
@@ -1149,7 +1149,7 @@ div.ao_sched ul.indices li.box { float:left; margin-left:30px; width:20px; }
 div#popupCP ul li:first-child { border-bottom:1px solid #e6f0f9;}
 div#popupCP ul li { line-height: 1.5em;}
 
-div.schedcp {float:right; margin: 15px 50px auto auto;}
+div.schedcp {float:right; margin: 15px 0px auto auto;}
 
 .arout_color1 {background-color: #060405 !important;}
 .arout_color2 {background-color: #dc1215 !important;}
@@ -1167,7 +1167,7 @@ table.aout-sched td.tdoff {background-color:#E8E8E8;}
 #eventsetting_emailnoti input#button_ftpserver_edit {width:170px;}
 #eventsetting_emailnoti dl {line-height:24px; margin-top: 8px !important}
 #eventsetting_emailnoti dl dt {width:300px; margin-right: 14px; font-weight:normal;  color:#c3c3c3; letter-spacing:0; text-decoration:none; line-height:24px; text-align:right; float:left;}
-#eventsetting_emailnoti dl dd select  {width:170px; margin:2px 0 1px 0; border:1px solid #A3BCD3;  color: #000000;}
+#eventsetting_emailnoti dl dd select  { margin:2px 0 1px 0; border:1px solid #A3BCD3;  color: #000000;}
 #fragment-ftp #btn_help {width:100px;}
 div#dialog_ftpserver dl dt {width : 150px; line-height: 21px; float:left; text-align:right; padding-right: 7px;}
 div#dialog_ftpserver dl dd {margin-bottom: 5px; margin-right: 7px;}
@@ -1177,12 +1177,12 @@ div#dialog_email {display : none}
 div#dialog_email #email_noti { margin-top: 10px; min-width:350px;}
 div#dialog_email dl dt { width: 100px; line-height: 21px; float:left; text-align:right; padding-right: 7px;}
 div#dialog_email dl dd { margin-bottom: 13px; }
-div#dialog_email dl dd * { margin-right: 7px; }
+div#dialog_email dl dd * { margin-right: 7px; height: 21px; }
 div#dialog_email dl dd #email_list { width:218px; }
 div#dialog_email #email_add {width:60px; height: 21px}
 
-table#sched_table {width: 170px; border-collapse: collapse; margin-top: 10px !important}
-table#sched_table th {width: 28px; height:23px; border-bottom: 1px solid #d6e0e9; border-right: 1px solid #717171; background-color: #e6f0f9; padding-left: 10px !important; padding-right: 10px !important; font-weight: normal; color: #6ca4c8; letter-spacing:0px; text-decoration: none; text-align: center; font-size: 0.8em;}
+table#sched_table { border-collapse: collapse; margin-top: 10px !important}
+table#sched_table th { height:23px; border-bottom: 1px solid #d6e0e9; border-right: 1px solid #717171; background-color: #e6f0f9; padding-left: 10px !important; padding-right: 10px !important; font-weight: normal; color: #6ca4c8; letter-spacing:0px; text-decoration: none; text-align: center; font-size: 1em;}
 table#sched_table td {height:23px; border-bottom: 1px solid #e6f0f9; border-right: 1px solid #e6f0f9; background-color:#3e3e3e; font-weight: normal; color: #373487; letter-spacing: 0px; text-decoration: none; text-align: center;}
 
 #dialog_email #email_noti #email_button {text-align:center;}
@@ -1210,7 +1210,7 @@ div#dialog_ftpserver dl dd {margin-bottom: 5px; margin-right: 7px;}
 
 /* Sensor Alarm Input */
 table.event_sensor {width:750px;}
-table.event_sensor thead th {font-size: 0.8em; white-space:pre-line;}
+table.event_sensor thead th {font-size: 1em;}
 table.event_sensor col.col1 {width:8%;}
 table.event_sensor col.col2 {width:8%;}
 table.event_sensor col.col3 {width:8%;}
@@ -1229,7 +1229,7 @@ table.event_sensor col.col12{width: 6%;}
 
 table.event_motion {width:750px;}
 
-table.event_motion thead th {font-size: 0.8em; white-space:pre-line;}
+table.event_motion thead th {font-size: 1em;}
 
 table.event_motion col.col1 {width:10%;}
 table.event_motion col.col2 {width:20%;}
@@ -1241,7 +1241,7 @@ table.event_motion col.col7 {}
 
 /* Sensor Video Loss */
 table.event_vloss { width: 750px; }
-table.event_vloss thead th {font-size: 0.8em; word-break:break-all; white-space:pre-line;}
+table.event_vloss thead th {font-size: 1em; word-break:break-all;}
 table.event_vloss col.col1 {width:10%;}
 table.event_vloss col.col2 {width:20%;}
 table.event_vloss col.col3 {width:20%;}
@@ -1268,7 +1268,7 @@ table.event_vca col.col8 {width:8%;}
 /* Sensor System Event */
 table.event_system { width: 95%; }
 
-table.event_system thead th { font-size: 0.8em; white-space:pre-line;}
+table.event_system thead th { font-size: 1em;}
 
 table.event_system col.col1 {width:40%;}
 table.event_system col.col2 {width:20%}
@@ -1357,7 +1357,7 @@ option.red    ,select.red   {background-color:red;}
   color: #fff;
   padding: 10px 20px;
   box-sizing: border-box;
-  text-align: right;; /*Tin #6539 - 20171025*/  /*nguyen #10995 - 20171026*/
+  text-align: left; /*Tin #6539 - 20171025*/  /*nguyen #10995 - 20171026*/
   /*margin:0px 0px; /*Tin #6539 - 20171026*/*/
 }
 
@@ -1370,7 +1370,7 @@ option.red    ,select.red   {background-color:red;}
 #c_sp_div_contents #c_g_div_button,
 #camsetting_cam #c_g_div_button,
 #camsetting_image  #c_g_div_button {
-  margin-right: 25px;
+  margin-right: 33px;
 }
 /*END :: i3 custom layout*/
 
@@ -1383,7 +1383,7 @@ option.red    ,select.red   {background-color:red;}
 }
 
 .add_width_100 {width: 100px;}
-.add_width_150 {width: 150px;}
+.add_width_150 {width: 150px; margin-bottom: 8px;}
 .add_width_600 {width: 600px;}
 
 .add_margin_left_30 {margin-left: 30%;}
@@ -1481,7 +1481,7 @@ table  tbody tr td input[type="text"] {
 }
 
 .ui-tabs .ui-tabs-nav .ui-state-default.ui-tabs-selected {
-    border-top: 2px solid #8bc34a;
+    border-top: 2px solid #00B1FF;
     background: #3c3c3c;
 }
 .ui-tabs .ui-tabs-nav .ui-state-default.ui-tabs-selected  a{
@@ -1539,7 +1539,7 @@ table  tbody tr td input[type="text"] {
 
 #lang_stream_control,
 #lang_warn_resolution {
-  color: #8bc34a;
+  color: #00B1FF;
 }
 
 
@@ -1704,7 +1704,7 @@ div.c_sp_div_storage_diskop > ul > li > div.timelimit_complex, /*Tin #11214 - 20
 #div_dialog_ipcam_install_message > div > div > h4 {margin-bottom: 5px;}
 /*Tin #10984 - 20171030*/
 #datetime_tab_datetime > div > div.c_sp_div_system_date > dl > dd > #nextsynctime,
-#datetime_tab_datetime > div > div.c_sp_div_system_date > dl > dd > #nettimeservsetup {width: 246px;}
+#datetime_tab_datetime > div > div.c_sp_div_system_date > dl > dd > #nettimeservsetup {width: 248px;}
 #form_fw_upgrade > p.tips {width: 402px;}
 #form_fw_upgrade > p > #netfwverify {
   left:283.5px;
@@ -1727,14 +1727,14 @@ div.c_sp_div_net > dl > dd > #btntestemail1 {width: 174px;}
 /*NETWORK - IP SETUP */
 div.c_sp_div_net > dl > dd > #maxtx,
 #c_sp_div_contents > div > div > dl > dd > #autoport {width: 180px;}
-div.c_sp_div_net > dl > dd > #port_status {width: 176px;}
+div.c_sp_div_net > dl > dd > #port_status {width: 220px;}
 /*NETWORK - SECURITY */
 #system_id,
 div.for_ipx.rtsp_service > dl > dd > #srtsp_method {width: 166px;}
 /*Tin #11200 - 20171101*/
 /*EVENT - ALARM - ON/OFF SCHEDULE */
 div#popupCP > ul > li > label > input[type="checkbox"]{margin-right: 5px;}
-div.ui-dialog-buttonset > button:nth-child(1){width: 75px;}
+div.ui-dialog-buttonset > button:nth-child(1){width: 110px;}
 div.container > dl > dd > #button_ftpserver_edit,
 div.container > dl > dd > #ftp_dir_mode,
 div.container > dl > dd > #ftp_fname_mode,
@@ -1751,18 +1751,202 @@ div[aria-labelledby="ui-dialog-title-dialog_help"] {left: 380px !important; widt
     #bitctrl_default0_0 {
       width: 159px;
     }
+    #bitctrl_default1_0 {
+      width: 159px;
+    }
+    #bitctrl_default2_0 {
+      width: 159px;
+    }
+    #bitctrl_default3_0 {
+      width: 159px;
+    }
+    #bitctrl_default4_0 {
+      width: 159px;
+    }
+    #bitctrl_default5_0 {
+      width: 159px;
+    }
+    #bitctrl_default6_0 {
+      width: 159px;
+    }
+    #bitctrl_default7_0 {
+      width: 159px;
+    }
+    #bitctrl_default8_0 {
+      width: 159px;
+    }
+    #bitctrl_default9_0 {
+      width: 159px;
+    }
+    #bitctrl_default10_0 {
+      width: 159px;
+    }
+    #bitctrl_default11_0 {
+      width: 159px;
+    }
+    #bitctrl_default12_0 {
+      width: 159px;
+    }
+    #bitctrl_default13_0 {
+      width: 159px;
+    }
+    #bitctrl_default14_0 {
+      width: 159px;
+    }
+    #bitctrl_default15_0 {
+      width: 159px;
+    }
+
 
     #bitctrl_default0_1 {
+      width: 159px;
+    }
+    #bitctrl_default1_1 {
+      width: 159px;
+    }
+    #bitctrl_default2_1 {
+      width: 159px;
+    }
+    #bitctrl_default3_1 {
+      width: 159px;
+    }
+    #bitctrl_default4_1 {
+      width: 159px;
+    }
+    #bitctrl_default5_1 {
+      width: 159px;
+    }
+    #bitctrl_default6_1 {
+      width: 159px;
+    }
+    #bitctrl_default7_1 {
+      width: 159px;
+    }
+    #bitctrl_default8_1 {
+      width: 159px;
+    }
+    #bitctrl_default9_1 {
+      width: 159px;
+    }
+    #bitctrl_default10_1 {
+      width: 159px;
+    }
+    #bitctrl_default11_1 {
+      width: 159px;
+    }
+    #bitctrl_default12_1 {
+      width: 159px;
+    }
+    #bitctrl_default13_1 {
+      width: 159px;
+    }
+    #bitctrl_default14_1 {
+      width: 159px;
+    }
+    #bitctrl_default15_1 {
       width: 159px;
     }
 
     #res_default0_0{
       width: 159px;
     }
+    #res_default1_0{
+      width: 159px;
+    }
+    #res_default2_0{
+      width: 159px;
+    }
+    #res_default3_0{
+      width: 159px;
+    }
+    #res_default4_0{
+      width: 159px;
+    }
+    #res_default5_0{
+      width: 159px;
+    }
+    #res_default6_0{
+      width: 159px;
+    }
+    #res_default7_0{
+      width: 159px;
+    }
+    #res_default8_0{
+      width: 159px;
+    }
+    #res_default9_0{
+      width: 159px;
+    }
+    #res_default10_0{
+      width: 159px;
+    }
+    #res_default11_0{
+      width: 159px;
+    }
+    #res_default12_0{
+      width: 159px;
+    }
+    #res_default13_0{
+      width: 159px;
+    }
+    #res_default14_0{
+      width: 159px;
+    }
+    #res_default15_0{
+      width: 159px;
+    }
 
     #res_default0_1{
       width: 159px;
     }
+    #res_default1_1{
+      width: 159px;
+    }
+    #res_default2_1{
+      width: 159px;
+    }
+    #res_default3_1{
+      width: 159px;
+    }
+    #res_default4_1{
+      width: 159px;
+    }
+    #res_default5_1{
+      width: 159px;
+    }
+    #res_default6_1{
+      width: 159px;
+    }
+    #res_default7_1{
+      width: 159px;
+    }
+    #res_default8_1{
+      width: 159px;
+    }
+    #res_default9_1{
+      width: 159px;
+    }
+    #res_default10_1{
+      width: 159px;
+    }
+    #res_default11_1{
+      width: 159px;
+    }
+    #res_default12_1{
+      width: 159px;
+    }
+    #res_default13_1{
+      width: 159px;
+    }
+    #res_default14_1{
+      width: 159px;
+    }
+    #res_default15_1{
+      width: 159px;
+    }
+
+
+
 /*Nguyen 12332 - 20180830*/
 
 /*Nguyen 14217 - 20180830*/
@@ -1776,4 +1960,78 @@ div[aria-labelledby="ui-dialog-title-dialog_help"] {left: 380px !important; widt
   color: #ffffff;
   background-color: none;
   border: none  !important;
+}
+
+.motion_setup .sensitivity  thead tr th {
+  background-color: #3e3e3e !important;
+}
+
+#usrid_new{
+  width: 98%;
+}
+
+#grpname_new{
+  width: 100%;
+}
+
+#email_new[maxlengt=63]{
+    width: 98%;
+    height: 20px;
+}
+#email_ne{
+  width: 42%;
+  height: 20px;
+}
+
+#noti_new{
+  width: 50%;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+  background: #222222;
+}
+
+.ui-widget-content{
+  color: #c3c3c3 !important;
+}
+
+#dhcp{
+  margin-right: 20px;
+}
+
+#lang_MenuStorageInternal{
+  text-transform: uppercase;
+}
+
+#lang_MenuStorageExternal{
+  text-transform: uppercase;
+}
+.ui-dialog .ui-dialog-title{
+  color: #ffffff !important;
+}
+
+.ui-widget-header{
+  background-color: #222222 !important;
+}
+
+.ui-widget-content{
+  background: #222222; 
+}
+.ui-multiselect-menu{
+  background: #343434 !important;
+}
+
+.ui-dialog .ui-dialog-titlebar-close{
+  background: white;
+}
+
+thead email_sched_time{
+  width: 200px;
+}
+
+#email_from_h_0 {
+  width: 40px;
+}
+#email_freq, #ftp_fname_mode, #ftp_dir_mode {
+  width: 170px;
 }

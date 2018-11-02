@@ -533,14 +533,6 @@ $z.v({
                   $("#br_max_default"+ch+"_"+encoder_cnt).removeAttr("disabled");
                   $("#br_min_default"+ch+"_"+encoder_cnt).removeAttr("disabled");
                 }
-
-                if(array["bitctrl_support"+ch+'_'+encoder_cnt] == 0 ||
-                    array["bitctrl_support"+ch+'_'+encoder_cnt] == undefined) {
-                  $("#bitctrl_default"+ch+"_"+encoder_cnt).attr("disabled", true);
-                }
-                else {
-                  $("#bitctrl_default"+ch+"_"+encoder_cnt).removeAttr("disabled");
-                }                  
               } else {
                 $("#vcodec_default"+ch+"_"+encoder_cnt).hide();
                 $("#res_default"+ch+"_"+encoder_cnt).hide();
@@ -3738,7 +3730,7 @@ $z.v({
     },
     init: function() {
       //confirm: recording stop
-      if(!confirm(langArray["LTXT_SETUPCAMINSTALLATION_WARNING_MESSAGE3"]+"\n"+langArray["LTXT_SETUPCAMINSTALLATION_WARNING_MESSAGE2"])){
+      if(!confirm(langArray["LTXT_SETUPCAMINSTALLATION_WARNING_MESSAGE1"]+"\n"+langArray["LTXT_SETUPCAMINSTALLATION_WARNING_MESSAGE2"])){
         history.back();
         return false;
       };

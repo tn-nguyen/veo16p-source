@@ -2061,39 +2061,39 @@ function OnPlaybackMouseDown(e)
 
 	if ( imgelem.id == "division1")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_screen_01_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_screen_01_p.gif");
 	}
 	else if ( imgelem.id == "division4")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_screen_04_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_screen_04_p.gif");
 	}
 	else if ( imgelem.id == "division8")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_screen_08_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_screen_08_p.gif");
 	}
 	else if ( imgelem.id == "division9")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_screen_09_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_screen_09_p.gif");
 	}
 	else if ( imgelem.id == "division16")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_screen_16_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_screen_16_p.gif");
 	}
 	else if ( imgelem.id == "btpageset")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_page_set_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_page_set_p.gif");
 	}
 	else if ( imgelem.id == "btpageone")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_page_one_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_page_one_p.gif");
 	}
 	else if ( imgelem.id == "btpagefull")
 	{
-		imgelem.setAttribute("src", "../images/images/live_bt_page_full_p.png");
+		imgelem.setAttribute("src", "../images/images/live_bt_page_full_p.gif");
 	}
 	else if ( imgelem.id == "btzoomin")
   {
-    imgelem.setAttribute("src", "../images/images/live_bt_zoom_in_p.png");
+    imgelem.setAttribute("src", "../images/images/live_bt_zoom_in_p.gif");
   }
 	else if ( imgelem.id == "btspeaker")
 	{
@@ -2101,13 +2101,13 @@ function OnPlaybackMouseDown(e)
 		var img_str = imgurl.substring(imgurl.indexOf('images'),imgurl.length);
 
 /*	    if (imgurl == "../images/images/live_sound_off_o.gif") */
-	    if (img_str == "images/images/live_sound_off_o.png")
+	    if (img_str == "images/images/live_sound_off_o.gif")
 	    {
-	       imgelem.setAttribute("src", "../images/images/live_sound_on_p.png");
+	       imgelem.setAttribute("src", "../images/images/live_sound_on_p.gif");
 	    }
 	    else
 	    {
-		    imgelem.setAttribute("src", "../images/images/live_sound_off_p.png");
+		    imgelem.setAttribute("src", "../images/images/live_sound_off_p.gif");
 		}
 	}
 	else if ( imgelem.id == "btprint")
@@ -4212,7 +4212,7 @@ function SetSpeaker()
 
     var audio_speaker;
 
-    if (img_str == "images/images/live_sound_on_o.png" || img_str == "images/images/live_sound_on_n.png" || img_str == "images/images/live_sound_on_p.png")
+    if (img_str == "images/images/live_sound_on_o.gif" || img_str == "images/images/live_sound_on_n.gif" || img_str == "images/images/live_sound_on_p.gif")
     {
         audio_speaker = false;
     }

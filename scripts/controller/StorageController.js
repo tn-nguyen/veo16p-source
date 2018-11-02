@@ -159,7 +159,7 @@ $z.c({
 
               if( (INFO_MODEL.indexOf("ATM") < 0 && INFO_MODEL.indexOf("ANF") < 0 && INFO_MODEL.indexOf("UTM") < 0)
                 || (INFO_MODEL.indexOf("4G") >= 0)
-                || (INFO_MODEL.indexOf("5G") >= 0 || INFO_MODEL.indexOf("5X") >= 0 || INFO_MODEL.indexOf("5HG") >= 0)) {
+                || (INFO_MODEL.indexOf("5G") >= 0 || INFO_MODEL.indexOf("5X") >= 0)) {
                 $.scm.Start();
                 $.scm.RegistCallback('IRET_RESTART_SERVICE', c.CbRetComplete);
               } else {

@@ -100,7 +100,7 @@ th {font-weight:normal;}
 /* Message */
 #c_g_div_msg {width:90%; min-height:20px; background-color:#3e3e3e; text-align:center; margin-left:30px;clear: both;}
 #errMsg {color:#CC006A;}
-#printMsg {color:#1FA908;}
+#printMsg {color:#00B1FF;}
 
 /* height of textbox */ /*Tin #6530 - 20171025*/
 #networksetting_ipsetup input[type="text"] {height:25px}

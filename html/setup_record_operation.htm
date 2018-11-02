@@ -17,7 +17,7 @@
     <script type="text/javascript" src="../scripts/global.js"></script>
 
     <script type="text/javascript">info_include()</script>
-    
+
     <script type="text/javascript" src="../scripts/libs.js"></script>
     <script type="text/javascript" src="../scripts/top_menu.js"></script>
     <script type="text/javascript" src="../scripts/left_menu.js"></script>
@@ -49,7 +49,7 @@
             <script type="text/javascript">print_left_menu(document, "Record", "Recording operation")</script>
           </ul>
         </div>
-    
+
     			<div id="c_sp_div_contents">
                           <form name="recordsetting_operation" id="recordsetting_operation">
                             <div class="c_sp_div_frame c_sp_div_frame_dot">
@@ -75,28 +75,28 @@
                                 <h2><span id='lang_automatic_record_option'>Automatic Record Configuration Options</span></h2>
                                 <div class="c_sp_div_rec_op">
                                     <ul id='auto'>
-                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="0"/> 
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="0"/>
                                         <span id='lang_auto_continuous'>Continuous Record</span>
                                       </label>
                                       <select id="hd_priority" name="hd_priority">
                                         </select>
                                       </li>
-                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="1"/> 
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="1"/>
                                         <span id='lang_auto_motion'>Motion Record</span>
                                       </label></li>
-                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="2"/> 
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="2"/>
                                         <span id='lang_auto_alarm'>Alarm Record</span>
                                       </label></li>
-                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="3"/> 
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="3"/>
                                         <span id='lang_auto_motionalarm'>Motion/Alarm Record</span>
                                       </label></li>
-                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="4"/> 
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="4"/>
                                         <span id='lang_auto_intense_motion'>Intensive Motion Record</span>
                                       </label></li>
-                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="5"/> 
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="5"/>
                                         <span id='lang_auto_intense_alarm'>Intensive Alarm Record</span>
                                       </label></li>
-                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="6"/> 
+                                      <li><label><input id="autocfg" name="autocfg" type="radio" value="6"/>
                                         <span id='lang_auto_intense_motionalarm'>Intensive Motion/Alarm Record</span>
                                       </label></li>
                                     </ul>
@@ -117,7 +117,7 @@
                                             <option value="1">Weekly</option>
                                         </select>
                                         </li>
-                                        <li>    
+                                        <li>
                                         <select  id="prerec" name="prerec" class="lstrec">
                                             <option value="0">0 SEC</option>
                                             <option value="1">1 SEC</option>
@@ -127,7 +127,7 @@
                                             <option value="5">5 SEC</option>
                                             <option value="10" class="prerec hidden">10 SEC</option>
                                             <option value="15" class="prerec hidden">15 SEC</option>
-                                        </select>   
+                                        </select>
                                         </li>
                                         <li>
                                         <select  id="postrec" name="postrec" class="lstrec">
@@ -139,7 +139,7 @@
                                             <option value="60">60 SEC</option>
                                             <option value="120">120 SEC</option>
                                             <option value="180">180 SEC</option>
-                                        </select>   
+                                        </select>
                                         </li>
                                     </ul>
                                 </div>
@@ -167,7 +167,7 @@
                                     </select>
                                     </li>
                                   </ul>
-                                </div> 
+                                </div>
 
                                 <h2 class='for4G remove_alsok' style='display:none'>
                                     <span id='lang_bitrate'>BIT RATE</span><span> / </span><span id='lang_codec'>CODEC</span>
@@ -200,30 +200,31 @@
                                       </select>
                                     </li>
                                   </ul>
-                                </div> 
                                 </div>
-
+                                </div>
+                                <div id="c_g_div_button">
+                                    <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
+                                    <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
+                                </div>
+                                <div id="c_g_div_msg">
+                                    <div id="errMsg">
+                                    </div>
+                                    <div id="printMsg">
+                                    </div>
+                                </div>
                               </div>
- 
-                              <div id="c_g_div_button">
-                            <input type="submit" value="lang_OK" class="c_sp_btn_okcancel"/>
-                            <input type="button" value="lang_CANCEL" id="cancel" class="c_sp_btn_okcancel"/>
-                        </div>
-                        <div id="c_g_div_msg">
-                            <div id="errMsg">
-                            </div>
-                            <div id="printMsg">
-                            </div>
-                        </div>    				 
-                    </form> 
-    			</div>                     
-    	    </div>                     
+
+                         
+                      
+                    </form>
+    			</div>
+    	    </div>
         </div>
-        
+
         <br/>
-        
+
         <div id='dlgMotionAlarm' style='display:none;'>
-            <form id="alarm_rec">            
+            <form id="alarm_rec">
                 <table class="c_sp_tb_rec_op " style="width:100%;">
                     <colgroup>
                     </colgroup>
@@ -237,7 +238,7 @@
                             <th class="tdhead3"><span id='lang_FrameRate'>Frame Rate</span></th>
                             <th class="tdhead4"><span id='lang_Quality'>Quality</span></th>
                             <th class="tdhead5"><span id='lang_Audio'>Audio</span></th>
-                        </tr>         
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -245,7 +246,7 @@
                             <td class="tdsfq1" ><span class='title1'>Ch 1</span></td>
                             <td class="tdsfq2">
                                 <select id="size0" name="size0"  class="c_sp_lst_rec_op">
-                                </select>                                   
+                                </select>
                             </td>
                             <td class="tdsfq3" >
                                 <select id="fps0" name="fps0"  class="c_sp_lst_rec_op">
@@ -643,9 +644,9 @@
                                 <select id="size15" name="size15"  class="c_sp_lst_rec_op">
                                 </select>
                             </td>
-                            <td class="tdsfq3" >                                                
+                            <td class="tdsfq3" >
                                 <select id="fps15" name="fps15"  class="c_sp_lst_rec_op">
-                                </select>                                               
+                                </select>
                             </td>
                             <td class="tdsfq4" >
                                 <select id="quality15" name="quality15" class="c_sp_lst_rec_op">
@@ -666,11 +667,11 @@
                     </tbody>
                 </table>
 
-                
+
 
                 <div id="rec-calc-ma" class="rec-calc">
                 </div>
-                
+
                 <div class='prerec'>
                   <dl class='prerec'>
                     <dt>
@@ -701,7 +702,7 @@
                       <option value="60">60 SEC</option>
                       <option value="120">120 SEC</option>
                       <option value="180">180 SEC</option>
-                    </select>                 
+                    </select>
                     </dd>
                   </dl>
                 </div>
@@ -711,9 +712,9 @@
                 </div>
             </form>
         </div>
-        
+
         <br/>
-        
+
         <div id='dlgIntensive' style='display:none;'>
             <form id="intensive_rec">
                 <table class="c_sp_tb_rec_op" style="width:100%;">
@@ -729,24 +730,24 @@
                             <th></th>
                             <th class="chenable16 forUTM4G tdhead0"></td>
                             <th colspan="3"><span id='lang_Normal'>Normal</span></th>
-    
+
                             <th colspan="3"><span id='lang_action'>Motion</span></th>
-                            
+
                             <th></th>
-                        </tr>         
+                        </tr>
                         <tr>
                             <th></th>
                             <th class="chenable16 forUTM4G tdhead0"></td>
                             <th><span id='lang_Size'>Size</span></th>
                             <th><span id='lang_FrameRate'>Frame Rate</span></th>
                             <th><span id='lang_Quality'>Quality</span></th>
-    
+
                             <th><span id='lang_Size'>Size</span></th>
                             <th><span id='lang_FrameRate'>Frame Rate</span></th>
                             <th><span id='lang_Quality'>Quality</span></th>
-                            
+
                             <th><span id='lang_Audio'>Audio</span></th>
-                        </tr>         
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -754,7 +755,7 @@
                             <td class="tdsfq1" ><span class='title1'>Ch 1</span></td>
                             <td class="tdsfq2">
                                 <select id="n_size0" name="n_size0"  class="c_sp_lst_rec_op">
-                                </select>                                   
+                                </select>
                             </td>
                             <td class="tdsfq3" >
                                 <select id="n_fps0" name="n_fps0"  class="c_sp_lst_rec_op">
@@ -771,7 +772,7 @@
                             </td>
                             <td class="tdsfq2">
                                 <select id="a_size0" name="a_size0"  class="c_sp_lst_rec_op">
-                                </select>                                   
+                                </select>
                             </td>
                             <td class="tdsfq3" >
                                 <select id="a_fps0" name="a_fps0"  class="c_sp_lst_rec_op">
@@ -1406,9 +1407,9 @@
                                 <select id="n_size15" name="n_size15"  class="c_sp_lst_rec_op">
                                 </select>
                             </td>
-                            <td class="tdsfq3" >                                                
+                            <td class="tdsfq3" >
                                 <select id="n_fps15" name="n_fps15"  class="c_sp_lst_rec_op">
-                                </select>                                               
+                                </select>
                             </td>
                             <td class="tdsfq4" >
                                 <select id="n_quality15" name="n_quality15" class="c_sp_lst_rec_op">
@@ -1423,9 +1424,9 @@
                                 <select id="a_size15" name="a_size15"  class="c_sp_lst_rec_op">
                                 </select>
                             </td>
-                            <td class="tdsfq3" >                                                
+                            <td class="tdsfq3" >
                                 <select id="a_fps15" name="a_fps15"  class="c_sp_lst_rec_op">
-                                </select>                                               
+                                </select>
                             </td>
                             <td class="tdsfq4" >
                                 <select id="a_quality15" name="a_quality15" class="c_sp_lst_rec_op">
@@ -1457,7 +1458,7 @@
                 </table>
 
                 <table>
-                  
+
                 </table>
 
                 <div class='prerec'>
@@ -1490,7 +1491,7 @@
                       <option value="60">60 SEC</option>
                       <option value="120">120 SEC</option>
                       <option value="180">180 SEC</option>
-                    </select>                 
+                    </select>
                     </dd>
                   </dl>
                 </div>
@@ -1500,13 +1501,13 @@
                 </div>
             </form>
         </div>
-                             
+
         <script type="text/javascript" src="../scripts/init/RecordInit.js"></script>
         <script type="text/javascript">
             ShowInit('RecOp');
         </script>
-        
-        
+
+
         <script type="text/javascript" src="../scripts/zzmvc.js"></script>
         <script type="text/javascript" src="../scripts/model/RecordModel.js"></script>
 
@@ -1521,9 +1522,8 @@
                 action: 'index',
                 debug: false
             });
-            
+
             dvrpoke();
         </script>
-    </body>                    
-</html>                    
-
+    </body>
+</html>
