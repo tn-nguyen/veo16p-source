@@ -1,0 +1,28 @@
+{
+	"Model": "ANF5HG",
+	"Vendor": "I3DVR",
+	"Channel": "16",
+	"Language": "ENGLISH",
+	"SignalType": "NTSC",
+	"LanguageCount": "15",
+	"LanguageList": {
+		"ENGLISH": "english",
+		"KOREAN": "korean",
+		"JAPANESE": "japanese",
+		"RUSSIAN": "russian",
+		"ITALIAN": "italian",
+		"FRENCH": "french",
+		"GERMAN": "german",
+		"POLISH": "polish",
+		"THAI": "thai",
+		"SPANISH": "spanish",
+		"CHINESE(T)": "chinese(t)",
+		"DUTCH": "dutch",
+		"CZECH": "czech",
+		"TURKISH": "",
+		"DANSK": "",
+		"": ""
+	},
+	"CameraInstallMode": "1",
+	"": ""
+}

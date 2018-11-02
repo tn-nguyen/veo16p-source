@@ -1,0 +1,29 @@
+﻿.i3-refresh-button {
+    width: 30px;
+    background-color: #616161;
+    color: #fff;
+    border: 1px solid #4E4E4E;
+    height: 28px;
+}
+input[type='button'], input[type='submit'] {
+    background-image: none;
+    border: 1px solid #717171;
+    color: #fff;
+    background-color: #616161 !important;
+    border-radius: 2px;
+    height: 28px;
+    padding-top: 1px;
+    padding-left: 10px; /*Nguyen - #10995 - 20171026*/
+    padding-right: 10px; /*Nguyen - #10995 - 20171026*/
+}
+    input[type='button']:hover, input[type='submit']:hover {
+        background-color: #CACACA !important;
+    }
+.icon-button-up {
+    background: url(../../images/images/bt_ic_up.png) no-repeat center center !important;
+    background-repeat: no-repeat !important;
+}
+.icon-button-down {
+    background: url(../../images/images/bt_ic_down.png) no-repeat center center !important;
+    background-repeat: no-repeat  !important;
+}
